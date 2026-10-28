@@ -20,7 +20,7 @@ Route::any('/invitationCard/create', [ResumeBuilderController::class, 'invitatio
 Route::any('/instagram', [ResumeBuilderController::class, 'instagram']);
 Route::any('/versioncheck/index.php', [ResumeBuilderController::class, 'versionCheck']);
 
-// Angular SPA fallback — exclude /api/* so API POSTs are not blocked
+// Angular SPA fallback — never catch Laravel resume/API routes (pure Laravel backend)
 Route::get('/{any}', function () {
     $index = public_path('frontend/index.html');
     if (is_file($index)) {
@@ -28,4 +28,4 @@ Route::get('/{any}', function () {
     }
 
     return response('Frontend not found', 404);
-})->where('any', '^(?!api(?:/|$)).*');
+})->where('any', '^(?!api(?:/|$))(?!resume/create$)(?!resume/createweb$)(?!resume/mapper-check$)(?!resume/deploy-fingerprint$)(?!test-api$)(?!cv/create$)(?!get/chatgpt-data$)(?!festival/create$)(?!statusMaker/create$)(?!invitationCard/create$)(?!instagram$)(?!versioncheck/index\.php$).*');
