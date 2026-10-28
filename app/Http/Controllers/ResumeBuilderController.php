@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Services\BrowserRenderService;
 use App\Services\HandlebarsService;
 use App\Services\ResumeDataNormalizer;
+use App\Services\Resume12PostRenderFix;
+use App\Services\ResumeSectionHtmlBuilder;
 use App\Services\ResumeTemplateDataMapper;
 use App\Services\ResumeTemplatesInstaller;
 use Illuminate\Http\Request;
@@ -23,6 +25,15 @@ class ResumeBuilderController extends Controller
     {
         $payload = $this->parseResumePayload($request);
         $data = ResumeTemplateDataMapper::fromApiPayload($payload);
+        $data = $this->coalesceMappedSections($data, $payload);
+
+        @file_put_contents(public_path('LAST_RAW.json'), json_encode([
+            'time' => date('c'),
+            'payload_top_keys' => array_keys($payload),
+            'has_Skills' => array_key_exists('Skills', $payload),
+            'Skills_type' => gettype($payload['Skills'] ?? null),
+            'mapped_skill_count' => is_array($data['Skills'] ?? null) ? count($data['Skills']) : 0,
+        ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
         @file_put_contents(public_path('LAST_MAP.json'), json_encode([
             'time' => date('c'),
@@ -41,9 +52,21 @@ class ResumeBuilderController extends Controller
         ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
         if ($request->boolean('debug_normalize') || ! empty($payload['debug_normalize'])) {
+            $sections = ResumeSectionHtmlBuilder::injectResume12Sections($data);
+            $templatePath = resource_path('resume-builder/'.($payload['format'] ?? 'resume31.html'));
+
             return response()->json($this->resumeApiMeta($data) + [
                 'status' => true,
                 'mapped' => $data,
+                'post_render_version' => Resume12PostRenderFix::VERSION,
+                'template_resume12_marker' => is_file($templatePath)
+                    ? str_contains((string) file_get_contents($templatePath), 'resume12-php-sections-v1')
+                    : false,
+                'section_html_lengths' => array_map(
+                    static fn ($html) => is_string($html) ? strlen($html) : 0,
+                    $sections
+                ),
+                'hint_remove_debug_normalize' => 'Remove debug_normalize from body to generate PDF; debug mode does NOT update PDF.',
             ]);
         }
 
@@ -53,14 +76,21 @@ class ResumeBuilderController extends Controller
         $templatePath = $this->handlebars->resolveTemplatePath((string) ($payload['format'] ?? 'resume31.html'));
         $html = $this->handlebars->render($templatePath, $data);
 
+        if ($this->isResume12Format($payload)) {
+            $html = Resume12PostRenderFix::apply($html, $data, $payload);
+        }
+
         @file_put_contents(public_path('LAST_RENDER.html'), $html);
         @file_put_contents(public_path('LAST_RENDER.meta.json'), json_encode([
             'time' => date('c'),
             'resume_engine' => 'laravel',
             'mapper_version' => ResumeTemplateDataMapper::VERSION,
+            'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
             'format' => $payload['format'] ?? null,
             'html_contains_php_skill' => str_contains($html, 'PHP / Laravel'),
             'html_contains_education' => str_contains($html, 'State University') || str_contains($html, 'Computer Science'),
+            'post_render_version' => Resume12PostRenderFix::VERSION,
+            'html_has_php_sections_marker' => str_contains($html, 'resume12-php-sections-v1'),
             'html_byte_length' => strlen($html),
         ], JSON_PRETTY_PRINT));
 
@@ -112,6 +142,58 @@ class ResumeBuilderController extends Controller
     }
 
     /**
+     * @param  array<string, mixed>  $data
+     * @param  array<string, mixed>  $payload
+     * @return array<string, mixed>
+     */
+    protected function coalesceMappedSections(array $data, array $payload): array
+    {
+        $mappedSkills = is_array($data['Skills'] ?? null) ? count($data['Skills']) : 0;
+        $payloadSkills = is_array($payload['Skills'] ?? null) ? count($payload['Skills']) : 0;
+
+        if ($mappedSkills === 0 && $payloadSkills > 0) {
+            return ResumeTemplateDataMapper::fromApiPayload($payload);
+        }
+
+        return $data;
+    }
+
+    /**
+     * @param  array<string, mixed>  $payload
+     */
+    protected function isResume12Format(array $payload): bool
+    {
+        return stripos((string) ($payload['format'] ?? ''), 'resume12.html') !== false;
+    }
+
+    /**
+     * Open in browser: GET /resume/deploy-fingerprint
+     */
+    public function deployFingerprint()
+    {
+        $template = resource_path('resume-builder/resume12.html');
+        $body = is_file($template) ? (string) file_get_contents($template) : '';
+
+        return response()->json([
+            'status' => true,
+            'resume_engine' => 'laravel',
+            'mapper_version' => ResumeTemplateDataMapper::VERSION,
+            'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
+            'post_render_version' => Resume12PostRenderFix::VERSION,
+            'controller_file' => __FILE__,
+            'controller_mtime' => @date('c', filemtime(__FILE__)),
+            'resume12_template_path' => $template,
+            'resume12_template_mtime' => is_file($template) ? date('c', filemtime($template)) : null,
+            'resume12_has_php_marker' => str_contains($body, 'resume12-php-sections-v1'),
+            'resume12_has_legacy_education_if' => str_contains($body, '{{#if Education}}'),
+            'resume12_has_php_placeholder' => str_contains($body, 'Resume12SkillsHtml'),
+            'base_path' => base_path(),
+            'public_path' => public_path(),
+            'expected_post_render_version' => Resume12PostRenderFix::VERSION,
+        ]);
+    }
+
+    /**
      * If Postman response is missing these fields, you are NOT hitting Laravel (old Node still running).
      *
      * @param  array<string, mixed>  $data
@@ -127,6 +209,8 @@ class ResumeBuilderController extends Controller
         $meta = [
             'resume_engine' => 'laravel',
             'mapper_version' => ResumeTemplateDataMapper::VERSION,
+            'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
+            'post_render_version' => Resume12PostRenderFix::VERSION,
             'debug_first_skill' => $firstSkill,
             'debug_education_course' => is_array($data['Education'] ?? null)
                 ? (string) ($data['Education'][0]['course'] ?? '')

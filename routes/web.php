@@ -10,6 +10,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::any('/get/chatgpt-data', [ChatGptController::class, 'getGptResult']);
 Route::any('/resume/create', [ResumeBuilderController::class, 'createResume']);
 Route::get('/resume/mapper-check', [ResumeBuilderController::class, 'mapperCheck']);
+Route::get('/resume/deploy-fingerprint', [ResumeBuilderController::class, 'deployFingerprint']);
 Route::any('/resume/createweb', [ResumeBuilderController::class, 'createResumeForWeb']);
 Route::any('/cv/create', [ResumeBuilderController::class, 'createCV']);
 Route::any('/test-api', [ResumeBuilderController::class, 'testApi']);

@@ -23,6 +23,10 @@ class HandlebarsService
 
         $htmlData = file_get_contents($templatePath);
 
+        if (self::usesResume12PhpSections($templatePath)) {
+            $htmlData = $this->embedResume12PhpSections($htmlData, $data);
+        }
+
         $php = LightnCandy::compile($htmlData, [
             'flags' => LightnCandy::FLAG_HANDLEBARS
                 | LightnCandy::FLAG_ERROR_EXCEPTION
@@ -143,5 +147,28 @@ class HandlebarsService
             'Achivement' => $data['Achivement'] ?? [],
             'Interests' => $data['Interests'] ?? [],
         ];
+    }
+
+    protected static function usesResume12PhpSections(string $templatePath): bool
+    {
+        return str_ends_with(str_replace('\\', '/', $templatePath), 'resume12.html');
+    }
+
+    /**
+     * Replace {{{Resume12*Html}}} placeholders with PHP-built HTML before LightnCandy runs.
+     *
+     * @param  array<string, mixed>  $data
+     */
+    protected function embedResume12PhpSections(string $htmlData, array $data): string
+    {
+        $sections = ResumeSectionHtmlBuilder::injectResume12Sections($data);
+        foreach ($sections as $key => $fragment) {
+            if ($key === 'section_html_version' || ! str_ends_with($key, 'Html')) {
+                continue;
+            }
+            $htmlData = str_replace('{{{'.$key.'}}}', (string) $fragment, $htmlData);
+        }
+
+        return $htmlData;
     }
 }

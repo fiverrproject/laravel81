@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Http\Controllers\ResumeBuilderController;
 use App\Services\HandlebarsService;
+use App\Services\ResumeSectionHtmlBuilder;
 use App\Services\ResumeTemplateDataMapper;
 use App\Services\ResumeTemplatesInstaller;
 use Illuminate\Console\Command;
@@ -19,8 +20,10 @@ class VerifyResumeDeploy extends Command
     {
         $checks = [];
 
+        $checks['class_ResumeSectionHtmlBuilder'] = class_exists(ResumeSectionHtmlBuilder::class);
         $checks['class_ResumeTemplateDataMapper'] = class_exists(ResumeTemplateDataMapper::class);
         $checks['mapper_version'] = ResumeTemplateDataMapper::VERSION;
+        $checks['section_html_version'] = ResumeSectionHtmlBuilder::VERSION;
         $checks['template_count'] = ResumeTemplatesInstaller::resumeTemplateCount();
         $checks['templates_ok'] = $checks['template_count'] >= 35;
 
@@ -32,7 +35,7 @@ class VerifyResumeDeploy extends Command
 
         $handlebars = app_path('Services/HandlebarsService.php');
         $checks['handlebars_calls_mapper'] = is_file($handlebars)
-            && str_contains(file_get_contents($handlebars), 'prepareTemplateData');
+            && str_contains(file_get_contents($handlebars), 'embedResume12PhpSections');
 
         $mapperFile = app_path('Services/ResumeTemplateDataMapper.php');
         $checks['mapper_file_on_disk'] = is_file($mapperFile);
@@ -56,9 +59,10 @@ class VerifyResumeDeploy extends Command
         $fail = 0;
         foreach ($checks as $key => $value) {
             $ok = $value === true || ($key === 'mapper_version' && is_string($value) && $value !== '')
+                || ($key === 'section_html_version' && is_string($value) && $value !== '')
                 || ($key === 'sample_skillName' && $value === 'PHP')
                 || ($key === 'template_count' && is_int($value));
-            if ($key === 'template_count' || $key === 'mapper_version' || $key === 'sample_skillName') {
+            if ($key === 'template_count' || $key === 'mapper_version' || $key === 'section_html_version' || $key === 'sample_skillName') {
                 $this->line("  {$key}: {$value}");
                 if ($key === 'template_count' && $value < 35) {
                     $fail++;
