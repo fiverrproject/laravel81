@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;800&family=Comforter&family=Grape+Nuts&display=swap"
+    rel="stylesheet">
+  <title>Days To Go 6</title>
+
+  <style>
+    body {
+      margin: 0px;
+
+
+      /* font-family: 'Grape Nuts', cursive; */
+    }
+
+    .container {
+      height: 100vh;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+
+    .couple-img {
+      width: 100%;
+      height: 100%;
+      /* position: absolute; */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    .box {
+      position: absolute;
+      bottom: 3rem;
+      width: 100%;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+    }
+
+    .count {
+      font-family: 'Cinzel', serif;
+      font-size: 15rem;
+      margin: 0;
+    }
+
+    .days {
+      font-family: 'Cinzel', serif;
+      font-size: 6rem;
+      margin: 0;
+
+    }
+
+    .to-go {
+      font-family: 'Comforter', cursive;
+      font-size: 3rem;
+      margin-left: 10px;
+
+    }
+
+
+    .couple-name {
+      font-family: 'Comforter', cursive;
+      position: absolute;
+      top: 6rem;
+      width: 100%;
+      text-align: center;
+      font-size: 5rem;
+      text-transform: capitalize;
+    }
+
+    .date {
+      font-family: 'Comforter', cursive;
+      position: absolute;
+      bottom: 13rem;
+      right: 13rem;
+      font-size: 3rem;
+      width: 29%;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="couple-img" style="background-image: url({{image}});"></div>
+
+    <div class="date">{{date}}</div>
+
+    <div class="box">
+      <div>
+        <h1 class="count">{{day_count}}</h1>
+      </div>
+      <div>
+        <h1 class="days">Days</h1>
+      </div>
+      <div>
+        <p class="to-go">to go</p>
+      </div>
+    </div>
+    <div class="couple-name">
+      {{boy_name}} & {{girls_name}}
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 22</title>
+   <style>
+      .container {
+         margin: 0 1rem 0 1rem;
+      }
+
+      li {
+         font-family: sans-serif;
+      }
+
+      .col-4 {
+         width: 30%;
+      }
+
+      .col-8 {
+         width: 68%;
+         margin-left: 2%;
+      }
+
+      .d-flex {
+         display: flex;
+         justify-content: space-between;
+      }
+
+      .head {
+         background-color: rgb(51, 156, 170);
+         position: relative;
+         /* height: 8rem; */
+         /* margin-left: 2.5rem; */
+         padding: 0 1rem 0 1rem;
+      }
+
+      .head h3 {
+         color: white;
+         padding-top: 3rem;
+         /* padding-left: 1rem; */
+         font-family: sans-serif;
+         /* font-weight: 500; */
+      }
+
+      .img {
+         float: right;
+         width: 21%;
+      }
+
+      .name {
+         padding-left: 1rem;
+
+      }
+
+      .name h1 {
+         margin-block-end: 0px;
+         font-family: sans-serif;
+         font-weight: 600;
+         color: rgb(100, 99, 99);
+         font-size: 30px;
+      }
+
+      .name h5 {
+         margin-block-start: 0px;
+         font-weight: 100;
+         color: rgb(100, 99, 99);
+         ;
+      }
+
+      .profile {
+         background-color: rgb(51, 156, 170);
+         position: relative;
+         color: white;
+         padding: 0 1rem 0 1rem;
+      }
+
+      .profile h3 {
+         font-family: sans-serif;
+         /* font-weight: 500; */
+         color: white;
+         margin-bottom: 0px;
+      }
+
+      .border {
+         border-bottom: solid 2px white;
+         margin-top: 0px;
+      }
+
+      .profile h4 {
+         margin-bottom: 0px;
+         margin-top: 5px;
+         font-family: sans-serif;
+      }
+
+      .profile h5 {
+         margin-block-start: 0px;
+         font-weight: 100;
+         margin-bottom: 0px;
+         font-family: sans-serif;
+         font-size: small;
+      }
+
+      .padding-left {
+         padding: 0 0 0 4px;
+         margin: 0;
+         font-size: 15px;
+         font-weight: 500;
+         font-family: sans-serif;
+      }
+
+      .h3 {
+         margin-block-end: 0px;
+         color: rgb(51, 156, 170);
+         font-family: sans-serif;
+         /* color: rgb(100, 99, 99); */
+      }
+
+      .border1 {
+         border-bottom: solid 2px rgb(51, 156, 170);
+         margin-block-start: 0px;
+         margin-block-end: 0px;
+         width: 100%;
+      }
+
+      .year {
+         padding-left: 1rem;
+         margin-block-start: 12px;
+         color: rgb(100, 99, 99);
+      }
+
+      .footer {
+         background-color: rgb(51, 156, 170);
+         margin-top: 2rem;
+         color: white;
+         height: 7rem;
+      }
+
+      .heading {
+         font-size: 15px;
+         font-weight: bold;
+         list-style-type: none;
+         margin-left: -20px;
+         font-family: sans-serif;
+      }
+
+      li {
+         padding: 3px;
+      }
+
+      .progressbar {
+         background-color: rgb(0 0 0 / 45%);
+         border-radius: 15px;
+         word-break: break-all;
+         height: 11px;
+         margin-bottom: 7px;
+      }
+
+      .skill {
+         background-color: #fff;
+         color: rgb(51, 156, 170);
+         text-align: center;
+         font-size: 10px;
+         border-radius: 15px;
+         margin-bottom: 1rem;
+      }
+
+      /* .skillprograss {
+      display: flex;
+      padding-top: 10px;
+    } */
+
+      .skillprograss p {
+         /* width: 32%; */
+         margin: 2px;
+      }
+
+      .font-family {
+         font-family: sans-serif;
+         font-weight: 600;
+      }
+
+      .pb {
+         padding: 0 0 5px 5px;
+      }
+
+      ul {
+         margin: 8px 0 0 0;
+         padding: 0 0 0 10px;
+      }
+
+      .wo {
+         word-break: break-all;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <div>
+         <div class="col-4 head">
+            <h3>RESUME</h3>
+            <!-- </div>
+      {{#if profilePhoto}}
+      <div class="col-8">
+        <img src="{{profilePhoto}}" class="img" alt="..">
+        {{else}}
+        <img
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4QBWRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEAAAAAAAAAAAEsAAAAAQAAASwAAAAB/+0ALFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAPHAFaAAMbJUccAQAAAgAEAP/hDIFodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0n77u/JyBpZD0nVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkJz8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0nYWRvYmU6bnM6bWV0YS8nIHg6eG1wdGs9J0ltYWdlOjpFeGlmVG9vbCAxMC4xMCc+CjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczp0aWZmPSdodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyc+CiAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICA8dGlmZjpYUmVzb2x1dGlvbj4zMDAvMTwvdGlmZjpYUmVzb2x1dGlvbj4KICA8dGlmZjpZUmVzb2x1dGlvbj4zMDAvMTwvdGlmZjpZUmVzb2x1dGlvbj4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6eG1wTU09J2h0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8nPgogIDx4bXBNTTpEb2N1bWVudElEPmFkb2JlOmRvY2lkOnN0b2NrOjlmOGM2NzA4LTZjZGItNDE3My1hZmFhLTg2MTMxYjQyYjEyZjwveG1wTU06RG9jdW1lbnRJRD4KICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjkzNTNjMzAzLWFhMTktNGY2Yi04MDQwLTFkOTc0OWM1YzU5YjwveG1wTU06SW5zdGFuY2VJRD4KIDwvcmRmOkRlc2NyaXB0aW9uPgo8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSd3Jz8+/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxERExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgBaAFoAwERAAIRAQMRAf/EABsAAQADAQEBAQAAAAAAAAAAAAAEBQYDAgEI/8QAOhABAAIBAgMDCQcCBgMAAAAAAAECAwQRBSExEkFRBhNSYWJxkaGxFCIjMoHB0RU0M3JzgpLh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"
+          class="img" alt="..">
+      </div>
+      {{/if}} -->
+         </div>
+         <div class="name">
+            <h1>{{Name}}</h1>
+            <h5 class="font-family">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h5>
+         </div>
+         <div class="d-flex">
+            <div class="col-4 profile">
+               <h3>Profile</h3>
+               <p class="border"></p>
+
+               <!-- {{#if Name}}
+          <h4>Name</h4>
+          <h5 class="pb">{{Name}}</h5>
+          {{/if}} -->
+
+               {{#if Phone}}
+               <h4>Phone</h4>
+               <h5 class="pb">{{Phone}}</h5>
+               {{/if}}
+               {{#if DOB}}
+               <h4>Date Of Birth</h4>
+               <h5 class="pb">{{DOB}}</h5>
+               {{/if}}
+
+               {{#if Email}}
+               <h4>Email</h4>
+               <h5 class="pb" style="word-break: break-all !important;">{{Email}}</h5>
+               {{/if}}
+
+               {{#if Address}}
+               <h4>Address</h4>
+               <h5 class="pb" style="word-break: break-all !important;">{{Address}}</h5>
+               {{/if}}
+
+               {{#if Skills}}
+               <h3>Skills</h3>
+               <p class="border"></p>
+               {{#each Skills}}
+               {{#if skillName}}
+               <div class="skillprograss">
+                  <!-- <div style="width: 38%; "> -->
+                  <p class="word-break" style="word-break: break-all !important;">{{skillName}}</p>
+                  <!-- </div> -->
+                  <div class="progressbar" style="margin-top:5px;">
+                     <div class="skill" style="width:{{expertise}}%;">{{expertise}}%</div>
+                  </div>
+               </div>
+               {{/if}}
+               {{/each}}
+               {{/if}}
+               {{#if Language}}
+               <div>
+                  <h3>Language</h3>
+                  <p class="border"></p>
+                  {{#each Language}}
+                  <div style="padding-left: 2%;">
+                     <ul>
+                        {{#if name}}<li class="padding-left word-break" style="word-break: break-all !important;">
+                           {{name}}</li> {{/if}}
+                     </ul>
+                  </div>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Interests}}
+               <div>
+                  <h3>Interests</h3>
+                  <p class="border"></p>
+                  {{#each Interests}}
+                  <div style="padding-left: 2%;">
+                     <ul>
+                        {{#if hoby}}<li class="padding-left word-break" style="word-break: break-all !important;">
+                           {{hoby}}</li> {{/if}}
+                     </ul>
+                  </div>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+
+
+
+               <!-- <p class="border"></p> -->
+            </div>
+            <div class="col-8">
+
+               {{#if Objective}}
+               <div>
+                  <h3 class="h3">Objective</h3>
+                  <p class="border1"></p>
+                  <p style="text-align: justify; font-family: sans-serif;">{{Objective}}</p>
+               </div>
+               {{/if}}
+
+               {{#if Education}}
+               <div>
+                  <h3 class="h3">Education</h3>
+                  <p class="border1"></p>
+                  {{#each Education}}
+                  <div class="d-flex">
+                     <div>
+                        {{#if yearOfPassing}} <h4 class="year"> {{yearOfPassing}}</h4> {{/if}}
+                     </div>
+                     <div class="col-8">
+                        <ul>
+                           {{#if course}}<li class="heading"> {{course}}</li> {{/if}}
+                           {{#if institute}}<li> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</li> {{/if}}
+                           {{#if percentage}} <li> {{percentage}}%</li> {{/if}}
+                        </ul>
+                     </div>
+                  </div>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Experience}}
+               <h3 class="h3">Experience</h3>
+               <p class="border1"></p>
+               {{#each Experience}}
+               <div class="d-flex ">
+                  <div>
+                     <h4 class="year"> {{from}}</h4>
+                  </div>
+                  <div class="col-8">
+                     <ul>
+                        {{#if jobTitle}} <li class="heading">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</li>{{/if}}
+                        {{#if organization}} <li>{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
+                        {{#if role}}<li>{{role}}</li>{{/if}}
+                        {{#if description}}<li>{{description}}</li>{{/if}}
+                        {{#if present}}<li>Present</li>{{/if}}
+                     </ul>
+                  </div>
+               </div>
+               {{/each}}
+               {{/if}}
+
+               {{#if Projects}}
+               <div>
+                  <h3 class="h3">Projects</h3>
+                  <p class="border1"></p>
+                  {{#each Projects}}
+                  <div class="d-flex">
+                     <div style="padding-left: 2%;">
+                        <ul>
+                           {{#if projectTitle}}<li class="heading">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</li> {{/if}}
+                           {{#if roles}}<li> {{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li> {{/if}}
+                           {{#if duration}} <li> {{duration}}</li> {{/if}}
+                           {{#if projectDescription}}<li> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li> {{/if}}
+                        </ul>
+                     </div>
+                  </div>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Achivement}}
+               <div>
+                  <h3 class="h3">Achievement</h3>
+                  <p class="border1"></p>
+                  {{#each Achivement}}
+                  <div style="padding-left: 2%;">
+                     <ul>
+                        {{#if achivement}}<li style=" font-family: sans-serif;">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</li>{{/if}}
+                     </ul>
+                  </div>
+                  <!-- <p style="text-align: justify; font-family: sans-serif;"></p> -->
+                  {{/each}}
+               </div>
+               {{/if}}
+
+
+               {{#if Reference}}
+               <div>
+                  <h3 class="h3">Reference</h3>
+                  <p class="border1"></p>
+                  {{#each Reference}}
+                  <div style="padding-left: 2%;">
+                     <ul>
+                        {{#if name}}<li class="heading"> {{name}}</li> {{/if}}
+                        {{#if jobtitle}}<li> {{jobtitle}}</li> {{/if}}
+                        {{#if companyname}}<li> {{companyname}}</li> {{/if}}
+                        {{#if email}} <li style="word-break: break-all;"> {{email}}</li> {{/if}}
+                        {{#if phone}} <li> {{phone}}</li> {{/if}}
+                     </ul>
+                  </div>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+
+            </div>
+         </div>
+
+         {{#if sign}}
+         <div class="footer">
+
+            <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 20px;">
+               <h3 style="margin: 3px 0 0 0;">Signature</h3>
+               <img width="80px" height="80px" src="{{sign}}" alt="Signature">
+            </div>
+         </div>
+         {{/if}}
+</body>
+
+</html>

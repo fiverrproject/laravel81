@@ -1,0 +1,482 @@
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Professional Resume</title>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style type="text/css">
+      :root {
+         --background: #c3c0ba;
+         --white: #fff;
+         --one: #c3266f;
+         --two: #743578;
+         --black: #54585d;
+         --process: #a5a5a5;
+      }
+
+      * {
+         margin: 0px;
+         padding: 0px;
+         box-sizing: border-box;
+         font-family: system-ui;
+      }
+
+      body {
+         /*ackground: var(--background);*/
+      }
+
+      .col-div-3 {
+         width: 25%;
+         float: left;
+      }
+
+      .col-div-7 {
+         width: 75%;
+         float: left;
+      }
+
+      .col-div-4 {
+         width: 35%;
+         float: left;
+      }
+
+      .col-div-8 {
+         width: 65%;
+         float: left;
+      }
+
+      .col-div-6 {
+         width: 50%;
+         float: left;
+         position: relative;
+      }
+
+      .clearfix {
+         clear: both;
+      }
+
+      .resume-main {
+         width: 100%;
+         height: max-content;
+         background: linear-gradient(var(--one), var(--two));
+         /*margin: 50px auto;*/
+         box-shadow: 5px 5px 5px 5px #54585d33;
+      }
+
+      .left-box {
+         width: 35%;
+         float: left;
+         height: 100%;
+      }
+
+      .right-box {
+         width: 65%;
+         float: right;
+         background-color: var(--white);
+         height: auto;
+         margin: 50px 0px;
+         border-radius: 50px 0px 0px 50px;
+         padding: 30px 50px;
+         box-shadow: -7px 2px 15px 2px #54585d52;
+      }
+
+      .profile {
+         width: 150px;
+         height: 150px;
+         border: 3px solid var(--white);
+         padding: 7px;
+         border-radius: 50%;
+         margin: 20px auto;
+      }
+
+      .profile img {
+         width: 100%;
+         border-radius: 50%;
+      }
+
+      .content-box {
+         padding: 0px 40px 0px 45px;
+      }
+
+      .content-box h2 {
+         text-transform: uppercase;
+         font-weight: 500;
+         color: var(--white);
+         letter-spacing: 1px;
+         font-size: 20px;
+      }
+
+      .hr1 {
+         border: none;
+         height: 1px;
+         background: var(--white);
+         margin-top: 3px;
+         margin-bottom: 4px;
+      }
+
+      .p1 {
+         font-size: 11px;
+         color: var(--white);
+         letter-spacing: 1px;
+         padding-top: 8px;
+      }
+
+      #progress {
+         background: var(--process);
+         border-radius: 13px;
+         height: 8px;
+         width: 100%;
+      }
+
+      #progress:after {
+         content: '';
+         display: block;
+         background: var(--white);
+         width: 100%;
+         height: 100%;
+         border-radius: 9px;
+      }
+
+      #progress1 {
+         background: var(--process);
+         border-radius: 13px;
+         height: 8px;
+         width: 100%;
+      }
+
+      #progress1:after {
+         content: '';
+         display: block;
+         background: var(--white);
+         width: 40%;
+         height: 100%;
+         border-radius: 9px;
+      }
+
+      .content-box h3 {
+         font-size: 13px;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         padding-top: 10px;
+         color: white;
+         font-weight: 500;
+      }
+
+      .p2 {
+         font-size: 13px;
+         margin-bottom: 5px;
+         margin-top: 5px;
+         color: var(--white);
+      }
+
+      .circle {
+         color: var(--white);
+         font-size: 14px !important;
+         margin-top: 7px;
+      }
+
+      .circle1 {
+         color: var(--process);
+         font-size: 14px !important;
+         margin-top: 7px;
+      }
+
+      .in {
+         background: var(--white);
+         color: var(--one);
+         padding: 8px;
+         border-radius: 20px;
+         font-size: 14px !important;
+      }
+
+      .inp {
+         color: var(--white);
+         font-size: 11px;
+      }
+
+      .col3 {
+         text-align: center;
+      }
+
+      h1 {
+         font-size: 50px;
+         text-transform: uppercase;
+         color: var(--black);
+         line-height: 50px;
+      }
+
+      h1 span {
+         color: var(--one);
+      }
+
+      .p3 {
+         letter-spacing: 4px;
+         color: #54585d;
+         font-weight: 500;
+      }
+
+      .heading {
+         text-transform: uppercase;
+         font-weight: 500;
+         color: var(--one);
+         letter-spacing: 1px;
+         font-size: 20px;
+      }
+
+      .hr2 {
+         border: none;
+         height: 1px;
+         background: var(--black);
+         margin-top: 3px;
+      }
+
+      .p5 {
+         font-weight: 700;
+         color: var(--black);
+      }
+
+      .span1 {
+         font-size: 12px;
+         color: var(--black);
+      }
+
+      progress {
+         accent-color: rgb(255, 255, 255);
+      }
+
+      .f-clr-size {
+         font-size: 11px;
+         color: white;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .showPosts {
+         cursor: pointer;
+         list-style-type: none;
+         /* width: 200px; */
+      }
+
+      .greekCross {
+         color: #020202;
+         font-size: 10px;
+         width: 1.5em;
+         float: left;
+      }
+
+      .showPosts>div {
+         /* font-size: 15px; */
+         margin-left: 2em;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="resume-main">
+      <div class="left-box">
+         <br><br>
+         {{#if profilePhoto}}
+         <div class="profile">
+            <img src="{{profilePhoto}}" style="height:130px !important">
+         </div>
+         {{/if}}
+
+         <div class="content-box">
+            <h2>Profile Info</h2>
+            <hr class="hr1">
+            {{#if Objective}}
+            <p class="p1" style="word-break: break-all; text-align: justify;">{{Objective}}</p>
+            {{/if}}{{#if Phone}}
+            <div style="color: #fff; margin-bottom: 5px;font-size: 12px; margin-top: 5px;"><strong>Phone:</strong>
+               {{Phone}}</div>
+            {{/if}}
+            {{#if DOB}}
+            <div style="color: #fff; margin-bottom: 5px;font-size: 12px;margin-top: 5px;"><strong>DOB:</strong>{{DOB}}
+            </div>
+            {{/if}}{{#if Email}}
+            <div style="color: #fff; margin-bottom: 5px;font-size: 12px; display: flex; justify-content: flex-start;">
+               <p style="padding-right: 5px;"> <strong>Email: </strong></p>
+               <p style="word-break: break-all;"> {{Email}}</p>
+            </div>
+            {{/if}}{{#if Address}}
+            <div style="color: #fff; margin-bottom: 5px;font-size: 12px; display: flex; justify-content: flex-start;">
+               {{Address}}
+            </div>
+            {{/if}}
+            {{#if Language}}
+            <br>
+            <h2>Language</h2>
+            <hr class="hr1">
+            {{#each Language}}
+            <p class="p2" style="word-break: break-all;">{{name}}</p>
+            {{/each}}
+            <br>
+            {{/if}}
+
+            {{#if Skills}}
+
+            <h2>My Skills</h2>
+            <hr class="hr1">
+
+            {{#each Skills}}
+            <div class="col-div-12">
+               {{#if skillName}}
+               <p class="p2" style="word-break: break-all;">{{skillName}}</p>
+               <!-- <div id="progress"></div> -->
+
+               <progress value="{{expertise}}" max="100"> </progress><span class="f-clr-size">
+                  {{expertise}}%</span>
+               {{/if}}
+            </div>
+            {{/each}}
+            <div class="clearfix"></div>
+            <br>
+            {{/if}}
+
+            {{#if Interests}}
+
+            <h2>Interests</h2>
+            <hr class="hr1">
+            {{#each Interests}}
+            <div class="col-div-12">
+               {{#if hoby}}<p class="p2" style="word-break: break-all;">{{hoby}}</p>{{/if}}
+            </div>
+            {{/each}}
+            <div class="clearfix"></div>
+            <br>
+            {{/if}}
+         </div>
+      </div>
+
+      <div class="right-box">
+         <h2 style="font-size: 25px; color: #54585d;">
+            {{Name}}
+         </h2>
+         <p class="p3">{{jobTitle}}</p>
+
+         <br>
+
+         {{#if Education}}
+         <br>
+         <h2 class="heading">My Education</h2>
+         <hr class="hr2">
+         {{#each Education}}
+         <br>
+         <div class="col-div-12">
+            <p class="p5 word-break">{{institute}}</p>
+         </div>
+         <div class="col-div-12">
+            <p class="span1 word-break">{{course}}</p>
+            {{#if percentage}}
+            <p class="span1 word-break">{{percentage}}%</p>
+            {{/if}}
+            <p class="span1 word-break">{{yearOfPassing}}</p>
+         </div>
+         <div class="clearfix"></div>
+         {{/each}}
+         {{/if}}
+         <div class="clearfix"></div>
+         {{#if Experience}}
+         <br>
+         <h2 class="heading">Work Experience</h2>
+         <hr class="hr2">
+         {{#each Experience}}
+         <br>
+         <div class="col-div-12">
+            <p class="p5 word-break">{{jobTitle}}</p>
+         </div>
+         <div class="col-div-12">
+            {{#if from}}<p class="span1">{{from}} {{#if to}}- {{to}} {{/if}}</p>{{/if}}
+            {{#if organization}}<p class="span1 word-break">{{organization}}</p>{{/if}}
+            {{#if description}}<p class="span1 word-break">{{description}}</p>{{/if}}
+            {{#if present}}<p class="span1 word-break">Present</p>{{/if}}
+         </div>
+         <div class="clearfix"></div>
+         {{/each}}
+         {{/if}}
+
+         {{#if Projects}}
+         <br>
+         <h2 class="heading">Projects</h2>
+         <hr class="hr2">
+         {{#each Projects}}
+         <br>
+         <div class="col-div-12">
+            <p class="p5 word-break">{{projectTitle}}</p>
+         </div>
+         <div class="col-div-12">
+            <p class="span1 word-break">{{roles}}</p>
+            <p class="span1 word-break">{{duration}}</p>
+            <p class="span1 word-break">{{projectDescription}}</p>
+         </div>
+         <div class="clearfix"></div>
+         {{/each}}
+         {{/if}}
+
+         {{#if Achivement}}
+         <br>
+         <h2 class="heading">Achievement</h2>
+         <hr class="hr2">
+         {{#each Achivement}}
+         <br>
+         <div class="col-div-12">
+            <ul>
+               <li class="showPosts">
+                  <span class="greekCross">＊ </span>
+                  {{#if achivement}}<div class="span1 word-break">{{achivement}}</div>{{/if}}
+               </li>
+            </ul>
+         </div>
+         <div class="clearfix"></div>
+         {{/each}}
+         {{/if}}
+
+         {{#if Reference}}
+         <br>
+         <h2 class="heading">Reference</h2>
+         <hr class="hr2">
+         {{#each Reference}}
+         <br>
+         <div class="col-div-12">
+            {{#if name}}
+            <div class="span1 word-break" style="margin-bottom: 2px;"><strong>Name:</strong> {{name}}</div>
+            {{/if}}{{#if jobtitle}}
+            <div class="span1 word-break" style="margin-bottom: 2px;"><strong>Job Title:</strong> {{jobtitle}}</div>
+            {{/if}}{{#if companyname}}
+            <div class="span1 word-break" style="margin-bottom: 2px;"><strong>Company Name:</strong> {{companyname}}
+            </div>
+            {{/if}}{{#if email}}
+            <div class="span1 word-break" style="margin-bottom: 2px;"><strong>Email:</strong> {{email}}</div>
+            {{/if}}
+         </div>
+
+         <div class="clearfix"></div>
+         {{/each}}
+         {{/if}}
+
+         {{#if sign}}
+         <br>
+         <h2 class="heading">Signature</h2>
+         <hr class="hr2">
+
+         <div class="col-div-12">
+            <div>
+               <img src="{{sign}}" style="width: 110px; height: 110px;">
+            </div>
+         </div>
+         <div class="clearfix"></div>
+         {{/if}}
+
+         <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+
+   </div>
+
+</body>
+
+</html>

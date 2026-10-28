@@ -1,0 +1,371 @@
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>Resume 3</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+      /* 
+// Online Responsive Resume
+// Made with ❤ by @Pawan_Mall
+// http://www.pawanmall.net 
+*/
+
+      * {
+         margin: 0;
+         padding: 0;
+      }
+
+      body {
+         background: #f2f2f2;
+         font-size: 62.5%;
+         /* padding: 10px; */
+      }
+
+      .myResume-Contact-Info h1 {
+         font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;        
+         font-size: 32px;
+         line-height: 35px;
+      }
+
+      .myResume-Contact-Info>h3 {
+         font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+         color: #484848;
+         margin-bottom: 10px;
+         text-decoration: underline;
+      }
+
+      .myResume-Contact-Info>h6 {
+         font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+         color: #777;
+         font-weight: normal;
+         font-size: 1em;
+      }
+
+      .myResume {
+         background: #fff;
+         width: 100%;
+         font-family: "Balthazar", "Droid Serif", serif;
+         color: #565656;
+         font-size: 1.8em;
+         line-height: 1.4em;
+         /* margin: 3% auto; */
+         padding: 10px 0px 35px 80px;
+         /* padding: 35px; */
+         text-shadow: 1px 1px 10px #CCC;
+      }
+
+      .myResume-Contact-Info {
+         width: 63%;
+         margin-top: 50px;
+         margin-bottom: 10px;
+         margin-right: 1px;
+         float: left;
+      }
+
+      .clear {
+         clear: both;
+      }
+
+      .myResume-Profile-Pic {
+         width: 100%;
+         margin: 40px auto;
+      }
+
+      .myResume-Profile-Pic img {
+         width: 25%;
+         height: 20%;
+         border-radius: 3px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+         background-color: #fff;
+         border: 1px solid #ccc;
+         padding: 0px;
+      }
+
+      .myResume-Profile-Intro {
+         width: 88.5%;
+         margin: 10 px auto;
+         text-align: justify;
+         margin-top: 0px;
+      }
+
+      .myResume-Skills {
+         width: 88.5%;
+         margin: 10 px auto;
+         text-align: justify;
+         margin-top: 0px;
+      }
+
+      .myResume-Education {
+         width: 88.5%;
+         margin-top: 0px;
+      }
+
+      .myResume-Education>ul>li {
+         list-style-type: circle;
+      }
+
+      .myResume-Experience {
+         width: 88.5%;
+         margin-top: 0px;
+      }
+
+      .myResume-Experience>ul>li {
+         list-style-type: circle;
+      }
+
+      h1.title {
+         text-transform: uppercase;
+         font-size: 150%;
+         background-color: #CCC;
+         padding: 10px 0px 10px 15px;
+         border-radius: 0px 50px 50px 0px;
+         width: 80%;
+         margin-bottom: 10px;
+         color: #fff;
+         text-shadow: 2px 2px 8px #000;
+         position: relative;
+         left: -85px;
+      }
+
+      .myResume-Skills-left {
+         display: block;
+         float: left;
+         padding-bottom: 20px;
+         /* margin-left: 30px; */
+         margin-left: 30px;
+      }
+
+      .myResume-Skills-right {
+         display: block;
+         float: left;
+         margin-left: 30px;
+      }
+
+
+      ul.myResume-Skills-left,
+      ul.myResume-Skills-right {
+         display: block;
+      }
+
+      ul.myResume-Skills-left>li {
+         padding-left: 10px;
+         list-style-type: circle;
+         vertical-align: top;
+         font-family: "Balthazar", "Droid Serif", serif;
+      }
+
+      ul.myResume-Skills-right>li {
+         padding-left: 10px;
+         list-style-type: circle;
+         vertical-align: top;
+         font-family: "Balthazar", "Droid Serif", serif;
+      }
+
+      ul.myResume-Skills-left>li:first-child {
+         list-style-type: none;
+         font-weight: bolder;
+         font-size: 20px;
+         /* text-decoration: underline; */
+      }
+
+      ul.myResume-Skills-right>li:first-child {
+         list-style-type: none;
+         font-weight: bolder;
+         font-size: 20px;
+         text-decoration: underline;
+      }
+      .text-justify {
+         text-align: justify;
+      }
+
+      .word-break {
+         word-break: break-all !important;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="myResume">     
+      {{#if profilePhoto}}
+      <div class="myResume-Contact-Info">
+         {{#if Name}}
+         <h1 class="word-break">{{Name}}</h1>
+         {{/if}}
+         {{#if jobTitle}}
+         <h4 class="word-break">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}
+         </h4>
+         {{/if}}{{#if Phone}}
+         <h6 class="word-break" style="margin-top: 15px !important;">{{Phone}}</h6>
+         {{/if}} {{#if DOB}}
+         <h6 class="word-break">{{DOB}}</h6>
+         {{/if}} {{#if Email}}
+         <h6 class="word-break">{{Email}}</h6>
+         {{/if}}{{#if Address}}
+         <h6 class="word-break">{{Address}}</h6>
+         {{/if}}
+      </div>
+      <div class="myResume-Profile-Pic">
+         <img src="{{profilePhoto}}" width=100% alt="profilePhoto" />
+      </div>
+      {{else}}
+      <div class="myResume-Contact-Info" style="width: 90% !important;">
+         {{#if Name}}
+         <h1 class="word-break">{{Name}}</h1>
+         {{/if}}
+         {{#if jobTitle}}
+         <h4 class="word-break">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h4>
+         {{/if}}
+         {{#if Phone}}
+         <h6 class="word-break" style="margin-top: 15px !important;">{{Phone}}</h6>
+         {{/if}} {{#if DOB}}
+         <h6 class="word-break">{{DOB}}</h6>
+         {{/if}} {{#if Email}}
+         <h6 class="word-break">{{Email}}</h6>
+         {{/if}}{{#if Address}}
+         <h6 class="word-break">{{Address}}</h6>
+         {{/if}}
+      </div>
+      {{/if}}
+      <div class="clear"></div>
+      {{#if Objective}}
+      <div class="myResume-Profile-Intro" style="margin-bottom: 10px;">
+         <h1 class="title" style="text-align: justify;">Objective</h1>
+         <p class="word-break">{{Objective}}</p>
+      </div>
+      {{/if}}
+      <div class="myResume-Education" style="margin-bottom: 10px;">
+         {{#if Skills}}
+         <h1 class="title word-break">Skills</h1>
+         {{#each Skills}}
+         {{#if skillName}}
+         <ul>
+            <li class="text-justify word-break"><b>{{skillName}}</b></li>
+            {{#if expertise}}<p>{{expertise}}%</p>{{/if}}
+         </ul>
+         {{/if}}
+         {{/each}}
+         {{/if}}
+      </div>
+      <div class="clear"></div>
+      <div class="myResume-Education">
+         {{#if Education}}
+         <h1 class="title">Education</h1>
+         {{#each Education}}
+         <ul>
+            {{#if course}}
+            <li class="word-break"><b>{{course}}</b></li>
+            {{/if}}{{#if institute}}
+            <p class="word-break">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
+            {{/if}}{{#if percentage}}
+            <p class="word-break">{{percentage}}%</p>
+            {{/if}}{{#if yearOfPassing}}
+            <p class="word-break">{{yearOfPassing}}</p>
+            {{/if}}
+            <br>
+         </ul>
+         {{/each}}
+         {{/if}}
+      </div>
+      <div class="myResume-Experience">
+         {{#if Experience}}
+         <h1 class="title">Experience</h1>
+         {{#each Experience}}
+         <ul>
+            {{#if jobTitle}}
+            <li class="word-break"><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></li>
+            {{/if}}{{#if organization}}
+            <p class="word-break">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
+            {{/if}}{{#if from}}
+            <p class="word-break">{{from}}{{#if to}} - {{to}}{{/if}}</p>
+            {{/if}} {{#if role}}
+            <p class="word-break">{{role}}</p>
+            {{/if}}{{#if description}}
+            <p class="word-break">{{description}}</p>
+            {{/if}}
+            {{#if present}}
+            <p>Present</p>
+            {{/if}}
+            <br>
+         </ul>
+         {{/each}}
+         {{/if}}
+      </div>
+      <div class="myResume-Education" style="margin-bottom: 10px;">
+         {{#if Language}}
+         <h1 class="title">Language</h1>
+         {{#each Language}}
+         <ul>
+            {{#if name}}<li class="word-break"><b>{{name}}</b></li>{{/if}}
+         </ul>
+         {{/each}}
+         {{/if}}
+      </div>
+      <div class="myResume-Education">
+         {{#if Projects}}
+         <h1 class="title">Projects</h1>
+         {{#each Projects}}
+         <ul>{{#if projectTitle}}
+            <li class="word-break"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></li>
+            {{/if}} {{#if roles}}
+            <p class="word-break">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
+            {{/if}} {{#if duration}}
+            <p class="word-break">{{duration}}</p>
+            {{/if}}{{#if projectDescription}}
+            <p class="word-break">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
+            {{/if}}
+            <br>
+         </ul>
+         {{/each}}
+         {{/if}}
+      </div>
+      {{#if Achivement}}
+      <div class="myResume-Education" style="margin-bottom: 10px;">
+         <h1 class="title">Achievement</h1>
+         {{#each Achivement}}
+         <ul>
+            {{#if achivement}}<li class="word-break"><b>{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</b></li>{{/if}}
+         </ul>
+         {{/each}}
+      </div>
+      {{/if}}
+      <div class="myResume-Education">
+         {{#if Reference}}
+         <h1 class="title">Reference</h1>
+         {{#each Reference}}
+         <ul>
+            {{#if name}}
+            <li class="word-break"><b>{{name}}</b></li>
+            {{/if}} {{#if jobtitle}}
+            <p class="word-break">{{jobtitle}}</p>
+            {{/if}} {{#if companyname}}
+            <p class="word-break">{{companyname}}</p>
+            {{/if}} {{#if email}}
+            <p class="word-break">{{email}}</p>
+            {{/if}} {{#if phone}}
+            <p class="word-break">{{phone}}</p>
+            {{/if}}
+            <br>
+         </ul>
+         {{/each}}
+         {{/if}}
+      </div>
+      <div class="myResume-Education">
+         {{#if Interests}}
+         <h1 class="title">Interests</h1>
+         {{#each Interests}}
+         <ul>
+            {{#if hoby}}<li class="word-break"><b>{{hoby}}</b></li>{{/if}}
+         </ul>
+         {{/each}}<br>
+         {{/if}}
+      </div>
+      {{#if sign}}
+      <div class="myResume-Education">
+         <h1 class="title" style="margin-bottom: 0px;">Signature</h1>
+         <img width="30%" src="{{sign}}" alt="sign">
+      </div>
+      {{/if}}
+   </div>
+</body>
+
+</html>

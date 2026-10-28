@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 41</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Marck+Script&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300&display=swap"
+      rel="stylesheet">
+   <style>
+      body {
+         font-family: 'Raleway', sans-serif;
+      }
+
+      .d-flex {
+         display: flex;
+      }
+
+      .justify-content-end {
+         justify-content: end;
+      }
+
+      .justify-content-space-between {
+         justify-content: space-between;
+      }
+
+      .name {
+         font-size: 25px;
+         text-transform: uppercase;
+         color: #087d7e;
+         font-weight: 800;
+      }
+
+      .education {
+         font-size: 13px;
+         font-weight: 600;
+      }
+
+      .text-end {
+         text-align: end;
+      }
+
+      .head {
+         background-color: #087d7e;
+         color: white;
+         padding: 10px 0px 5px 10px;
+         font-size: 20px;
+         font-weight: 600;
+         margin-top: 10px;
+         text-transform: uppercase;
+      }
+
+      .education1 {
+         box-shadow: 0px 0px 10px #0c0c0c4d;
+         margin-top: 10px;
+         padding: 10px
+      }
+
+      .pt-5 {
+         padding-top: 5px;
+      }
+
+      .f-w-600 {
+         font-weight: 600;
+         color: #087d7e;
+      }
+
+      .grid-container1 {
+         display: grid;
+         grid-template-columns: 50% 50%;
+         padding-bottom: 5px;
+      }
+   </style>
+</head>
+
+<body>
+   <div>
+      <div>
+         <div class="text-end">
+            {{#if Name}} <div class="name">{{Name}}</div>{{/if}}
+            {{#if jobTitle}} <div class="education">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div> {{/if}}
+         </div>
+      <div>
+
+      </div>
+         <div class="head">Contact</div>
+         <div class="education1">
+            <div class="grid-container1">
+
+               {{#if Phone}}
+               <div class="d-flex" style="word-break: break-all; align-items: start;">
+                  <label class="f-w-600" style="width: 10%;">Ph: </label> 
+                  <p style="width: 85%; margin: 0px;">{{Phone}}</p>
+               </div>
+               {{/if}}
+
+               {{#if DOB}}
+               <div class="d-flex" style="word-break: break-all; align-items: start;">
+                  <label class="f-w-600" style="width: 13%;">DOB: </label> 
+                  <p style="width: 85%; margin: 0px;">{{DOB}}</p>
+               </div>
+               {{/if}}
+
+               {{#if Email}}
+               <div class="d-flex" style="word-break: break-all; align-items: start;">
+                  <label class="f-w-600" style="width: 15%;">Email: </label> 
+                  <p style="width: 85%; margin: 0px;">{{Email}}</p>
+               </div>
+               {{/if}}
+               
+               {{#if Address}}
+               <div class="d-flex" style="word-break: break-all; align-items: start;">
+                  <label class="f-w-600" style="width: 20%;">Address: </label> 
+                  <p style="width:80%; margin: 0px;">{{Address}}</p>
+               </div>
+               {{/if}}
+            </div>
+         </div>
+      </div>
+
+      <div>
+         {{#if Objective}}
+         <div>
+            <div class="head">OBJECTIVE</div>
+            <div class="education1">
+               <div>
+                  {{#if Objective}} <div class="pt-5">{{Objective}}</div>{{/if}}
+               </div>
+            </div>
+         </div>
+         {{/if}}
+
+         <div style="display: flex;">
+            {{#if Skills}}
+            <div style="width: 33%;">
+               <div class="head">SKILLS</div>
+               {{#each Skills}}
+               <div class="education1" style="padding-left: 10px;margin-bottom: 10px;">
+                  {{#if skillName}} <div class="pt-5" style="word-break: break-all;">{{skillName}}</div>{{/if}}
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+            {{#if Interests}}
+            <div style="width: 33%;">
+               <div class="head">INTERESTS</div>
+               {{#each Interests}}
+               <div class="education1" style="padding-left: 10px;margin-bottom: 10px;">
+                  {{#if hoby}} <div class="pt-5" style="word-break: break-all;">{{hoby}}</div>{{/if}}
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Language}}
+            <div style="width: 33%;">
+               <div class="head">LANGUAGE</div>
+               {{#each Language}}
+               <div class="education1" style="padding-left: 10px;margin-bottom: 10px;">
+                  {{#if name}} <div class="pt-5" style="word-break: break-all;" style="word-break: break-all;">{{name}}
+                  </div>{{/if}}
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+         </div>
+
+         {{#if Education}}
+         <div>
+            <div class="head">EDUCATION</div>
+
+            <div class="education1">
+               {{#each Education}}
+               <div style="float: right;">
+                  {{#if yearOfPassing}} <div class="pt-5">{{yearOfPassing}}</div>{{/if}}
+               </div>
+               {{#if course}} <div class="f-w-600">{{course}}</div>{{/if}}
+               <div style="padding-left: 10px;margin-bottom: 10px;">
+                  {{#if institute}} <div class="pt-5">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</div>{{/if}}
+                  {{#if percentage}} <div class="pt-5">{{percentage}}</div>{{/if}}
+               </div>
+
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if Experience}}
+         <div>
+            <div class="head">EXPERIENCE</div>
+            <div class="education1">
+               {{#each Experience}}
+               <div style="float: right;">
+                  {{#if from}} <div class="pt-5">{{from}} - {{#if to}} {{to}} {{else}} Present {{/if}}</div>{{/if}}
+               </div>
+               {{#if jobTitle}} <div class="f-w-600">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>{{/if}}
+               <div style="padding-left: 10px;margin-bottom: 10px;">
+                  {{#if organization}} <div class="pt-5">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</div>{{/if}}
+                  {{#if role}} <div class="pt-5">{{role}}</div>{{/if}}
+                  {{#if description}} <div class="pt-5">{{description}}</div>{{/if}}
+               </div>
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if Projects}}
+         <div>
+            <div class="head">PROJECTS</div>
+            <div class="education1">
+               {{#each Projects}}
+               <div style="float: right;">
+                  {{#if duration}} <div class="pt-5">{{duration}}</div>{{/if}}
+               </div>
+               {{#if projectTitle}} <div class="f-w-600">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</div>{{/if}}
+               <div style="padding-left: 10px;margin-bottom: 10px;">
+                  {{#if roles}} <div class="pt-5">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</div>{{/if}}
+                  {{#if projectDescription}} <div class="pt-5">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</div>{{/if}}
+               </div>
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if Achivement}}
+         <div>
+            <div class="head">ACHIEVEMENT</div>
+            <div class="education1">
+               {{#each Achivement}}
+               <div>
+                  {{#if achivement}} <div class="pt-5">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</div>{{/if}}
+               </div>
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if Reference}}
+         <div>
+            <div class="head">REFERENCE</div>
+            <div class="education1">
+               {{#each Reference}}
+
+               {{#if name}} <div class="f-w-600">{{name}}</div>{{/if}}
+               <div style="padding-left: 10px;margin-bottom: 10px;">
+                  {{#if jobtitle}} <div class="pt-5">{{jobtitle}}</div>{{/if}}
+                  {{#if companyname}} <div class="pt-5">{{companyname}}</div>{{/if}}
+                  {{#if email}} <div class="pt-5">{{email}}</div>{{/if}}
+                  {{#if phone}} <div class="pt-5">{{phone}}</div>{{/if}}
+               </div>
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if sign}}
+         <div style="display: flex; flex-direction: column;">
+            <div class="head" style="display: flex; justify-content: flex-end;">
+               <div style="align-items: end; padding-right: 10px;">SIGNATURE </div>
+            </div>
+            <div class="" style="display: flex; justify-content: flex-end;">
+               <img src="{{sign}}" alt="Signature" height="10%" width="15%">
+
+            </div>
+         </div>
+         {{/if}}
+         <!-- {{#if sign}}
+            <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                <h2 class="color-t"> SIGNATURE</h2>
+                <img src="{{sign}}" alt="Signature" height="10%" width="15%">
+            </div>
+            {{/if}} -->
+      </div>
+   </div>
+</body>
+
+</html>

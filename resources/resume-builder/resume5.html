@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>Resume 5</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+   <meta name="keywords" content="" />
+   <meta name="description" content="" />
+
+   <style>
+      .pl {
+         padding-left: 10px;
+         font-size: small;
+      }
+
+      .grid-container {
+         display: grid;
+         grid-template-columns: auto auto auto;
+      }
+
+      .grid-container1 {
+         display: grid;
+         grid-template-columns: 50% 50%;
+      }
+
+      .grid-item1 {
+         background-color: #050505d6;
+         color: #050505d6;
+         margin: 0px 5px 20px 5px;
+      }
+
+      .grid-item2 {
+         background-color: #ffb629;
+         color: #ffb629;
+         margin: 0px 5px 20px 5px;
+      }
+
+      .grid-item3 {
+         background-color: #050505d6;
+         margin: 38px 5px 5px 5px;
+      }
+
+      .grid-item4 {
+         background-color: #ffb629;
+         margin: 35px 5px 5px 5px;
+         border-top: 18px solid #fca03805;
+         padding-bottom: 5px;
+      }
+
+      .box {
+         margin: 40px 5px 17px 5px;
+         background-color: #ffb629;
+         padding: 10px 50px;
+         border-radius: 0px 40px 0px 0px;
+         text-align: center;
+         min-height: 57px;
+      }
+
+      .text {
+         margin: 23px 25px;
+         padding: 10px;
+      }
+
+      .mini-box {
+         background-color: #ffb629db;
+         margin: -30px 20px 20px 20px;
+         padding: 11px;
+         text-align: center;
+      }
+
+      /* h3 {
+			font-size: 32px;
+		} */
+
+      hr {
+         margin: 1px 50px 1px 50px;
+      }
+
+      .mini-box2 {
+         background-color: #050505d6;
+         margin: -40px 200px 0px 200px;
+         padding: 11px;
+         text-align: center;
+      }
+
+      .pl-5 {
+         padding-left: 23px;
+      }
+
+      .progress {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 1rem;
+         overflow: hidden;
+         font-size: .75rem;
+         background-color: #e9ecef;
+         border-radius: 0.25rem;
+      }
+
+      .bg-danger {
+         /* background-color: #ffb629 !important; */
+         background-color: #050505d6 !important;
+      }
+
+      .progress-bar {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         justify-content: center;
+         color: #030303;
+         text-align: center;
+         background-color: #007bff;
+         transition: width .6s ease;
+      }
+
+      .d-flax {
+         width: 100%;
+         display: flex;
+         align-items: baseline;
+      }
+
+      h3 {
+         margin: 0px;
+      }
+
+      h1 {
+         margin: 0px;
+      }
+
+      p {
+         margin-top: 5px;
+         margin-bottom: 5px;
+      }
+
+      h2 {
+         margin: 0px;
+      }
+
+      .image {
+         border: 5px solid white;
+         border-radius: 50%;
+         position: relative;
+         width: 170px;
+         height: 170px;
+         margin-left: 90px;
+         margin-top: 50px;
+      }
+
+      .pl-20 {
+         padding-left: 10px;
+         padding-top: 10px;
+      }
+
+      /* .color-white{
+			color: white;
+		} */
+      .borders {
+         border: 5px solid white;
+      }
+
+      .word-breck {
+         word-break: break-all;
+      }
+
+      .tx-gold {
+         color: #ffb629;
+      }
+
+      .font-s {
+         font-size: small;
+      }
+
+      .font-big {
+         font-size: larger;
+      }
+
+      .showPosts {
+         cursor: pointer;
+         list-style-type: none;
+         /* width: 200px; */
+      }
+
+      .greekCross {
+         color: #ffb629;
+         /* font-size: 15px; */
+         width: 1em;
+         float: left;
+      }
+
+      .showPosts>div {
+         /* font-size: 15px; */
+         margin-left: 1em;
+      }
+   </style>
+</head>
+
+<body style="margin: 0px;">
+   <div style="margin: 10px; display: flex;">
+      <div style="width: 30%; background-color: #050505d6; color: #ffb629;">
+         {{#if profilePhoto}}
+         <div>
+            <img class="image" height="auto" width="5%" src="{{profilePhoto}}" alt="profilePhoto">
+         </div>
+         {{/if}}
+         <div class="color-white" style="padding-top:10px;">
+            <h3 class="pl-20">Profile</h3>
+            <ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px;">
+               {{#if Phone}}
+               <li class="showPosts">
+                  <span class="greekCross">➳ </span>
+                  <p class="pl word-breck">{{Phone}}</p>
+               </li>
+               {{/if}}{{#if DOB}}
+               <li class="showPosts">
+                  <span class="greekCross">➳ </span>
+                  <p class="pl word-breck">{{DOB}}</p>
+               </li>
+               {{/if}}
+               {{#if Email}}
+               <li class="showPosts">
+                  <span class="greekCross">➳ </span>
+                  <p class="pl word-breck">{{Email}}</p>
+               </li>
+               {{/if}}
+               {{#if Address}}
+               <li class="showPosts">
+                  <span class="greekCross">➳ </span>
+                  <p class="pl word-breck">{{Address}}</p>
+               </li>
+               {{/if}}
+            </ul>
+         </div>
+         {{#if Language}}
+         <div class="color-white" style="padding-top: 10px;">
+            <h3 class="pl-20">Language</h3>
+            {{#each Language}}
+            <ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px;">
+               {{#if name}}
+               <li class="showPosts">
+                  <span class="greekCross">➳ </span>
+                  <p class="pl word-breck">{{name}}</p>
+               </li>
+               {{/if}}
+            </ul>
+            {{/each}}
+         </div>
+         {{/if}}{{#if Interests}}
+         <div class="color-white" style="padding-top: 10px;">
+            <h3 class="pl-20">Interests</h3>
+            {{#each Interests}}
+            <ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px;">
+               {{#if hoby}}
+               <li class="showPosts">
+                  <span class="greekCross">➳ </span>
+                  <p class="pl word-breck">{{hoby}}</p>
+               </li>
+               {{/if}}
+            </ul>
+            {{/each}}
+         </div>
+         {{/if}}
+      </div>
+      <div style="width: 70%;background-color: white;">
+         <div class="grid-container">
+            <div class="grid-item1">.</div>
+            <div class="grid-item2">.</div>
+            <div class="grid-item1">.</div>
+         </div>
+         <div class="box">
+            <h1 class="word-breck">{{Name}}</h1>
+            <h3 class="word-breck">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h3>
+         </div>
+         {{#if Objective}}
+         <div class="text">
+            <h3>Objective</h3>
+            <p class="word-breck" style="text-align: justify;">{{Objective}}</p>
+         </div>
+         {{/if}}
+         <!-- <div class="grid-container1">
+				{{#if Education}}
+				<div class="grid-item3">
+					<h3 class="mini-box borders">Education</h3>
+					{{#each Education}}
+					{{#if course}}<p class="tx-gold  font-s word-breck"><b><span class="font-big">➳</span> {{course}}</b></p>{{/if}}
+					{{#if institute}}<p class="tx-gold pl-5 font-s word-breck">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>{{/if}}
+					<p class="tx-gold pl-5 font-s word-breck">{{percentage}}{{#if percentage}}%{{/if}}</p>
+					<p class="tx-gold pl-5 font-s word-breck">{{yearOfPassing}}</p>
+					
+					{{/each}}
+				</div>
+				{{/if}}
+				{{#if Skills}}
+				<div class="grid-item3" style="padding-bottom: 5px;">
+					<h3 class="mini-box borders">Skills</h3>
+					{{#each Skills}}
+					{{#if skillName}}
+					<div class="d-flax" style="flex-direction: column;">
+						<div style="width: 99%;">
+							<p class="font-s word-breck tx-gold"><b>{{skillName}}</b></p>
+						</div>
+						<div class="progress" style="width: 94%; margin-left: 10px;">
+							<div class="progress-bar bg-danger" style="width:{{expertise}}%">{{expertise}}%</div>
+						</div>
+					</div>
+					{{/if}}
+					{{/each}}
+				</div>				
+				{{/if}}				
+			</div>	 -->
+
+         {{#if Skills}}
+         <div class="grid-item4">
+            <h3 class="mini-box2 borders tx-gold">Skills</h3>
+            {{#each Skills}}
+            {{#if skillName}}
+            <div class="d-flax" style="flex-direction: column;">
+               <div style="width: 99%;">
+                  <p class="font-s word-breck"><b>{{skillName}}</b></p>
+               </div>
+               <div class="progress" style="width: 94%; margin-left: 10px;">
+                  <div class="progress-bar bg-danger" style="width:{{expertise}}%"><span
+                        class="tx-gold">{{expertise}}%</span></div>
+               </div>
+            </div>
+            {{/if}}
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Education}}
+         <div class="grid-item4">
+            <h3 class="mini-box2 borders tx-gold">Education</h3>
+            {{#each Education}}
+            {{#if course}}<p class="font-s word-breck"><b><span class="font-big">➳</span> {{course}}</b></p>{{/if}}
+            {{#if institute}}<p class="pl-5 font-s word-breck">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>{{/if}}
+            {{#if percentage}}<p class="pl-5 font-s word-breck">{{percentage}}%</p>{{/if}}
+            <p class="pl-5 font-s word-breck">{{yearOfPassing}}</p>
+            {{/each}}
+         </div>
+         {{/if}}
+
+
+         {{#if Experience}}
+         <div class="grid-item4">
+            <h3 class="mini-box2 borders tx-gold">Experience</h3>
+            {{#each Experience}}
+            {{#if jobTitle}}<p class="font-s word-breck"><b><span class="font-big">➳</span> {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>
+            {{/if}}
+            {{#if organization}}<p class="pl-5 font-s word-breck">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>{{/if}}
+            {{#if from}}<p class="pl-5 font-s word-breck">{{from}} {{#if to}} - {{to}}{{/if}}</p>{{/if}}
+            <p class="pl-5 font-s word-breck">{{role}}</p>
+            <p class="pl-5 font-s word-breck">{{description}}</p>
+            {{#if present}}<p class=" pl-5 font-s word-breck">Present</p>{{/if}}
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Projects}}
+         <div class="grid-item4">
+            <h3 class="mini-box2 borders tx-gold">Projects</h3>
+            {{#each Projects}}
+            {{#if projectTitle}}<p class="font-s word-breck"><b><span class="font-big">➳</span> {{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b>
+            </p>{{/if}}
+            {{#if roles}}<p class="pl-5 font-s word-breck">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>{{/if}}
+            {{#if duration}}<p class="pl-5 font-s word-breck">{{duration}}</p>{{/if}}
+            {{#if projectDescription}}<p class="pl-5 font-s word-breck">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>{{/if}}
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Achivement}}
+         <div class="grid-item4">
+            <h3 class="mini-box2 borders tx-gold">Achievement</h3>
+            {{#each Achivement}}
+            <ul style="padding-left: 0px; margin-top: 0px; margin-bottom: 0px;">
+               {{#if achivement}}
+               <li class="showPosts">
+                  <span class="greekCross" style="color: black;">➳ </span>
+                  <p class="pl word-breck">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
+               </li>
+               {{/if}}
+            </ul>
+            <!-- {{#if achivement}}<p class="word-breck"><span>➳ </span> {{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>{{/if}} -->
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Reference}}
+         <div class="grid-item4">
+            <h3 class="mini-box2 borders tx-gold">Reference</h3>
+            {{#each Reference}}
+            {{#if name}}<p class="font-s word-breck"><b><span class="font-big">➳</span> {{name}}</b></p>{{/if}}
+            {{#if jobtitle}}<p class="pl-5 font-s word-breck">{{jobtitle}}</p>{{/if}}
+            {{#if companyname}}<p class="pl-5 font-s word-breck">{{companyname}}</p>{{/if}}
+            {{#if email}}<p class="pl-5 font-s word-breck">{{email}}</p>{{/if}}
+            {{#if phone}}<p class="pl-5 font-s word-breck">{{phone}}</p>{{/if}}
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if sign}}
+         <div class="grid-item4" style="text-align: center;">
+            <h3 class="mini-box2 borders tx-gold">Signature</h3>
+            <img width="20%" src="{{sign}}" alt="Signature">
+         </div>
+         {{/if}}
+      </div>
+   </div>
+
+
+</body>
+
+</html>

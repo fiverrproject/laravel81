@@ -1,0 +1,431 @@
+{
+    "Home": {
+        "title": "Free Resume Maker to Create Professional Resumes | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Free resume maker to create professional resumes with templates, live preview, and instant PDF resume download. Built for students and professionals\u2014no subscription."
+            },
+            {
+                "property": "og:title",
+                "content": "Free Resume Maker to Create Professional Resumes | Resumes Maker"
+            },
+            {
+                "property": "og:site_name",
+                "content": "Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "Create a professional resume online with free templates, live preview, and PDF download. No subscription required."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            },
+            {
+                "property": "og:image",
+                "content": "https://resumesmaker.com/assets/images/resume_5.png"
+            },
+            {
+                "name": "twitter:title",
+                "content": "Free Resume Maker to Create Professional Resumes | Resumes Maker"
+            },
+            {
+                "name": "twitter:description",
+                "content": "Create a professional resume online with free templates, live preview, and PDF download."
+            }
+        ]
+    },
+    "Template": {
+        "title": "Free Resume Templates 2026 | Professional CV Templates \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Browse 40+ free resume templates\u2014professional, modern, creative, and clean designs. Edit online with live preview and download your CV or resume as PDF instantly."
+            },
+            {
+                "property": "og:title",
+                "content": "Free Resume Templates | Professional Designs \u2013 Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "40+ free resume and CV templates with live preview and instant PDF download."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "How-it-works": {
+        "title": "How It Works | Free Resume Builder \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "keywords",
+                "content": "how to make a resume, resume builder steps, create resume online, download resume PDF, free resume maker guide"
+            },
+            {
+                "name": "description",
+                "content": "Create a free resume in 4 steps: choose a template, add your experience with live preview, review, and download PDF instantly."
+            },
+            {
+                "property": "og:title",
+                "content": "How Resumes Maker Works"
+            },
+            {
+                "property": "og:description",
+                "content": "Step-by-step guide to building your free professional resume online."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Contact-us": {
+        "title": "Contact Us | Resumes Maker \u2013 Free Resume Builder Support",
+        "meta": [
+            {
+                "name": "keywords",
+                "content": "contact resumes maker, resume builder help, support email, resume maker questions"
+            },
+            {
+                "name": "description",
+                "content": "Contact the Resumes Maker team for help with templates, PDF downloads, accounts, and privacy. We reply within 1\u20132 business days."
+            },
+            {
+                "property": "og:title",
+                "content": "Contact Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "Get support for our free online resume builder."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "FAQ": {
+        "title": "Resume Maker FAQ | Free Resume Builder Help \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "FAQ about Resumes Maker: free resume maker, professional templates, PDF download, accounts, resume format tips, and customer support answers."
+            },
+            {
+                "property": "og:title",
+                "content": "Frequently Asked Questions \u2013 Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "Get help using our free online resume builder."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Privacy-policy": {
+        "title": "Privacy Policy | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "How Resumes Maker collects, uses, and protects your personal data when you use our free resume builder, accounts, and career blog."
+            },
+            {
+                "property": "og:title",
+                "content": "Privacy Policy | Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "Data collection, cookies, account information, and your privacy rights."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Terms-condition": {
+        "title": "Terms of Use | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Terms and conditions for using Resumes Maker\u2019s free resume builder, templates, downloads, and website content."
+            },
+            {
+                "property": "og:title",
+                "content": "Terms of Use | Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "Rules for using our free resume maker and related services."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Success-stories": {
+        "title": "Resume Maker Use Cases | Free Professional Resumes \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "keywords",
+                "content": "resume maker use cases, resume builder examples, professional resume templates, free resume PDF"
+            },
+            {
+                "name": "description",
+                "content": "Practical resume maker use cases for students, career changers, and professionals\u2014free templates, live preview, and PDF download."
+            },
+            {
+                "property": "og:title",
+                "content": "Success Stories | Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "See how different job seekers can use Resumes Maker to build professional resumes and download PDFs for free."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "About-us": {
+        "title": "About Us | Resumes Maker \u2013 Free Resume Builder",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Learn about Resumes Maker, our mission to help job seekers build professional resumes, and our editorial standards."
+            },
+            {
+                "property": "og:title",
+                "content": "About Resumes Maker"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Blog": {
+        "title": "Resume Writing & Job Search Blog 2026 | Career Guides \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Free career blog: resume writing tips, interview prep, cover letters, LinkedIn optimization, and job search strategy for 2026 applicants."
+            },
+            {
+                "property": "og:title",
+                "content": "Career & Resume Blog | Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "Practical resume, interview, and job search guides\u2014written for real applicants. 100% free to read."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Disclaimer": {
+        "title": "Disclaimer | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Legal disclaimer for resumesmaker.com content and resume builder tools."
+            },
+            {
+                "property": "og:title",
+                "content": "Disclaimer"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Cookie-policy": {
+        "title": "Cookie Policy | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "How Resumes Maker uses cookies, analytics, and advertising technologies."
+            },
+            {
+                "property": "og:title",
+                "content": "Cookie Policy"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Dmca-policy": {
+        "title": "DMCA Policy | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Copyright and DMCA takedown procedures for Resumes Maker."
+            },
+            {
+                "property": "og:title",
+                "content": "DMCA Policy"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Editorial-policy": {
+        "title": "Editorial Policy | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "How we create, review, and update career content on Resumes Maker."
+            },
+            {
+                "property": "og:title",
+                "content": "Editorial Policy"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Author": {
+        "title": "Authors | Resumes Maker Editorial Team",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Meet the Resumes Maker career editorial team and their areas of expertise."
+            },
+            {
+                "property": "og:title",
+                "content": "Authors"
+            },
+            {
+                "property": "og:type",
+                "content": "profile"
+            }
+        ]
+    },
+    "Login": {
+        "title": "Log In | Free Resume Builder \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Sign in to Resumes Maker to save resume profiles, download PDFs, and access your free account."
+            },
+            {
+                "property": "og:title",
+                "content": "Log In | Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "Sign in to save resumes and download PDFs with your free account."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Resume": {
+        "title": "Build & Download Resume | Free PDF \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Fill in your resume details and download a professional PDF using your chosen template\u2014100% free."
+            },
+            {
+                "property": "og:title",
+                "content": "Build Resume | Resumes Maker"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "My-resume": {
+        "title": "My Resume Profiles | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "View and manage your saved resume profiles. Edit details or create a new profile for your next application."
+            },
+            {
+                "property": "og:title",
+                "content": "My Resume Profiles | Resumes Maker"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Updat-resume": {
+        "title": "Edit Resume Profile | Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Create or update your resume profile\u2014contact, education, experience, skills, and more."
+            },
+            {
+                "property": "og:title",
+                "content": "Resume Profile Editor | Resumes Maker"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "My-profile": {
+        "title": "My Profile | Account Settings \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Update your Resumes Maker account\u2014mobile, email, and password."
+            },
+            {
+                "property": "og:title",
+                "content": "My Profile | Resumes Maker"
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    },
+    "Register": {
+        "title": "Sign Up Free | Resume Builder Account \u2013 Resumes Maker",
+        "meta": [
+            {
+                "name": "description",
+                "content": "Create a free Resumes Maker account to save resume profiles, use professional templates, and download PDFs."
+            },
+            {
+                "property": "og:title",
+                "content": "Sign Up Free | Resumes Maker"
+            },
+            {
+                "property": "og:description",
+                "content": "Register free\u2014save resumes, professional templates, instant PDF download."
+            },
+            {
+                "property": "og:type",
+                "content": "website"
+            }
+        ]
+    }
+}

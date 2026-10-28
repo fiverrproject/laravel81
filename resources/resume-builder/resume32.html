@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 32</title>
+   <style>
+      .container {
+         font-family: 'Poppins', sans-serif;
+         position: relative;
+      }
+
+      .break-word {
+         word-break: break-word;
+      }
+
+      .break-all {
+         word-break: break-all;
+      }
+
+      .font1 {
+         font-size: 36px;
+         font-weight: 600;
+      }
+
+      .font2 {
+         font-size: 1.2rem;
+         font-weight: 600;
+      }
+
+      .font3 {
+         font-size: .9rem;
+         font-weight: 600;
+      }
+
+      .font4 {
+         font-size: .8rem;
+      }
+
+      .font5 {
+         font-size: 14px;
+         color: #403838;
+      }
+
+      .d-flex {
+         display: flex;
+      }
+
+      .profile {
+         background: #FDF0F0;
+         min-height: 200px;
+      }  
+      
+      .profile-with-img {
+         background: #FDF0F0;
+      }
+
+      .main-content {
+         background: white;
+      }
+
+      .left-header {
+         width: 60%;
+         padding: 15px;
+      }
+
+      .right-header {
+         width: 40%;
+         padding: 15px;
+         position: relative;
+      }
+
+      .left-part {
+         padding: 15px;
+         width: 60%
+      }
+
+      .right-part {
+         width: 40%;
+         padding: 15px;
+         background: #ECF9FF;
+      }
+
+      .image {
+         background-color: aliceblue;
+         border-radius: 50%;
+         width: 210px;
+         height: 210px;
+         border: 5px solid white;
+      }
+
+      image {
+         border-radius: 50%;
+         width: 200px;
+         height: 200px;
+         border: 5px solid white;
+      }
+
+      .mt-30 {
+         margin-top: 30px;
+      }
+
+      .heading {
+         display: flex;
+         border-bottom: 2px solid #8d958d;
+         word-break: break-word;
+         padding-bottom: 4px;
+         align-items: center;
+      }
+
+      .mb-10 {
+         margin-bottom: 15px;
+      }
+
+      ul {
+         padding-inline-start: 0px;
+      }
+
+      .ml-30 {
+         margin-left: 30px;
+      }
+
+      .top-ul {
+         list-style-type: square;
+         padding-left: 30px !important;
+      }
+
+      .sub-ul {
+         list-style-type: disc;
+         padding-left: 47px !important;
+         margin-top: 0 !important;
+      }
+
+      .mb-16 {
+         margin-bottom: 1.4rem;
+      }
+
+      .mt-10 {
+         margin-top: 10px;
+      }
+
+      .icon-width {
+         width: 2rem;
+         font-weight: 600 !important;
+      }
+
+      .info-text {
+         width: 18rem;
+      }
+
+      .circle {
+         width: 210px;
+         height: 210px;
+         border-radius: 50%;
+         border: 8px solid white;
+         position: absolute;
+         text-align: center;
+         /* margin: 0px 30px -70px 30px; */
+         left: 50%;
+         bottom: 0%;
+         transform: translate(-50%, 50%);
+      }
+
+      .imgDiv {
+         background-color: rgb(212, 208, 208);
+         width: 200px;
+         height: 200px;
+         border-radius: 50%;
+         border: 5px solid rgb(212, 208, 208);
+      }
+
+      .image {
+         border-radius: 50%;
+         border: none;
+         width: 200px;
+         height: 200px;
+      }
+
+      .icon-width-2 {
+         border: 1px solid black;
+         border-radius: 50%;
+         height: 20px;
+         width: 20px;
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
+         background: black;
+         color: white;
+         margin-right: 8px;
+         padding: 2px;
+      }
+
+      .icon-width-3 {
+         border: 1px solid white;
+         border-radius: 50%;
+         height: 20px;
+         width: 20px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: white;
+         color: black;
+         margin-right: 8px;
+         padding: 2px;
+      }
+
+      .mb-8 {
+         margin-bottom: 8px;
+      }
+
+      .mb-10 {
+         margin-bottom: 10px;
+      }
+
+      .mb-1rem {
+         margin-bottom: 1rem;
+      }
+
+      .progress {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 1rem;
+         overflow: hidden;
+         font-size: .75rem;
+         background-color: rgb(175, 206, 231);
+         border-radius: 0.25rem;
+      }
+
+      .progress-bar {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         justify-content: center;
+         /* color: #ECF9FF; */
+         text-align: center;
+         background-color: #eec0c0;
+         transition: width .6s ease;
+      }
+
+      .signature {
+         padding: 4px;
+         background-color: #ECF9FF;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <div class="main">
+         {{#if profilePhoto}}
+         <div class="d-flex profile">
+         {{else}}
+         <div class="d-flex profile-with-img">
+         {{/if}}
+            <div class="left-header">
+               {{#if Objective}}
+               <div class="font2 d-flex" style="padding-bottom:5px; align-items:center;">
+                  <span class="icon-width-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person-fill" viewBox="0 0 16 16">
+                        <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z" />
+                     </svg>
+                  </span>
+                  Objective
+               </div>
+               <div class="font5">{{Objective}}</div>
+               {{/if}}
+            </div>
+
+            <div class="right-header">
+               <div class="font1" style="text-align: center; font-size:1.2rem; text-transform: uppercase;">
+                  {{Name}}
+               </div>
+               <div class="font5" style="text-align: center; font-size: 1rem; color:black; margin-top:5px;">
+                  {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}
+               </div>
+               {{#if profilePhoto}}
+               <div class="circle">
+                  <div class="imgDiv">
+                     <img class="image" src="{{profilePhoto}}" alt="profilePhoto">
+                  </div>
+               </div>
+               {{/if}}
+            </div>
+         </div>
+
+         <div class="main-content d-flex">
+            <div class="left-part">
+               {{#if Education}}
+               <div class="heading font2"><span class="icon-width-2"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+                        <path
+                           d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                     </svg></span><span>Education</span></div>
+               <div class="mb-16">
+                  {{#each Education}}
+                  <ul class="top-ul" style="margin-bottom:0">
+                     <li class="font3 mb-4">{{course}}</li>
+                  </ul>
+
+                  <ul class="sub-ul">
+                     {{#if institute}}<li class="font4 mb-4"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}} {{#if yearOfPassing}} |
+                        {{yearOfPassing}}{{/if}}
+                     </li>{{/if}}
+                     {{#if percentage}}<li class="font4"> {{percentage}}%</li>{{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Experience}}
+               <div class="heading font2"><span class="icon-width-2"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                        <path
+                           d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+                        <path
+                           d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+                     </svg></span>Work Experience</div>
+               <div class="mb-16">
+                  {{#each Experience}}
+                  <ul class="top-ul" style="margin-bottom:0;">
+                     {{#if organization}}<li class="font3 mb-4"> {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
+                  </ul>
+                  <ul class="sub-ul">
+                     {{#if jobTitle}}<li class="font4 mb-4">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</li>{{/if}}
+                     {{#if from}}<li class="font4 mb-4"> {{from}} {{#if to}} - {{to}}{{/if}}</li>{{/if}}
+                     {{#if role}}<li class="font4 mb-4"> {{role}}</li>{{/if}}
+                     {{#if description}}<li class="font4 mb-4">{{description}}</li>{{/if}}
+                     {{#if organization}}<li class="font4 mb-4">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
+                     {{#if present}}<li class="font4">Present</li>{{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Projects}}
+               <div class="heading font2"><span class="icon-width-2"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                        <path
+                           d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                     </svg></span>Projects</div>
+               <div class="mb-16">
+                  {{#each Projects}}
+                  {{# if projectTitle}}
+                  <ul class="top-ul" style="margin-bottom:0">
+                     <li class="font3 mb-4">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</li>
+                  </ul>
+                  {{/if}}
+
+                  <ul class="sub-ul">
+                     {{#if roles}}<li class="font4 mb-4">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li>{{/if}}
+                     {{#if duration}}<li class="font4 mb-4">{{duration}}</li>{{/if}}
+                     {{#if projectDescription}}<li class="font4 mb-4"> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li>{{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+
+               {{#if Achivement}}
+               <div class="heading font2"><span class="icon-width-2"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                           d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                     </svg></span>Achievement</div>
+               <div class="mb-16">
+                  {{#each Achivement}}
+                  <ul class="top-ul" style="margin-bottom:0">
+                     <li class="font3 mb-4" style="font-weight:500;">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</li>
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Reference}}
+               <div class="heading font2"><span class="icon-width-2"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                           d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z" />
+                     </svg></span>Reference</div>
+               <div class="mb-16">
+                  {{#each Reference}}
+                  {{#if name}}
+                  <ul class="top-ul" style="margin-bottom:0;">
+                     <li class="font3 mb-4">{{name}}</li>
+                  </ul>
+                  {{/if}}
+
+                  <ul class="sub-ul">
+                     {{#if jobtitle}}<li class="font4 mb-4">{{jobtitle}}</li>{{/if}}
+                     {{#if companyname}}<li class="font4 mb-4">{{companyname}}</li>{{/if}}
+                     {{#if email}}<li class="font4 mb-4">{{email}}</li>{{/if}}
+                     {{#if phone}}<li class="font4 mb-4">{{phone}}</li>{{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if sign}}
+               <div class="signature" style="text-align: center;">
+                  <h3 style="margin-bottom: 3px" class="font2">Signature</h3>
+                  <img style="width:20%; height:auto;" src="{{sign}}" alt="Signature">
+               </div>
+               {{/if}}
+            </div>
+
+            {{#if profilePhoto}}
+            <div class="right-part" style="padding-top: 8rem;">
+            {{else}}
+            <div class="right-part">
+            {{/if}}
+               <div class="contact_me mb-16">
+                  <div class="font2 heading mb-1rem">
+                     <span class="icon-width-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                           <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                        </svg>
+                     </span> Contact
+                  </div>
+                  
+                  {{#if Phone}}
+                  <div class="font4 mb-8 d-flex">
+                     <span class="icon-width"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                           <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                           <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        </svg> 
+                     </span> 
+                     <span class="info-text break-all">{{Phone}}</span>
+                  </div>
+                  {{/if}}
+
+                  {{#if DOB}}
+                  <div class="font4 mb-8 d-flex">
+                     <span class="icon-width"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                           <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                        </svg> 
+                     </span> 
+                     <span class="info-text">{{DOB}}</span>
+                  </div>
+                  {{/if}}
+
+                  {{#if Email}}
+                  <div class="font4 mb-8 d-flex">
+                     <span class="icon-width"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                           <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                        </svg> 
+                     </span> 
+                     <span class="info-text break-all">{{Email}}</span>
+                  </div>
+                  {{/if}}
+
+                  {{#if Address}}
+                  <div class="font4 mb-8 d-flex">
+                     <span class="icon-width"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                           <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                           <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg> 
+                     </span><span class="info-text break-word">{{Address}}</span>
+                  </div>
+                  {{/if}}
+
+                  <!-- {{#if Website}}
+              <div class="font4 mb-8 d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M16 8a8.001 8.001 0 0 1-7.022 7.94l1.902-7.098a2.995 2.995 0 0 0 .05-1.492A2.977 2.977 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8ZM0 8a8 8 0 0 0 7.927 8l1.426-5.321a2.978 2.978 0 0 1-.723.255 2.979 2.979 0 0 1-1.743-.147 2.986 2.986 0 0 1-1.043-.7L.633 4.876A7.975 7.975 0 0 0 0 8Zm5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a2.979 2.979 0 0 0-1.252.243 2.987 2.987 0 0 0-1.81 2.59ZM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                  </svg> </span><span class="info-text">{{Website}}</span></div>
+              {{/if}} -->
+               </div>
+
+               {{#if Skills}}
+               <div class="mb-16">
+                  <div class="font2 heading mb-1rem">
+                     <span class="icon-width-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+                           <path  d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                        </svg>
+                     </span>Skills
+                  </div>
+                  {{#each Skills}}
+                  <div class="mb-10">
+                     {{#if skillName}}
+                     <div>
+                        <div class="font4" style="word-break: break-all;">{{skillName}}</div>
+                     </div>
+                     <!-- {{#if expertise}} -->
+                     <div class="progress" style="width: 99%; margin-top:5px;">
+                        <div class="progress-bar bg-white" style="width:{{expertise}}%;">{{expertise}}%</div>
+                     </div>
+                     <!-- {{/if}} -->
+                     {{/if}}
+                  </div>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Language}}
+               <div class="heading font2">
+                  <span class="icon-width-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-translate" viewBox="0 0 16 16">
+                        <path
+                           d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
+                        <path
+                           d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
+                     </svg>
+                  </span>Language
+               </div>
+
+               <div class="mb-16">
+                  {{#each Language}}
+                  {{#if name}}
+                  <ul class="top-ul" style="margin-bottom:0">
+                     <li class="font3 mb-4 break-all" style="font-weight:500; word-break: break-all;">{{name}}</li>
+                  </ul>
+                  {{/if}}
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Interests}}
+               <div class="heading font2">
+                  <span class="icon-width-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                           <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                     </svg>
+                  </span>Interests
+               </div>
+               <div class="mb-16">
+                  {{#each Interests}}
+                     {{#if hoby}}
+                     <ul class="top-ul" style="margin-bottom:0">
+                        <li class="font3 mb-4" style="font-weight:500; word-break: break-all;">{{hoby}}</li>
+                     </ul>
+                     {{/if}}
+                  {{/each}}
+               </div>
+               {{/if}}
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

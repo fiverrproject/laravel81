@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>Resume 2</title>
+
+   <style>
+      * {
+         box-sizing: border-box;
+         margin-top: 0px;
+         margin-bottom: 0px;
+      }
+
+      img {
+         display: block;
+      }
+
+      hr {
+         border-top: 1px rgb(30, 30, 30) solid;
+         width: 100%;
+         margin-top: 0.4vw;
+         margin-bottom: 0.4vw;
+      }
+
+      .HeaderHr {
+         position: absolute;
+         z-index: 2;
+         border: 1px solid black;
+         width: 4vw;
+         bottom: 0vw;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      #leftHr {
+         left: 6.2vw;
+      }
+
+      #rightHr {
+         left: 13.7vw;
+      }
+
+      .over {
+         color: white;
+         position: absolute;
+         z-index: 2;
+         width: 100%;
+         text-align: center;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .dot {
+         height: 0.5vw;
+         width: 0.5vw;
+         background-color: rgba(0, 0, 0, 0);
+         border-radius: 50%;
+         border: 3px solid black;
+         display: inline-block;
+      }
+
+      #middleOne {
+         background-color: white;
+      }
+
+      #dotContainer {
+         bottom: 0vw;
+      }
+
+      #Profession {
+         top: -0.2vw;
+         font-family: "Lato";
+         letter-spacing: 0.05em;
+         font-weight: 200;
+      }
+
+      h1 {
+         font-family: "Fjalla One";
+         font-size: 2.2em;
+         letter-spacing: 0.2em;
+         font-weight: 900;
+         margin: 0;
+         padding-bottom: 0.5vw;
+      }
+
+      h2 {
+         font-family: "Fjalla One";
+         font-weight: 600;
+         font-size: 1.6em;
+         letter-spacing: 0.2vw;
+      }
+
+      h3 {
+         font-family: "Lato";
+         font-size: 1em;
+         margin: 0;
+      }
+
+      h4 {
+         font-family: "Lato";
+         font-size: 0.9em;
+         margin: 0;
+         font-style: italic;
+         font-weight: 400;
+      }
+
+      .left {
+         display: inline-block;
+         width: 100%;
+         text-align: center;
+      }
+
+      .right {
+         display: inline-block;
+         width: 100%;
+         text-align: left;
+         margin-bottom: 0.5vw;
+      }
+
+      .left1sing {
+         display: inline-block;
+         width: 100%;
+         text-align: right;
+         margin-bottom: 0.5vw;
+      }
+
+      .flexContainer {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: no-wrap;
+         align-items: stretch;
+         justify-content: center;
+      }
+
+      .leftColumn {
+         width: 25%;
+      }
+
+      .leftRow {
+         position: relative;
+         margin: 0px;
+         padding-bottom: 0px;
+         letter-spacing: 0.06vw;
+         font-size: 0.85vw;
+         font-family: "Lato";
+      }
+
+      #name {
+         color: black;
+         font-family: "Permanent Marker";
+         font-size: 1.5vw;
+         font-weight: 600;
+         position: absolute;
+         z-index: 2;
+         top: 23vw;
+         width: 100%;
+         text-align: center;
+      }
+
+      #Cone {
+         width: 24.1vw;
+         height: 11.14vw;
+         background-color: rgb(213, 213, 215);
+         /* background: conic-gradient(rgb(56, 23, 6) 6%, rgb(0, 0, 0) 20%, white 0 80%, rgb(0, 0, 0) 0 81%, rgb(56, 23, 6) 92%); */
+      }
+
+      .Triangle1 {
+         position: absolute;
+         z-index: 1;
+         width: 0;
+         height: 0;
+         border-bottom: 4.25vw solid black;
+         top: 20px;
+      }
+
+      #LeftTriangle {
+         left: 0;
+         top: 40px;
+         border-right: 12.8vw solid transparent;
+      }
+
+      #RightTriangle {
+         left: 11.45vw;
+         border-left: 12.7vw solid transparent;
+         top: 40px;
+      }
+
+      .Triangle2 {
+         position: absolute;
+         z-index: 2;
+         top: 25px;
+         width: 0;
+         height: 0;
+         border-bottom: 4.01vw solid #C0D8DE;
+      }
+
+      #LeftTriangle2 {
+         left: 0;
+         border-right: 12vw solid transparent;
+         top: 45px;
+      }
+
+      #RightTriangle2 {
+         left: 12.2vw;
+         border-left: 11.98vw solid transparent;
+         top: 46px;
+      }
+
+      #LeftBottom {
+         top: -1.4vw;
+         padding: 0 1.1vw 3.4vw 1.1vw;
+         margin: 0;
+         background-color: #C0D8DE;
+      }
+
+      .skills {
+         /*position: relative;*/
+         /*background-color: white;*/
+         margin-bottom: 0.5vw;
+         padding: 0.3vw;
+         font-size: .7vw;
+      }
+
+      .skillBar {
+         /*position: absolute;*/
+         border-top: 8px rgb(70, 70, 70) solid;
+         /*top: 0.175vw;*/
+         /*margin-left: 50%;*/
+         /*max-width: 48%;*/
+         border-radius: 10px;
+      }
+
+      #microsoftOffice {
+         width: 42%;
+      }
+
+      #adobeAnalytics {
+         width: 32%;
+      }
+
+      #googleAnalytics {
+         width: 20%;
+      }
+
+      #googleAds {
+         width: 10%;
+      }
+
+      #htmlCssJavascript {
+         width: 15%;
+      }
+
+      #projectManagement {
+         width: 40%;
+      }
+
+      #productDevelopment {
+         width: 29%;
+      }
+
+      #problemSolving {
+         width: 42%;
+      }
+
+      #mediaManagement {
+         width: 30%;
+      }
+
+      #businessAnalysis {
+         width: 36%;
+      }
+
+      #consumerCommunication {
+         width: 39%;
+      }
+
+      #negotiation {
+         width: 36%;
+      }
+
+      .rightColumn {
+         width: 76%;
+         flex: none;
+      }
+
+      .rightRow {
+         padding: 2vw 3vw;
+         position: relative;
+         z-index: 0;
+      }
+
+      .rightText {
+         letter-spacing: 0.1em;
+         font-size: 1.1em;
+         font-family: "Lato";
+         text-align: justify;
+         text-justify: inter-word;
+      }
+
+      #rightHeader {
+         background-color: rgb(213, 213, 215);
+      }
+
+      .containerHl {
+         /* display: flex; */
+         padding: 0vw 2vw;
+         align-items: center;
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+
+      .years {
+         border: 1px solid black;
+         background: #C0D8DE;
+         border-radius: 1vw;
+         width: 90%;
+         height: 100%;
+         text-align: center;
+         margin: 0.1vw 5% 0.1vw 2%;
+         padding: 0.55vw 0.2vw 0.2vw 0.2vw;
+      }
+
+      .jobs {
+         width: 82%;
+         /* padding: 0.3vw; */
+      }
+
+      .containerText {
+         display: flex;
+         padding: 0vw 2vw;
+         align-items: stretch;
+         margin-bottom: 1vw;
+         padding-left: 4.1vw;
+         min-height: 0;
+      }
+
+      .verticalLines {
+         border-left: 1px solid black;
+         border-right: 1px solid black;
+         min-height: 4.8vw;
+         width: 1.2%;
+         margin: 0 0.2vw;
+         text-align: center;
+      }
+
+      .verticalLinesEdu {
+         border-left: 1px solid black;
+         border-right: 1px solid black;
+         min-height: 3vw;
+         width: 1.2%;
+         margin: 0 0.2vw;
+         text-align: center;
+      }
+
+      .jobText {
+         width: 97%;
+         /* padding: 0.3vw; */
+         /* margin-left: 3.3vw; */
+         font-family: "Lato";
+         font-size: 1em;
+         letter-spacing: 0.05em;
+      }
+
+      .font-size {
+         font-size: 12px;
+      }
+
+      .mr-1 {
+         margin: 3px;
+      }
+
+      .fs-15 {
+         font-size: 15px;
+      }
+
+      .mt-10 {
+         margin-top: 10px;
+      }
+
+      .text-justify {
+         text-align: justify !important;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="flexContainer">
+      <div class="leftColumn" style="background-color:#C0D8DE;"> <!--start of the container for the left column-->
+         <div class=leftRow> <!-- start of the container for the pic-->
+            {{#if profilePhoto}}
+            <img src="{{profilePhoto}}" alt="ddp" width=100% height="225px">
+            {{/if}}
+            <hr class="HeaderHr" id="leftHr">
+            <hr class="HeaderHr" id="rightHr">
+            <div class="over" id="dotContainer">
+               <span class="dot"></span>
+               <span class="dot" id="middleOne"></span>
+               <span class="dot"></span>
+            </div>
+         </div>
+
+         <div class=leftRow>
+            <div id=Cone> </div>
+            <!-- <p id="name"></p> -->
+            <p class="over" id="Profession"
+               style="color: black; word-break: break-all; font-size: 15px; padding: 13px 25px 0px 25px;">
+               <b>{{Name}}</b>
+            </p>
+            <div class="Triangle1" id=LeftTriangle> </div>
+            <div class="Triangle2" id=LeftTriangle2> </div>
+            <div class="Triangle1" id=RightTriangle> </div>
+            <div class="Triangle2" id=RightTriangle2> </div>
+         </div>
+         <div class=leftRow id="LeftBottom">
+            <br>
+            <h2 class="left fs-15"> Personal Details </h2>
+            <hr>
+            {{#if jobTitle}}
+            <span class="font-size" style="word-break: break-all;"> {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</span>
+            <hr>
+            {{/if}}{{#if Phone}}
+            <span class="font-size" style="word-break: break-all;"> {{Phone}} </span>
+            <hr>
+            {{/if}}
+            {{#if DOB}}
+            <span class="font-size" style="word-break: break-all;"> {{DOB}}</span>
+            <hr>
+            {{/if}}{{#if Email}}
+            <span class="font-size" style="word-break: break-all;"> {{Email}} </span>
+            <hr>{{/if}}{{#if Address}}
+            <span class="font-size" style="word-break: break-all;"> {{Address}} </span>
+            <hr>{{/if}} <br>
+            {{#if Skills}}
+            <h2 class="left fs-15"> Skills </h2>
+            {{#each Skills}}
+            <div class="skills">
+               {{#if skillName}}
+               <p class="font-size" style="word-break: break-all;margin-bottom: 0px;margin-top: 0px;">{{skillName}}</p>
+               <div style="display: flex;">
+                  <hr class="skillBar mr-1" style="width:{{expertise}}%;">
+                  <span class="font-size" style="margin: 0px;">{{expertise}}%</span>
+               </div>
+               {{/if}}
+            </div>
+            {{/each}}
+            {{/if}}
+            <div>
+               {{#if Language}}
+               <h2 class="left fs-15"> Language </h2>
+               <hr>
+               {{#each Language}}
+               {{#if name}}<span class="font-size" style="word-break: break-all;"> {{name}}</span>{{/if}}
+               <hr>
+               {{/each}}
+               {{/if}}
+            </div>
+
+            <br>
+            {{#if Interests}}
+            <h2 class="left fs-15"> Interests </h2>
+            <hr>
+            {{#each Interests}}
+            {{#if hoby}}<span class="font-size" style="word-break: break-all;"> {{hoby}}</span>{{/if}}
+            <hr>
+            {{/each}}
+            {{/if}}
+            <br>
+         </div>
+      </div>
+
+      <div class="rightColumn">
+
+         <div class="rightRow" id="rightHeader">
+            <h1> RESUME </h1>
+            {{#if Objective}}
+            <!-- <h2 class="right"> Objective</h2> -->
+            <span class="rightText text-justify" style="text-align: justify;">{{Objective}}</span>
+            {{/if}}
+         </div>
+
+         <div>
+            {{#if Education}}
+            <div class="rightRow">
+               <h2 class="right"> Education</h2>
+            </div>
+            {{#each Education}}
+            <div class="containerHl">
+               <div class="years">
+                  {{#if course}}<h3 style="word-break: break-all;">{{course}} </h3>{{/if}}
+               </div>
+               <div>
+
+               </div>
+            </div>
+            <div class="containerText">
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div style="padding-left:10px; width: 100%;">
+                  {{#if institute}}<p style="word-break: break-all;" class="mt-10"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}} </p>{{/if}}
+                  {{#if yearOfPassing}}<p> {{yearOfPassing}}
+                  <p>{{/if}}
+                     {{#if percentage}}
+                  <p>{{percentage}}%</p>{{/if}}
+               </div>
+            </div>
+            {{/each}}
+            {{/if}}
+         </div>
+         <div>
+            {{#if Experience}}
+            <div class="rightRow">
+               <h2 class="right"> Work Experience </h2>
+            </div>
+            {{#each Experience}}
+            <div class="containerHl">
+               <div class="years">
+                  <h3 style="word-break: break-all;"> {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}} </h3>
+               </div>
+            </div>
+            <div class="containerText">
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div style="padding-left:10px; width: 100%;">
+                  {{#if from}}<p style="word-break: break-all;" class="mt-10"> {{from}}{{#if to}} - {{to}}{{/if}}
+                  <p>{{/if}}
+                  <p> {{role}}</p>
+                  <p> {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
+                  <p class="jobText">{{description}} </p>
+                  {{#if present}}
+                  <p class="jobText">Present</p>
+                  {{/if}}
+               </div>
+            </div>
+            {{/each}}
+            {{/if}}
+         </div>
+         <div>
+            {{#if Projects}}
+            <div class="rightRow">
+               <h2 class="right">Projects</h2>
+            </div>
+            {{#each Projects}}
+            <div class="containerHl">
+               <div class="years">
+                  <h3 style="word-break: break-all;">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</h3>
+               </div>
+               <div class="jobs">
+                  <h4></h4>
+               </div>
+            </div>
+            <div class="containerText">
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div style="padding-left:10px; width: 100%;">
+                  <p style="word-break: break-all;" class="mt-10"> {{duration}}
+                  <p>
+                  <p style="word-break: break-all;"> {{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}} </p>
+                  <p style="word-break: break-all;"> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}} </p>
+               </div>
+            </div>
+            {{/each}}
+            {{/if}}
+
+         </div>
+
+         <div>
+            {{#if Achivement}}
+            <div class="rightRow">
+               <h2 class="right">Achievement</h2>
+            </div>
+            <div class="containerHl">
+               <div class="years mt-10">
+                  <h3>Achivement</h3>
+               </div>
+               <div class="jobs">
+               </div>
+            </div>
+            {{#each Achivement}}
+            <div class="containerText">
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div style="padding-left:10px ; width: 100%;">
+                  <p class="jobText" style="word-break: break-all; "> {{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}} </p>
+               </div>
+            </div>
+            {{/each}}
+            {{/if}}
+         </div>
+         <div>
+            {{#if Reference}}
+            <div class="rightRow">
+               <h2 class="right">Reference</h2>
+            </div>
+            {{#each Reference}}
+            <div class="containerHl">
+               <div class="years">
+                  <h3 style="word-break: break-all;">{{companyname}}</h3>
+               </div>
+               <div class="jobs">
+               </div>
+            </div>
+            <div class="containerText">
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div style="padding-left:10px; width: 100%;">
+                  <p style="word-break: break-all;" class="mt-10"> {{jobtitle}}
+                  <p>
+                  <p style="word-break: break-all;"> {{name}} </p>
+                  <p style="word-break: break-all;">{{email}} </p>
+                  <p>{{phone}} </p>
+               </div>
+            </div>
+            {{/each}}
+            {{/if}}
+         </div>
+
+         <div>
+            {{#if sign}}
+            <div class="rightRow">
+               <h2 class="left1sing">Signature</h2>
+            </div>
+            <div class="containerHl" style="display: flex; flex-direction: row-reverse">
+               <div>
+                  <img width="120px" src="{{sign}}" alt="Signature">
+               </div>
+            </div>
+            {{/if}}
+         </div>
+
+      </div>
+   </div>
+
+</body>
+
+</html>

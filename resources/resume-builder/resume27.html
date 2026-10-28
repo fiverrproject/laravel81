@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 27</title>
+   <style>
+      * {
+         padding: 0;
+         margin: 0;
+         font-family: system-ui;
+         /* word-break: break-all; */
+      }
+
+      body {
+         padding: 0;
+         margin: 0;
+      }
+
+      .d-flex {
+         display: flex;
+      }
+
+      .word-break {
+         word-break: break-word;
+      }
+
+      .break-all {
+         word-break: break-all;
+      }
+
+      .w-100 {
+         width: 100%;
+      }
+
+      .m-0 {
+         margin: 0;
+      }
+
+      .mb-0 {
+         margin-bottom: 0;
+      }
+
+      .left-card {
+         width: 40%;
+         background: #38373d;
+      }
+
+      .profile-pic-section {
+         height: 300px;
+      }
+
+      .img-size {
+         /*object-fit: none;*/
+         height: 100%;
+         width: 100%;
+      }
+
+      .first-name {
+         margin: 0;
+         font-size: 1.4rem;
+         font-weight: 600;
+         color: #dfdee4;
+      }
+
+      .work-post {
+         font-weight: 600;
+         margin: 0;
+         color: #dddce1;
+      }
+
+      .inner-section {
+         margin: 20px 0;
+      }
+
+      .heading-left-card {
+         width: 100%;
+         margin-bottom: 1rem;
+         font-size: 20px;
+         color: #dddce1;
+         position: relative;
+         z-index: 1;
+      }
+
+      .heading-left-card:before {
+         content: "";
+         position: absolute;
+         left: 0;
+         bottom: -5px;
+         height: 1px;
+         width: 50%;
+         border-bottom: 2px solid #dfdee4;
+      }
+
+      .right-card {
+         width: 60%;
+         background: #eae8eb;
+      }
+
+      .right-card-inner-padding {
+         /* padding: 100px 50px 30px 50px; */
+         padding: 2rem;
+      }
+
+
+      .heading-right-card {
+         width: 100%;
+         margin: 25px 0;
+         font-size: 18px;
+         color: #464546;
+         height: 36px;
+         position: relative;
+         z-index: 1;
+      }
+
+      .heading-right-card:before {
+         content: "";
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         height: 1px;
+         width: 100%;
+         border-bottom: 2px solid #464546;
+      }
+
+      .sub-heading {
+         color: #464546;
+      }
+
+      .second-header {
+         font-size: 16px;
+         font-weight: 600;
+      }
+
+      .mb-3 {
+         margin-bottom: 3px !important;
+      }
+
+      .mb-4 {
+         margin-bottom: 4px !important;
+      }
+
+      .mb-5 {
+         img-size margin-bottom: 5px !important;
+      }
+
+      .mb-8 {
+         margin-bottom: 8px !important;
+      }
+
+      .mb-10 {
+         margin-bottom: 10px !important;
+      }
+
+      .mb-16 {
+         margin-bottom: 1rem !important;
+      }
+
+      .font-2 {
+         font-size: 1rem !important;
+         font-weight: 600 !important;
+         ;
+      }
+
+      .font-3 {
+         font-size: .9rem;
+         font-weight: 200;
+      }
+
+      .timeline {
+         position: relative;
+         margin: 0 auto;
+      }
+
+      .timeline::after {
+         content: '';
+         position: absolute;
+         width: 2px;
+         background-color: lightgrey;
+         top: 0;
+         bottom: 0;
+         /* margin-left: 40px; */
+      }
+
+      .container-2 {
+         padding: 0px 0 10px 0px;
+         position: relative;
+         background-color: inherit;
+         width: 100%;
+      }
+
+      .container-2::after {
+         content: '';
+         position: absolute;
+         width: 10px;
+         height: 10px;
+         left: -6px;
+         background-color: white;
+         border: 2px solid black;
+         top: -1px;
+         border-radius: 50%;
+         z-index: 1;
+      }
+
+      .content {
+         padding: 0 25px 0px 20px;
+         position: relative;
+         font-family: system-ui;
+      }
+
+      .icon-width {
+         width: 1.3rem;
+      }
+
+      .info-width {
+         width: 30rem;
+      }
+
+      .showPosts {
+         cursor: pointer;
+         list-style-type: none;
+         /* width: 200px; */
+      }
+
+      .greekCross {
+         color: rgb(255, 255, 255);
+         font-size: 13px;
+         width: 1.5em;
+         float: left;
+      }
+
+      .showPosts>p {
+         /* font-size: 15px; */
+         margin-left: 1.5em;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <div class="d-flex w-100">
+         <!-- Left card start -->
+         <div class="left-card">
+            {{#if profilePhoto}}
+            <div class="profile-pic-section">
+               <img class="img-size" src="{{profilePhoto}}" alt="profilePhoto">
+            </div>
+            {{/if}}
+            <div style="padding: 10px;">
+               <!-- <div style="text-align:center">
+                        {{#if Name}} <p class="first-name">{{Name}}</p> {{/if}}
+                        {{#if jobTitle}} <p class="work-post">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p> {{/if}}
+                    </div> -->
+               <div class="inner-section">
+                  <h3 class="heading-left-card">CONTACT</h3>
+                  <div>
+                     {{#if Phone}}
+                     <p class="d-flex mb-10 word-break">
+                        <span style="width: 30px; font-size: 10px;text-align: center; color: rgb(182, 176, 176); ">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-phone" viewBox="0 0 16 16">
+                              <path
+                                 d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                              <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                           </svg></span>
+                        <span style="width: 17rem; color: #dddce1;">{{Phone}}</span>
+                     </p>
+                     {{/if}}
+                     {{#if DOB}}
+                     <p class="d-flex mb-10 word-break">
+                        <span style="width: 30px; font-size: 10px;text-align: center; color: rgb(182, 176, 176);">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-calendar" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                           </svg></span>
+                        <span style="width: 17rem; color: #dddce1;">{{DOB}}</span>
+                     </p>
+                     {{/if}}
+                     {{#if Email}}
+                     <p class="d-flex mb-10 word-break">
+                        <span style="width: 30px; font-size: 10px;text-align: center; color: rgb(182, 176, 176);">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-envelope" viewBox="0 0 16 16">
+                              <path
+                                 d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                           </svg></span>
+                        <span style="width: 17rem; color: #dddce1;">{{Email}}</span>
+                     </p>
+                     {{/if}}
+
+                     {{#if Address}}
+                     <p class="d-flex mb-10 word-break">
+                        <span style="width: 30px; font-size: 10px;text-align: center; color: rgb(182, 176, 176);">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-geo-alt" viewBox="0 0 16 16">
+                              <path
+                                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                           </svg></span>
+                        <span style="width: 17rem; color: #dddce1;">{{Address}}</span>
+                     </p>
+                     {{/if}}
+
+                     {{#if Website}}
+                     <p class="d-flex mb-5 word-break">
+                        <span style="width: 30px; font-size: 10px;text-align: center; color: rgb(182, 176, 176);">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-browser-chrome" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd"
+                                 d="M16 8a8.001 8.001 0 0 1-7.022 7.94l1.902-7.098a2.995 2.995 0 0 0 .05-1.492A2.977 2.977 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8ZM0 8a8 8 0 0 0 7.927 8l1.426-5.321a2.978 2.978 0 0 1-.723.255 2.979 2.979 0 0 1-1.743-.147 2.986 2.986 0 0 1-1.043-.7L.633 4.876A7.975 7.975 0 0 0 0 8Zm5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a2.979 2.979 0 0 0-1.252.243 2.987 2.987 0 0 0-1.81 2.59ZM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                           </svg></span>
+                        <span style="width: 15rem; color: #dddce1;">{{Website}}</span>
+                     </p>
+                     {{/if}}
+                  </div>
+               </div>
+
+               {{#if Skills}}
+               <div class="inner-section">
+                  <h2 class="d-flex w-100">
+                     <span class="heading-left-card">SKILLS</span>
+                  </h2>
+                  <div>
+                     <ul style="color: white; padding-left: 5px;">
+                        {{#each Skills}}
+                        {{#if skillName}}
+                        <ul style="padding-left: 5px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                           <li class="showPosts">
+                              <span class="greekCross">➤</span>
+                              <p class="m-0 break-all">{{skillName}}</p>
+                           </li>
+                        </ul>
+                        {{/if}}
+                        {{/each}}
+                     </ul>
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if Language}}
+               <div class="inner-section">
+                  <h2 class="d-flex w-100">
+                     <span class="heading-left-card">LANGUAGE</span>
+                  </h2>
+                  <div>
+
+                     <ul style="color: white; padding-left: 5px;">
+                        {{#each Language}}
+                        <ul style="padding-left: 5px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                           {{#if name}}
+                           <li class="showPosts">
+                              <span class="greekCross">➤</span>
+                              <p class="m-0 break-all">{{name}}</p>
+                           </li>
+                           {{/if}}
+                        </ul>
+
+                        {{/each}}
+                     </ul>
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if Interests}}
+               <div class="inner-section">
+                  <h2 class="d-flex w-100">
+                     <span class="heading-left-card">INTERESTS</span>
+                  </h2>
+                  <div>
+                     <ul style="color: white; padding-left: 5px; list-style-type:none;">
+                        {{#each Interests}}
+                        <ul style="padding-left: 5px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                           {{#if hoby}}
+                           <li class="showPosts">
+                              <span class="greekCross">➤</span>
+                              <p class="m-0 break-all">{{hoby}}</p>
+                           </li>
+                           {{/if}}
+                        </ul>
+                        {{/each}}
+                     </ul>
+                  </div>
+               </div>
+               {{/if}}
+            </div>
+         </div>
+         <!-- Left card end -->
+
+         <!-- Right card start -->
+         <div class="right-card w-100">
+            <div class="right-card-inner-padding">
+
+               <div style="color:black">
+                  {{#if Name}} <p class="first-name" style="color:black; margin-bottom:8px; text-transform: Uppercase;">
+                     {{Name}}</p> {{/if}}
+                  {{#if jobTitle}} <p class="work-post font-3" style="color:black">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p> {{/if}}
+               </div>
+
+               {{#if Objective}}
+               <div class="sub-heading">
+                  <h3 class="heading-right-card">OBJECTIVE</h3>
+                  <p class="details-text">{{Objective}}</p>
+               </div>
+               {{/if}}
+
+               {{#if Education}}
+               <div>
+                  <h2 class="w-100">
+                     <h3 class="heading-right-card">EDUCATION</h3>
+                  </h2>
+                  <div>
+                     <div class="sub-heading w-100">
+                        {{#each Education}}
+                        <div class="mb-10">
+                           <ul style="list-style-type: none; padding-left:10px;">
+                              {{#if course}}<li class="mb-0 font-2"><span>⎔</span> {{course}}</li>{{/if}}
+                           </ul>
+                           <ul class="font-3" style="padding-left:28px; list-style-type: none;">
+                              {{#if institute}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
+                              </li>
+                              {{/if}}
+                              {{#if percentage}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">{{percentage}}%</p>
+                              </li>
+                              {{/if}}
+                              {{#if yearOfPassing}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">{{yearOfPassing}}</p>
+                              </li>
+                              {{/if}}
+                           </ul>
+                        </div>
+                        {{/each}}
+                     </div>
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if Experience}}
+               <div>
+                  <h2 class="w-100">
+                     <h3 class="heading-right-card">WORK EXPERIENCE</h3>
+                  </h2>
+                  <div>
+                     <div class="sub-heading w-100">
+                        {{#each Experience}}
+                        <div class="d-flex">
+                           {{#if from}} <div class="mb-3 font-3" style="width: 25%;">{{from}} {{#if to}}-
+                              {{/if}}<div>{{to}}</div>
+                           </div> {{/if}}
+                           <div style="width: 75%;">
+                              <div class="timeline">
+                                 <div class="container-2">
+                                    <div class="content">
+                                       {{#if organization}} <div class="font-2 mb-3">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}
+                                       </div> {{/if}}
+                                       {{#if jobTitle}} <div class="font-3">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div> {{/if}}
+                                       <ul class="font-3" style="list-style-type: none;">
+                                          {{#if role}}
+                                          <li class="showPosts">
+                                             <span class="greekCross" style="color: #464546;">➤</span>
+                                             <p class="m-0 break-all">{{role}}</p>
+                                          </li>
+                                          {{/if}}
+                                          {{#if description}}
+                                          <li class="showPosts">
+                                             <span class="greekCross" style="color: #464546;">➤</span>
+                                             <p class="m-0 break-all">{{description}}</p>
+                                          </li>
+                                          {{/if}}
+                                          {{#if present}}
+                                          <li class="showPosts">
+                                             <span class="greekCross" style="color: #464546;">➤</span>
+                                             <p class="m-0 break-all">Present</p>
+                                          </li>
+                                          {{/if}}
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        {{/each}}
+                     </div>
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if Projects}}
+               <div>
+                  <h2 class="w-100">
+                     <h3 class="heading-right-card">PROJECTS</h3>
+                  </h2>
+                  <div>
+                     <div class="sub-heading w-100">
+                        {{#each Projects}}
+                        <div class="mb-10">
+                           <ul style="list-style-type: none; padding-left: 10px;">
+                              {{#if projectTitle}}
+                              <li class="showPosts font-2">
+                                 <span class="greekCross" style="color: #464546;">⎔</span>
+                                 <p class="m-0 break-all">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</p>
+                              </li>
+                              {{/if}}
+                           </ul>
+                           <ul class="font-3" style="padding-left:28px; list-style-type: none;">
+                              {{#if roles}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
+                              </li>
+                              {{/if}}
+                              {{#if duration}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">{{duration}}</p>
+                              </li>
+                              {{/if}}
+                              {{#if projectDescription}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
+                              </li>
+                              {{/if}}
+                           </ul>
+
+                        </div>
+                        {{/each}}
+                     </div>
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if Achivement}}
+               <div class="sub-heading">
+                  <h3 class="heading-right-card">ACHIEVEMENT</h3>
+                  <ul style="list-style-type:none; margin-left:15px;">
+                     {{#each Achivement}}
+                     {{#if achivement}}
+                     <li class="showPosts">
+                        <span class="greekCross" style="color: #464546;">➤</span>
+                        <p class="m-0 break-all">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
+                     </li>
+                     {{/if}}
+
+                     {{/each}}
+                  </ul>
+               </div>
+               {{/if}}
+
+               {{#if Reference}}
+               <div>
+                  <h2 class="w-100">
+                     <h3 class="heading-right-card">REFERENCE</h3>
+                  </h2>
+                  <div>
+                     <div class="sub-heading">
+                        {{#each Reference}}
+                        <div class="mb-10">
+                           {{#if name}}
+                           <ul style="list-style-type:none; padding-left:10px;">
+                              <li class="showPosts font-2">
+                                 <span class="greekCross" style="color: #464546;">⎔</span>
+                                 <p class="m-0 break-all">{{name}}</p>
+                              </li>
+                           </ul>
+                           {{/if}}
+                           <ul class="font-3" style="list-style-type: none; padding-left:28px;">
+
+                              {{#if companyname}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">{{companyname}}</p>
+                              </li>
+                              {{/if}}
+                              {{#if jobtitle}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">{{jobtitle}}</p>
+                              </li>
+                              {{/if}}
+                              {{#if email}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">Email : {{email}}</p>
+                              </li>
+                              {{/if}}
+                              {{#if phone}}
+                              <li class="showPosts">
+                                 <span class="greekCross" style="color: #464546;">➤</span>
+                                 <p class="m-0 break-all">Phone : {{phone}}</p>
+                              </li>
+                              {{/if}}
+
+                           </ul>
+                        </div>
+                        {{/each}}
+                     </div>
+                  </div>
+               </div>
+               {{/if}}
+            </div>
+            {{#if sign}}
+            <div style="text-align: end; padding-right:2rem;">
+               <h3 style=" font-size: 18px; color: #464546;">SIGNATURE</h3>
+               <img width="20%" src="{{sign}}" alt="Signature">
+            </div>
+            {{/if}}
+         </div>
+         <!-- Right card end -->
+
+      </div>
+   </div>
+</body>
+
+</html>

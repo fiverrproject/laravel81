@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 21</title>
+   <link rel="stylesheet" href="myStyle.css">
+   <style>
+      body {
+         width: 100%;
+         margin: 0;
+         /* background: rgb(42, 46, 54);
+            background: linear-gradient(90deg, rgba(42, 46, 54, 1) 37%, rgba(255, 255, 255, 1) 37%); */
+      }
+
+      .d-flex {
+         display: flex;
+      }
+
+      .list-style {
+         list-style-type: square;
+      }
+
+      .mb-2 {
+         margin-bottom: 2px !important;
+      }
+
+      .wrap {
+         white-space: normal !important;
+         word-wrap: break-word !important;
+      }
+
+      .icon-width {
+         width: 1.5rem !important;
+         /* padding-right: 7px !important; */
+      }
+
+      ul {
+         padding-inline-start: 20px;
+      }
+
+      .main-container {
+         width: 100%;
+         /* padding:0 20px 0 20px; */
+      }
+
+      .left-page {
+         /* padding-left:2rem; */
+         width: 37%;
+         color: lightgray;
+         display: flex;
+         background: rgb(42, 46, 54);
+      }
+
+      .right-page {
+         width: 60%;
+      }
+
+      .header {
+         display: flex;
+         align-items: center;
+         /* background: rgb(42, 46, 54); */
+         background: linear-gradient(to left, #fff 63%, rgb(42, 46, 54) 37%);
+         /* background: linear-gradient(to left, #ff0000 50%, #0000ff 50%); */
+      }
+
+      .profile-pic {
+         border: 16px solid white;
+      }
+
+      .name {
+         /* display: grid; */
+         width: 70%;
+         color: #292d2d;
+         padding: .9rem 0 !important;
+      }
+
+      .nameDiv {
+         /* background-color: #f4d644; */
+         /* background-color: rgb(42, 46, 54); */
+         background-color: rgb(42, 46, 54);
+      }
+
+      .nameDiv h1 {
+         font-size: 1.7rem;
+         font-family: system-ui;
+         margin: 37px 0 0 63px;
+         color: white;
+      }
+
+      .nameDiv p {
+         margin: 0px 0 38px 67px;
+         font-size: 1.0rem;
+         font-family: system-ui;
+         color: white;
+      }
+
+      .imgDiv {
+         /* width: 22%; */
+         /* height: 250px; */
+         margin: 2rem 0rem 2rem 5rem;
+         border: 16px solid white;
+         /* padding: 20px 0px; */
+         height: 200px;
+         width: 200px;
+         position: relative;
+      }
+
+      .imgDiv img {
+         /* width: 100%;
+            height: 100%; */
+         position: absolute;
+         left: 0;
+         width: 100%;
+         height: 200px;
+      }
+
+      .email-phone {
+         padding: 5px 30px;
+         letter-spacing: 0px;
+         font-family: system-ui;
+      }
+
+      .info-text {
+         font-size: 0.9rem;
+         width: 14rem !important;
+      }
+
+      .email-phone ul li {
+         padding: 5px 10px 5px 0;
+      }
+
+      .education {
+         letter-spacing: 0;
+      }
+
+      .education h2 {
+         margin: 33px 0 18px 0;
+         font-size: 30px;
+         color: white;
+      }
+
+      .education hr {
+         border: 1px solid #f4d644;
+      }
+
+      .education h3 {
+         margin-bottom: 0;
+      }
+
+      .education h4 {
+         margin: 6px 0;
+      }
+
+      .education p {
+         margin-top: 0;
+      }
+
+      .expertise {
+         letter-spacing: 0;
+      }
+
+      .expertise h2 {
+         margin: 33px 0 18px 0;
+         font-size: 30px;
+         color: white;
+      }
+
+      .expertise hr {
+         border: 1px solid #f4d644;
+      }
+
+      .expertise p {
+         margin: 19px 0;
+      }
+
+      .language {
+         letter-spacing: 0;
+      }
+
+      .language h2 {
+         margin: 33px 0 18px 0;
+         font-size: 30px;
+         color: white;
+      }
+
+      .language hr {
+         border: 1px solid #f4d644;
+      }
+
+      .language p {
+         margin: 19px 0;
+      }
+
+      .experience {
+         margin: -15px 0 15px 30px;
+         /* font-family: system-ui; */
+      }
+
+      .experience h2 {
+         margin: 33px 0 18px 0;
+         font-size: 30px;
+         color: #2a2e36;
+      }
+
+      .hr {
+         border: 1px solid #f4d644;
+      }
+
+      .timeline {
+         position: relative;
+         margin: 0 auto;
+      }
+
+      .timeline::after {
+         content: '';
+         position: absolute;
+         width: 2px;
+         background-color: lightgrey;
+         top: 0;
+         bottom: 0;
+         margin-left: 40px;
+      }
+
+      .container {
+         padding: 0px 0 5px 30px;
+         position: relative;
+         background-color: inherit;
+         width: 100%;
+      }
+
+      .container::after {
+         content: '';
+         position: absolute;
+         width: 10px;
+         height: 10px;
+         left: 34px;
+         background-color: white;
+         border: 2px solid black;
+         top: -1px;
+         border-radius: 50%;
+         z-index: 1;
+      }
+
+      .left {
+         left: 0;
+      }
+
+      .content {
+         padding: 0 25px 0px 20px;
+         position: relative;
+         font-family: system-ui;
+      }
+
+      .content .font-1 {
+         font-size: 1.2rem;
+         letter-spacing: 1px;
+         color: #717171;
+         margin-top: -13px;
+      }
+
+      .content .font-2 {
+         margin-top: 11px;
+         color: #717171;
+         font-size: .9rem;
+         letter-spacing: 0.8px;
+      }
+
+      .div-heading {
+         font-size: 1.1rem !important;
+         font-weight: 600 !important;
+      }
+
+      .sub-heading {
+         font-size: 0.9rem !important;
+         font-weight: 500 !important;
+      }
+
+      .content-text {
+         font-size: .8rem;
+      }
+
+      .project-div {
+         margin-top: 10px;
+      }
+
+      .content h4 {
+         margin: -12px 0 -4px 0;
+         font-size: 24px;
+         letter-spacing: .3px;
+         font-weight: 400;
+         color: #2e2e2e;
+      }
+
+      .reference {
+         font-family: system-ui;
+         margin: 0 0 0 37px;
+      }
+
+      .reference h2 {
+         margin-bottom: 12px;
+         font-size: 30px;
+         color: #2a2e36;
+      }
+
+      .reference hr {
+         border: 1px solid #f4d644;
+      }
+
+      .font-refrence {
+         color: #292d2d !important;
+      }
+
+      .font-3 {
+         color: gray !important;
+         font-size: .8rem !important;
+         margin-bottom: 2px !important;
+         margin-top: 2px;
+      }
+
+      .font-4 {
+         color: #fff;
+         font-size: .8rem !important;
+         margin: 2px !important;
+      }
+
+      .left-box {
+         width: 40%;
+         padding: 0 0 0 0;
+         margin: 9px 0 9px 1px;
+         float: left;
+      }
+
+      .left-box h4 {
+         margin: 0 0 0 0;
+         font-size: 21px;
+         color: #2e2e2e;
+         font-weight: 400;
+      }
+
+      .left-box h5 {
+         margin: 3px 0 9px 0;
+         font-weight: 400;
+         color: #717171;
+         font-size: 20px;
+      }
+
+      .left-box p {
+         margin: 5px 0;
+         font-size: 17px;
+         color: #717171;
+      }
+
+      .right-box {
+         width: 40%;
+         word-wrap: normal;
+         padding: 0 0 0 0;
+         margin: 9px 50px 9px 1px;
+         float: right;
+      }
+
+      .right-box h4 {
+         word-wrap: break-word;
+         margin: 0 0 0 0;
+         font-size: 21px;
+         color: #2e2e2e;
+         font-weight: 400;
+      }
+
+      .right-box h5 {
+         word-wrap: break-word;
+         margin: 3px 0 9px 0;
+         font-weight: 400;
+         color: #717171;
+         font-size: 20px;
+      }
+
+      .right-box p {
+         word-wrap: break-word;
+         margin: 5px 0;
+         font-size: 17px;
+         color: #717171;
+      }
+
+      .grid-container1 {
+         display: grid;
+         grid-template-columns: 50% 50%;
+      }
+
+      .grid-item1 {
+         color: #3c393a;
+         margin: 10px 5px 10px 5px;
+         padding: 10px;
+      }
+
+      .ml-5 {
+         margin-left: 1rem !important;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .showPosts {
+         cursor: pointer;
+         list-style-type: none;
+         /* width: 200px; */
+      }
+
+      .greekCross {
+         color: lightgray;
+         font-size: 13px;
+         width: 1.5em;
+         float: left;
+      }
+
+      .showPosts>p {
+         /* font-size: 15px; */
+         margin-left: 1.5em;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .m-0 {
+         margin-top: 0px !important;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="main-container">
+      <div class="header">
+         <div class="imgDiv">
+            {{#if profilePhoto}}
+            <img class="imgs" src="{{profilePhoto}}" alt="profilePhoto">
+            {{else}}
+            <img class="imgs"
+               src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4QBWRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEAAAAAAAAAAAEsAAAAAQAAASwAAAAB/+0ALFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAPHAFaAAMbJUccAQAAAgAEAP/hDIFodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0n77u/JyBpZD0nVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkJz8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0nYWRvYmU6bnM6bWV0YS8nIHg6eG1wdGs9J0ltYWdlOjpFeGlmVG9vbCAxMC4xMCc+CjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczp0aWZmPSdodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyc+CiAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICA8dGlmZjpYUmVzb2x1dGlvbj4zMDAvMTwvdGlmZjpYUmVzb2x1dGlvbj4KICA8dGlmZjpZUmVzb2x1dGlvbj4zMDAvMTwvdGlmZjpZUmVzb2x1dGlvbj4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6eG1wTU09J2h0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8nPgogIDx4bXBNTTpEb2N1bWVudElEPmFkb2JlOmRvY2lkOnN0b2NrOjlmOGM2NzA4LTZjZGItNDE3My1hZmFhLTg2MTMxYjQyYjEyZjwveG1wTU06RG9jdW1lbnRJRD4KICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjkzNTNjMzAzLWFhMTktNGY2Yi04MDQwLTFkOTc0OWM1YzU5YjwveG1wTU06SW5zdGFuY2VJRD4KIDwvcmRmOkRlc2NyaXB0aW9uPgo8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSd3Jz8+/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxERExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgBaAFoAwERAAIRAQMRAf/EABsAAQADAQEBAQAAAAAAAAAAAAAEBQYDAgEI/8QAOhABAAIBAgMDCQcCBgMAAAAAAAECAwQRBSExEkFRBhNSYWJxkaGxFCIjMoHB0RU0M3JzgpLhJGPw/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwD9LNMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPGbLjw17WXJWkeuQQc3F9NTljrfJ8oMEa/Gcs/kwUj3zMrg8f1jVeji/4z/Jg+14zqI64sU/GDB1pxr09P8A8bJgk4uK6S/K1rY59qP4MEzHkx5Y3x5K3j2Z3B6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABy1Gpwaeu+bJFfCO+f0BV6zi97b101exHpW6/BcFZe98lpte02tPfM7g8gAAAAARvE7xO0+MAveH8S09sdMV98Vojb707xP6/ygsQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVvFOIxhmcOCYnJ326xX/swUl7WvabXtNrT1mZ5qPgAAAAAAAAAJvD+IZdNMUtvfF6PfHuBf4slMuOuTHaLVt0lB6AAAAAAAAAAAAAAAAAAAAAAAAAAAAABU8Z11q2nTYbbTH57R9FgpwAAAAAAAAAAAAWHBdVOHURhtP4eSdvdPcC+QAAAAAAAAAAAAAAAAAAAAAAAAAAAAec14x4r5J6VrMgylrTe02tO8zO8qPgAAAAAAAAAAAAG8xzjrANZit28VL+lWJ+SD0AAAAAAAAAAAAAAAAAAAAAAAAAAACv47nnFpYxVn72Wdp93eQUKgAAAAAAAAAAAAADRcFyec4fTfrSZqlEwAAAAAAAAAAAAAAAAAAAAAAAAAAAFBx3J2td2e6lYj91ggAAAAAAAAAAAAAAAu/J2Z+zZY8L/ALJRZgAAAAAAAAAAAAAAAAAAAAAAAAAAAzPE7driGefbmFEcAAAAAAAAAAAAAAF35O2j7Plr3xeJ+SUWYAAAAAAAAAAAAAAAAAAAAAAAAAAAMvrv73P/AKk/VRxAAAAAAAAAAAAAABaeTtvxs1fGsT8/+yi6QAAAAAAAAAAAAAAAAAAAAAAAAAAAZjiEba7PH/slRwAAAAAAAAAAAAAABY+T/wDe3/05+sFF6gAAAAAAAAAAAAAAAAAAAAAAAAAAAzfF69niOb1zE/JRFAAAAAAAAAAAAAABZeT0f+Vknwx/uUXiAAAAAAAAAAAAAAAAAAAAAAAAAAD5kvTHSb3tFa1jeZkGd4rmxZ9X53DaZrNYid425qIgAAAAAAAAAAAAAALHgmowae2Sc1+zN9ojlyKL1AAAAAAAAAAAAAAAAAAAAAAAAAABD43v/Tr7eNfqQZ1QAAAAAAAAAAAAAAABqtJv9kw79exX6IOgAAAAAAAAAAAAAAAAAAAAAAAAAI3FY34dm9Vd/mQZpQAAAAAAAAAAAAAAABraR2aVr4REIPoAAAAAAAAAAAAAAAAAAAAAAAAAOWrp5zS5ccdbUmIBllAAAAAAAAAAAAAAAHvBScmfHjjra0R8waxB8AAAAAAAAAAAAAAAAAAAAAAAAAABltXTzWqy4+6t5iFHIAAAAAAAAAAAAAAE3glO3xCkz0rE2/8AviDQoAAAAAAAAAAAAAAAAAAAAAAAAAAAKHjWmyV1ds0Um1L894jfaVgr+nUAAAAAAAAAAAAACImekTPuBccB02Slr58lZrE17NYnrPrSi2AAAAAAAAAAAAAAAAAAAAAAAAAAAABneM07PEcntbW+SiGAAAAAAAAAAAAC28nafiZsvhEVj6lFwgAAAAAAAAAAAAAAAAAAAAAAAAAAAAApvKLHtkxZo74msrBVAAAAAAAAAAAAA0PBMXm9BW09ckzb+EomgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjcUwTqNFetY3tX71ffBBmlAAAAAAAAAAAHvDjtmzUxV62naAaqlYpStK9KxtCD6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACi4zo/MZPP44/DvPOPRlRXAAAAAAAAAAAueA6Xav2q8c53inu75Si1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABx19IyaLNSfQmf1jmDLqAAAAAAAAAEg1OjrFdJhrHdSPolHUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjUf2+X/JP0BlI6KAAAAAAAAAE9AavT/2+L/JH0QewAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcOIX7GhzW9iY+PIgzCgAAAAAAAAADT8Pv29Dht7ER8OSDuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADjqdVg00fi5Iie6sc5n9DBTcR4lbU45xUp2Me+/OecqIAAAAAAAAAAAJ/DuJW02OMV6dvHvvG084Bc6bVYNTH4WSJnvrPKY/RMHYAAAAAAAAAAAAAAAAAAAAAAAAAAAAFfxvU5tPjx1xT2e3vvbvj3EFFMzMzMzMzPWZUfAAAAAAAAAAAAAfYmYmJiZiY6TAL3gmpzajHkrlntdjba3fPvSiwAAAAAAAAAAAAAAAAAAAAAAAAAABE1nEdPp969rzmT0a/vJgpNbrM2rtE5JiKx+WsdIURwAAAAAAAAAAAAAASNFrM2ktM45iaz+as9JBd6PiOn1G1e15vJ6Nv2lMEsAAAAAAAAAAAAAAAAAAAAAACeUbzygELVcT02HeK287bwr0+JgqtXxHU6jeva83T0a/vKiGAAAAAAAAAAAAAAAAAACZpOI6nT7V7XnKejb9pBa6XiemzbRa3mreFunxTBNjnG8c4AAAAAAAAAAAAAAAAAABHz63S4fz5q7+Fec/IwQNRxnuwYv91/4XBXajVajUT+LltaPDpHwBxAAAAAAAAAAAAAAAAAAAAAAB20+q1Gnn8LLaseHWPgCx0/Ge7Pi/3U/gwT8Gt0ub8mau/hblPzTBIAAAAAAAAAAAAnlG88oBB1PFNNima03y29np8TBX5uLaq/5Ipjj1RvPzXBEy6jPl/wATNe3qmeQOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAOuLUZ8X+HmvX1RPIEvDxbVU/PFMkeuNp+RgsNNxTTZZit98Vva6fFME6OcbxzgAAAAAAAHLVajFpsXnMs8u6I6zPqBQa3XZtVba09nH3Ujp+vioigAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlaLXZtLbas9rH30np+ngC/0uoxanF5zFPLviesT60HUAAAAHnLkrixWyXnatY3mQZrW6m+qzzkvyjpWvhCjgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADvotTfS54yU5x0tXxgGlxZK5cVclJ3raN4lB6AAABU+UGeYimniev3rfsQU6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC48n88zF9PM9PvV/dKLYAAAGd4zbtcRyeztX5LBDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABM4Nbs8Rx+1vX5FGiQAf/9k="
+               alt="profilePhoto">
+            {{/if}}
+         </div>
+         <div class="name">
+            <div class="nameDiv">
+               <h1 style="padding-top: 5px;">{{Name}}</h1>
+               <p style="padding-top: 5px; padding-bottom: 5px;">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>
+            </div>
+         </div>
+      </div>
+      <div class="d-flex">
+         <div class="left-page">
+            <div class="email-phone wrap">
+               <ul style="text-decoration: none;  padding-left:0 !important;">
+                  {{#if Phone}}
+                  <li class="d-flex mb-2">
+                     <span style="color:#fff;" class="icon-width">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                           class="bi bi-phone" viewBox="0 0 16 16">
+                           <path
+                              d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                           <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        </svg>
+                     </span>
+                     <span class="info-text">{{Phone}}</span>
+                  </li>
+                  {{/if}}
+
+                  {{#if Email}}
+                  <li class="d-flex mb-2">
+                     <span style="color:#fff;" class="icon-width">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                           class="bi bi-envelope" viewBox="0 0 16 16">
+                           <path
+                              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                        </svg>
+                     </span>
+                     <span class="info-text">{{Email}}</span>
+                  </li>
+                  {{/if}}
+
+                  <!-- {{#if Website}}
+                        <li class="d-flex mb-2">
+                            <span style=" color: #fff;" class="icon-width">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-browser-chrome" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M16 8a8.001 8.001 0 0 1-7.022 7.94l1.902-7.098a2.995 2.995 0 0 0 .05-1.492A2.977 2.977 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8ZM0 8a8 8 0 0 0 7.927 8l1.426-5.321a2.978 2.978 0 0 1-.723.255 2.979 2.979 0 0 1-1.743-.147 2.986 2.986 0 0 1-1.043-.7L.633 4.876A7.975 7.975 0 0 0 0 8Zm5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a2.979 2.979 0 0 0-1.252.243 2.987 2.987 0 0 0-1.81 2.59ZM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                                </svg>
+                            </span>
+                            <span class="info-text">{{Website}}</span>
+                        </li>
+                        {{/if}} -->
+
+                  {{#if Address}}
+                  <li class="d-flex mb-2">
+                     <span style=" color: #fff;" class="icon-width">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                           class="bi bi-geo-alt" viewBox="0 0 16 16">
+                           <path
+                              d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                           <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                     </span>
+                     <span class="info-text">{{Address}}</span>
+                  </li>
+                  {{/if}}
+               </ul>
+
+
+
+               {{#if Skills}}
+               <div class="expertise" style="margin-top: 1rem">
+                  <div class="mt-15">
+                     <div class="div-heading">Skills</div>
+                     <hr>
+                     {{#each Skills}}
+                     {{#if skillName}}
+                     <div style="margin: 7px;">
+                        <ul style="padding-left: 5px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                           {{#if skillName}}
+                           <p class="sub-heading word-break m-0" style="margin-bottom:0; margin-top: 0;">{{skillName}}
+                           </p>
+                           {{#if expertise}}
+                           <li class="showPosts">
+                              <span class="greekCross">■</span>
+                              <p class="m-0 word-break" style="margin: 0px !important;">{{expertise}}%</p>
+                           </li>
+                           {{/if}}
+                           {{/if}}
+                        </ul>
+                     </div>
+                     {{/if}}
+                     {{/each}}
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if Language}}
+               <div class="language" style="margin-top: 1rem;">
+                  <div class="div-heading">Language</div>
+                  <hr>
+                  {{#each Language}}
+                  <ul style="padding-left: 5px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                     {{#if name}}
+                     <li class="showPosts">
+                        <span class="greekCross">■</span>
+                        <p class="m-0 word-break" style="margin-bottom: 0px;">{{name}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Interests}}
+               <div class="interest" style="margin-top: 1rem;">
+                  <div class="div-heading">Interest</div>
+                  <hr class="hr">
+                  {{#each Interests}}
+                  <ul style="padding-left: 5px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                     {{#if hoby}}
+                     <li class="showPosts">
+                        <span class="greekCross">■</span>
+                        <p class="m-0 word-break" style="margin-bottom: 0px;">{{hoby}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+
+                  {{/each}}
+               </div>
+               {{/if}}
+            </div>
+         </div>
+         <div class="right-page">
+            {{#if Objective}}
+            <div class="education" style="margin-bottom:0; margin-left:30px; margin-top: -85px;">
+               <div class="div-heading">Objective</div>
+               <hr class="hr">
+               <p>{{Objective}}</p>
+            </div>
+            {{/if}}
+
+            {{#if Education}}
+            <div class="education" style="margin-bottom:0; margin-left:30px;">
+               <div class="div-heading">Education</div>
+               <hr class="hr">
+               {{#each Education}}
+               <ul class="content list-style">
+                  <li class="sub-heading" style="margin-bottom: 2px;">{{course}}
+                     <ul>
+                        {{#if institute}}<li class="font-3"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}} </li>{{/if}}
+                        {{#if percentage}}<li class="font-3"> {{percentage}}%</li>{{/if}}
+                        {{#if yearOfPassing}}<li class="font-3"> {{yearOfPassing}}</li>{{/if}}
+                     </ul>
+                  </li>
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Experience}}
+            <div class="experience" style="margin-top:10px;">
+               <div class="div-heading">Experience</div>
+               <hr class="hr">
+            </div>
+            {{#each Experience}}
+            <div class="timeline">
+               <div class="container">
+                  <div class="content">
+                     <ul style="margin-top:0; list-style-type:none;">
+                        <li>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}
+                           <!-- <div class="ml-5"> -->
+                           <ul>
+                              {{#if organization}}<li class="font-3"> {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
+                              {{#if from}}<li class="font-3">{{from}} - {{#if to}}{{to}} {{/if}}</li>{{/if}}
+                              {{#if role}}<li class="font-3">{{role}}</li>{{/if}}
+                              {{#if description}}<li class="font-3"> {{description}}</li>{{/if}}
+                              {{#if present}}<li class="font-3"> present</li>{{/if}}
+                           </ul>
+                           <!-- </div> -->
+                        </li>
+
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            {{/each}}
+            {{/if}}
+
+            {{#if Projects}}
+            <div class="experience project-div" style="margin-top:10px;">
+               <div class="div-heading">Projects</div>
+               <hr class="hr">
+            </div>
+            {{#each Projects}}
+            <div class="timeline">
+               <div class="container">
+                  <div class="content">
+                     <ul style="margin-top:0; list-style-type: none;">
+                        <li class="sub-heading">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}
+                           <ul>
+                              {{#if roles}}<li class="font-3">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li>{{/if}}
+                              {{#if duration}}<li class="font-3"> {{duration}}</li>{{/if}}
+                              {{#if projectDescription}}<li class="font-3"> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li>{{/if}}
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            {{/each}}
+            {{/if}}
+
+            {{#if Achivement}}
+            <div class="experience project-div" style="margin-bottom:0; margin-left:30px; margin-top:10px;">
+               <div class="div-heading">Achievement</div>
+               <hr class="hr">
+            </div>
+            {{#each Achivement}}
+            <ul class="content list-style" style="margin-left:30px;">
+               <li class="font-3">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</li>
+            </ul>
+            {{/each}}
+            {{/if}}
+
+            {{#if Reference}}
+            <div class="div-heading" style="margin-bottom:0; margin-left:30px; margin-top:10px;">
+               Reference
+            </div>
+            <hr class="hr" style="margin-left:30px;">
+            <div class="grid-container1" style="margin-left: 30px;">
+               {{#each Reference}}
+               <div class="grid-item1" style="margin-top:0; margin-left:0; padding-left:0">
+                  <ul class="list-style" style="margin-top: 2px; margin-bottom: 0px;">
+                     <li>{{name}}
+                        <ul>
+                           {{#if jobtitle}}<li class="font-3 wrap"> {{jobtitle}}</li>{{/if}}
+                           {{#if companyname}}<li class="font-3 wrap">{{companyname}}</li>{{/if}}
+                           {{#if email}}<li class="font-3 wrap"> {{email}}</li>{{/if}}
+                           {{#if phone}}<li class="font-3 wrap"> {{phone}}</li>{{/if}}
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if sign}}
+            <div class="grid-item4" style="text-align:end;">
+               <h3 class="" style="margin-bottom: 3px">Signature</h3>
+               <span><img width="20%" src="{{sign}}" alt="Signature"></span>
+            </div>
+            {{/if}}
+         </div>
+
+      </div>
+
+
+   </div>
+</body>
+
+</html>

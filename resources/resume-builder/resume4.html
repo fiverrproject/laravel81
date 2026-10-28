@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1">
+
+<head>
+
+   <title>Resume 4</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+   <meta name="keywords" content="" />
+   <meta name="description" content="" />
+
+   <style>
+      .box {
+         border: 1px solid black;
+         background-color: black;
+         text-align: center;
+         color: white;
+         border-radius: 3px;
+      }
+
+      .header {
+         border: 2px dotted black;
+         text-align: center;
+         border-radius: 20px;
+      }
+
+      h2 {
+         margin: 0px;
+         color: #444;
+      }
+
+      h3 {
+         margin: 0px;
+         font-weight: normal;
+      }
+
+      p {
+         margin: 0px;
+         color: #444;
+         padding-top: 1px;
+         font-size: 19px;
+      }
+
+      .text-center {
+         text-align: center;
+      }
+
+      .footer {
+         border-bottom: 3px solid;
+         padding-bottom: 10px;
+         font-size: 92%;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+   </style>
+</head>
+
+<body>
+   <div style="margin: 20px;">
+      <div>
+         <div class="header">
+            <br>
+            {{#if Name}}<h2>{{Name}}</h2>{{/if}}
+            {{#if jobTitle}}<p class="word-break"><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>{{/if}}
+            {{#if Phone}}<p class="word-break"><b>{{Phone}}</b></p>{{/if}}
+            {{#if DOB}}<p class="word-break"><b>{{DOB}}</b></p>{{/if}}
+            {{#if Email}}<p class="word-break"><b>{{Email}}</b></p>{{/if}}
+            {{#if Address}}<p class="word-break"><b>{{Address}}</b></p>{{/if}}
+            <br>
+         </div><br>
+         {{#if Objective}}
+         <div>
+            <h3 class="box">Objective</h3><br>
+            {{#if Objective}}<h3 class="word-break" style="text-align: justify;">{{Objective}}</h3><br>{{/if}}
+         </div>
+         {{/if}}
+         {{#if Skills}}
+         <div>
+            <h3 class="box">Skills</h3><br>
+            {{#each Skills}}
+            {{#if skillName}}
+            <div style="padding-bottom: 10px;">
+               <p class="word-break"><b>{{skillName}}</b></h3>
+                  {{#if expertise}}
+               <p>{{expertise}}%</p>{{/if}}
+            </div>
+
+            {{/if}}
+
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Education}}
+         <div>
+            <h3 class="box">Education</h3><br>
+            {{#each Education}}
+            <p class="word-break"><b>{{course}}</b></p>
+            <p class="word-break">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
+            {{#if percentage}}<p class="word-break">{{percentage}}%</p>{{/if}}
+            <p class="word-break"> {{yearOfPassing}}</p><br>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Experience}}
+         <div>
+            <h3 class="box">Experience</h3><br>
+            {{#each Experience}}
+            {{#if jobTitle}}<p class="word-break"><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>{{/if}}
+            {{#if organization}}<p class="word-break">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>{{/if}}
+            {{#if from}}<p class="word-break">{{from}} {{#if to}} - {{to}}{{/if}}</p>{{/if}}
+            {{#if role}}<p class="word-break">{{role}}</p>{{/if}}
+            {{#if description}}<p class="word-break">{{description}}</p>{{/if}}
+            {{#if present}}
+            <p>Present</p>
+            {{/if}}
+            <br>
+            {{/each}}
+         </div>
+         {{/if}}
+
+         {{#if Projects}}
+         <div>
+            <h3 class="box">Projects</h3><br>
+            {{#each Projects}}
+            <p class="word-break"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p>
+            <p class="word-break">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
+            <p class="word-break">{{duration}}</p>
+            <p class="word-break">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p><br>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Language}}
+         <div>
+            <h3 class="box">Language</h3><br>
+            {{#each Language}}
+            <h3 class="word-break">{{name}}</h3><br>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Interests}}
+         <div>
+            <h3 class="box">Interests</h3><br>
+            {{#each Interests}}
+            <h3 class="word-break">{{hoby}}</h3><br>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Achivement}}
+         <div>
+            <h3 class="box">Achievement</h3><br>
+            {{#each Achivement}}
+            <h3 class="word-break">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</h3><br>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Reference}}
+         <div>
+            <h3 class="box">Reference</h3><br>
+            {{#each Reference}}
+            <p class="word-break"><b>{{name}}</b></p>
+            <p class="word-break">{{jobtitle}}</p>
+            <p class="word-break">{{companyname}}</p>
+            <p class="word-break">{{email}}</p>
+            <p class="word-break">{{phone}}</p>
+            <br>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if sign}}
+         <div class="text-center">
+            <h3 class="box">Signature</h3>
+            <img width="16%" height="auto" src="{{sign}}">
+         </div>
+         {{/if}}
+      </div>
+      <hr>
+      <div class="text-center">
+         <p class="footer"> {{Name}}{{#if Phone}} &mdash; {{Phone}}{{/if}} </p>
+      </div>
+   </div>
+</body>
+
+</html>

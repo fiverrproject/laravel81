@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Marcus Chen",
+    "role": "Junior Software Developer",
+    "rating": 5,
+    "description": "I rebuilt my resume in one evening using the live preview. The single-column template read cleanly in our ATS, and I had a polished PDF before my campus career fair."
+  },
+  {
+    "name": "Elena Ruiz",
+    "role": "Operations Coordinator",
+    "rating": 5,
+    "description": "Switching careers meant rewriting everything. I saved one profile on Resumes Maker and spun up a second version for logistics roles without retyping ten years of work history."
+  },
+  {
+    "name": "James Okafor",
+    "role": "Registered Nurse",
+    "rating": 5,
+    "description": "Clinical resumes get messy fast. The section order and spacing stayed consistent, and the PDF export looked sharp on hospital HR portals—no weird margins or broken bullets."
+  },
+  {
+    "name": "Rachel Kim",
+    "role": "Digital Marketing Specialist",
+    "rating": 5,
+    "description": "I needed a creative layout for agency applications and a tighter one for in-house roles. Same core profile, two templates, two downloads—done in under twenty minutes."
+  },
+  {
+    "name": "Daniel Torres",
+    "role": "Freelance UX Researcher",
+    "rating": 5,
+    "description": "I edited a draft on my phone between client calls. The preview updated instantly, so I knew exactly how the page break would land before I sent the file."
+  },
+  {
+    "name": "Amara Osei",
+    "role": "Administrative Assistant",
+    "rating": 5,
+    "description": "No account upsells or watermarks—just pick a template, fill the fields, and download. That alone saved me from juggling another subscription I did not need."
+  },
+  {
+    "name": "Noah Bennett",
+    "role": "IT Support Technician",
+    "rating": 5,
+    "description": "The blog tips on keyword placement helped me tighten my skills section. Combined with an ATS-friendly layout, my resume finally matched how I talk about my work in interviews."
+  },
+  {
+    "name": "Sofia Alvarez",
+    "role": "High School Teacher",
+    "rating": 5,
+    "description": "I had avoided resume builders for years. This one walked me through experience and education without clutter, and the finished PDF looked professional enough for district postings."
+  },
+  {
+    "name": "Vikram Nair",
+    "role": "Data Analyst",
+    "rating": 5,
+    "description": "Forty-plus templates sounded overwhelming, but filtering to clean, modern layouts was quick. Export was one click—no waiting on email links or paywalled downloads."
+  },
+  {
+    "name": "Chloe Martin",
+    "role": "Customer Success Manager",
+    "rating": 5,
+    "description": "I maintain separate profiles for SaaS and healthcare targets. Updating one bullet propagates everywhere, then I swap templates when a role needs a different emphasis."
+  }
+]

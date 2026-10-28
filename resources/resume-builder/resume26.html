@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 26</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 20px;
+      }
+
+      .break-word {
+         word-break: break-word;
+      }
+
+      .break-all {
+         word-break: break-all;
+      }
+
+      .d-flex {
+         display: flex;
+      }
+
+      .font-1 {
+         font-size: 1.4rem !important;
+         font-weight: 700;
+      }
+
+      .font-2 {
+         font-size: 1rem !important;
+         font-weight: 600;
+      }
+
+      .font-3 {
+         font-size: 1rem !important;
+         font-weight: 100;
+      }
+
+      .font-4 {
+         font-size: .8rem !important;
+         font-weight: 100;
+      }
+
+      .mt-2 {
+         margin-top: 4px !important;
+      }
+
+      .mt-5 {
+         margin-top: 5px !important;
+      }
+
+      .mt-10 {
+         margin-top: 10px !important;
+      }
+
+      .mt-16 {
+         margin-top: 1.3rem !important;
+      }
+
+      .mt-20 {
+         margin-top: 1.5rem !important;
+      }
+
+      .ps-0 {
+         padding-left: 0;
+      }
+
+      .icon-width {
+         width: 1.5rem !important;
+      }
+
+      .info-text {
+         font-size: 0.8rem;
+         width: 14rem !important;
+         word-wrap: break-word;
+      }
+
+      .text-center {
+         text-align: center !important;
+      }
+
+      .social-media-footer {
+         display: flex;
+         padding-left: 0 !important;
+         justify-content: center;
+      }
+
+      .border-bottom {
+         display: inline-block;
+         border-bottom: .5px solid black;
+         /* padding: 0 10px 0 10px; */
+      }
+
+      .progress {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 1rem;
+         overflow: hidden;
+         font-size: .75rem;
+         background-color: #e9ecef;
+         border-radius: 0.25rem;
+      }
+
+      .bg-white {
+         background-color: #2c2a2a !important;
+      }
+
+      .progress-bar {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         justify-content: center;
+         color: #030303;
+         text-align: center;
+         background-color: #007bff;
+         transition: width .6s ease;
+      }
+
+      .sub-data {
+         padding-left: 1.3rem;
+         margin-top: 5px;
+      }
+
+      .resume {
+         display: flex;
+         max-width: 1000px;
+         margin: auto;
+         background-color: #fff;
+         border-radius: 1px;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .left-col {
+         flex: 1;
+         background-color: #e9e9e9;
+         padding: 20px;
+         width: 33%;
+         /* text-align: center; */
+      }
+
+      .image {
+         border-radius: 50%;
+         border: none;
+         width: 150px;
+         height: 150px;
+      }
+
+      .right-col {
+         flex: 2;
+         padding: 20px;
+         width: 67%;
+      }
+
+      .border1 {
+         border-bottom: 1px solid rgb(65, 64, 64);
+         padding: 0 20px 0 20px;
+      }
+
+      .border {
+         border-bottom: 1px solid rgb(0, 0, 0);
+         width: 50%;
+         margin-left: 65px;
+         margin-bottom: 20px;
+      }
+
+      .footer {
+         margin-top: 5rem;
+         text-align: center;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="resume">
+
+      <!-- ----------- left column --------------- -->
+      <div class="left-col">
+         {{#if profilePhoto}}
+         <div style="text-align: center;">
+            <img class="image" src="{{profilePhoto}}" alt="profilePhoto">
+         </div>
+         {{/if}}
+
+         <div style="text-align: center;">
+            <div class="font-1 border1">
+               {{Name}}
+            </div>
+            <div class="font-3 mt-5">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>
+         </div>
+
+         <div class="contact-info mt-20">
+            <div style="text-align: center;" class="font-2 mt-16 border1">CONTACT</div>
+            <ul style="padding:0">
+               {{#if Phone}}
+               <li class="font-4 d-flex mt-2"><span class="icon-width">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-phone" viewBox="0 0 16 16">
+                        <path
+                           d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                        <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                     </svg>
+                  </span> <span class="info-text">{{Phone}}</span>
+               </li>
+               {{/if}}
+
+
+               {{#if DOB}}
+               <li class="font-4 d-flex mt-5"><span class="icon-width">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path
+                           d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                     </svg>
+                  </span><span class="info-text">{{DOB}}</span>
+               </li>
+               {{/if}}
+
+               {{#if Email}}
+               <li class="font-4 d-flex mt-5"><span class="icon-width">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path
+                           d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                     </svg>
+                  </span><span class="info-text">{{Email}}</span>
+               </li>
+               {{/if}}
+
+               {{#if Address}}
+               <li class="font-4 d-flex mt-5"><span class="icon-width">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-geo-alt" viewBox="0 0 16 16">
+                        <path
+                           d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                     </svg>
+                  </span><span class="info-text">{{Address}}</span>
+               </li>
+               {{/if}}
+            </ul>
+         </div>
+
+         {{#if Objective}}
+         <div class="mt-20">
+            <div style="text-align: center;" class="font-2 mt-16 border1">OBJECTIVE</div>
+            <div class="font-4 mt-5">{{Objective}}</div>
+         </div>
+         {{/if}}
+
+         {{#if Interests}}
+         <div class="mt-20">
+            <div class="font-2 border1 text-center">
+               <div>INTEREST</div>
+            </div>
+            <div class="sub-data font-4">
+               <ul class="font-4 mt-5" style="padding-left: 0;">
+                  {{#each Interests}}
+                  <li class="mt-2 break-all">{{hoby}}</li>
+                  {{/each}}
+               </ul>
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if Skills}}
+         <div class="mt-20">
+            <div class="font-2 border1 text-center">
+               <div>SKILLS</div>
+            </div>
+            {{#each Skills}}
+            {{#if skillName}}
+            <div class="mt-10">
+               <div style="width: 99%;">
+                  <div class="font-4 break-all">{{skillName}}</div>
+               </div>
+
+               <div class="progress" style="width: 99%; margin-top:5px; background:#fff">
+                  <div class="progress-bar bg-white" style="width:{{expertise}}%; color:white">{{expertise}}%</div>
+               </div>
+            </div>
+            {{/if}}
+            {{/each}}
+         </div>
+         {{/if}}
+
+         {{#if Language}}
+         <div class="mt-20">
+            <div class="font-2 border1 text-center">
+               <div>LANGUAGE</div>
+            </div>
+            <div class="sub-data font-4">
+               <ul style="margin-top:10px;padding-left:0">
+                  {{#each Language}}
+                  <li class="font-4 mt-2 break-all">{{name}}</li>
+                  {{/each}}
+               </ul>
+            </div>
+         </div>
+         {{/if}}
+      </div>
+
+      <!-- --------- Right column ---------------- -->
+      <div class="right-col" style="padding-left: 2rem;">
+
+         {{#if Education}}
+         <div class="mt-5">
+            <div class="border-bottom">
+               <span class="font-2">EDUCATION</span>
+            </div>
+            <div class="sub-data">
+               {{#each Education}}
+               {{#if course}}
+               <ul class="experience" style="margin:0;margin-top: 12px; padding-left:10px; list-style-type:square;">
+                  <li class="font-3 mt-5">{{course}} </li>
+               </ul>
+               {{/if}}
+               <ul style="list-style-type: disc; padding-left:25px; margin:0;">
+                  {{#if institute}}<li class="font-4 mt-2"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}{{#if yearOfPassing}} |
+                     {{yearOfPassing}}{{/if}}
+                  </li>{{/if}}
+                  {{#if percentage}} <li class="font-4 mt-5">{{percentage}}%</li>{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if Experience}}
+         <div class="mt-16">
+            <div class="border-bottom">
+               <span class="font-2">WORK EXPERIENCE</span>
+            </div>
+            <div class="sub-data">
+               {{#each Experience}}
+               <ul class="experience" style="margin:0;margin-top: 12px; list-style-type: square; padding-left:10px;">
+                  {{#if organization}}
+                  <li class="font-3 mt-5">
+                     <span>{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</span>
+                  </li>
+                  {{/if}}
+               </ul>
+
+               <ul style="list-style-type:disc; padding-left: 25px; margin:0px;">
+                  {{#if from}} <li class="font-4 mt-1"> <span>{{from}}</span> {{#if to}} <span>- {{to}}</li> {{/if}}
+                  </span>{{/if}}
+                  {{#if jobTitle}}<li class="font-4 mt-5">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</li>{{/if}}
+                  {{#if role}}<li class="font-4 mt-5">{{role}}</li>{{/if}}
+                  {{#if description}}<li class="font-4 mt-5">{{description}}</li>{{/if}}
+                  {{#if present}}<li class="font-4 mt-5">Present</li>{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+
+         {{#if Projects}}
+         <div class="mt-16">
+            <div class="border-bottom">
+               <span class="font-2">PROJECTS</span>
+            </div>
+            <div class="sub-data">
+               {{#each Projects}}
+               {{#if projectTitle}}
+               <ul class="experience" style="margin:0;margin-top: 12px; list-style-type: square; padding-left:10px;">
+                  <li class="font-3 mt-5">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</li>
+               </ul>
+               {{/if}}
+
+               <ul style="padding-left:25px; list-style-type:disc; margin:0;">
+                  {{#if roles}}<li class="font-4 mt-5"> {{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li>{{/if}}
+                  {{#if duration}}<li class="font-4 mt-5"> {{duration}}</li>{{/if}}
+                  {{#if projectDescription}}<li class="font-4 mt-1">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li>{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if Achivement}}
+         <div class="mt-16">
+            <div class="border-bottom">
+               <span class="font-2">ACHIEVEMENT</span>
+            </div>
+            <div class="sub-data">
+               <ul class="content" style="padding-left:10px; list-style-type: square;">
+                  {{#each Achivement}}
+                  <li class="font-4 mt-2">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</li>
+                  {{/each}}
+               </ul>
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if Reference}}
+         <div class="mt-16">
+            <div class="border-bottom">
+               <span class="font-2">REFERENCE</span>
+            </div>
+            <div class="sub-data">
+               {{#each Reference}}
+               <div style="margin-top:15px;">
+                  {{#if name}}
+                  <ul class="experience" style="margin:0;list-style-type:square;padding-left:10px;">
+                     <li class="font-3">{{name}}</li>
+                  </ul>
+                  {{/if}}
+                  <ul style="padding-left:25px; list-style-type: disc; margin:0;">
+                     {{#if jobtitle}}<li class="font-4 mt-2"> {{jobtitle}}</li>{{/if}}
+                     {{#if companyname}}<li class="font-4 mt-2"> {{companyname}}</li>{{/if}}
+                     {{#if email}}<li class="font-4 mt-2">{{email}}</li>{{/if}}
+                     {{#if phone}}<li class="font-4 mt-2">{{phone}}</li>{{/if}}
+                  </ul>
+               </div>
+               {{/each}}
+            </div>
+         </div>
+         {{/if}}
+
+         {{#if sign}}
+         <div class="mt-16" style="text-align: end;">
+            <h3 class="font-2" style="margin-bottom: 3px">SIGNATURE</h3>
+            <img width="20%" src="{{sign}}" alt="Signature">
+         </div>
+         {{/if}}
+
+      </div>
+   </div>
+</body>
+
+</html>

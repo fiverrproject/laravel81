@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>Resume 7</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="" />
+   <style>
+      .body {
+         border: 1px solid black;
+         /* background-color: #a6a6a6; */
+         border-radius: 5px;
+         /* margin: 0%; */
+      }
+
+      .progress {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 0.9rem;
+         overflow: hidden;
+         font-size: .75rem;
+         background-color: #e9ecef;
+         border-radius: 0.25rem;
+         width: 95%;
+      }
+
+      .bg-info {
+         background-color: #ff3968 !important;
+      }
+
+      .progress-bar {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         justify-content: center;
+         color: #fff;
+         text-align: center;
+         background-color: #007bff;
+         transition: width .6s ease;
+      }
+
+      .grid-container {
+         display: grid;
+         grid-template-columns: 48% 48%;
+         /* padding: 10px; */
+      }
+
+      .grid-container2 {
+         display: grid;
+         grid-template-columns: auto auto;
+         /* padding: 10px; */
+      }
+
+      h1 {
+         margin: 5px 5px 0px 5px;
+      }
+
+      p {
+         margin: 0px;
+         padding-left: 30px;
+      }
+
+      h3 {
+         padding-left: 5px;
+         margin-bottom: 4px;
+      }
+
+      .coloe-h3 {
+         color: #ff3968;
+      }
+
+      .p-lr {
+         padding-left: 5px;
+         padding-right: 5px;
+      }
+
+      .box {
+         border: 2px solid #ff3968;
+         background-color: #ff3968;
+         display: flex;
+         flex-direction: column;
+         color: white;
+      }
+
+      .right-head {
+         padding-right: 5px;
+         padding-bottom: 5px;
+         padding-top: 5px;
+         text-align: end;
+      }
+
+      .icon {
+         border: 0px solid;
+         border-radius: 50%;
+         background-color: #ff3968;
+         color: white;
+      }
+
+      .word-breck {
+         word-break: break-all;
+      }
+
+      .box1 {
+         background-color: #ff3968;
+         color: white;
+      }
+
+      .div-p {
+         padding-left: 5px;
+      }
+
+      .d-flex {
+         display: flex;
+         align-items: center;
+         justify-content: flex-end
+      }
+
+      .mr-5 {
+         margin-right: 5px;
+      }
+
+      .showPostslong {
+         cursor: pointer;
+         list-style-type: none;
+      }
+
+      .greekCross {
+         color: #ffffff;
+         font-size: 15px;
+         width: 1.5em;
+         float: left;
+      }
+
+      .greekCrossblack {
+         color: #000000;
+         font-size: 15px;
+         width: 1.5em;
+         float: left;
+      }
+
+      .showPosts>p {
+         /* font-size: 15px; */
+         margin-left: 1.5em;
+      }
+   </style>
+</head>
+
+<body class="body">
+   <div style="color:#ff3968; display: flex; justify-content: space-between;">
+      <div>
+         <h1 class="word-breck">{{Name}}</h1>
+         <div class="word-breck div-p">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>
+      </div>
+      <div>
+         {{#if Phone}}
+         <div class="d-flex">
+            <p class="right-head word-breck">{{Phone}}</p>
+            <div class="icon mr-5" style="padding: 5px; font-size: 13px;">☎</div>
+         </div>
+         {{/if}} {{#if DOB}}
+         <div class="d-flex">
+            <p class="right-head word-breck">{{DOB}}</p>
+            <div class="icon mr-5" style="padding:4px 6px; font-size: 15px;"><b>♕</b></div>
+         </div>
+         {{/if}} {{#if Email}}
+         <div class="d-flex">
+            <p class="right-head word-breck">{{Email}}</p>
+            <div class="icon mr-5" style="padding: 5px; font-size: 14px;">⌧</div>
+         </div>
+         {{/if}}{{#if Address}}
+         <div class="d-flex">
+            <p class="right-head word-breck">{{Address}}</p>
+            <div class="icon mr-5" style=" padding: 3px 6px; font-size: 17px;">⟰</div>
+         </div>
+         {{/if}}
+
+      </div>
+   </div>
+   {{#if Objective}}
+   <div style="padding-bottom: 5px;">
+      <h3 class="coloe-h3 word-breck">Objective</h3>
+      <p style="text-align: justify;">{{Objective}}</p>
+   </div>
+   {{/if}}
+   {{#if Experience}}
+   <div class="box">
+      <h3 class="word-breck" style="display: block; width: 100%;">Work Experience</h3>
+      {{#each Experience}}
+      <div style="width: 100%; display: flex;">
+         <div style="width: 30% !important;">
+            <!-- <p class="word-breck">2020-2022</p> -->
+            {{#if from}}
+            <p class="word-breck" style="margin-top: 15px;">{{from}} {{#if to}} - {{to}}{{/if}}</p>
+            {{/if}}
+         </div>
+         <div style="width: 70% !important;">
+            <ul>
+               {{#if jobTitle}}
+               <li class="showPostslong">
+                  <span class="greekCross">⇒ </span>
+                  <p class="word-breck">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>
+               </li>
+               {{/if}}
+               {{#if organization}}
+               <li class="showPostslong">
+                  <span class="greekCross">⇒ </span>
+                  <p class="word-breck">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
+               </li>
+               {{/if}}
+               <!-- {{#if from}}
+               <li class="showPostslong">
+                  <span class="greekCross">⇒ </span>
+                  <p class="word-breck">{{from}} {{#if to}} - {{to}}{{/if}}</p>
+               </li>
+               {{/if}} -->
+               {{#if role}}
+               <li class="showPostslong">
+                  <span class="greekCross">⇒ </span>
+                  <p class="word-breck">{{role}}</p>
+               </li>
+               {{/if}}
+               {{#if description}}
+               <li class="showPostslong">
+                  <span class="greekCross">⇒ </span>
+                  <p class="word-breck">{{description}}</p>
+               </li>
+               {{/if}}
+               {{#if present}}
+               <li class="showPostslong">
+                  <span class="greekCross">⇒ </span>
+                  <p class="word-breck">Present</p>
+               </li>
+               {{/if}}
+            </ul>
+            <!-- {{#if jobTitle}}<p class="">⇒ {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>{{/if}}
+				{{#if organization}}<p class="word-breck">⇒ {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>{{/if}}
+				{{#if from}}<p class="word-breck">⇒ {{from}} {{#if to}} - {{to}}{{/if}}</p>{{/if}}
+				{{#if role}}<p class="word-breck">⇒ {{role}}</p>{{/if}}
+				{{#if description}}<p class="word-breck">⇒ {{description}}</p>{{/if}}
+				{{#if present}}<p class="word-breck">⇒ Present</p>{{/if}} -->
+         </div>
+      </div>
+      <br>
+      {{/each}}
+   </div>
+   {{/if}}
+   <div style="display: flex;">
+      {{#if Education}}
+      <div>
+         <h3 class="coloe-h3">Education</h3>
+         {{#each Education}}
+         {{#if course}}<p class="word-breck"><b>{{course}}</b></p>{{/if}}
+
+         <ul style="margin-top: 0px; margin-bottom: 0px;">
+            {{#if institute}}
+            <li class="showPostslong">
+               <span class="greekCrossblack">⇒ </span>
+               <p class="word-breck">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
+            </li>
+            {{/if}}
+            {{#if percentage}}
+            <li class="showPostslong">
+               <span class="greekCrossblack">⇒ </span>
+               <p class="word-breck">{{percentage}}%</p>
+            </li>
+            {{/if}}
+            {{#if yearOfPassing}}
+            <li class="showPostslong">
+               <span class="greekCrossblack">⇒ </span>
+               <p class="word-breck">{{yearOfPassing}}</p>
+            </li>
+            {{/if}}
+         </ul>
+
+         {{/each}}
+      </div>
+      {{/if}}
+   </div>
+   {{#if Skills}}
+   <h3 class="coloe-h3">Skills</h3>
+   <div style="margin-bottom: 10px;">
+      {{#each Skills}}
+      {{#if skillName}}
+      <div class="grid-item p-lr">
+         <ul style="margin-top: 0px; margin-bottom: 0px;">
+            {{#if skillName}}
+            <li class="showPostslong">
+               <span class="greekCrossblack">⇒ </span>
+               <p class="word-breck">{{skillName}}</p>
+               <div class="progress" style="margin-left: 30px;">
+                  <div class="progress-bar bg-info" role="progressbar" style="width:{{expertise}}%" aria-valuenow="50"
+                     aria-valuemin="0" aria-valuemax="100">{{expertise}}%</div>
+
+               </div>
+            </li>
+            {{/if}}
+         </ul>
+      </div>
+      {{/if}}
+      {{/each}}
+   </div>
+   {{/if}}
+   {{#if Projects}}
+   <div class="box1">
+      <h3 class="coloe-h3" style="margin-top: 0px; color:white;">Projects</h3>
+      {{#each Projects}}
+      {{#if projectTitle}}<p class="word-breck"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p>{{/if}}
+
+      <ul style="margin-top: 0px; margin-bottom: 0px;">
+         {{#if roles}}
+         <li class="showPostslong">
+            <span class="greekCross">⇒ </span>
+            <p class="word-breck">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
+         </li>
+         {{/if}}
+         {{#if duration}}
+         <li class="showPostslong">
+            <span class="greekCross">⇒ </span>
+            <p class="word-breck">{{duration}}</p>
+         </li>
+         {{/if}}
+         {{#if projectDescription}}
+         <li class="showPostslong">
+            <span class="greekCross">⇒ </span>
+            <p class="word-breck">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
+         </li>
+         {{/if}}
+      </ul>
+      {{/each}}
+   </div>
+   {{/if}}
+   {{#if Language}}
+   <div>
+      <h3 style="margin-top:0px;" class="coloe-h3">Language</h3>
+      {{#each Language}}
+      <ul style="margin-top: 0px; margin-bottom: 0px;">
+         {{#if name}}
+         <li class="showPostslong">
+            <span class="greekCrossblack">⇒ </span>
+            <p class="word-breck">{{name}}</p>
+         </li>
+         {{/if}}
+      </ul>
+      {{/each}}
+   </div>
+   {{/if}}
+   {{#if Interests}}
+   <div>
+      <h3 class="coloe-h3">Interests</h3>
+      {{#each Interests}}
+
+      <ul style="margin-top: 0px; margin-bottom: 0px;">
+         {{#if hoby}}
+         <li class="showPostslong">
+            <span class="greekCrossblack">⇒ </span>
+            <p class="word-breck">{{hoby}}</p>
+         </li>
+         {{/if}}
+      </ul>
+      {{/each}}
+   </div>
+   {{/if}}
+   {{#if Achivement}}
+   <div class="box1">
+      <h3>Achievement</h3>
+      {{#each Achivement}}
+      <ul style="margin-top: 0px; margin-bottom: 0px;">
+         {{#if achivement}}
+         <li class="showPostslong">
+            <span class="greekCross">⇒ </span>
+            <p class="word-breck">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
+         </li>
+         {{/if}}
+      </ul>
+      {{/each}}
+   </div>
+   {{/if}}
+   {{#if Reference}}
+   <div class="box1">
+      <h3 style="margin-top: 0px; padding-top: 8px;">Reference</h3>
+      {{#each Reference}}
+      {{#if name}}<p class="word-breck"><b>{{name}}</b></p>{{/if}}
+      <ul style="margin-top: 0px; margin-bottom: 0px;">
+         {{#if jobtitle}}
+         <li class="showPostslong">
+            <span class="greekCross">⇒ </span>
+            <p class="word-breck">{{jobtitle}}</p>
+         </li>
+         {{/if}}
+         {{#if companyname}}
+         <li class="showPostslong">
+            <span class="greekCross">⇒ </span>
+            <p class="word-breck">{{companyname}}</p>
+         </li>
+         {{/if}}
+         {{#if email}}
+         <li class="showPostslong">
+            <span class="greekCross">⇒ </span>
+            <p class="word-breck">{{email}}</p>
+         </li>
+         {{/if}}
+         {{#if phone}}
+         <li class="showPostslong">
+            <span class="greekCross">⇒ </span>
+            <p class="word-breck">{{phone}}</p>
+         </li>
+         {{/if}}
+      </ul>
+      {{/each}}
+   </div>
+   {{/if}}
+   {{#if sign}}
+   <div style="text-align: end;">
+      <h3 style="margin-right: 120px;">Signature</h3>
+      <img style="margin-right: 70px;" width="20%" src="{{sign}}" alt="Signature">
+   </div>
+   {{/if}}
+</body>
+
+</html>

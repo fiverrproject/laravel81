@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1">
+
+<head>
+
+   <title>Resume 6</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+   <meta name="keywords" content="" />
+   <meta name="description" content="" />
+   <style>
+      .body {
+         border: 1px solid black;
+         /* background-color: #a6a6a6; */
+         border-radius: 5px;
+         /* margin: 0%; */
+      }
+
+      .header {
+         /* margin-top: 20px; */
+         border-top: 20px solid #a6a6a6;
+         padding: 25px 20px 25px 80px;
+         background-color: rgb(0, 0, 0);
+         text-shadow: 1px 2px 4px;
+         color: white;
+         display: flex;
+         min-height: 100px;
+      }
+
+      .header1 {
+         border-top: 20px solid #a6a6a6;
+         padding: 25px 20px;
+         background-color: rgb(0, 0, 0);
+         text-shadow: 1px 2px 4px;
+         color: white;
+         text-align: center;
+      }
+
+      .p-name {
+         font-size: 30px;
+         margin: 0px 50px 0px 0px;
+      }
+
+      p {
+         margin: 2px 2px 2px 15px;
+         font-size: 13px;
+      }
+
+      .border-br {
+         border-bottom: 1px solid rgb(90, 84, 84);
+         padding-top: 15px;
+         padding-bottom: 30px;
+      }
+
+      .border-bl {
+         border-bottom: 1px solid rgb(90, 84, 84);
+         border-left: 1px solid rgb(90, 84, 84);
+         padding-top: 15px;
+         padding-bottom: 15px;
+      }
+
+      .border-l {
+         border-left: 1px solid rgb(90, 84, 84);
+         padding-top: 15px;
+         padding-bottom: 15px;
+      }
+
+      h2 {
+         margin: 0px 0px 6px 15px;
+      }
+
+      .image {
+         border-radius: 50%;
+         position: relative;
+         width: 160px;
+         height: 160px;
+         box-shadow: 0px 0px 7px 0px;
+         margin-bottom: -90px;
+      }
+
+      .m-0-letter-5 {
+         margin: 0px;
+         letter-spacing: 5px;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .showPosts {
+         cursor: pointer;
+         list-style-type: none;
+         width: 260px;
+      }
+
+      .showPostslong {
+         cursor: pointer;
+         list-style-type: none;
+      }
+
+      .greekCross {
+         color: #000000;
+         font-size: 13px;
+         width: 1.5em;
+         float: left;
+      }
+
+      .showPosts>p {
+         margin-left: 1.5em;
+      }
+
+      ul {
+         padding-left: 15px;
+         margin-top: 0px;
+         margin-bottom: 0px;
+
+      }
+   </style>
+</head>
+
+<body class="body">
+   {{#if profilePhoto}}
+   <div style="display: flex;" class="header">
+      <div>
+         <p class="p-name">{{Name}}</p>
+         <p class="word-break m-0-letter-5">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>
+      </div>
+      <div>
+         <img class="image" height="auto" width="5%" src="{{profilePhoto}}" alt="profilePhoto">
+      </div>
+   </div>
+   {{else}}
+   <div class="header1">
+      <p class="p-name">{{Name}}</p>
+      <p class="word-break m-0-letter-5">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>
+   </div>
+   {{/if}}
+
+   <div style="display: flex; border-top: 30px solid #a6a6a6; background-color: #a6a6a6;">
+      <div style="width: 35%;">
+         <div class="border-br">
+            <ul style="padding-left: 15px; margin-top: 0px; margin-bottom: 0px;">
+               {{#if Phone}}
+               <li class="showPosts">
+                  <span class="greekCross">✆ </span>
+                  <p class="" style="word-break: break-all;">{{Phone}}</p>
+               </li>
+               {{/if}}
+               {{#if DOB}}
+               <li class="showPosts">
+                  <span class="greekCross">♔ </span>
+                  <p class="" style="word-break: break-all;">{{DOB}}</p>
+               </li>
+               {{/if}}
+               {{#if Email}}
+               <li class="showPosts">
+                  <span class="greekCross">✉ </span>
+                  <p class="" style="word-break: break-all;">{{Email}}</p>
+               </li>
+               {{/if}}
+               {{#if Address}}
+               <li class="showPosts">
+                  <span class="greekCross">⟰ </span>
+                  <p class="" style="word-break: break-all;">{{Address}}</p>
+               </li>
+               {{/if}}
+            </ul>
+         </div>
+         {{#if Language}}
+         <div class="border-br">
+            <h2>LANGUAGE</h2>
+            {{#each Language}}
+            <ul>
+               {{#if name}}
+               <li class="showPosts">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{name}}</p>
+               </li>
+               {{/if}}
+            </ul>
+            <!-- {{#if name}}<p class="word-break">➢ {{name}}</p>{{/if}}			 -->
+            {{/each}}
+         </div>
+         {{/if}}{{#if Skills}}
+         <div class="border-br">
+            <h2>SKILLS</h2>
+            {{#each Skills}}
+            {{#if skillName}}
+            <ul>
+               {{#if skillName}}
+               <li class="showPosts">
+                  <span class="greekCross">➢ </span>
+                  <p class="word-break">{{skillName}}
+                     {{#if expertise}}<span class="word-break">({{expertise}}%)</span>{{/if}}
+                  </p>
+               </li>
+               {{/if}}
+            </ul>
+
+            {{/if}}
+            {{/each}}
+         </div>
+         {{/if}}{{#if Interests}}
+         <div class="border-br">
+            <h2>INTERESTS</h2>
+            {{#each Interests}}
+            <ul>
+               {{#if hoby}}
+               <li class="showPosts">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{hoby}}</p>
+               </li>
+               {{/if}}
+            </ul>
+
+            {{/each}}
+         </div>
+         {{/if}}
+      </div>
+
+      <div style="width: 65%;">
+         {{#if Objective}}
+         <div class="border-bl">
+            <h2>OBJECTIVE</h2>
+            <ul>
+               {{#if Objective}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{Objective}}</p>
+               </li>
+               {{/if}}
+            </ul>
+         </div>
+         {{/if}}{{#if Education}}
+         <div class="border-bl">
+            <h2>EDUCATION</h2>
+            {{#each Education}}
+
+            <p class="word-break"><b>{{course}}</b></p>
+            <ul>
+               {{#if institute}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
+               </li>
+               {{/if}}
+               {{#if percentage}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{percentage}}%</p>
+               </li>
+               {{/if}}
+               {{#if yearOfPassing}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{yearOfPassing}}</p>
+               </li>
+               {{/if}}
+            </ul>
+            <!-- {{#if institute}}<p class="word-break">➢ {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>{{/if}}
+				{{#if percentage}}<p class="word-break">➢ {{percentage}}%</p>{{/if}}
+				{{#if yearOfPassing}}<p class="word-break">➢ {{yearOfPassing}}</p>{{/if}} -->
+
+            {{/each}}
+         </div>
+         {{/if}}{{#if Experience}}
+         <div class="border-bl">
+            <h2>EXPERIENCE</h2>
+            {{#each Experience}}
+            <p><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>
+            <ul>
+               {{#if organization}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
+               </li>
+               {{/if}}
+               {{#if from}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{from}} {{#if to}} - {{to}}{{/if}}</p>
+               </li>
+               {{/if}}
+               {{#if role}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{role}}</p>
+               </li>
+               {{/if}}
+               {{#if description}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{description}}</p>
+               </li>
+               {{/if}}
+               {{#if present}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">Present</p>
+               </li>
+               {{/if}}
+            </ul>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Projects}}
+         <div class="border-bl">
+            <h2>PROJECTS</h2>
+            {{#each Projects}}
+            <p class="word-break"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p>
+            <ul>
+               {{#if roles}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
+               </li>
+               {{/if}}
+               {{#if duration}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{duration}}</p>
+               </li>
+               {{/if}}
+               {{#if projectDescription}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
+               </li>
+               {{/if}}
+            </ul>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Achivement}}
+         <div class="border-bl">
+            <h2>ACHIEVEMENT</h2>
+            {{#each Achivement}}
+            <ul>
+               {{#if achivement}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
+               </li>
+               {{/if}}
+            </ul>
+            {{/each}}
+         </div>
+         {{#if Reference}}
+         <div class="border-bl">
+            <h2>REFERENCE</h2>
+            {{#each Reference}}
+            <p class="word-break"><b>{{name}}</b></p>
+            <ul>
+               {{#if jobtitle}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{jobtitle}}</p>
+               </li>
+               {{/if}}
+               {{#if companyname}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{companyname}}</p>
+               </li>
+               {{/if}}
+               {{#if email}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{email}}</p>
+               </li>
+               {{/if}}
+               {{#if phone}}
+               <li class="showPostslong">
+                  <span class="greekCross">➢ </span>
+                  <p class="" style="word-break: break-all;">{{phone}}</p>
+               </li>
+               {{/if}}
+            </ul>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{/if}}{{#if sign}}
+         <div class="border-l">
+            <h2>SIGNATURE</h2>
+            <img style="margin-left: 20px;" width="25%" src="{{sign}}" alt="Signature">
+         </div>
+         {{/if}}
+      </div>
+   </div>
+</body>
+
+</html>

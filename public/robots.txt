@@ -1,0 +1,37 @@
+# Resumes Maker – https://resumesmaker.com
+# AdSense crawlers must be able to read public content pages.
+
+# Google AdSense bots – full access to public pages
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# Search crawlers – index content, skip thin app/account screens
+User-agent: Googlebot
+Allow: /
+Disallow: /login
+Disallow: /register
+Disallow: /my-profile
+Disallow: /my-resume
+Disallow: /updat-resume
+Disallow: /resume-builder
+Disallow: /resume/
+Disallow: /not-found
+
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /register
+Disallow: /my-profile
+Disallow: /my-resume
+Disallow: /updat-resume
+Disallow: /resume-builder
+Disallow: /resume/
+Disallow: /not-found
+
+Sitemap: https://resumesmaker.com/sitemap.xml

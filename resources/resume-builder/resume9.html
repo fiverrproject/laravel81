@@ -1,0 +1,410 @@
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>Resume 9</title>
+
+   <style>
+      .grid-container {
+         display: flex;
+         /*grid-template-columns: 30% 75%;*/
+      }
+
+      .grid-item {
+         width: 100%;
+         padding: 10px;
+      }
+
+      .grid-container1 {
+         display: grid;
+         grid-template-columns: 50% 50%;
+      }
+
+      .grid-item1 {
+         width: 100%;
+         padding-top: 10px;
+      }
+
+      .grid-container2 {
+         display: grid;
+         grid-template-columns: 33.33% 33.33% 33.33%;
+      }
+
+      .grid-item2 {
+         width: 100%;
+      }
+
+      .head-color {
+         background-color: rgb(30 62 92);
+         border-bottom: 4px solid rgb(2, 238, 255);
+         position: relative;
+      }
+
+      .header-name {
+         font-size: 35px;
+         margin: 35px 0px 0px 0px;
+         color: white;
+         font-weight: 500;
+      }
+
+      .head-title {
+         font-size: 25px;
+         margin: 0px 0px 3px 0px;
+         font-weight: 100;
+      }
+
+      .head-title1 {
+         font-size: 19px;
+         margin: 0px 0px 10px 0px;
+         font-weight: 100;
+         padding-left: 3px;
+      }
+
+      .heading-row {
+         width: 480px;
+         border: 1px solid rgb(2, 238, 255);
+         margin: 10px 0px;
+      }
+
+      .errow {
+         color: black;
+         font-size: 60px;
+         height: 73px;
+      }
+
+      .errow1 {
+         color: rgb(2, 238, 255);
+         font-size: 60px;
+         height: 73px;
+      }
+
+      .box {
+         right: 60px;
+         font-size: 165px;
+         position: absolute;
+         bottom: -75px;
+         color: rgb(30 62 92);
+         z-index: -1;
+      }
+
+      .box1 {
+         right: 60px;
+         font-size: 165px;
+         position: absolute;
+         bottom: -80px;
+         color: rgb(2, 238, 255);
+         z-index: -2;
+      }
+
+      .box2 {
+         right: 73px;
+         font-size: 101px;
+         position: absolute;
+         bottom: -49px;
+         color: rgb(30 62 92);
+         font-weight: bold;
+      }
+
+      .imgs {
+         border: 0px solid rgb(255, 255, 255);
+         border-radius: 50%;
+         width: 80%;
+         margin: 30px;
+      }
+
+      .p-text {
+         word-break: break-all;
+         padding-right: 50px;
+         padding-bottom: 15px;
+      }
+
+      .pl-10 {
+         padding-left: 20px;
+         font-weight: 300;
+         font-style: italic;
+
+      }
+
+      .display-h {
+         display: flex;
+         align-items: center;
+         height: 0px;
+      }
+
+      .line2 {
+         border-bottom: 2px solid black;
+         width: 200px;
+      }
+
+      .m-0-mr-2 {
+         margin: 0px 0px 2px 0px;
+      }
+
+      .m-0 {
+         margin: 0px;
+      }
+
+      .pl-15 {
+         padding-left: 10px;
+      }
+
+      .pl-20 {
+         padding-left: 17px;
+      } .
+
+      .mb-3 {
+         margin-bottom: 3px;
+         margin-top: 12px;
+      }
+
+      .h3-color {
+         color: rgb(30 62 92);
+      }
+
+      .color-muted {
+         color: #454545;
+      }
+
+      .foot-color {
+         background-color: rgb(30 62 92);
+         border-top: 4px solid rgb(2, 238, 255);
+         position: relative;
+      }
+
+      .box3 {
+         right: 60px;
+         font-size: 165px;
+         position: absolute;
+         top: -103px;
+         color: rgb(30 62 92);
+         z-index: -1;
+      }
+
+      .box4 {
+         right: 60px;
+         font-size: 165px;
+         position: absolute;
+         top: -109px;
+         color: rgb(2, 238, 255);
+         z-index: -2;
+      }
+
+      .box5 {
+         right: 73px;
+         font-size: 101px;
+         position: absolute;
+         top: -70px;
+         color: rgb(30 62 92);
+         font-weight: bold;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .width-95 {
+         width: 95%;
+      }
+
+      .width-97 {
+         width: 97%;
+      }
+
+      .font-italic {
+         font-style: italic;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="head-color">
+      <div class="grid-container" style="color: white;">
+         {{#if profilePhoto}}
+         <div class="grid-item">
+            <img class="imgs" style="max-height: 200px;" height="200px" src="{{profilePhoto}}" alt="profilePhoto">
+         </div>
+         {{/if}}
+         <div class="grid-item">
+            <h1 class="header-name">{{Name}}</h1>
+            <h1 class="head-title font-italic">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h1>
+            {{#if DOB}}
+            <h2 class="head-title1 font-italic">Dob : {{DOB}}</h2>
+            {{/if}}
+            <div style="display: flex; align-items: center; height: 0px;">
+               <div class="heading-row"></div>
+               <div class="errow1">➟</div>
+            </div>
+            {{#if Objective}}
+            <p class="p-text" style="text-align: justify;">{{Objective}} </p>
+            {{/if}}
+         </div>
+      </div>
+      <div class="box">◆
+      </div>
+      <div class="box1">◆
+      </div>
+      <div class="box2">―</div>
+   </div>
+   <div style="padding-top: 40px;">
+      <div class="grid-container1">
+         {{#if Education}}
+         <div class="grid-item1 width-97">
+            <h2 class="pl-10 m-0-mr-2 h3-color">Education</h2>
+            <div class="display-h">
+               <div class="line2"></div>
+               <div class="errow">➟</div>
+            </div>
+            {{#each Education}}
+            <p class="pl-10 mb-3 h3-color word-break"><b>{{course}}</b></p>
+            <p class="m-0 pl-20 color-muted word-break">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
+            {{#if percentage}}<p class="m-0 pl-20 color-muted word-break">{{percentage}}%</p>{{/if}}
+            <p class="m-0 pl-20 color-muted word-break">{{yearOfPassing}}</p>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Experience}}
+         <div class="grid-item1 width-97">
+            <h2 class="pl-10 m-0-mr-2 h3-color">Experience</h2>
+            <div class="display-h">
+               <div class="line2"></div>
+               <div class="errow">➟</div>
+            </div>
+            {{#each Experience}}
+            <p class="pl-10 mb-3 h3-color word-break"><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>
+            <p class="m-0 pl-20 color-muted word-break">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
+            {{#if from}}<p class="m-0 pl-20 color-muted word-break">{{from}} {{#if to}} - {{to}}{{/if}}</p>{{/if}}
+            <p class="m-0 pl-20 color-muted word-break">{{role}}</p>
+            <p class="m-0 pl-20 color-muted word-break">{{description}}</p>
+            {{#if present}}<p class="m-0 pl-20 color-muted">Present</p>{{/if}}
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Skills}}
+         <div class="grid-item1 width-97">
+            <h2 class="pl-10 m-0-mr-2 h3-color">Skills</h2>
+            <div class="display-h">
+               <div class="line2"></div>
+               <div class="errow">➟</div>
+            </div>
+            {{#each Skills}}
+            {{#if skillName}}
+            <p class="pl-10 mb-3 h3-color word-break"><b>{{skillName}}</b></p>
+            {{#if expertise}}<p class="m-0 pl-20 color-muted">{{expertise}}%</p>{{/if}}
+            {{/if}}
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Projects}}
+         <div class="grid-item1 width-97">
+            <h2 class="pl-10 m-0-mr-2 h3-color">Projects</h2>
+            <div class="display-h">
+               <div class="line2"></div>
+               <div class="errow">➟</div>
+            </div>
+            {{#each Projects}}
+            <p class="pl-10 mb-3 h3-color word-break"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p>
+            <p class="m-0 pl-20 color-muted word-break">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
+            <p class="m-0 pl-20 color-muted word-break">{{duration}}</p>
+            <p class="m-0 pl-20 color-muted word-break">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Language}}
+         <div class="grid-item1 width-97">
+            <h2 class="pl-10 m-0-mr-2 h3-color">Language</h2>
+            <div class="display-h">
+               <div class="line2"></div>
+               <div class="errow">➟</div>
+            </div>
+            {{#each Language}}
+            <p class="pl-10 mb-3 h3-color word-break"><b>{{name}}</b></p>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Achivement}}
+         <div class="grid-item1 width-97">
+            <h2 class="pl-10 m-0-mr-2 h3-color">Achievement</h2>
+            <div class="display-h">
+               <div class="line2"></div>
+               <div class="errow">➟</div>
+            </div>
+            {{#each Achivement}}
+            <p class="pl-10 mb-3 h3-color word-break"><b>{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</b></p>
+            {{/each}}
+         </div>
+         {{/if}}
+         {{#if Interests}}
+         <div class="grid-item1 width-97">
+            <h2 class="pl-10 m-0-mr-2 h3-color">Interests</h2>
+            <div class="display-h">
+               <div class="line2"></div>
+               <div class="errow">➟</div>
+            </div>
+            {{#each Interests}}
+            <p class="pl-10 mb-3 h3-color word-break"><b>{{hoby}}</b></p>
+            {{/each}}
+         </div>
+         {{/if}}
+
+         {{#if Reference}}
+         <div class="grid-item1 width-97">
+            <h2 class="pl-10 m-0-mr-2 h3-color">Reference</h2>
+            <div class="display-h">
+               <div class="line2"></div>
+               <div class="errow">➟</div>
+            </div>
+            {{#each Reference}}
+            <p class="pl-10 mb-3 h3-color word-break"><b>{{name}}</b></p>
+            <p class="m-0 pl-20 color-muted word-break">{{jobtitle}}</p>
+            <p class="m-0 pl-20 color-muted word-break">{{companyname}}</p>
+            <p class="m-0 pl-20 color-muted word-break">{{email}}</p>
+            <p class="m-0 pl-20 color-muted word-break">{{phone}}</p>
+            {{/each}}
+         </div>
+         {{/if}}
+      </div>
+      {{#if sign}}
+      <div>
+         <h2 class="pl-10 m-0-mr-2 h3-color">Signature</h2>
+         <div class="display-h">
+            <div style="border-bottom: 2px solid black; width:620px;"></div>
+            <div class="errow">➟</div>
+         </div>
+         <img src="{{sign}}" alt="Signature" height="13%" width="20%" style="margin-left: 500px;">
+      </div>
+      {{/if}}
+   </div>
+   <div class="foot-color" style="margin-top: 40px; padding-bottom: 25px;">
+      <div style="color: white;">
+         <h2 class="pl-10">Contact</h2>
+         <div class="grid-container2">
+            {{#if Phone}}
+            <div class="grid-item2" style="border-right: 2px solid white;padding-right: 10px !important;">
+               <p class="pl-10 mb-3"><b>Phone</b></p>
+               <p class="m-0 pl-20 word-break width-95">{{Phone}}</p>
+            </div>
+            {{/if}}
+            {{#if Address}}
+            <div class="grid-item2" style="border-right: 2px solid white;padding-right: 10px !important;">
+               <p class="pl-10 mb-3"><b>Address</b></p>
+               <p class="m-0 pl-20 word-break width-95">{{Address}}</p>
+            </div>
+            {{/if}}
+            {{#if Email}}
+            <div class="grid-item2" style="padding-right: 10px !important;">
+               <p class="pl-10 mb-3"><b>E-mail</b></p>
+               <p class="pl-20 word-break">{{Email}}</p>
+            </div>
+            {{/if}}
+         </div>
+      </div>
+      <div class="box3">◆
+      </div>
+      <div class="box4">◆
+      </div>
+      <div class="box5">―</div>
+   </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 19</title>
+   <link rel="stylesheet" href="myStyle.css">
+   <style>
+      .w-100 {
+         width: 100%;
+      }
+
+      .text-white {
+         color: white;
+      }
+
+      .text-dark {
+         color: black;
+      }
+
+      .bg-light {
+         background-color: white;
+      }
+
+      .main-container {
+         border: 1px solid black;
+         border-radius: 10px;
+         background-color: #091425;
+      }
+
+      /* Profile pic start */
+      .profile-pic-box {
+         background-color: white;
+         border-radius: 0 0 20px 20px;
+         margin: 0px auto;
+         text-align: center;
+         height: 200px;
+         width: 200px;
+      }
+
+      .profile-pic-box img {
+         margin: 15px 0px;
+         border-radius: 20px;
+         height: 170px;
+         width: 170px;
+      }
+
+      .header-table {
+         margin: -3px;
+         width: 100%;
+      }
+
+      .name {
+         color: white;
+         font-family: monospace;
+         font-size: 27px;
+         text-align: center;
+         padding: 20px 0px 0px 0px;
+      }
+
+      .position-name {
+         color: white;
+         font-family: monospace;
+         font-size: 15px;
+         padding-left: 45px;
+      }
+
+      /* Main Section start */
+      .section-table {
+         width: 100%;
+         margin-top: 35px;
+         display: flex;
+      }
+
+      /* Left card start */
+      .left-card {
+         font-family: monospace;
+         width: 60%;
+         border-radius: 0 50px 9px 0;
+         /* padding: 20px; */
+         padding: 20px 0px 20px 10px;
+      }
+
+      .left-card h2 {
+         margin: 20px 0 -9px 0;
+      }
+
+      .left-card h3 {
+         margin-left: 15px;
+      }
+
+      .left-card p {
+         color: #636363;
+         margin-left: 30px;
+         margin-right: 20px;
+         margin-top: 5px;
+         margin-bottom: 5px;
+      }
+
+      .left-card ul li {
+         color: #636363;
+         margin: 0 10px 0px 4px;
+         line-height: 17px;
+      }
+
+      .hr-line-left-card {
+         border-bottom: 2px solid black;
+         width: 90%;
+         margin-left: 1px;
+      }
+
+
+      /* Middle Card start */
+      .middle-card {
+         width: 40%;
+         padding: 20px 20px 66px 20px;
+         font-family: monospace;
+      }
+
+      .middle-card h2 {
+         margin: 20px 0 -7px 0;
+      }
+
+      .middle-card h3 {
+         margin: 10px 0 0 14px;
+      }
+
+      .middle-card p {
+         margin-left: 25px;
+      }
+
+      .hr-line-middle-card {
+         border-bottom: 2px solid white;
+         width: 100%;
+         margin-left: 1px;
+      }
+
+      .big-Dot {
+         font-size: 0;
+         padding: 5px;
+         margin-right: 10px;
+         border-radius: 50%;
+         background-color: white;
+         vertical-align: super;
+
+      }
+
+      /* Right card start */
+      .right-card {
+         width: 5%;
+         border-radius: 50px 0 0 9px;
+      }
+
+      /* Footer start */
+      footer {
+         border-top: 1px solid;
+         border-bottom-left-radius: 9px;
+         border-bottom-right-radius: 9px;
+         width: 100%;
+         background-color: #e7e7e7;
+      }
+
+      .signature-text {
+         margin: 11px 70px 0 0;
+         display: flex;
+         justify-content: end;
+      }
+
+      .imgDiv {
+         display: flex;
+         justify-content: end;
+      }
+
+      .imgDiv img {
+         margin: -27px 58px 0px 0;
+         mix-blend-mode: darken;
+      }
+
+      h3 {
+         margin: 5px 15px 5px 15px !important;
+      }
+
+      ul {
+         margin-top: 5px;
+         margin-bottom: 5px;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .disc li {
+         list-style-type: none;
+         position: relative;
+      }
+
+      .disc li:before {
+         position: absolute;
+         top: -17px;
+         left: -18px;
+         content: '\2022';
+         font-size: 3rem;
+      }
+
+      .disc li p {
+         margin: 10px 0px 10px 15px !important;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="main-container">
+      <table class="header-table">
+         <tr>
+            {{#if profilePhoto}}
+            <td style="text-align: center;">
+               <div class="profile-pic-box">
+                  <img class="imgs" src="{{profilePhoto}}" alt="profilePhoto">
+               </div>
+            </td>
+            <td style="text-align: center;">
+               <div class="name">{{Name}}</div>
+               <div class="name" style="font-size: 15px !important;">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>
+            </td>
+            {{else}}
+            <td style="text-align: center;">
+               <div class="name">{{Name}}</div>
+               <div class="name" style="font-size: 15px !important;">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>
+            </td>
+            {{/if}}
+         </tr>
+      </table>
+
+      <div class="section-table">
+         <!-- Left card start -->
+         <div class="left-card bg-light">
+            <div class="w-100">
+               {{#if Objective}}
+               <div>
+                  <h2>OBJECTIVE</h2>
+                  <hr class="hr-line-left-card">
+                  <p>{{Objective}}</p>
+               </div>
+               {{/if}}
+               {{#if Education}}
+               <div>
+                  <h2>EDUCATION</h2>
+                  <hr class="hr-line-left-card">
+                  {{#each Education}}
+                  <h3>{{course}}</h3>
+                  <ul>
+                     {{#if institute}}<li>{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</li>{{/if}}
+                     {{#if percentage}}<li>{{percentage}}%</li>{{/if}}
+                     {{#if yearOfPassing}}<li>{{yearOfPassing}}</li>{{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+               {{#if Experience}}
+               <div>
+                  <h2>EXPERIENCE</h2>
+                  <hr class="hr-line-left-card">
+                  {{#each Experience}}
+                  <h3>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h3>
+                  <ul>
+                     {{#if organization}}<li>{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
+                     {{#if from}}<li>{{from}} {{#if to}} - {{to}}{{/if}}</li>{{/if}}
+                     {{#if role}}<li>{{role}}</li>{{/if}}
+                     {{#if description}}<li>{{description}}</li>{{/if}}
+                     {{#if present}}<li>Present</li>{{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}{{#if Projects}}
+               <div>
+                  <h2>PROJECTS</h2>
+                  <hr class="hr-line-left-card">
+                  {{#each Projects}}
+                  <h3>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</h3>
+                  <ul>
+                     {{#if roles}}<li>{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li>{{/if}}
+                     {{#if duration}}<li>{{duration}}</li>{{/if}}
+                     {{#if projectDescription}}<li>{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li>{{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}{{#if Achivement}}
+               <div>
+                  <h2>ACHIEVEMENT</h2>
+                  <hr class="hr-line-left-card">
+                  {{#each Achivement}}
+                  <ul>
+                     <li>
+                        {{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}
+                     </li>
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+               {{#if Reference}}
+               <div>
+                  <h2>REFERENCE</h2>
+                  <hr class="hr-line-left-card">
+                  {{#each Reference}}
+                  {{#if name}}<h3>{{name}}</h3>{{/if}}
+                  <ul>
+                     {{#if jobtitle}}<li>{{jobtitle}}</li>{{/if}}
+                     {{#if companyname}}<li>{{companyname}}</li>{{/if}}
+                     {{#if email}}<li class="word-break">{{email}}</li>{{/if}}
+                     {{#if phone}}<li>{{phone}}</li>{{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+            </div>
+         </div>
+         <!-- Left card end -->
+
+         <!-- Middle card start -->
+         <div class="middle-card">
+            <div class="text-white">
+               <div>
+                  <h2>PROFILE INFO</h2>
+                  <hr class="hr-line-middle-card">
+                  <ul class="disc">
+                     {{#if Phone}}
+                     <li>
+                        <p class="word-break">{{Phone}}</p>
+                     </li>
+                     {{/if}}
+                     {{#if DOB}}
+                     <li>
+                        <p class="word-break">{{DOB}}</p>
+                     </li>
+                     {{/if}}
+                     {{#if Email}}
+                     <li>
+                        <p class="word-break">{{Email}}</p>
+                     </li>
+                     {{/if}}
+                     {{#if Address}}
+                     <li>
+                        <p class="word-break">{{Address}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+               </div>
+
+               {{#if Skills}}
+               <div>
+                  <h2>SKILLS</h2>
+                  <hr class="hr-line-middle-card">
+                  {{#each Skills}}
+                  <ul class="disc">
+                     {{#if skillName}}
+                     <li>
+                        <p class="word-break">{{skillName}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Language}}
+               <div>
+                  <h2>LANGUAGE</h2>
+                  <hr class="hr-line-middle-card">
+                  {{#each Language}}
+                  <ul class="disc">
+                     {{#if name}}
+                     <li>
+                        <p class="word-break">{{name}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+
+               {{#if Interests}}
+               <div>
+                  <h2>INTERESTS</h2>
+                  <hr class="hr-line-middle-card">
+                  {{#each Interests}}
+                  <ul class="disc">
+                     {{#if hoby}}
+                     <li>
+                        <p class="word-break">{{hoby}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+            </div>
+         </div>
+         <!-- Middle card end -->
+
+         <!-- Right card start -->
+         <div class="right-card bg-light">
+            <div></div>
+         </div>
+         <!-- Right card end -->
+      </div>
+
+      <!-- Footer start -->
+      {{#if sign}}
+      <footer>
+         <div class="signature">
+            <div class="signature-text">
+               <h2>SIGNATURE</h2>
+            </div>
+            <div class="imgDiv">
+               <img style="height: 120px; width: 120px;" src="{{sign}}" alt="sign">
+            </div>
+         </div>
+      </footer>
+      {{/if}}
+      <!-- Footer end -->
+   </div>
+</body>
+
+</html>

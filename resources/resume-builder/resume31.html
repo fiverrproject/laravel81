@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <title>Resume 31</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      body {
+         margin: 0;
+         padding: 0;
+         /* font-family: system-ui; */
+         font-family: "Lucida Console", "Courier New", monospace;
+      }
+
+      .canvas {
+         background: linear-gradient(293deg,
+               #9dd0c1b3 10%,
+               rgb(228, 225, 224) 41%,
+               rgb(229, 206, 233) 55%,
+               rgb(225, 178, 219) 82%,
+               rgb(229, 162, 212) 89%,
+               rgb(226, 130, 187) 100%,
+               rgb(255, 201, 227) 10%);
+      }
+
+      .arrow {
+         position: relative;
+         width: 200px;
+         background: #896f6fb3;
+         height: auto;
+         line-height: 40px;
+         margin-bottom: 1rem;
+         /* text-align: center; */
+         color: #fff;
+      }
+
+
+      .arrow-right:after {
+         content: "";
+         position: absolute;
+         right: -20px;
+         top: 0;
+         border-top: 20px solid transparent;
+         border-bottom: 20px solid transparent;
+         border-left: 20px solid #896f6fb3;
+      }
+
+      .arrow-right::before {
+         content: "";
+         position: absolute;
+         left: -20px;
+         top: 0;
+         border-top: 20px solid #896f6fb3;
+         border-bottom: 20px solid #896f6fb3;
+         border-left: 20px solid transparent;
+      }
+
+      .d-flex {
+         display: flex;
+      }
+
+      .mt-1 {
+         margin-top: 4px;
+      }
+
+      .fs-2 {
+         margin: 16px 0;
+         font-weight: 300;
+         font-size: 18px;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .container {
+         padding: 30px;
+      }
+
+      .contact {
+         display: inline-block;
+         font-weight: 500;
+         border-top: 3px solid;
+         border-bottom: 1px solid;
+         width: 50%;
+      }
+
+      .contact p {
+         margin: 12px 0;
+      }
+
+      .user-name-and-pic {
+         display: flex;
+         width: 100%;
+         margin: 40px 0 40px 0;
+      }
+
+      .user-name-section {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         width: 60%;
+      }
+
+      .name {
+         font-size: 1.6rem;
+         font-weight: 100;
+         margin: 0;
+      }
+
+      p {
+         margin: 0;
+      }
+
+      .work-name {
+         margin: 4px 0 0 0;
+         font-weight: 100;
+         font-size: 1rem;
+         color: gray;
+      }
+
+      /* p.work-name::first-letter {
+            font-size: 50px;
+            color: #896f6fb3;
+        } */
+
+      .user-pic-section {
+         width: 30%;
+         display: flex;
+         justify-content: right;
+      }
+
+      .img-size {
+         width: 200px;
+         height: 200px;
+         object-fit: cover;
+         border-radius: 50%;
+         /* border: 4px solid;
+            padding: 10px; */
+         box-shadow: 1px 3px 10px gray;
+      }
+
+      .heading {
+         font-size: 25px;
+         font-weight: 600;
+         margin-left: 5px;
+         /* border-top: 3px solid;
+            border-bottom: 1px solid; */
+      }
+
+      .description {
+         word-spacing: 4px;
+         line-height: 28px;
+         font-weight: 200;
+      }
+
+      .text-heading {
+         /* display: inline-block; */
+         font-size: 20px;
+         font-weight: 600;
+         margin: 10px 0 10px 0;
+      }
+
+      .university {
+         font-size: 18px;
+         text-transform: uppercase;
+         font-weight: 400;
+      }
+
+      .year-to-year {
+         font-size: 18px;
+         text-transform: capitalize;
+         font-weight: 400;
+         margin: 0;
+      }
+
+      .left-card {
+         width: 65%;
+         padding: 15px;
+      }
+
+      .right-card {
+         width: 35%;
+         padding: 15px;
+      }
+
+      .top-ul {
+         list-style-type: square;
+         padding-left: 20px !important;
+      }
+
+      .sub-ul {
+         list-style-type: disc;
+         padding-left: 35px !important;
+         margin-top: 0 !important;
+      }
+
+      .mb-div {
+         margin-top: 1.2rem;
+      }
+
+      .mb-2 {
+         margin-bottom: 2rem;
+      }
+
+      .mb-4px {
+         margin-bottom: 4px !important;
+      }
+
+      .font-1 {
+         font-size: 1.4rem;
+      }
+
+      .font-2 {
+         font-size: 1rem;
+      }
+
+      .font-3 {
+         font-size: 0.9rem;
+      }
+
+      .bg-bar {
+         background: rgb(221 97 171) !important;
+      }
+
+      .progress {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 1rem;
+         overflow: hidden;
+         font-size: .75rem;
+         background-color: #e9ecef;
+         border-radius: 0.4rem;
+      }
+
+      .progress-bar {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         justify-content: center;
+         color: #030303;
+         text-align: center;
+         background-color: #007bff;
+         transition: width .6s ease;
+      }
+
+      .icon-width {
+         width: 2rem;
+      }
+
+      .info-width {
+         width: 23rem;
+      }
+
+      .break-word {
+         word-break: break-word;
+      }
+   </style>
+</head>
+
+<body class="canvas">
+   <div class="container">
+      <div>
+         <div class="contact">
+
+            {{#if Phone}}
+            <p class="d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                     <path
+                        d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                     <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                  </svg></span><span class="info-width word-break">{{Phone}}</span></p>
+            {{/if}}
+
+            {{#if DOB}}
+            <p class="d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                     <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                  </svg></span><span class="info-width">{{DOB}}</span></p>
+            {{/if}}
+            {{#if Email}}
+            <p class="d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                     <path
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                  </svg></span> <span class="info-width word-break">{{Email}}</span></p>
+            {{/if}}
+
+            {{#if Address}}
+            <p class="d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                     <path
+                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                     <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                  </svg></span><span class="info-width break-word">{{Address}}</span></p>
+            {{/if}}
+         </div>
+         {{#if profilePhoto}}
+         <div class="user-name-and-pic">
+            <div class="user-name-section">
+               {{#if Name}} <p class="name"><i>{{Name}}</i> </p> {{/if}}
+               {{#if jobTitle}} <p class="work-name">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>{{/if}}
+            </div>           
+            <div class="user-pic-section">
+               <img class="img-size" src="{{profilePhoto}}" alt="profilePhoto">
+            </div>           
+         </div>
+         {{else}}
+            <div class="user-name-and-pic">     
+               <div class="user-name-section" style="width: 100% !important">        
+                  {{#if Name}} <p class="name"><i>{{Name}}</i> </p> {{/if}}
+                  {{#if jobTitle}} <p class="work-name">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>{{/if}}
+               </div>          
+            </div>
+         {{/if}}
+
+        
+      </div>
+      <div class="d-flex">
+
+         <div class="left-card">
+            {{#if Objective}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Objective</p>
+               </div>
+
+               <div style="margin: 15px 0 15px 0;">
+                  <p>{{Objective}}</p>
+               </div>
+            </div>
+            {{/if}}
+
+            {{#if Education}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Education</p>
+               </div>
+
+               {{#each Education}}
+               <div class="mb-div">
+                  <ul class="top-ul" style="margin-bottom:0;">
+                     <li class="font-2 mb-4" style="font-weight:600;"> {{#if course}}{{course}}{{else}}{{degree}}{{/if}} </li>
+                  </ul>
+                  <ul class="sub-ul" style="padding-left:10px;">
+                     {{#if institute}}<li class="font-3 mb-4"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</li>{{else}}{{#if institution}}<li class="font-3 mb-4"> {{institution}}</li>{{/if}}{{/if}}
+                     {{#if percentage}}<li class="font-3 mb-4"> {{percentage}}%</li>{{else}}{{#if grade}}<li class="font-3 mb-4"> {{grade}}</li>{{/if}}{{/if}}
+                     {{#if yearOfPassing}}<li class="font-3 mb-4"> {{yearOfPassing}}</li>{{else}}{{#if startYear}}<li class="font-3 mb-4"> {{startYear}}{{#if endYear}} - {{endYear}}{{/if}}</li>{{/if}}{{/if}}
+                  </ul>
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Experience}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Experience</p>
+               </div>
+
+               {{#each Experience}}
+               <div class="mb-div">
+                  <ul class="top-ul" style="margin-bottom:0;">
+                     {{#if organization}}<li class="font-2 mb-4" style="font-weight:600;"> {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}
+                     </li>{{else}}{{#if company}}<li class="font-2 mb-4" style="font-weight:600;"> {{company}}</li>{{/if}}{{/if}}
+                  </ul>
+                  <ul class="sub-ul" style="padding-left:10px;">
+                     {{#if jobTitle}}<li class="font-3 mb-4"> {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</li>{{else}}{{#if designation}}<li class="font-3 mb-4"> {{designation}}</li>{{/if}}{{/if}}
+                     {{#if from}}<li class="font-3 mb-4"> {{from}} {{#if to}} - {{to}}{{/if}} </li>{{else}}{{#if startDate}}<li class="font-3 mb-4"> {{startDate}}{{#if endDate}} - {{endDate}}{{/if}}</li>{{/if}}{{/if}}
+                     {{#if role}}<li class="font-3 mb-4"> {{role}}</li>{{/if}}
+                     {{#if description}}<li class="font-3 mb-4"> {{description}}</li>{{/if}}
+                     {{#if location}}<li class="font-3 mb-4"> {{location}}</li>{{/if}}
+                     {{#if present}}<li class="font-3">Present</li>{{/if}}
+                  </ul>
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Projects}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Project</p>
+               </div>
+
+               {{#each Projects}}
+               <ul class="top-ul" style="margin-bottom:0;">
+                  {{#if projectTitle}}<li class="font-2 mb-4" style="font-weight:600;"> {{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}
+                  </li>{{else}}{{#if title}}<li class="font-2 mb-4" style="font-weight:600;"> {{title}}</li>{{/if}}{{/if}}
+               </ul>
+               <ul class="sub-ul" style="padding-left:10px;">
+                  {{#if roles}}<li class="font-3 mb-4"> {{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li>{{else}}{{#if role}}<li class="font-3 mb-4"> {{role}}</li>{{/if}}{{/if}}
+                  {{#if duration}}<li class="font-3 mb-4"> {{duration}}</li>{{/if}}
+                  {{#if projectDescription}}<li class="font-3 mb-4"> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li>{{else}}{{#if description}}<li class="font-3 mb-4"> {{description}}</li>{{/if}}{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Achivement}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Achievement</p>
+               </div>
+
+               {{#each Achivement}}
+               <div style="margin-bottom:5px;">
+                  <ul class="top-ul" style="margin-bottom:0;">
+                     <li class="font-2 mb-4"> {{#if achivement}}{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{else}}{{achievement}}{{/if}}{{/if}}
+                     </li>
+                  </ul>
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Reference}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Reference</p>
+               </div>
+
+               {{#each Reference}}
+               <div class="mb-div">
+                  {{#if name}}
+                  <ul class="top-ul" style="margin-bottom:0;">
+                     <li class="font-2 mb-4" style="font-weight:600;"> {{name}}</li>
+                  </ul>
+                  {{/if}}
+
+                  <ul class="sub-ul" style="padding-left:10px;">
+                     {{#if jobtitle}}<li class="font-3 mb-4"> {{jobtitle}}</li>{{else}}{{#if designation}}<li class="font-3 mb-4"> {{designation}}</li>{{/if}}{{/if}}
+                     {{#if companyname}}<li class="font-3 mb-4"> {{companyname}}</li>{{else}}{{#if company}}<li class="font-3 mb-4"> {{company}}</li>{{/if}}{{/if}}
+                     {{#if email}}<li class="font-3 mb-4"> {{email}}</li>{{else}}{{#if contact}}<li class="font-3 mb-4"> {{contact}}</li>{{/if}}{{/if}}
+                     {{#if phone}}<li class="font-3 mb-4"> {{phone}}</li>{{/if}}
+                  </ul>
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            <!-- {{#if sign}}
+                <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 40px;">
+                    <h2 class="color-t"> Signature</h2>
+                    <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+                </div>
+                {{/if}} -->
+
+         </div>
+
+         <div class="right-card">
+
+            {{#if Skills}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Skills</p>
+               </div>
+               {{#each Skills}}
+               <div style="margin-bottom: 1rem;">
+                  {{#if skillName}}
+                  <div>
+                     <div class="font-4" style="margin-top:0; margin-bottom:4px;">{{skillName}}</div>
+                  </div>
+                  {{else}}
+                  {{#if name}}
+                  <div>
+                     <div class="font-4" style="margin-top:0; margin-bottom:4px;">{{name}}</div>
+                  </div>
+                  {{/if}}
+                  {{/if}}
+
+                  {{#if skillName}}
+                  <div class="progress" style="background:#fff">
+                     <div class="progress-bar bg-bar" style="width:{{expertise}}%; color:white; font-weight: 600;">
+                        {{expertise}}%
+                     </div>
+                  </div>
+                  {{else}}
+                  {{#if name}}
+                  <div class="progress" style="background:#fff">
+                     <div class="progress-bar bg-bar" style="width:{{#if expertise}}{{expertise}}{{else}}0{{/if}}%; color:white; font-weight: 600;">
+                        {{#if expertise}}{{expertise}}{{else}}0{{/if}}%
+                     </div>
+                  </div>
+                  {{/if}}
+                  {{/if}}
+
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Language}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Language</p>
+               </div>
+               {{#each Language}}
+               <ul class="top-ul">
+                  <li class="mb-4px font-2" style="word-break: break-all;">{{#if name}}{{name}}{{else}}{{language}}{{#if level}} ({{level}}){{/if}}{{/if}}</li>
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Interests}}
+            <div class="mb-2">
+               <div class="arrow arrow-right">
+                  <p class="heading">Interests</p>
+               </div>
+               {{#each Interests}}
+               <ul class="top-ul">
+                  <li class="mb-4px font-2" style="margin:0;">{{#if hoby}}{{hoby}}{{else}}{{.}}{{/if}}</li>
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+         </div>
+      </div>
+
+      {{#if sign}}
+      <div style="display: flex; flex-direction: column; align-items: flex-end;">
+         <h2 class="color-t"> Signature</h2>
+         <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+      </div>
+      {{/if}}
+   </div>
+</body>
+
+</html>

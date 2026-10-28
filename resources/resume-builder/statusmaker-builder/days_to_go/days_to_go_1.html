@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+   <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100;200;400;500;600;700;800;900&family=Baskervville:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Heebo:wght@900&family=Jost:wght@600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200;300;400;500;600;700&family=Vina+Sans&display=swap"
+      rel="stylesheet">
+   <title>Days To Go 1</title>
+
+   <style>
+      body {
+         margin: 0px;
+      }
+
+      .container {
+         height: 100vh;
+         max-width: 1000px;
+         margin: auto;
+         position: relative;
+      }
+
+      img {
+         width: 100%;
+         height: 100vh;
+         position: absolute;
+         left: 0px;
+         top: 0px;
+         z-index: -1;
+      }
+
+      .day {
+         position: absolute;
+         bottom: 0px;
+         right: 50px;
+         color: #ffffff;
+         font-size: 17rem;
+         font-family: 'Vina Sans', sans-serif !important;
+      }
+
+      .text {
+         font-size: 100px;
+         color: rgb(255, 255, 255);
+         position: absolute;
+         bottom: 116px;
+         padding-left: 20px;
+         font-weight: 700;
+         font-family: 'Albert Sans', sans-serif !important;
+      }
+
+      .text2 {
+         position: absolute;
+         bottom: 64px;
+         width: 60%;
+         text-align: center;
+         margin-left: 30px;
+         background-color: #fae100;
+         color: rgb(255, 255, 255);
+         font-size: 50px;
+         font-weight: 700;
+         font-family: 'Albert Sans', sans-serif !important;
+      }
+
+      .date {
+         color: rgb(255, 255, 255);
+         font-size: 30px;
+         width: 60%;
+         position: absolute;
+         bottom: 0px;
+         padding: 20px;
+         text-align: center;
+         font-family: 'Albert Sans', sans-serif;
+      }
+
+      .d-flex {
+         display: flex;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <div>
+         <div>
+            <img src="{{image}}" alt="Brand logo">
+         </div>
+         <div class="d-flex">
+            <div style="width: 65%;">
+               <p style="position: absolute;bottom:18%;left: 3%;color: white;font-size: 2.5rem;font-family: system-ui;"><span>{{boy_name}}</span> {{#if girls_name}} <span> & {{girls_name}}</span>{{/if}}</p>
+               <div class="text">DAYS TO GO</div>
+               {{#if title}}
+               <div class="text2">{{title}}</div>
+               {{/if}}
+               {{#if date}}
+               <div class="date">{{date}}</div>
+               {{/if}}
+            </div>
+            <div style="width: 35%;">
+               <div class="day">{{day_count}}</div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

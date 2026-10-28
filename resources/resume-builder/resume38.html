@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume 17 revised</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 15px;
+        }
+
+
+        .header {
+            height: 160px;
+            background-color: #f5eaea;
+            margin-top: 15%;
+            position: relative;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .name {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            padding-top: 60px;
+            margin: 0;
+        }
+
+        .job {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .middle-circle {
+            position: absolute;
+            top: -108px;
+            left: 38vw;
+            background-color: white;
+            height: 180px;
+            width: 180px;
+            border: 6px solid rgb(211 192 143);
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .left-resume {
+            width: 65%;
+            padding: 30px;
+        }
+
+        .box {
+            margin-bottom: 35px;
+        }
+
+        .heading {
+            font-size: 1.5rem;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        .sub-heading {
+            font-size: 1.2rem;
+            margin: 11px 0 -8px 0;
+            font-weight: 600;
+        }
+
+        .right-resume {
+            width: 30%;
+            padding: 30px;
+        }
+
+        .sub_heading {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            list-style: none;
+        }
+
+        .dashed {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <div class="header">            
+            <div>
+                {{#if profilePhoto}}
+                <img class="middle-circle" src="{{profilePhoto}}" alt="profilePhoto">
+                {{else}}
+                <img class="middle-circle"
+                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4QBWRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEAAAAAAAAAAAEsAAAAAQAAASwAAAAB/+0ALFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAPHAFaAAMbJUccAQAAAgAEAP/hDIFodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0n77u/JyBpZD0nVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkJz8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0nYWRvYmU6bnM6bWV0YS8nIHg6eG1wdGs9J0ltYWdlOjpFeGlmVG9vbCAxMC4xMCc+CjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczp0aWZmPSdodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyc+CiAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICA8dGlmZjpYUmVzb2x1dGlvbj4zMDAvMTwvdGlmZjpYUmVzb2x1dGlvbj4KICA8dGlmZjpZUmVzb2x1dGlvbj4zMDAvMTwvdGlmZjpZUmVzb2x1dGlvbj4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6eG1wTU09J2h0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8nPgogIDx4bXBNTTpEb2N1bWVudElEPmFkb2JlOmRvY2lkOnN0b2NrOjlmOGM2NzA4LTZjZGItNDE3My1hZmFhLTg2MTMxYjQyYjEyZjwveG1wTU06RG9jdW1lbnRJRD4KICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOjkzNTNjMzAzLWFhMTktNGY2Yi04MDQwLTFkOTc0OWM1YzU5YjwveG1wTU06SW5zdGFuY2VJRD4KIDwvcmRmOkRlc2NyaXB0aW9uPgo8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSd3Jz8+/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxERExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgBaAFoAwERAAIRAQMRAf/EABsAAQADAQEBAQAAAAAAAAAAAAAEBQYDAgEI/8QAOhABAAIBAgMDCQcCBgMAAAAAAAECAwQRBSExEkFRBhNSYWJxkaGxFCIjMoHB0RU0M3JzgpLh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"
+                    alt="profilePhoto">
+                {{/if}}
+                {{#if Name}} <p class="name">{{Name}}</p> {{/if}}
+                {{#if jobTitle}} <p class="job">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p> {{/if}}
+            </div>
+
+        </div>
+
+        <div style="display: flex; margin: 8px 0 ;">
+            <div class="left-resume">
+                {{#if Objective}}
+                <div class="box">
+                    <p class="heading">ABOUT</p>
+                    <p>{{Objective}}</p>
+                </div>
+                {{/if}}
+
+                {{#if Education}}
+                <div class="box">
+                    <p class="heading">EDUCATION</p>
+                    {{#each Education}}
+                    <ul class="dashed">
+                        {{#if course}} <li class="sub_heading"> {{course}}</li> {{/if}}
+                        <div style="padding-left: 20px;list-style: circle;">
+                            {{#if institute}} <li>{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</li> {{/if}}
+                            {{#if percentage}} <li>{{percentage}}</li> {{/if}}
+                            {{#if yearOfPassing}} <li>{{yearOfPassing}}</li> {{/if}}
+                        </div>
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                {{#if Experience}}
+                <div class="box">
+                    <p class="heading">EXPERIENCE</p>
+                    {{#each Experience}}
+                    <ul class="dashed">
+                        {{#if jobTitle}} <li class="sub_heading"> {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</li> {{/if}}
+                        <div style="padding-left: 20px;list-style: circle;">
+                            {{#if organization}} <li>{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li> {{/if}}
+                            {{#if role}} <li>{{role}}</li> {{/if}}
+                            {{#if from}} <li>{{from}} - {{#if to}} {{to}} {{else}} Present {{/if}}</li> {{/if}}
+                            {{#if description}} <li>{{description}}</li> {{/if}}
+                        </div>
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                {{#if Projects}}
+                <div class="box">
+                    <p class="heading">PROJECTS</p>
+                    {{#each Projects}}
+                    <ul class="dashed">
+                        {{#if projectTitle}} <li class="sub_heading"> {{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</li> {{/if}}
+                        <div style="padding-left: 20px;list-style: circle;">
+                            {{#if roles}} <li>{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li> {{/if}}
+                            {{#if duration}} <li>{{duration}}</li> {{/if}}
+                            {{#if projectDescription}} <li>{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li> {{/if}}
+                        </div>
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+
+                {{#if Achivement}}
+                <div class="box">
+                    <p class="heading">ACHIEVEMENT</p>
+                    {{#each Achivement}}
+                    <p>{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                {{#if Reference}}
+                <div class="box">
+                    <p class="heading">REFERENCE</p>
+                    {{#each Reference}}
+                    <ul class="dashed">
+                        {{#if name}} <li class="sub_heading"> {{name}}</li> {{/if}}
+                        <div style="padding-left: 20px;list-style: circle;">
+                            {{#if jobtitle}} <li>{{jobtitle}}</li> {{/if}}
+                            {{#if companyname}} <li>{{companyname}}</li> {{/if}}
+                            {{#if email}} <li>{{email}}</li> {{/if}}
+                            {{#if phone}} <li>{{phone}}</li> {{/if}}
+                        </div>
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+
+                {{#if sign}}
+                <div class="box" style="border-bottom: 1px solid;">
+                    <p class="heading">SIGNATURE</p>
+                    <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+                </div>
+                {{/if}}
+
+            </div>
+            <div class="right-resume" style="border-left: 1px solid;">
+
+                <div class="box" style="border-bottom: 1px solid;">
+                    <p class="heading">CONTACT</p>
+                    {{#if Phone}}
+                    <div style="display: flex; margin: 8px 0 ;">
+                        <div style="width: 12%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#d3c08f"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                            </svg>
+                        </div>
+                        <div style="width: 82%; word-break: break-all;">{{Phone}}</div>
+                    </div>
+                    {{/if}}
+
+                    {{#if DOB}}
+                    <div style="display: flex; margin: 8px 0 ;">
+                        <div style="width: 12%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#d3c08f"
+                                class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                            </svg>
+                        </div>
+                        <div style="width: 82%; word-break: break-all;">{{DOB}}</div>
+                    </div>
+                    {{/if}}
+
+                    {{#if Email}}
+                    <div style="display: flex; margin: 8px 0 ;">
+                        <div style="width: 12%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#d3c08f"
+                                class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z" />
+                                <path
+                                    d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z" />
+                            </svg>
+                        </div>
+                        <div style="width: 82%; word-break: break-all;">{{Email}}</div>
+                    </div>
+                    {{/if}}
+
+                    {{#if Address}}
+                    <div style="display: flex; margin: 8px 0 ;">
+                        <div style="width: 12%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#d3c08f"
+                                class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                            </svg>
+                        </div>
+                        <div style="width: 82%; word-break: break-all;">{{Address}}</div>
+                    </div>
+                    {{/if}}
+                </div>
+
+                {{#if Skills}}
+                <div class="box">
+                    <p class="heading">SKILLS</p>
+                    {{#each Skills}}
+                    <ul class="dashed" style="margin: 0;">
+                        {{#if skillName}} <li style="list-style: circle;margin-left: 15px;">{{skillName}}</li> {{/if}}
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                {{#if Language}}
+                <div class="box">
+                    <p class="heading">LANGUAGE</p>
+                    {{#each Language}}
+                    <ul class="dashed" style="margin: 0;">
+                        {{#if name}} <li style="list-style: circle;margin-left: 15px;  word-break: break-all;">{{name}}</li> {{/if}}
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                {{#if Interests}}
+                <div class="box">
+                    <p class="heading">INTERESTS</p>
+                    {{#each Interests}}
+                    <ul class="dashed" style="margin: 0;">
+                        {{#if hoby}} <li style="list-style: circle;margin-left: 15px">{{hoby}}</li> {{/if}}
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 24</title>
+   <style>
+      .container {
+         border: 5px solid rgb(37, 148, 148);
+         background-color: white;
+      }
+
+      .d-flex {
+         display: flex;
+         margin-bottom: 5px;
+      }
+
+      .col-5 {
+         width: 35%;
+         background-color: rgb(37 148 148 / 45%);
+         margin: 0px 10px 0px 10px;
+      }
+
+      .profile {
+         margin: 1rem 0rem 1rem 0rem;
+         font-family: sans-serif;
+         padding-left: 10px;
+      }
+
+      .profile h1 {
+         font-family: sans-serif;
+         margin: 0px 0px;
+         font-size: 25px;
+      }
+
+      .profile H5 {
+         margin: 0px;
+         font-weight: 100;
+      }
+
+      .profile h4 {
+         /* margin-top: 0px; */
+         /* margin-bottom: 7px; */
+         margin: 0 0 7px -14px;
+      }
+
+      .img {
+         border: 5px solid white;
+         border-radius: 100%;
+         width: 150px;
+         height: 150px;
+         margin: 20px;
+         /* object-fit: contain; */
+         text-align: center;
+      }
+
+      .profile h2 {
+         font-size: 25px;
+      }
+
+      .text-align {
+         text-align: center;
+      }
+
+      .border {
+         border-bottom: solid 2px white;
+         margin-top: 0px;
+      }
+
+      .border1 {
+         border-bottom: solid 2px black;
+         margin: 5px 0 5px 0;
+      }
+
+      .col-7 {
+         width: 60%;
+         border-left: 2px solid black;
+
+      }
+
+      .about {
+         padding: 1rem 1rem 2rem 1rem;
+         font-family: sans-serif;
+         line-break: auto;
+      }
+
+      h3 {
+         margin: 2px 0 2px 0;
+         padding: 0;
+         font-size: 16px;
+      }
+
+      .about h4 {
+         margin: 0;
+         font-weight: 100;
+      }
+
+      .about h5 {
+         margin: 1px 0 2px 0;
+         font-weight: 100;
+         font-size: 12px;
+      }
+
+      .about h6 {
+         font-weight: 100;
+         /* margin-top: 15px; */
+      }
+
+      /* p {
+      font-size: 20px;
+    } */
+
+      .progressbar {
+         background-color: rgb(37 148 148 / 45%);
+         border-radius: 15px;
+      }
+
+
+      ul {
+         padding-left: 25px;
+         margin: 0;
+      }
+
+      li {
+         font-size: 12px;
+         font-weight: 100;
+         padding: 2px 0 2px 0;
+      }
+
+      .skill {
+         background-color: rgb(37, 148, 148);
+         color: white;
+         text-align: center;
+         font-size: 20px;
+         border-radius: 15px;
+      }
+
+      .progress {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 15px;
+         overflow: hidden;
+         font-size: .75rem;
+         background-color: #e9ecef;
+         border-radius: 0.25rem;
+      }
+
+      .progress-bar {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 15px;
+         margin-bottom: 8px !important;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         justify-content: center;
+         color: #030303;
+         text-align: center;
+         background-color: #b0adad;
+         transition: width .6s ease;
+      }
+
+      .second-header {
+         font-size: 15px;
+         font-weight: 500;
+         margin: 0;
+         padding: 0;
+      }
+
+      .pl-5 {
+         padding-left: 5px !important;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container d-flex">
+      <div class="col-5">
+         <div class="profile">
+            {{#if Name}} <h1 class="text-align">{{Name}}</h1> {{/if}}
+            {{#if jobTitle}} <h5 class="text-align">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h5> {{/if}}
+
+            {{#if profilePhoto}}
+            <div class="text-align">
+               <img src="{{profilePhoto}}" class="text-align img" alt="..">
+            </div>
+            {{/if}}
+
+            <h3 class="text-align" style="margin-top: 15px;">CONTACT ME</h3>
+            <ul style="list-style: none; padding: 0;">
+               {{#if Phone}}<li> <span style="width: 1.2rem;">☎</span> {{Phone}} </li> {{/if}}
+               {{#if Email}}<li style="display: flex; word-break: break-all;"> <span style=" width: 1.2rem;"> <svg
+                        height="15px" width="15px" style="margin-right: 4px;" id="Layer_1"
+                        style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="10px"
+                        xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                           <path
+                              d="M67,148.7c11,5.8,163.8,89.1,169.5,92.1c5.7,3,11.5,4.4,20.5,4.4c9,0,14.8-1.4,20.5-4.4c5.7-3,158.5-86.3,169.5-92.1   c4.1-2.1,11-5.9,12.5-10.2c2.6-7.6-0.2-10.5-11.3-10.5H257H65.8c-11.1,0-13.9,3-11.3,10.5C56,142.9,62.9,146.6,67,148.7z" />
+                           <path
+                              d="M455.7,153.2c-8.2,4.2-81.8,56.6-130.5,88.1l82.2,92.5c2,2,2.9,4.4,1.8,5.6c-1.2,1.1-3.8,0.5-5.9-1.4l-98.6-83.2   c-14.9,9.6-25.4,16.2-27.2,17.2c-7.7,3.9-13.1,4.4-20.5,4.4c-7.4,0-12.8-0.5-20.5-4.4c-1.9-1-12.3-7.6-27.2-17.2l-98.6,83.2   c-2,2-4.7,2.6-5.9,1.4c-1.2-1.1-0.3-3.6,1.7-5.6l82.1-92.5c-48.7-31.5-123.1-83.9-131.3-88.1c-8.8-4.5-9.3,0.8-9.3,4.9   c0,4.1,0,205,0,205c0,9.3,13.7,20.9,23.5,20.9H257h185.5c9.8,0,21.5-11.7,21.5-20.9c0,0,0-201,0-205   C464,153.9,464.6,148.7,455.7,153.2z" />
+                        </g>
+                     </svg> </span> <span style="width: 15rem;"> {{Email}}</span> </li> {{/if}}
+
+               {{#if Address}}<li style="margin-bottom: 1.67em; display: flex;"> <span style="width: 1.2rem;"><svg
+                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15px" height="15px"
+                        style="margin-right: 4px;" viewBox="0 0 30 30">
+                        <path
+                           d="M 15 2 A 1 1 0 0 0 14.300781 2.2851562 L 3.3925781 11.207031 A 1 1 0 0 0 3.3554688 11.236328 L 3.3183594 11.267578 L 3.3183594 11.269531 A 1 1 0 0 0 3 12 A 1 1 0 0 0 4 13 L 5 13 L 5 24 C 5 25.105 5.895 26 7 26 L 23 26 C 24.105 26 25 25.105 25 24 L 25 13 L 26 13 A 1 1 0 0 0 27 12 A 1 1 0 0 0 26.681641 11.267578 L 26.666016 11.255859 A 1 1 0 0 0 26.597656 11.199219 L 25 9.8925781 L 25 6 C 25 5.448 24.552 5 24 5 L 23 5 C 22.448 5 22 5.448 22 6 L 22 7.4394531 L 15.677734 2.2675781 A 1 1 0 0 0 15 2 z M 18 15 L 22 15 L 22 23 L 18 23 L 18 15 z">
+                        </path>
+                     </svg> </span> <span style="width: 15rem;">{{Address}} </span></li>{{/if}}
+
+            </ul>
+
+            <!-- <p class="border"></p> -->
+
+            {{#if Skills}}
+            <h3>SKILLS</h3>
+            {{#each Skills}}
+            <div class="d-flax" style="flex-direction: column;">
+               {{#if skillName}}
+               <div style="width: 99%; margin-top: 5px;">
+                  <p class="word-break" style="font-size: 11px; margin: 1px;">{{skillName}}</p>
+               </div>
+               <div class="progress" style="width: 94%; margin-left: 10px;">
+                  <div class="progress-bar bg-danger" style="width:{{expertise}}%">{{expertise}}%</div>
+               </div>
+               {{/if}}
+            </div>
+            {{/each}}
+            {{/if}}
+
+            <!-- <div class="d-flex"> -->
+            {{#if Language}}
+            <div>
+               <h3 style="margin-top:8px !important;">LANGUAGE</h3>
+               {{#each Language}}
+               <div class="d-flex">
+                  <ul style="padding-left: 15px;">
+                     <li class="word-break">{{name}}</li>
+                  </ul>
+               </div>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Interests}}
+            <div>
+               <h3>INTEREST</h3>
+               {{#each Interests}}
+               <ul style="padding-left: 15px;">
+                  <li class="word-break">{{hoby}}</li>
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+            <!-- </div> -->
+
+         </div>
+      </div>
+      <div class="col-7">
+         <div class="about">
+            {{#if Objective}}
+            <h3>OBJECTIVE</h3>
+            <h5>{{Objective}}</h5>
+            <p class="border1"></p>
+            {{/if}}
+
+            {{#if Education}}
+            <h3>EDUCATION</h3>
+            {{#each Education}}
+            {{#if course}} <p class="second-header pl-5"> <b>{{course}}</b></p> {{/if}}
+            <ul>
+               {{#if institute}} <li>{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}} </li> {{/if}}
+               {{#if percentage}} <li>{{percentage}}% </li> {{/if}}
+               {{#if yearOfPassing}} <li>{{yearOfPassing}} </li> {{/if}}
+            </ul>
+            {{/each}}
+            <p class="border1"></p>
+            {{/if}}
+
+            {{#if Experience}}
+            <div class="d-flex" style="justify-content: space-between;">
+               <h3>JOB EXPERIENCE</h3>
+
+            </div>
+            {{#each Experience}}
+            {{#if jobTitle}} <p class="second-header pl-5"><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>{{/if}}
+            <ul>
+               {{#if organization}} <li>{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li> {{/if}}
+               {{#if from}} <li>{{from}} {{#if to}} - {{to}} {{/if}}</li>{{/if}}
+               {{#if role}} <li>{{role}}</li> {{/if}}
+               {{#if description}} <li>{{description}}</li> {{/if}}
+               {{#if present}} <li>Present</li> {{/if}}
+
+            </ul>
+            {{/each}}
+            <p class="border1"></p>
+            {{/if}}
+
+            {{#if Projects}}
+
+            <h3>PROJECTS</h3>
+            {{#each Projects}}
+            {{#if projectTitle}} <p class="second-header pl-5"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p> {{/if}}
+            <ul>
+               {{#if projectDescription}} <li>{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li> {{/if}}
+               {{#if roles}} <li>{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li> {{/if}}
+               {{#if duration}} <li>{{duration}}</li> {{/if}}
+            </ul>
+            {{/each}}
+            <p class="border1"></p>
+            {{/if}}
+            {{#if Achivement}}
+            <h3>ACHIEVEMENT</h3>
+            {{#each Achivement}}
+            <ul>
+               <li style="list-style: none;">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</li>
+            </ul>
+            {{/each}}
+            <p class="border1"></p>
+            {{/if}}
+
+            {{#if Reference}}
+
+            <h3>REFERENCE</h3>
+            {{#each Reference}}
+            {{#if name}} <p class="second-header pl-5"><b>{{name}}</b></p> {{/if}}
+            <ul>
+               {{#if jobtitle}} <li> {{jobtitle}} </li> {{/if}}
+               {{#if companyname}} <li> {{companyname}} </li> {{/if}}
+               {{#if email}} <li> {{email}} </li> {{/if}}
+               {{#if phone}} <li> {{phone}} </li> {{/if}}
+            </ul>
+            {{/each}}
+            <p class="border1"></p>
+            {{/if}}
+         </div>
+
+         {{#if sign}}
+         <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 20px;">
+            <h3 class="pl-10">SIGNATURE</h3>
+            <img width="20%" src="{{sign}}" alt="Signature">
+         </div>
+         {{/if}}
+
+      </div>
+   </div>
+   <!-- </div> -->
+</body>
+
+</html>

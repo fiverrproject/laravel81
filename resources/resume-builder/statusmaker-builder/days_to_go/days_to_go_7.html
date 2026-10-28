@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cookie&family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Dancing+Script:wght@500;600;700&family=Dhurjati&family=Gabarito:wght@400;500;600;700;800;900&family=Heebo:wght@900&family=Jost:wght@600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Marck+Script&family=Nova+Square&family=Oswald:wght@200;300;400;500;600;700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Rubik+Bubbles&family=Vina+Sans&display=swap"
+    rel="stylesheet">
+  <title>Days To Go 7</title>
+
+  <style>
+    body {
+      margin: 0px;
+    }
+
+    .container {
+      height: 100vh;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+
+    .img1 {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: -1;
+    }
+
+
+
+    .day {
+      position: absolute;
+      right: 0;
+      bottom: 20%;
+      width: 70%;
+      text-align: center;
+      color: rgb(132 87 54);
+      font-size: 200px;
+      font-family: 'Dancing Script', sans-serif;
+    }
+
+    .text {
+      font-size: 50px;
+      color: rgb(132 87 54);
+      position: absolute;
+      bottom: 14%;
+      right: 0%;
+      width: 70%;
+      text-align: center;
+      font-family: 'Dancing Script', sans-serif;
+
+    }
+
+
+
+    .date {
+      color: rgb(132 87 54);
+      font-size: 30px;
+      position: absolute;
+      bottom: 10%;
+      right: 0%;
+      width: 70%;
+      text-align: center;
+      font-family: 'Dancing Script', sans-serif;
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+    .name {
+      position: absolute;
+      bottom: 45%;
+      right: 0;
+      width: 70%;
+      text-align: center;
+      color: rgb(132 87 54);
+      font-size: 50px;
+      font-family: 'Dancing Script', sans-serif;
+      padding: 5px;
+    }
+
+    p {
+      margin: 0px;
+      padding-right: 140px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <div>
+        <img src="{{image}}" class="img1" alt="Brand logo">
+      </div>
+      <div class="d-flex">
+        <div>
+          {{#if boy_name}}
+          <div class="name">
+            <p>{{boy_name}}</p>
+            <p>&</p>
+            <p>{{girls_name}}</p>
+          </div>
+          {{/if}}
+
+          <div class="day">
+            <div class="text">
+              <p style="font-size: 8rem;">{{day_count}}</p>
+              <p>DAYS TO GO</p>
+              {{#if date}} <p>{{date}}</p> {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

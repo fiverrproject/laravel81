@@ -1,0 +1,302 @@
+{
+  "global": {
+    "brand": [
+      "resumes maker",
+      "resumesmaker",
+      "resumesmaker.com",
+      "resume maker website"
+    ],
+    "core": [
+      "resume maker",
+      "resume builder",
+      "free resume maker",
+      "free resume builder",
+      "online resume maker",
+      "online resume builder",
+      "resume creator",
+      "CV maker",
+      "CV builder",
+      "curriculum vitae maker",
+      "create resume online",
+      "make a resume",
+      "build a resume",
+      "professional resume maker",
+      "resume maker online free",
+      "resume builder free download",
+      "resume templates free",
+      "free resume templates",
+      "professional resume maker",
+      "online CV maker",
+      "resume maker free PDF",
+      "job ready resume maker",
+      "resume PDF download",
+      "download resume PDF free",
+      "resume maker PDF",
+      "job resume maker",
+      "job application resume",
+      "career resume builder",
+      "modern resume templates",
+      "simple resume maker",
+      "free AI resume builder",
+      "resume builder no sign up",
+      "instant resume download"
+    ]
+  },
+  "pages": {
+    "Home": {
+      "primary": [
+        "free resume maker online",
+        "free resume builder 2026",
+        "online resume maker free",
+        "resume maker with templates",
+        "create professional resume free"
+      ],
+      "secondary": [
+        "resume builder live preview",
+        "one page resume maker",
+        "two page resume builder",
+        "student resume maker free",
+        "entry level resume builder",
+        "executive resume maker",
+        "fresher resume maker",
+        "resume maker for job application",
+        "resume builder no subscription",
+        "resume maker no watermarks"
+      ],
+      "longTail": [
+        "how to make a resume online for free",
+        "free online resume builder with PDF download",
+        "create professional resume online free",
+        "free resume maker with professional templates",
+        "build resume online and download PDF instantly",
+        "resume maker for college students free",
+        "free CV maker online download PDF",
+        "make resume without Microsoft Word",
+        "online resume builder for job seekers",
+        "free resume creator with instant download"
+      ]
+    },
+    "Template": {
+      "primary": [
+        "free resume templates",
+        "resume template download free",
+        "professional resume templates free",
+        "modern resume template"
+      ],
+      "secondary": [
+        "creative resume templates",
+        "simple resume template",
+        "minimalist resume template",
+        "single column resume template",
+        "two column resume template",
+        "executive resume template",
+        "student resume template",
+        "nurse resume template",
+        "teacher resume template",
+        "software engineer resume template",
+        "marketing resume template",
+        "finance resume template"
+      ],
+      "longTail": [
+        "free downloadable resume templates PDF",
+        "professional resume layout templates online",
+        "choose resume template and edit online free",
+        "modern CV templates free download",
+        "clean resume templates for job application"
+      ]
+    },
+    "How-it-works": {
+      "primary": [
+        "how to make a resume",
+        "how to create a resume online",
+        "resume builder steps",
+        "how to build a resume PDF"
+      ],
+      "secondary": [
+        "resume writing process",
+        "fill out resume online",
+        "resume editor tutorial",
+        "download resume step by step"
+      ],
+      "longTail": [
+        "how to make a resume in 15 minutes free",
+        "step by step resume builder guide",
+        "how to create a job resume online for free",
+        "easy way to build a professional resume"
+      ]
+    },
+    "FAQ": {
+      "primary": [
+        "resume maker FAQ",
+        "resume builder help",
+        "free resume maker questions"
+      ],
+      "secondary": [
+        "is resume maker free",
+        "how to download resume PDF",
+        "do I need account for resume builder"
+      ],
+      "longTail": [
+        "is resumes maker really free no hidden fees",
+        "how to download resume as PDF free"
+      ]
+    },
+    "Blog": {
+      "primary": [
+        "resume writing tips",
+        "job search blog",
+        "career advice blog",
+        "interview preparation guide",
+        "cover letter tips"
+      ],
+      "secondary": [
+        "LinkedIn profile tips",
+        "resume summary examples",
+        "resume skills section guide",
+        "behavioral interview questions",
+        "salary negotiation tips"
+      ],
+      "longTail": [
+        "how to write a resume 2026",
+        "beat applicant tracking system resume",
+        "career change resume guide",
+        "first job resume with no experience"
+      ]
+    },
+    "About-us": {
+      "primary": [
+        "about resumes maker",
+        "free resume builder company",
+        "resume maker mission"
+      ],
+      "secondary": [
+        "who makes resumes maker",
+        "free resume tool about us"
+      ],
+      "longTail": [
+        "about free online resume builder resumesmaker.com"
+      ]
+    },
+    "Success-stories": {
+      "primary": [
+        "resume maker reviews",
+        "resume builder testimonials",
+        "resume maker success stories"
+      ],
+      "secondary": [
+        "free resume builder user experience"
+      ],
+      "longTail": [
+        "how people use free resume maker to get jobs"
+      ]
+    },
+    "Contact-us": {
+      "primary": [
+        "resume maker support",
+        "contact resume builder",
+        "resume maker help email"
+      ],
+      "secondary": [
+        "resumes maker customer service",
+        "resume builder contact form"
+      ],
+      "longTail": [
+        "get help with free resume maker account"
+      ]
+    },
+    "Register": {
+      "primary": [
+        "resume maker sign up free",
+        "create resume account free",
+        "register resume builder"
+      ],
+      "secondary": [
+        "free resume maker registration",
+        "save resume online free account"
+      ],
+      "longTail": [
+        "sign up for free resume builder account"
+      ]
+    },
+    "Login": {
+      "primary": [
+        "resume maker login",
+        "resume builder sign in"
+      ],
+      "secondary": [
+        "log in to resume account",
+        "access saved resume profile"
+      ],
+      "longTail": []
+    }
+  },
+  "topicClusters": [
+    {
+      "name": "Resume maker intent",
+      "keywords": [
+        "resume maker",
+        "resume builder",
+        "CV maker",
+        "create resume",
+        "make resume online",
+        "build resume free"
+      ]
+    },
+    {
+      "name": "Free / no cost",
+      "keywords": [
+        "free resume maker",
+        "free resume builder",
+        "no subscription resume builder",
+        "100 percent free resume",
+        "resume maker no paywall"
+      ]
+    },
+    {
+      "name": "Resume formatting & hiring",
+      "keywords": [
+        "applicant tracking system"
+      ]
+    },
+    {
+      "name": "Templates & design",
+      "keywords": [
+        "resume templates",
+        "CV templates",
+        "professional resume design",
+        "modern resume layout",
+        "resume format"
+      ]
+    },
+    {
+      "name": "Download & PDF",
+      "keywords": [
+        "resume PDF download",
+        "download CV PDF",
+        "export resume PDF free",
+        "print ready resume"
+      ]
+    },
+    {
+      "name": "Audience",
+      "keywords": [
+        "student resume",
+        "fresher resume",
+        "career change resume",
+        "executive resume",
+        "internship resume",
+        "remote job resume"
+      ]
+    },
+    {
+      "name": "Alternatives intent",
+      "keywords": [
+        "resume maker online free",
+        "resume builder like Canva free",
+        "Word alternative resume builder",
+        "Google Docs resume alternative",
+        "best resume builder website"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html data-postman-fallbacks="1" lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume 30</title>
+   <style>
+      .two-column {
+         display: flex;
+         background-color: white;
+         height: 100%;
+         font-family: 'Inter', sans-serif;
+         font-family: 'Montserrat', sans-serif;
+      }
+
+      .column1 {
+         width: 40%;
+         background-color: black;
+         padding: 20px;
+         /* text-align: center; */
+      }
+
+      .column1 img {
+         display: block;
+         margin: 50px auto 30px;
+      }
+
+      .column2 {
+         width: 60%;
+         padding: 20px;
+         background-color: black;
+         /* background-color: #f2f2f2; */
+         /* text-align: center; */
+         color: white;
+      }
+
+      .d-flex {
+         display: flex;
+      }
+
+      .column2 h1 {
+         margin-block-start: 3rem;
+         margin-block-end: 0px;
+      }
+
+      .column2 h3 {
+         background-color: #80808061;
+         width: 19%;
+         margin-block-start: 0px;
+         margin-block-end: 0px;
+      }
+
+      .column2 h5 {
+         margin: 1.67em 0px 0px 0px;
+         font-weight: bold;
+      }
+
+      .column2 h6 {
+         font-weight: 100;
+         margin: 0px 0px 0px 0px;
+      }
+
+      .email {
+         margin-right: 2rem;
+         word-break: break-all;
+      }
+
+      .address {
+         word-break: break-word;
+      }
+
+      .column3 {
+         width: 40%;
+         /* background-color: #f2f2f2; */
+      }
+
+      .column4 {
+         width: 60%;
+      }
+
+      .section {
+         color: #000000;
+         word-break: break-word;
+      }
+
+
+
+      .section ul {
+         margin: 0px 0px 0px 0px;
+         padding-left: 15px;
+      }
+
+      .section li {
+         margin: 0px 0px 10px 0px;
+         font-weight: 600;
+      }
+
+      .section2 {
+         height: 100%;
+         color: #000000;
+      }
+
+      .col-4 {
+         width: 30%;
+      }
+
+      .col-8 {
+         width: 68%;
+         margin-left: 2%;
+      }
+
+      .year {
+         margin-block-start: 12px;
+         margin-block-end: 0px;
+         font-weight: 100;
+      }
+
+      .col-8 h4 {
+         margin-block-end: 0px;
+         margin-block-start: 12px;
+         font-family: sans-serif;
+         color: rgb(100, 99, 99);
+      }
+
+      .col-8 h5 {
+         margin-block-start: 0px;
+         margin-block-end: 0px;
+         font-weight: 100;
+         margin-block-end: 0px;
+         font-family: sans-serif;
+         color: rgb(100, 99, 99);
+      }
+
+      .col-8 h6 {
+         margin-top: 1px;
+         margin-bottom: 0px;
+         font-weight: 100;
+         font-family: sans-serif;
+         color: rgb(100, 99, 99);
+      }
+
+      .col-4 h5 {
+         margin-block-start: 0px;
+         margin-block-end: 0px;
+         font-weight: 100;
+         margin-block-end: 0px;
+         font-family: sans-serif;
+         color: rgb(100, 99, 99);
+      }
+
+      .mb {
+         margin-bottom: 20px;
+      }
+
+      .col-6 {
+         width: 50%;
+      }
+
+      .progressbar {
+         margin-top: 68px;
+
+      }
+
+      .progressbar h3 {
+         margin: 0px 50px 20px 0px;
+         color: rgb(100, 99, 99);
+         font-weight: 100;
+      }
+
+      .progressbar-dot {
+         background-color: #000000;
+         width: 10px;
+         height: 14px;
+         border: 1px solid black;
+         border-radius: 50%;
+         margin: 2px 10px 0px 0px;
+      }
+
+      .progressbar-dot-gray {
+         background-color: #444242;
+         width: 10px;
+         height: 14px;
+         border: 1px solid #444242;
+         border-radius: 50%;
+         margin: 2px 10px 0px 0px;
+      }
+
+
+      /* ----keyur---- */
+      .header {
+         display: flex;
+         background: black;
+         color: white;
+      }
+
+      .left-part {
+         width: 35%;
+         padding: 10px;
+      }
+
+      .right-part {
+         width: 100%;
+         padding: 10px;
+      }
+
+      .image {
+         width: 200px;
+         height: 220px;
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+      }
+
+      .imgDiv {
+         height: 100%;
+         /* background: rgb(202 199 199 / 14%); */
+         position: relative;
+      }
+
+      .progress {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 1rem;
+         overflow: hidden;
+         font-size: .75rem;
+         background-color: #e9ecef;
+         border-radius: 0.4rem;
+      }
+
+      .bg-white {
+         background-color: #616361 !important;
+      }
+
+      .progress-bar {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         justify-content: center;
+         color: #030303;
+         text-align: center;
+         background-color: #007bff;
+         transition: width .6s ease;
+      }
+
+      .top-ul {
+         list-style-type: square;
+         padding-left: 30px !important;
+      }
+
+      .sub-ul {
+         list-style-type: disc;
+         padding-left: 47px !important;
+         margin-top: 0 !important;
+      }
+
+      .font-1 {
+         font-size: 2.4rem;
+         font-weight: 800 !important;
+      }
+
+      .font-2 {
+         font-size: 1.5rem;
+         font-weight: 600 !important;
+      }
+
+      .font-3 {
+         font-size: 1rem;
+         font-weight: 600 !important;
+      }
+
+      .font-5 {
+         font-size: 1rem;
+         font-weight: 500 !important;
+      }
+
+      .font-4 {
+         font-size: .9rem;
+         font-weight: 200 !important;
+      }
+
+      .job-title {
+         display: inline-block;
+         padding: 3px 6px 3px 6px;
+         background: rgb(202 199 199 / 14%);
+      }
+
+      .contact-info {
+         padding: 10px;
+      }
+
+      .mb-2 {
+         margin-bottom: 2px !important;
+      }
+
+      .mb-4 {
+         margin-bottom: 4px !important;
+      }
+
+      .mb-10 {
+         margin-bottom: 10px !important;
+      }
+
+      .mb-16 {
+         margin-bottom: 1rem !important;
+      }
+
+      .mt-16 {
+         margin-top: 1rem !important;
+      }
+
+      .grid-container1 {
+         display: grid;
+         grid-template-columns: 50% 50%;
+         /* padding: 5px 0; */
+         padding-bottom: 5px;
+         border-bottom: 2px solid #80808094;
+      }
+
+      .grid-item1 {
+         display: flex;
+         /* color: #3c393a; */
+         /* padding: 2px 0 2px 0; */
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="header">
+      {{#if profilePhoto}}
+      <div class="left-part">
+         <div class="imgDiv">
+            <img class="image" src="{{profilePhoto}}" alt="profilePhoto">
+         </div>
+      </div>
+      {{/if}}
+      <div class="right-part" style="color:white">
+         <div class="contact-info" style="color:white">
+            <div class="font-1" style="margin-bottom: 10px;">{{Name}}</div>
+            <div class="font-3 job-title">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>
+
+            <div class="grid-container1" style="margin-top: 1rem;">
+               {{#if Phone}}
+               <div class="grid-item1">
+                  <div class="phone" style="margin-bottom: 1rem; padding-right:10px">
+                     <div class="font-4" style="margin-bottom: 5px; font-weight: 600;">Phone:</div>
+                     <div class="font-4" style="font-weight: 500;">{{Phone}}</div>
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if DOB}}
+               <div class="grid-item1">
+                  <div class="phone" style="margin-bottom: 1rem; padding-right: 10px">
+                     <div class="font-4" style="margin-bottom: 5px; font-weight: 600;">DOB:</div>
+                     <div class="font-4" style="font-weight: 500;">{{DOB}}</div>
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if Email}}
+               <div class="grid-item1">
+                  <div class="email">
+                     <div class="font-4" style="margin-bottom: 5px; font-weight: 600;">Email:</div>
+                     <div class="font-4" ; style="font-weight: 500;">{{Email}}</div>
+                  </div>
+               </div>
+               {{/if}}
+
+               {{#if Address}}
+               <div class="grid-item1">
+                  <div class="address">
+                     <div class="font-4" style="margin-bottom: 5px; font-weight: 600;">Address:</div>
+                     <div class="font-4" ; style="font-weight: 500;">{{Address}}</div>
+                  </div>
+               </div>
+               {{/if}}
+            </div>
+
+         </div>
+      </div>
+   </div>
+
+   <div class="content d-flex">
+      <div class="left-part" style="background: #e1dada;">
+         <div class="section">
+
+            {{#if Objective}}
+            <div class="education mb-16" style="margin-top: 5px;">
+               <div class="font-2 mb-10">Objective</div>
+               <ul class="top-ul">
+                  <li class="font-5 mb-4">{{Objective}}</li>
+               </ul>
+            </div>
+            {{/if}}
+
+            {{#if Skills}}
+            <div class="education mt-16">
+               <div class="font-2 mb-10">Skills</div>
+               {{#each Skills}}
+               {{#if skillName}}
+               <div class="mb-10 ">
+                  <!-- <div style="width: 40%;"> -->
+                  <div class="font-4" style="margin-top:0">{{skillName}}</div>
+                  <!-- </div> -->
+
+                  <div class="progress" style="width: 95%; background:#fff">
+                     <div class="progress-bar bg-white" style="width:{{expertise}}%; color:white;"><span
+                           style="word-break: normal;"> {{expertise}}%</span></div>
+                  </div>
+
+               </div>
+               {{/if}}
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Language}}
+            <div class="education mt-16">
+               <div class="font-2 mb-10">Language</div>
+               <ul class="top-ul">
+                  {{#each Language}}
+                  <li class="font-5 mb-4" style="word-break: break-all">{{name}}</li>
+                  {{/each}}
+               </ul>
+            </div>
+            {{/if}}
+
+            {{#if Interests}}
+            <div class="education mt-16">
+               <div class="font-2 mb-10">Interest</div>
+               <ul class="top-ul">
+                  {{#each Interests}}
+                  <li class="font-5 mb-4">{{hoby}}</li>
+                  {{/each}}
+               </ul>
+            </div>
+            {{/if}}
+         </div>
+      </div>
+
+
+      <div class="right-part">
+         <div class="section2">
+
+            {{#if Education}}
+            <div class="education">
+               <div class="font-2 mb-10">Education</div>
+               {{#each Education}}
+               <ul class="top-ul" style="margin-bottom:0;">
+                  {{#if course}}<li class="font-3 mb-4" style="font-weight:500;"> {{course}}</li>{{/if}}
+               </ul>
+               <ul class="sub-ul">
+                  {{#if institute}}<li class="font-4 mb-4">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</li>{{/if}}
+                  {{#if yearOfPassing}}<li class="font-4 mb-4"> {{yearOfPassing}}</li>{{/if}}
+                  {{#if percentage}}<li class="font-4 mb-4"> {{percentage}}%</li>{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Experience}}
+            <div class="education mt-16">
+               <div class="font-2 mb-10">Work Experience</div>
+               {{#each Experience}}
+               <ul class="top-ul" style="margin-bottom:0;">
+                  {{#if organization}}<li class="font-3 mb-4" style="font-weight:500;"> {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
+               </ul>
+               <ul class="sub-ul">
+                  {{#if jobTitle}}<li class="font-4 mb-4">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</li>{{/if}}
+                  {{#if from}}<li class="font-4 mb-4"> {{from}} {{#if to}} - {{to}}{{/if}}</li>{{/if}}
+                  {{#if role}}<li class="font-4 mb-4"> {{role}}</li>{{/if}}
+                  {{#if description}}<li class="font-4 mb-4">{{description}}</li>{{/if}}
+                  {{#if organization}}<li class="font-4 mb-4">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
+                  {{#if present}}<li class="font-4">Present</li>{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Projects}}
+            <div class="education mt-16">
+               <div class="font-2 mb-10">Projects</div>
+               {{#each Projects}}
+               <ul class="top-ul" style="margin-bottom:0">
+                  <li class="font-3 mb-4" style="font-weight:500;">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</li>
+               </ul>
+
+               <ul class="sub-ul">
+                  {{#if roles}}<li class="font-4 mb-4">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li>{{/if}}
+                  {{#if duration}}<li class="font-4 mb-4">{{duration}}</li>{{/if}}
+                  {{#if projectDescription}}<li class="font-4 mb-4"> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li>{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+
+
+            {{#if Achivement}}
+            <div class="education mt-16">
+               <div class="font-2 mb-10">Achievement</div>
+               <ul class="top-ul">
+                  {{#each Achivement}}
+                  <li class="font-5 mb-4">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</li>
+                  {{/each}}
+               </ul>
+            </div>
+            {{/if}}
+
+            {{#if Reference}}
+            <div class="education mt-16">
+               <div class="font-2 mb-10">Reference</div>
+               {{#each Reference}}
+               {{#if name}}
+               <ul class="top-ul" style="margin-bottom:0;">
+                  <li class="font-3 mb-4">{{name}}</li>
+               </ul>
+               {{/if}}
+
+               <ul class="sub-ul">
+                  {{#if jobtitle}}<li class="font-4 mb-4">{{jobtitle}}</li>{{/if}}
+                  {{#if companyname}}<li class="font-4 mb-4">{{companyname}}</li>{{/if}}
+                  {{#if email}}<li class="font-4 mb-4">{{email}}</li>{{/if}}
+                  {{#if phone}}<li class="font-4 mb-4">{{phone}}</li>{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+            {{#if sign}}
+            <div class="signature" style="text-align: end;">
+               <h3 style="margin-bottom: 3px" class="font-2">Signature</h3>
+               <img width="20%" src="{{sign}}" alt="Signature">
+            </div>
+            {{/if}}
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

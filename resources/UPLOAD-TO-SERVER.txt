@@ -1,0 +1,28 @@
+LARAVEL81 — RESOURCES FOLDER ONLY (no Node, no files outside laravel81)
+=======================================================================
+
+Upload this entire folder to Hostinger:
+
+  FROM (your PC):
+    laravel81/resources/resume-builder/
+
+  TO (server):
+    public_html/server/resources/resume-builder/
+
+Replace all files. Then SSH:
+
+  cd ~/domains/resumemaker.com/public_html/server
+  /opt/alt/php81/usr/bin/php artisan optimize:clear
+
+Templates now accept Postman JSON keys directly:
+  Skills: name + expertise
+  Education: degree + institution
+  Language: language + level
+  Interests: plain strings
+  Projects: title + description
+
+Also upload Laravel PHP (if not done yet) from laravel81/app and routes —
+templates alone fix PDF when raw JSON hits Handlebars.
+
+Re-patch templates locally after edits:
+  cd laravel81 && php resources/patch-resume-postman-keys.php

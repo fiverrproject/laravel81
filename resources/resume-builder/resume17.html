@@ -1,0 +1,481 @@
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>Resume 17</title>
+   <style>
+      .imgs {
+         border: 0px solid rgb(255, 255, 255);
+         border-radius: 50%;
+         width: 160px;
+         margin: 25px 30px 25px 50px;
+         height: 160px;
+      }
+
+      .p-10 {
+         padding-left: 10px;
+      }
+
+      .p-30 {
+         padding-left: 30px;
+      }
+
+      .p-20 {
+         padding-left: 23px;
+      }
+
+      .m-0 {
+         margin: 0px;
+      }
+
+      .mt-mb-5 {
+         margin-top: 6px;
+         /* margin-bottom: 2px; */
+      }
+
+      .p-15 {
+         padding-left: 15px;
+      }
+
+      .m-4 {
+         margin: 5px 0px;
+      }
+
+      .m-10 {
+         margin: 10px 0px;
+      }
+
+      .color-erow {
+         color: #042757e8 !important;
+         padding: 3px 1px 3px 5px !important;
+         background-color: white !important;
+         border-radius: 50% !important;
+         margin-right: 7px !important;
+         margin-left: -8px !important;
+         font-size: smaller !important;
+      }
+
+      .pb-3 {
+         padding-bottom: 3px;
+         padding-left: 25px;
+      }
+
+      .pb-3-pl-35 {
+         padding-bottom: 3px;
+         padding-left: 0px;
+      }
+
+      .pb-3-pl-40 {
+         padding-bottom: 3px;
+         padding-left: 0px;
+      }
+
+      .box {
+         /* padding-top: 50px;
+      padding-bottom: 60px; */
+         background-color: #042757e8 !important;
+         /* padding-left: 37%;
+      position: absolute; */
+         max-width: 547px;
+         min-width: 547px;
+         z-index: 2;
+         max-height: 85px;
+         color: white;
+         /* word-break: break-all; */
+         /* padding-right: 5px; */
+      }
+
+      .font-size-45 {
+         font-size: 30px;
+         padding-right: 10px;
+         text-transform: capitalize;
+         font-weight: 600;
+         /* font-family: system-ui; */
+      }
+
+      .bg-color {
+         background-color: #c4edf4c7 !important;
+      }
+
+      .mt-15 {
+         margin-top: 15px;
+      }
+
+      .box1 {
+         width: 68%;
+         padding-top: 5px;
+         padding-left: 20px;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .resume-timeline {
+         padding-left: 2rem;
+      }
+
+      .resume-timeline:before {
+         content: "";
+         display: inline-block;
+         width: 2px;
+         height: 100%;
+         background: #aab4c3;
+         left: 6px;
+         top: -2px;
+         position: absolute;
+      }
+
+      .position-relative {
+         position: relative !important;
+      }
+
+      .Heading-box {
+         background-color: #042757e8 !important;
+         border-radius: 50px !important;
+         padding: 3px 22px 4px 11px !important;
+         color: white !important;
+      }
+
+      .color-t {
+         color: #042757e8 !important;
+      }
+
+      td {
+         vertical-align: top;
+      }
+
+      .text-justify {
+         text-align: justify !important;
+      }
+
+      .align-inherit {
+         vertical-align: inherit
+      }
+
+      .progress {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         height: 1.0rem !important;
+         overflow: hidden;
+         font-size: 0.75rem;
+         background-color: rgb(204, 204, 204);
+         border-radius: 0.25rem;
+      }
+
+      .bg-danger {
+         background-color: #042757e8 !important;
+      }
+
+      .progress-bar {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         justify-content: center;
+         color: #030303;
+         text-align: center;
+         background-color: #007bff;
+         transition: width .6s ease;
+      }
+
+      .d-flex {
+         display: flex;
+      }
+
+      .color-white {
+         color: white !important;
+      }
+
+      .showPosts {
+         cursor: pointer;
+         list-style-type: none;
+         /* width: 200px; */
+      }
+
+      .greekCross {
+         color: rgb(0, 0, 0);
+         font-size: 15px;
+         width: 1.5em;
+         float: left;
+      }
+
+      .showPosts>p {
+         /* font-size: 15px; */
+         margin-left: 1.5em;
+      }
+   </style>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+   <table style="border-spacing: unset;">
+      {{#if profilePhoto}}
+      <tr class="box" style="background-color: #1a3a66 !important">
+         <td>
+            <img class="imgs" src="{{profilePhoto}}" alt="profilePhoto">
+         </td>
+         <td class="align-inherit">
+            <div class="">
+               <p class="m-0 font-size-45 color-white" style="color: white !important;"> {{Name}}</p>
+               <h3 class="m-0 color-white">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h3>
+            </div>
+         </td>
+      </tr> {{else}}
+      <tr class="box" style="background-color: #1a3a66 !important">
+         <td class="align-inherit" colspan="2">
+            <div style="padding: 15px 0px; text-align: center;">
+               <p class="m-0 font-size-45 color-white" style="color: white !important;"> {{Name}}</p>
+               <h3 class="m-0 color-white">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h3>
+            </div>
+         </td>
+      </tr>
+      {{/if}}
+      <tr>
+         <td class="bg-color" style="background-color: #c4edf4c7 !important">
+            <div class="grid-item">
+               <div class="mt-15">
+                  <h3 class="p-10 m-0"> Profile</h3>
+                  {{#if Phone}}
+                  <p class="p-15 m-4 word-break">☎ {{Phone}}</p>
+                  {{/if}}{{#if DOB}}
+                  <p class="p-15 m-4 word-break"> <span style="font-size: larger;">♕ </span> {{DOB}}</p>
+                  {{/if}}{{#if Email}}
+                  <p class="p-15 m-4 word-break d-flex"> <span>⌧ </span> <span style="padding-left: 5px;">
+                        {{Email}}</span></p>
+                  {{/if}}{{#if Address}}
+                  <p class="p-15 m-4 word-break d-flex">⟰ <span></span> <span style="padding-left: 5px;">
+                        {{Address}}</span></p>
+                  {{/if}}
+               </div>
+               {{#if Language}}
+               <div class="mt-15">
+                  <h3 class="p-10 m-0">Language</h3>
+                  {{#each Language}}
+                  <ul style="padding-left: 12px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                     {{#if name}}
+                     <li class="showPosts">
+                        <span class="greekCross">⇒</span>
+                        <p class="m-0 word-break">{{name}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}{{#if Skills}}
+               <div class="mt-15">
+                  <h3 class="p-10 m-0">Skills</h3>
+                  {{#each Skills}}
+                  {{#if skillName}}
+                  <p class="p-15 m-4 word-break">{{skillName}}</p>
+                  <div class="progress" style="width: 93%; margin-left: 10px; background-color: #dfdfdf !important;">
+                     <div class="progress-bar bg-danger" style="width:{{expertise}}%; color: white !important;">
+                        {{expertise}}%</div>
+                  </div>
+                  {{/if}}
+                  {{/each}}
+               </div>
+               {{/if}}{{#if Interests}}
+               <div class="mt-15">
+                  <h3 class="p-10 m-0">Interests</h3>
+                  {{#each Interests}}
+                  <ul style="padding-left: 12px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                     {{#if hoby}}
+                     <li class="showPosts">
+                        <span class="greekCross">⇒</span>
+                        <p class="m-0 word-break">{{hoby}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}
+            </div>
+         </td>
+         <td class="box1">
+            <div class="grid-item">
+               {{#if Objective}}
+               <div>
+                  <h3 class="m-10"> <span class="Heading-box"> <span class="color-erow"
+                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
+                        </span>Objective </span></h3>
+                  <div class="resume-timeline position-relative">
+                     <p class="m-0 pb-3-pl-35 text-justify">{{Objective}}</p>
+                  </div>
+               </div>
+               {{/if}}{{#if Education}}
+               <div>
+                  <h3 class="m-10"><span class="Heading-box"> <span class="color-erow"
+                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
+                        </span>Education </span></h3>
+                  <div class="resume-timeline position-relative">
+                     {{#each Education}}
+                     <p class="m-0 mt-mb-5 pb-3-pl-35"><b>{{course}}</b></p>
+                     <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                        {{#if institute}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if percentage}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{percentage}}%</p>
+                        </li>
+                        {{/if}}
+                        {{#if yearOfPassing}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{yearOfPassing}}</p>
+                        </li>
+                        {{/if}}
+                     </ul>
+                     {{/each}}
+                  </div>
+               </div>
+               {{/if}}{{#if Experience}}
+               <div>
+                  <h3 class="m-10"><span class="Heading-box"><span class="color-erow"
+                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
+                        </span>Experience </span></h3>
+                  <div class="resume-timeline position-relative">
+                     {{#each Experience}}
+                     <p class="m-0 mt-mb-5 pb-3-pl-35"><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>
+                     <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                        {{#if organization}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if from}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{from}} {{#if to}} - {{to}}{{/if}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if role}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{role}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if description}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{description}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if present}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">Present</p>
+                        </li>
+                        {{/if}}
+                     </ul>
+                     {{/each}}
+                  </div>
+               </div>
+               {{/if}}{{#if Projects}}
+               <div>
+                  <h3 class="m-10"><span class="Heading-box"> <span class="color-erow"
+                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
+                        </span>Projects </span></h3>
+                  <div class="resume-timeline position-relative">
+                     {{#each Projects}}
+                     <p class="m-0 mt-mb-5 pb-3-pl-35"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p>
+                     <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                        {{#if roles}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if duration}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{duration}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if projectDescription}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
+                        </li>
+                        {{/if}}
+                     </ul>
+                     {{/each}}
+                  </div>
+               </div>
+               {{/if}}{{#if Reference}}
+               <div>
+                  <h3 class="m-10"> <span class="Heading-box"><span class="color-erow"
+                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
+                        </span>Reference </span></h3>
+                  <div class="resume-timeline position-relative">
+                     {{#each Reference}}
+                     <p class="m-0 mt-mb-5 pb-3-pl-35"><b>{{name}}</b></p>
+                     <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                        {{#if jobtitle}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{jobtitle}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if companyname}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{companyname}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if email}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{email}}</p>
+                        </li>
+                        {{/if}}
+                        {{#if phone}}
+                        <li class="showPosts">
+                           <span class="greekCross color-t">⇒</span>
+                           <p class="m-0 word-break">{{phone}}</p>
+                        </li>
+                        {{/if}}
+                     </ul>
+                     {{/each}}
+                  </div>
+               </div>
+               {{/if}}{{#if Achivement}}
+               <h3 class="m-10"><span class="Heading-box"><span class="color-erow"
+                        style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
+                     </span>Achievement</span></h3>
+               <div class="resume-timeline position-relative">
+                  {{#each Achivement}}
+                  <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
+                     {{#if achivement}}
+                     <li class="showPosts">
+                        <span class="greekCross color-t">⇒</span>
+                        <p class="m-0 word-break">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
+                     </li>
+                     {{/if}}
+                  </ul>
+                  {{/each}}
+               </div>
+               {{/if}}{{#if sign}}
+               <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 40px;">
+                  <h3 class="m-10">Signature</h3>
+                  <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+               </div>
+               {{/if}}
+            </div>
+         </td>
+      </tr>
+   </table>
+</body>
+
+</html>

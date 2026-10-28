@@ -1,0 +1,626 @@
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>
+      Resume 1
+   </title>
+   <style type="text/css">
+      @charset "utf-8";
+
+      /* CSS Document */
+      body,
+      td,
+      th {
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 12px;
+         color: #000000;
+      }
+
+      body {
+         margin-left: 0px;
+         margin-top: 0px;
+         margin-right: 0px;
+         margin-bottom: 0px;
+      }
+
+      .pad {
+         padding-left: 10px;
+      }
+
+      a:link {
+         color: #000000;
+         text-decoration: none;
+      }
+
+      a:visited {
+         text-decoration: none;
+         color: #000000;
+      }
+
+      a:hover {
+         text-decoration: underline;
+         color: #000000;
+      }
+
+      a:active {
+         text-decoration: none;
+         color: #000000;
+      }
+
+      .word-break {
+         word-break: break-all;
+      }
+
+      .fs-3 {
+         font-size: x-large;
+      }
+   </style>
+</head>
+
+<body>
+   <table align="center" border="0" width="850">
+      <tr>
+         <td>
+            <table border="0" class="bor" width="850">
+               <tr>{{#if Name}}
+                  <td colspan="2" height="60">
+                     <div align="center">
+                        <strong class="fs-3">
+                           {{Name}}
+                        </strong>
+                     </div>
+                  </td>
+                  {{/if}}
+               </tr>
+               <tr>
+                  <td width="48%">
+                     {{#if Email}}
+                     Email ID:{{Email}}
+                     {{/if}}
+                  </td>
+                  {{#if Phone}}
+                  <td width="52%">
+                     <div align="right">
+                        Contact:{{Phone}}
+                     </div>
+                  </td>
+                  {{/if}}
+               </tr>
+               {{#if Objective}}
+               <tr>
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        CAREER OBJECTIVE
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2" style="text-indent:30px; text-align: justify;">
+                     {{Objective}}
+                  </td>
+               </tr>
+               <tr>
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        PERSONAL DETAILS
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td bgcolor="#FFFFFF" colspan="2">
+                     <table align="center" border="0" width="829">
+                        {{#if Name}}
+                        <tr>
+                           <ul>
+                              <td width="331">
+                                 <li>
+                                    Name
+                                 </li>
+                              </td>
+                              <td width="29">
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td width="455">
+                                 {{Name}}
+                              </td>
+                           </ul>
+                        </tr>
+                        {{/if}}
+                        {{#if DOB}}
+                        <tr>
+                           <ul>
+                              <td>
+                                 <li>
+                                    Date of Birth
+                                 </li>
+                              </td>
+                              <td>
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td>
+                                 {{DOB}}
+                              </td>
+                           </ul>
+                        </tr>
+                        {{/if}}
+                        <tr>
+                           <ul>
+                              {{#if Language}}
+                              <td>
+                                 <li>
+                                    Languages
+                                 </li>
+                              </td>
+                              <td>
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+
+                              <td class="word-break">
+                                 {{#each Language}}
+                                 {{name}},
+                                 {{/each}}
+                              </td>
+
+                              {{/if}}
+                           </ul>
+                        </tr>
+                        {{#if Address}}
+                        <tr>
+                           <ul>
+                              <td>
+                                 <li>
+                                    Address
+                                 </li>
+                              </td>
+                              <td>
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td class="word-break">
+                                 {{Address}}
+                              </td>
+                           </ul>
+                        </tr>
+                        {{/if}}
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  {{/if}}
+                  {{#if Education}}
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        EDUCATIONAL PROFILE
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     <table border="1" bordercolor="#000000" width="850">
+
+                        <tr>
+                           <td>
+                              <div align="center">
+                                 <strong>
+                                    Course
+                                 </strong>
+                              </div>
+                           </td>
+                           <td>
+                              <div align="center">
+                                 <strong>
+                                    Educational Institutation
+                                 </strong>
+                              </div>
+                           </td>
+                           <td>
+                              <div align="center">
+                                 <strong>
+                                    Year of pass
+                                 </strong>
+                              </div>
+                           </td>
+                           <td>
+                              <p align="center">
+                                 <strong>
+                                    % of Marks
+                                 </strong>
+                              </p>
+                           </td>
+                        </tr>
+                        {{#each Education}}
+                        <tr align="center" class="word-break">
+                           <td>
+                              {{course}}
+                           </td>
+                           <td>
+                              {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}
+                           </td>
+                           <td>
+                              <div align="center">
+                                 {{yearOfPassing}}
+                              </div>
+                           </td>
+                           <td>
+                              {{percentage}}
+                           </td>
+                        </tr>
+                        {{/each}}
+                     </table>
+                  </td>
+                  {{/if}}
+               </tr>
+               {{#if Experience}}
+               <tr>
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        EXPERIENCE
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     {{#each Experience}}
+                     <table border="1" bordercolor="#000000" width="100%">
+                        <tr>
+                           <td style="width: 25%;">
+                              <div align="center" class="word-break">
+                                 <strong>
+                                    JobTitle
+                                 </strong>
+                              </div>
+                           </td>
+                           <td style="width: 50%;">
+                              <div align="center" class="word-break">
+                                 <strong>
+                                    Organization
+                                 </strong>
+                              </div>
+                           </td>
+                           <td style="width: 18%;">
+                              <div align="center" class="word-break">
+                                 <strong>
+                                    From - To
+                                 </strong>
+                              </div>
+                           </td>
+                           <td style="width: 8%;">
+                              <p align="center" class="word-break">
+                                 <strong>
+                                    Present
+                                 </strong>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="center" class="word-break">
+                              {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}
+                           </td>
+                           <td align="center" class="word-break">
+                              {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}
+                           </td>
+                           {{#if from}}
+                           <td align="center" class="word-break">
+                              {{from}}{{#if to}} - {{to}}{{/if}}
+                           </td>
+                           {{/if}}
+                           {{#if present}}
+                           <td align="center" class="word-break">
+                              Working
+                           </td>
+                           {{else}}
+                           <td align="center" class="word-break">
+                              No
+                           </td>
+                           {{/if}}
+                        </tr>
+                     </table>
+                     {{#if role}}
+                     <p style="margin: 2px;"> <strong>Role</strong></p>
+                     <p style="margin: 2px;">{{role}}</p>
+                     {{/if}}
+                     {{#if description}}
+                     <p style="margin: 2px;"><strong>Description</strong></p>
+                     <p style="margin: 2px;">{{description}}</p>
+                     {{/if}}
+                     {{/each}}
+                  </td>
+               </tr>
+               {{/if}}
+
+               <tr>
+                  {{#if Skills}}
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        TECHNICAL SKILLS
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     <table align="center" border="0" width="100%">
+                        {{#each Skills}}
+                        <tr>
+                           <ul>
+                              {{#if skillName}}
+                              <td width="40%" class="word-break">
+                                 <li>
+                                    {{skillName}}
+                                 </li>
+                              </td>
+                              <td width="4%">
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td width="auto" class="word-break">
+                                 {{expertise}}<b>%</b>
+                              </td>
+                              {{/if}}
+                           </ul>
+                        </tr>
+                        {{/each}}
+                     </table>
+                  </td>
+                  {{/if}}
+               </tr>
+               {{#if Projects}}
+               <tr>
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        PROJECTS
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td bgcolor="#FFFFFF" colspan="2" height="17">
+                     <table align="center" border="0" width="829">
+                        <tr>
+                           <td>
+                              {{#each Projects}}
+                              <table width="831">
+                                 <tr>
+                                    <td width="450">
+                                       <strong>
+                                          Project Title
+                                       </strong>
+                                    </td>
+                                    <td width="30">
+                                       <strong>
+                                          |
+                                       </strong>
+                                    </td>
+                                    <td width="345">
+                                       <strong>
+                                          Duration
+                                       </strong>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="word-break">
+                                       {{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}
+                                    </td>
+                                    <td>
+                                       |
+                                    </td>
+                                    <td class="word-break">
+                                       {{duration}}
+                                    </td>
+                                 </tr>
+                              </table>
+                              {{#if roles}}
+                              <p style="width: 831; margin: 2px;" class="word-break"><strong>Roles</strong></p>
+                              <p style="margin: 2px;"> {{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
+                              {{/if}} {{#if projectDescription}}
+                              <p width="831" style="margin:2px;"><strong>Project Description</strong></p>
+                              <p style="margin:2px;" class="word-break">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
+                              {{/if}}
+                              {{/each}}
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               {{/if}}
+
+               {{#if Interests}}
+               <tr>
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        HOBBIES
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td bgcolor="#FFFFFF" colspan="2">
+                     <table align="center" border="0" width="829">
+                        <tr>
+                           <ul>
+                              {{#each Interests}}
+                              <td width="513">
+                                 <li>
+                                    {{hoby}}
+                                 </li>
+                              </td>
+                              {{/each}}
+                           </ul>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               {{/if}}
+               <tr>
+                  {{#if Achivement}}
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        ACHIEVEMENT
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     <table align="center" border="0" width="100%">
+                        {{#each Achivement}}
+                        <tr>
+                           <ul>
+
+                              <td class="word-break">
+                                 <li>
+                                    {{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}
+                                 </li>
+                              </td>
+
+                           </ul>
+                        </tr>
+                        {{/each}}
+                     </table>
+                  </td>
+                  {{/if}}
+               </tr>
+
+               {{#if Reference}}
+               <tr>
+                  <td bgcolor="#CCCCCC" colspan="2">
+                     <strong>
+                        REFERENCE
+                     </strong>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     {{#each Reference}}
+                     <table align="center" border="0" width="829">
+                        {{#if name}}
+                        <tr>
+                           <ul>
+                              <td width="331">
+                                 <li>
+                                    Name
+                                 </li>
+                              </td>
+                              <td width="29">
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td width="455">
+                                 {{name}}
+                              </td>
+                           </ul>
+                        </tr>
+                        {{/if}}
+                        {{#if jobtitle}}
+                        <tr>
+                           <ul>
+                              <td>
+                                 <li>
+                                    Jobtitle
+                                 </li>
+                              </td>
+                              <td>
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td>
+                                 {{jobtitle}}
+                              </td>
+                           </ul>
+                        </tr>
+                        {{/if}}
+                        {{#if companyname}}
+                        <tr>
+                           <ul>
+                              <td>
+                                 <li>
+                                    Company Name
+                                 </li>
+                              </td>
+                              <td>
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td>
+                                 {{companyname}}
+                              </td>
+                           </ul>
+                        </tr>
+                        {{/if}}
+                        {{#if email}}
+                        <tr>
+                           <ul>
+                              <td>
+                                 <li>
+                                    Email
+                                 </li>
+                              </td>
+                              <td>
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td>
+                                 {{email}}
+                              </td>
+                           </ul>
+                        </tr>
+                        {{/if}}{{#if phone}}
+                        <tr>
+                           <ul>
+                              <td>
+                                 <li>
+                                    Phone
+                                 </li>
+                              </td>
+                              <td>
+                                 <strong>
+                                    :
+                                 </strong>
+                              </td>
+                              <td>
+                                 {{phone}}
+                              </td>
+                           </ul>
+                        </tr>
+                        {{/if}}
+                     </table>
+                     <hr>
+                     {{/each}}
+                  </td>
+               </tr>
+               {{/if}}
+
+
+               {{#if sign}}
+               <tr>
+                  <td bgcolor="#FFFFFF" width="58%">
+                  </td>
+                  <td bgcolor="#FFFFFF" width="42%" style="float: right; margin-right: 60px;">
+                     <p style="float: right;"> <strong>SIGNATURE </strong></p>
+                  </td>
+               </tr>
+               <tr>
+                  <td bgcolor="#FFFFFF" width="58%">
+                  </td>
+                  <td bgcolor="#FFFFFF" width="42%" style="float: right;margin-top: -8px;">
+                     <img src="{{sign}}" alt="Signature"
+                        style="width: 80%;float: right; margin-right: 20px;margin-top: -17px;">
+                  </td>
+               </tr>
+               {{/if}}
+
+            </table>
+         </td>
+      </tr>
+   </table>
+</body>
+
+</html>
