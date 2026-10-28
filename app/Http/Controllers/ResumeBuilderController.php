@@ -52,12 +52,28 @@ class ResumeBuilderController extends Controller
 
         $templatePath = $this->handlebars->resolveTemplatePath((string) ($payload['format'] ?? 'resume31.html'));
         $html = $this->handlebars->render($templatePath, $data);
+
+        @file_put_contents(public_path('LAST_RENDER.html'), $html);
+        @file_put_contents(public_path('LAST_RENDER.meta.json'), json_encode([
+            'time' => date('c'),
+            'resume_engine' => 'laravel',
+            'mapper_version' => ResumeTemplateDataMapper::VERSION,
+            'format' => $payload['format'] ?? null,
+            'html_contains_php_skill' => str_contains($html, 'PHP / Laravel'),
+            'html_contains_education' => str_contains($html, 'State University') || str_contains($html, 'Computer Science'),
+            'html_byte_length' => strlen($html),
+        ], JSON_PRETTY_PRINT));
+
         $this->browser->savePdf($html, $outputPath);
 
         return response()->json($this->resumeApiMeta($data) + [
             'status' => true,
             'result' => $pdffile,
             'pdf_full_path' => $outputPath,
+            'html_preview' => url('LAST_RENDER.html'),
+            'html_contains_skill_sample' => is_array($data['Skills'] ?? null)
+                ? str_contains($html, (string) ($data['Skills'][0]['skillName'] ?? ''))
+                : false,
         ]);
     }
 
@@ -67,10 +83,28 @@ class ResumeBuilderController extends Controller
     protected function parseResumePayload(Request $request): array
     {
         $payload = $request->all();
-        if (($payload === [] || ! isset($payload['format'])) && is_string($request->getContent()) && $request->getContent() !== '') {
-            $decoded = json_decode($request->getContent(), true);
-            if (is_array($decoded)) {
+        $rawBody = $request->getContent();
+        $decoded = is_string($rawBody) && $rawBody !== '' ? json_decode($rawBody, true) : null;
+
+        if (is_array($decoded)) {
+            // Some hosts populate only part of JSON via $request->all(); body is source of truth.
+            if ($payload === [] || ! isset($payload['Skills']) && isset($decoded['Skills'])) {
                 $payload = $decoded;
+            } else {
+                $payload = array_replace_recursive($decoded, $payload);
+            }
+        }
+
+        foreach ([
+            'Skills', 'Education', 'Experience', 'Language', 'Interests',
+            'Projects', 'Reference', 'Achivement', 'Achievement',
+        ] as $sectionKey) {
+            if (! isset($payload[$sectionKey]) || ! is_string($payload[$sectionKey])) {
+                continue;
+            }
+            $section = json_decode(trim($payload[$sectionKey]), true);
+            if (is_array($section)) {
+                $payload[$sectionKey] = $section;
             }
         }
 

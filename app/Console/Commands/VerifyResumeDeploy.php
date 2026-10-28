@@ -32,7 +32,7 @@ class VerifyResumeDeploy extends Command
 
         $handlebars = app_path('Services/HandlebarsService.php');
         $checks['handlebars_calls_mapper'] = is_file($handlebars)
-            && str_contains(file_get_contents($handlebars), 'ResumeTemplateDataMapper::map');
+            && str_contains(file_get_contents($handlebars), 'prepareTemplateData');
 
         $mapperFile = app_path('Services/ResumeTemplateDataMapper.php');
         $checks['mapper_file_on_disk'] = is_file($mapperFile);

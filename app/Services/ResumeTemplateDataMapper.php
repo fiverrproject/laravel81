@@ -8,7 +8,7 @@ namespace App\Services;
  */
 class ResumeTemplateDataMapper
 {
-    public const VERSION = 'laravel-resume-mapper-v7';
+    public const VERSION = 'laravel-resume-mapper-v8';
 
     /**
      * Full pipeline: raw API payload → template-ready array.

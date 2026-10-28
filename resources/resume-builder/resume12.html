@@ -254,7 +254,12 @@
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
                      </li>
-                     {{/if}}
+                     {{else}}{{#if institution}}
+                     <li class="showPosts">
+                        <span class="greekCross">✴</span>
+                        <p class="m-0 word-break">{{institution}}</p>
+                     </li>
+                     {{/if}}{{/if}}
                      {{#if percentage}}
                      <li class="showPosts">
                         <span class="greekCross">✴</span>
@@ -286,13 +291,23 @@
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
                      </li>
-                     {{/if}}
+                     {{else}}{{#if company}}
+                     <li class="showPosts">
+                        <span class="greekCross">✴</span>
+                        <p class="m-0 word-break">{{company}}</p>
+                     </li>
+                     {{/if}}{{/if}}
                      {{#if from}}
                      <li class="showPosts">
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{from}} {{#if to}} - {{to}}{{/if}}</p>
                      </li>
-                     {{/if}}
+                     {{else}}{{#if startDate}}
+                     <li class="showPosts">
+                        <span class="greekCross">✴</span>
+                        <p class="m-0 word-break">{{startDate}}{{#if endDate}} - {{endDate}}{{/if}}</p>
+                     </li>
+                     {{/if}}{{/if}}
                      {{#if role}}
                      <li class="showPosts">
                         <span class="greekCross">✴</span>
@@ -326,7 +341,12 @@
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
                      </li>
-                     {{/if}}
+                     {{else}}{{#if role}}
+                     <li class="showPosts">
+                        <span class="greekCross">✴</span>
+                        <p class="m-0 word-break">{{role}}</p>
+                     </li>
+                     {{/if}}{{/if}}
                      {{#if duration}}
                      <li class="showPosts">
                         <span class="greekCross">✴</span>
@@ -338,7 +358,12 @@
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
                      </li>
-                     {{/if}}
+                     {{else}}{{#if description}}
+                     <li class="showPosts">
+                        <span class="greekCross">✴</span>
+                        <p class="m-0 word-break">{{description}}</p>
+                     </li>
+                     {{/if}}{{/if}}
                   </ul>
 
                   {{/each}}
@@ -348,12 +373,10 @@
                   <h2 class="pl-10">Achievement</h2>
                   {{#each Achivement}}
                   <ul style="padding-left: 22px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                     {{#if achivement}}
                      <li class="showPosts">
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
                      </li>
-                     {{/if}}
                   </ul>
                   {{/each}}
                </div>
@@ -368,19 +391,34 @@
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{jobtitle}}</p>
                      </li>
-                     {{/if}}
+                     {{else}}{{#if designation}}
+                     <li class="showPosts">
+                        <span class="greekCross">✴</span>
+                        <p class="m-0 word-break">{{designation}}</p>
+                     </li>
+                     {{/if}}{{/if}}
                      {{#if companyname}}
                      <li class="showPosts">
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{companyname}}</p>
                      </li>
-                     {{/if}}
+                     {{else}}{{#if company}}
+                     <li class="showPosts">
+                        <span class="greekCross">✴</span>
+                        <p class="m-0 word-break">{{company}}</p>
+                     </li>
+                     {{/if}}{{/if}}
                      {{#if email}}
                      <li class="showPosts">
                         <span class="greekCross">✴</span>
                         <p class="m-0 word-break">{{email}}</p>
                      </li>
-                     {{/if}}
+                     {{else}}{{#if contact}}
+                     <li class="showPosts">
+                        <span class="greekCross">✴</span>
+                        <p class="m-0 word-break">{{contact}}</p>
+                     </li>
+                     {{/if}}{{/if}}
                      {{#if phone}}
                      <li class="showPosts">
                         <span class="greekCross">✴</span>
@@ -490,12 +528,10 @@
                   <h2 style="text-align: center;padding-top: 30px;"><u>Interests</u></h2>
                   {{#each Interests}}
                   <ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                     {{#if hoby}}
                      <li class="showPosts">
                         <span class="greekCross" style="color: white;">✴</span>
-                        <p class="m-0 word-break">{{hoby}}</p>
+                        <p class="m-0 word-break">{{#if hoby}}{{hoby}}{{else}}{{#if hobby}}{{hobby}}{{else}}{{this}}{{/if}}{{/if}}</p>
                      </li>
-                     {{/if}}
                   </ul>
                   {{/each}}
                </div>

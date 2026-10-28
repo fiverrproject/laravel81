@@ -19,8 +19,7 @@ class HandlebarsService
             throw new RuntimeException("Template not found: {$templatePath}");
         }
 
-        // Always map at render time (server must not use raw JSON like old Node).
-        $data = ResumeTemplateDataMapper::map($data);
+        $data = $this->prepareTemplateData($data);
 
         $htmlData = file_get_contents($templatePath);
 
@@ -63,6 +62,86 @@ class HandlebarsService
      */
     public function applyTemplateAliases(array $data): array
     {
+        return $this->prepareTemplateData($data);
+    }
+
+    /**
+     * Guarantee template keys (skillName, course, organization, …) even if an old controller or cached deploy skipped mapping.
+     *
+     * @param  array<string, mixed>  $data
+     * @return array<string, mixed>
+     */
+    public function prepareTemplateData(array $data): array
+    {
+        if (isset($data['Personal Details']) || isset($data['personal_details'])) {
+            return ResumeTemplateDataMapper::fromApiPayload($data);
+        }
+
+        if ($this->payloadLooksUnmapped($data)) {
+            return ResumeTemplateDataMapper::fromApiPayload(
+                $this->rebuildApiPayloadFromFlat($data)
+            );
+        }
+
         return ResumeTemplateDataMapper::map($data);
+    }
+
+    /**
+     * @param  array<string, mixed>  $data
+     */
+    protected function payloadLooksUnmapped(array $data): bool
+    {
+        if (is_array($data['Skills'] ?? null) && isset($data['Skills'][0]) && is_array($data['Skills'][0])) {
+            $first = $data['Skills'][0];
+            if (isset($first['name']) && ($first['skillName'] ?? '') === '') {
+                return true;
+            }
+        }
+
+        if (is_array($data['Education'] ?? null) && isset($data['Education'][0]) && is_array($data['Education'][0])) {
+            $first = $data['Education'][0];
+            if ((isset($first['degree']) || isset($first['institution'])) && ($first['course'] ?? '') === '') {
+                return true;
+            }
+        }
+
+        if (is_array($data['Language'] ?? null) && isset($data['Language'][0])) {
+            $first = $data['Language'][0];
+            if (is_array($first) && isset($first['language']) && ($first['name'] ?? '') === '') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @param  array<string, mixed>  $data
+     * @return array<string, mixed>
+     */
+    protected function rebuildApiPayloadFromFlat(array $data): array
+    {
+        return [
+            'format' => $data['format'] ?? 'resume31.html',
+            'Personal Details' => [
+                'Name' => $data['Name'] ?? '',
+                'Address' => $data['Address'] ?? '',
+                'Email' => $data['Email'] ?? '',
+                'Phone' => $data['Phone'] ?? '',
+                'DOB' => $data['DOB'] ?? '',
+                'jobTitle' => $data['jobTitle'] ?? '',
+            ],
+            'Objective' => ['Objective' => $data['Objective'] ?? ''],
+            'Signature' => ['sign' => $data['sign'] ?? ''],
+            'profilePhoto' => $data['profilePhoto'] ?? '',
+            'Skills' => $data['Skills'] ?? [],
+            'Education' => $data['Education'] ?? [],
+            'Experience' => $data['Experience'] ?? [],
+            'Projects' => $data['Projects'] ?? [],
+            'Reference' => $data['Reference'] ?? [],
+            'Language' => $data['Language'] ?? [],
+            'Achivement' => $data['Achivement'] ?? [],
+            'Interests' => $data['Interests'] ?? [],
+        ];
     }
 }
