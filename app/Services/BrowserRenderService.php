@@ -2,67 +2,81 @@
 
 namespace App\Services;
 
-use Spatie\Browsershot\Browsershot;
+use HeadlessChromium\BrowserFactory;
+use HeadlessChromium\Exception\OperationTimedOut;
+use RuntimeException;
 
+/**
+ * HTML → PDF/JPEG via headless Chrome (pure PHP chrome-php/chrome — no Node/npm).
+ */
 class BrowserRenderService
 {
-    protected function browser(string $html): Browsershot
+    /**
+     * @return array<string, mixed>
+     */
+    protected function browserOptions(int $width = 1920, int $height = 1080): array
     {
-        $shot = Browsershot::html($html)
-            ->noSandbox()
-            ->ignoreHttpsErrors()
-            ->timeout(120)
-            ->setOption('args', [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
+        $chromePath = config('services.chrome.path');
+        if (! empty($chromePath) && ! is_file($chromePath)) {
+            throw new RuntimeException("Chrome not found at {$chromePath}. Set CHROME_PATH in .env");
+        }
+
+        return [
+            'headless' => true,
+            'noSandbox' => true,
+            'windowSize' => [$width, $height],
+            'customFlags' => [
                 '--disable-dev-shm-usage',
                 '--disable-gpu',
                 '--disable-software-rasterizer',
-            ]);
+            ],
+            'sendSyncDefaultTimeout' => 120000,
+            'startupTimeout' => 60,
+        ];
+    }
 
+    protected function createBrowser(int $width = 1920, int $height = 1080)
+    {
         $chromePath = config('services.chrome.path');
-        if (! empty($chromePath) && is_file($chromePath)) {
-            $shot->setChromePath($chromePath);
-        }
+        $factory = new BrowserFactory(
+            ! empty($chromePath) && is_file($chromePath) ? (string) $chromePath : null
+        );
 
-        $nodePath = config('services.chrome.node_path');
-        $npmPath = config('services.chrome.npm_path');
-        $nodeModules = config('services.chrome.node_modules_path');
-
-        if ($nodePath) {
-            $shot->setNodeBinary($nodePath);
-        }
-
-        if ($npmPath) {
-            $shot->setNpmBinary($npmPath);
-        }
-
-        if ($nodeModules && is_dir($nodeModules)) {
-            $shot->setNodeModulePath($nodeModules);
-        }
-
-        return $shot;
+        return $factory->createBrowser($this->browserOptions($width, $height));
     }
 
     public function savePdf(string $html, string $outputPath, array $margins = ['top' => 0, 'right' => 0, 'bottom' => 0, 'left' => 0]): void
     {
         $this->ensureDirectory(dirname($outputPath));
 
-        // Match Node Puppeteer: small/zero margins in px (Browsershot default unit is mm).
-        // Also force @page margin:0 so Chrome does not add white top/bottom bands.
         $html = $this->withPdfPrintStyles($html);
 
-        $this->browser($html)
-            ->margins(
-                $margins['top'] ?? 0,
-                $margins['right'] ?? 0,
-                $margins['bottom'] ?? 0,
-                $margins['left'] ?? 0,
-                'px'
-            )
-            ->format('A4')
-            ->showBackground()
-            ->savePdf($outputPath);
+        $browser = $this->createBrowser();
+        try {
+            $page = $browser->createPage();
+            $page->setHtml($html, 120000);
+
+            $pxToIn = static fn ($px) => max(0.0, (float) $px / 96.0);
+
+            $pdf = $page->pdf([
+                'printBackground' => true,
+                'preferCSSPageSize' => true,
+                'marginTop' => $pxToIn($margins['top'] ?? 0),
+                'marginRight' => $pxToIn($margins['right'] ?? 0),
+                'marginBottom' => $pxToIn($margins['bottom'] ?? 0),
+                'marginLeft' => $pxToIn($margins['left'] ?? 0),
+                'paperWidth' => 8.27,
+                'paperHeight' => 11.69,
+            ]);
+
+            $pdf->saveToFile($outputPath);
+
+            if (! is_file($outputPath) || filesize($outputPath) === 0) {
+                throw new RuntimeException('Chrome did not write PDF: '.$outputPath);
+            }
+        } finally {
+            $browser->close();
+        }
     }
 
     /**
@@ -100,16 +114,28 @@ CSS;
     {
         $this->ensureDirectory(dirname($outputPath));
 
-        $this->browser($html)
-            ->windowSize($width, $height)
-            ->deviceScaleFactor(1)
-            ->setScreenshotType('jpeg', 90)
-            ->save($outputPath);
+        $browser = $this->createBrowser($width, $height);
+        try {
+            $page = $browser->createPage();
+            $page->setHtml($html, 120000);
+
+            $screenshot = $page->screenshot([
+                'format' => 'jpeg',
+                'quality' => 90,
+                'captureBeyondViewport' => true,
+            ]);
+
+            $screenshot->saveToFile($outputPath);
+        } catch (OperationTimedOut $e) {
+            throw new RuntimeException('Screenshot timed out: '.$e->getMessage(), 0, $e);
+        } finally {
+            $browser->close();
+        }
     }
 
     protected function ensureDirectory(string $dir): void
     {
-        if (! is_dir($dir)) {
+        if ($dir !== '' && ! is_dir($dir)) {
             mkdir($dir, 0755, true);
         }
     }

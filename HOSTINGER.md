@@ -1,133 +1,118 @@
-# Hostinger Deploy (PHP 8.1)
+# Hostinger — resumesmaker.com (pure Laravel, no Node)
 
-This folder (`laravel81`) is Laravel **10** and works with **PHP 8.1**.
+## Is there a solution? **Yes.**
 
-Do **not** upload the old `laravel/` folder (that is Laravel 12 / PHP 8.2).
+| Part | Status |
+|------|--------|
+| Resume JSON → PDF mapping (Skills, Education, Language, etc.) | **Done in this repo** — works on local Laravel |
+| Your live site | **Not fixed by uploading `server/app` again** while **Node.js port 3000** still answers the domain |
 
-## 1) hPanel PHP version
+Live proof (test anytime): open **`https://resumesmaker.com/test-api`**
 
-Keep **PHP 8.1** selected (as you already did).
+- **Wrong (what you have now):** `{"success":true,"message":"Port 3000 API is working"}` → **Node**
+- **Correct (Laravel):** `"message":"Laravel resume API is working"` and `"resume_engine":"laravel"`
 
-## 2) Upload code
+Until `/test-api` shows Laravel, PDF will stay broken no matter how many PHP files you upload.
 
-Upload the contents of `laravel81/` to your server folder, e.g.:
+---
 
-`~/domains/resumemaker.com/public_html/server`
+## Your server layout (from your File Manager)
 
-Document root / domain should point to the `public` folder (or use a subdomain that maps to `public`).
-
-## 3) Important: SSH uses different PHP
-
-hPanel can be PHP 8.1, but SSH `php` may still be **7.3**.  
-Always run Composer with **PHP 8.1**:
-
-```bash
-cd ~/domains/resumemaker.com/public_html/server
-
-# Find PHP 8.1 binary (try these)
-php81 -v
-# or
-/opt/alt/php81/usr/bin/php -v
-# or
-ls /opt/alt | grep php
+```text
+public_html/
+├── index.php          ← must load Laravel (see deploy/hostinger/index.php)
+├── .htaccess          ← must route to server/public (see deploy/hostinger/.htaccess)
+└── server/            ← full Laravel project
+    └── public/
+        ├── index.php  ← MUST EXIST (from laravel81/public/index.php)
+        └── .htaccess
 ```
 
-Then install:
+**Common mistake:** `server/public/index.php` missing on server → Laravel never runs.
+
+---
+
+## Fix checklist (do in this order only)
+
+### 1. Stop Node.js (required)
+
+hPanel → Websites → **resumesmaker.com** → **Node.js** → **Stop** or **Delete** the app (port **3000**).
+
+### 2. Three files at `public_html` root
+
+Copy from this repo on your PC to Hostinger:
+
+| PC | Server |
+|----|--------|
+| `deploy/hostinger/index.php` | `public_html/index.php` |
+| `deploy/hostinger/.htaccess` | `public_html/.htaccess` |
+
+### 3. Laravel front controller
+
+| PC | Server |
+|----|--------|
+| `public/index.php` | `public_html/server/public/index.php` |
+
+### 4. Upload / refresh full Laravel `server/` folder
+
+Upload changed app code (at minimum after git pull from your PC):
+
+- `app/Services/` (mapper, Handlebars, ResumeSectionHtmlBuilder, Resume12PostRenderFix)
+- `app/Http/Controllers/ResumeBuilderController.php`
+- `resources/resume-builder/resume12.html`
+- `routes/web.php`, `routes/api.php`
+
+### 5. SSH
 
 ```bash
-# Option A
-php81 /usr/local/bin/composer2 install --no-dev --optimize-autoloader
+cd ~/domains/resumesmaker.com/public_html/server
+/opt/alt/php81/usr/bin/php artisan optimize:clear
+/opt/alt/php81/usr/bin/php artisan resume:verify-deploy
+```
 
-# Option B
+### 6. Verify (browser)
+
+1. `https://resumesmaker.com/test-api` → **Laravel** message (not Port 3000)
+2. Postman `POST https://resumesmaker.com/resume/create` → JSON must include **`resume_engine`** and **`mapper_version`** (not only `status` + `result`)
+
+**Optional (cleaner):** hPanel document root = `public_html/server/public` (then Step 2 can be skipped later; **Step 1 still required**).
+
+---
+
+## No `package.json` / `node_modules` in this Laravel upload
+
+This repo is **PHP only**. There is no Node resume server and no npm install inside `server/`.
+
+PDF and festival/status JPEGs use **chrome-php/chrome** (PHP talks to **Google Chrome** only). Set `CHROME_PATH` in `.env`. No Node.js, no `npm install`, no port-3000 API.
+
+---
+
+## PHP 8.1, Composer, .env, permissions
+
+Keep **PHP 8.1** in hPanel. SSH often uses PHP 7.3 — always:
+
+```bash
 /opt/alt/php81/usr/bin/php /usr/local/bin/composer2 install --no-dev --optimize-autoloader
-```
-
-If `ext-sodium` warning appears:
-
-```bash
-php81 /usr/local/bin/composer2 install --no-dev --ignore-platform-req=ext-sodium
-```
-
-## 4) .env
-
-```bash
-cp .env.example .env
-php81 artisan key:generate
-```
-
-Set at least:
-
-```env
-APP_ENV=production
-APP_DEBUG=false
-APP_URL=https://your-domain.com
-
-OPENAI_API_KEY=your_key
-CHROME_PATH=/usr/bin/google-chrome
-```
-
-## 5) Permissions
-
-```bash
+/opt/alt/php81/usr/bin/php artisan key:generate   # if new .env
 chmod -R 775 storage bootstrap/cache
-chmod -R 775 public/festival public/statusmaker public/invitation_img public/invitation_pdf public/resume-web
 ```
 
-## 6) Upload resume templates (required)
+`.env`: `APP_URL=https://resumesmaker.com`, `CHROME_PATH=/usr/bin/google-chrome` (for PDF).
 
-Templates live in `resources/resume-builder/` (all `resume*.html` files).
+Templates: upload `resources/resume-builder/` → `server/resources/resume-builder/`.
 
-After deploy, on SSH:
+---
 
-```bash
-cd ~/domains/resumemaker.com/public_html/server
-/opt/alt/php81/usr/bin/php artisan resume:sync-templates
-```
+## Postman
 
-Or upload the whole folder from your PC:
+- URL: `POST https://resumesmaker.com/resume/create`
+- Remove `"debug_normalize": true` when you want a PDF (debug mode returns JSON only, no PDF).
 
-`laravel81/resources/resume-builder/` → `public_html/server/resources/resume-builder/`
+---
 
-## 7) Stop old Node API (fixes blank Skills / Education on server)
+## Summary
 
-If **local Laravel works** but **server PDF shows empty Skills, Education, Language, Interests, Projects** while Experience `description` still shows, the server is almost certainly still running the **old Node** app. Node passes raw JSON (`name`, `degree`, `language`) but templates need mapped keys (`skillName`, `course`, `hoby`).
+- **No** — uploading more random new files will not fix it.
+- **Yes** — stop Node + `public_html/index.php` + `server/public/index.php` + existing Laravel code in `server/`.
 
-**Check Postman response after** `POST /api/resume/create`:
-
-| Response | Meaning |
-|----------|---------|
-| Only `{"status":true,"result":"123.pdf"}` | **Node** — stop it |
-| Includes `"resume_engine":"laravel"` and `"mapper_version":"laravel-resume-mapper-v7"` | **Laravel** — mapping is active |
-
-Actions:
-
-1. In Hostinger, **stop Node/PM2** (anything running `index.js` on port 3000).
-2. Point the domain to **`public_html/server/public`** (or use root `index.php` that requires `server/public/index.php`).
-3. Upload these Laravel files (minimum):
-   - `app/Services/ResumeTemplateDataMapper.php`
-   - `app/Services/HandlebarsService.php`
-   - `app/Http/Controllers/ResumeBuilderController.php`
-   - `app/Providers/AppServiceProvider.php`
-4. Clear cache: `/opt/alt/php81/usr/bin/php artisan optimize:clear`
-
-Quick test:
-
-```bash
-curl -sS https://your-domain.com/api/resume/mapper-check
-curl -sS -X POST https://your-domain.com/api/test-api
-```
-
-## 8) Test resume create
-
-```bash
-curl -X POST https://your-domain.com/api/resume/create \
-  -H "Content-Type: application/json" \
-  -d '{"format":"resume25.html","debug_normalize":true,"Personal Details":{"Name":"Test","Email":"a@b.com","Phone":"1","Address":"x","jobTitle":"Dev"},"Skills":[{"name":"PHP","expertise":"90"}],"Education":[{"degree":"BSc","institution":"Uni","startYear":"2013","endYear":"2017"}],"Objective":{"Objective":"Hi"}}'
-```
-
-You should see `mapped.Skills[0].skillName` = `PHP`.
-
-## Note about PDF (Chrome)
-
-PDF/image APIs need Chrome/Chromium + Node (Puppeteer).  
-Shared hosting often blocks this. If PDF fails after Composer succeeds, you need Chrome on the server (VPS) or keep PDF generation on a VPS/Node server.
+Do not run Node for resume API on this domain anymore.

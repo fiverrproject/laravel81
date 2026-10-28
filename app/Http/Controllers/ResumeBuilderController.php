@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Services\BrowserRenderService;
 use App\Services\HandlebarsService;
-use App\Services\ResumeDataNormalizer;
 use App\Services\Resume12PostRenderFix;
+use App\Services\ResumePdfService;
 use App\Services\ResumeSectionHtmlBuilder;
 use App\Services\ResumeTemplateDataMapper;
 use App\Services\ResumeTemplatesInstaller;
@@ -18,47 +18,22 @@ class ResumeBuilderController extends Controller
     public function __construct(
         protected HandlebarsService $handlebars,
         protected BrowserRenderService $browser,
-        protected ResumeDataNormalizer $normalizer
+        protected ResumePdfService $resumePdf
     ) {}
 
     public function createResume(Request $request)
     {
-        $payload = $this->parseResumePayload($request);
-        $data = ResumeTemplateDataMapper::fromApiPayload($payload);
-        $data = $this->coalesceMappedSections($data, $payload);
+        ['payload' => $payload, 'data' => $data] = $this->resumePdf->prepare($request);
 
-        @file_put_contents(public_path('LAST_RAW.json'), json_encode([
-            'time' => date('c'),
-            'payload_top_keys' => array_keys($payload),
-            'has_Skills' => array_key_exists('Skills', $payload),
-            'Skills_type' => gettype($payload['Skills'] ?? null),
-            'mapped_skill_count' => is_array($data['Skills'] ?? null) ? count($data['Skills']) : 0,
-        ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-
-        @file_put_contents(public_path('LAST_MAP.json'), json_encode([
-            'time' => date('c'),
-            'resume_engine' => 'laravel',
-            'mapper_version' => ResumeTemplateDataMapper::VERSION,
-            'format' => $payload['format'] ?? null,
-            'template_count' => ResumeTemplatesInstaller::resumeTemplateCount(),
-            'Skills' => $data['Skills'] ?? null,
-            'Education' => $data['Education'] ?? null,
-            'Language' => $data['Language'] ?? null,
-            'Interests' => $data['Interests'] ?? null,
-            'Projects' => $data['Projects'] ?? null,
-            'Achivement' => $data['Achivement'] ?? null,
-            'template_path' => resource_path('resume-builder/'.($payload['format'] ?? 'resume31.html')),
-            'template_exists' => is_file(resource_path('resume-builder/'.($payload['format'] ?? 'resume31.html'))),
-        ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        $this->writeDeploySnapshot($payload, $data);
 
         if ($request->boolean('debug_normalize') || ! empty($payload['debug_normalize'])) {
             $sections = ResumeSectionHtmlBuilder::injectResume12Sections($data);
             $templatePath = resource_path('resume-builder/'.($payload['format'] ?? 'resume31.html'));
 
-            return response()->json($this->resumeApiMeta($data) + [
+            return response()->json($this->resumePdf->apiMeta($data) + [
                 'status' => true,
                 'mapped' => $data,
-                'post_render_version' => Resume12PostRenderFix::VERSION,
                 'template_resume12_marker' => is_file($templatePath)
                     ? str_contains((string) file_get_contents($templatePath), 'resume12-php-sections-v1')
                     : false,
@@ -66,109 +41,38 @@ class ResumeBuilderController extends Controller
                     static fn ($html) => is_string($html) ? strlen($html) : 0,
                     $sections
                 ),
-                'hint_remove_debug_normalize' => 'Remove debug_normalize from body to generate PDF; debug mode does NOT update PDF.',
             ]);
         }
 
-        $pdffile = (string) round(microtime(true) * 1000).'.pdf';
-        $outputPath = public_path($pdffile);
-
-        $templatePath = $this->handlebars->resolveTemplatePath((string) ($payload['format'] ?? 'resume31.html'));
-        $html = $this->handlebars->render($templatePath, $data);
-
-        if ($this->isResume12Format($payload)) {
-            $html = Resume12PostRenderFix::apply($html, $data, $payload);
-        }
-
+        $html = $this->resumePdf->renderHtml($payload, $data);
         @file_put_contents(public_path('LAST_RENDER.html'), $html);
-        @file_put_contents(public_path('LAST_RENDER.meta.json'), json_encode([
-            'time' => date('c'),
-            'resume_engine' => 'laravel',
-            'mapper_version' => ResumeTemplateDataMapper::VERSION,
-            'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
-            'format' => $payload['format'] ?? null,
-            'html_contains_php_skill' => str_contains($html, 'PHP / Laravel'),
-            'html_contains_education' => str_contains($html, 'State University') || str_contains($html, 'Computer Science'),
-            'post_render_version' => Resume12PostRenderFix::VERSION,
-            'html_has_php_sections_marker' => str_contains($html, 'resume12-php-sections-v1'),
-            'html_byte_length' => strlen($html),
-        ], JSON_PRETTY_PRINT));
 
-        $this->browser->savePdf($html, $outputPath);
+        $pdf = $this->resumePdf->createPdfFile($html);
 
-        return response()->json($this->resumeApiMeta($data) + [
+        return response()->json($this->resumePdf->apiMeta($data) + [
             'status' => true,
-            'result' => $pdffile,
-            'pdf_full_path' => $outputPath,
-            'html_preview' => url('LAST_RENDER.html'),
-            'html_contains_skill_sample' => is_array($data['Skills'] ?? null)
-                ? str_contains($html, (string) ($data['Skills'][0]['skillName'] ?? ''))
-                : false,
+            'result' => $pdf['filename'],
+            'pdf_full_path' => $pdf['path'],
         ]);
     }
 
     /**
-     * @return array<string, mixed>
-     */
-    protected function parseResumePayload(Request $request): array
-    {
-        $payload = $request->all();
-        $rawBody = $request->getContent();
-        $decoded = is_string($rawBody) && $rawBody !== '' ? json_decode($rawBody, true) : null;
-
-        if (is_array($decoded)) {
-            // Some hosts populate only part of JSON via $request->all(); body is source of truth.
-            if ($payload === [] || ! isset($payload['Skills']) && isset($decoded['Skills'])) {
-                $payload = $decoded;
-            } else {
-                $payload = array_replace_recursive($decoded, $payload);
-            }
-        }
-
-        foreach ([
-            'Skills', 'Education', 'Experience', 'Language', 'Interests',
-            'Projects', 'Reference', 'Achivement', 'Achievement',
-        ] as $sectionKey) {
-            if (! isset($payload[$sectionKey]) || ! is_string($payload[$sectionKey])) {
-                continue;
-            }
-            $section = json_decode(trim($payload[$sectionKey]), true);
-            if (is_array($section)) {
-                $payload[$sectionKey] = $section;
-            }
-        }
-
-        return $payload;
-    }
-
-    /**
+     * @param  array<string, mixed>  $payload
      * @param  array<string, mixed>  $data
-     * @param  array<string, mixed>  $payload
-     * @return array<string, mixed>
      */
-    protected function coalesceMappedSections(array $data, array $payload): array
+    protected function writeDeploySnapshot(array $payload, array $data): void
     {
-        $mappedSkills = is_array($data['Skills'] ?? null) ? count($data['Skills']) : 0;
-        $payloadSkills = is_array($payload['Skills'] ?? null) ? count($payload['Skills']) : 0;
-
-        if ($mappedSkills === 0 && $payloadSkills > 0) {
-            return ResumeTemplateDataMapper::fromApiPayload($payload);
-        }
-
-        return $data;
+        @file_put_contents(public_path('LAST_MAP.json'), json_encode([
+            'time' => date('c'),
+            'resume_engine' => 'laravel',
+            'mapper_version' => ResumeTemplateDataMapper::VERSION,
+            'format' => $payload['format'] ?? null,
+            'Skills' => $data['Skills'] ?? null,
+            'Education' => $data['Education'] ?? null,
+            'Language' => $data['Language'] ?? null,
+        ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
 
-    /**
-     * @param  array<string, mixed>  $payload
-     */
-    protected function isResume12Format(array $payload): bool
-    {
-        return stripos((string) ($payload['format'] ?? ''), 'resume12.html') !== false;
-    }
-
-    /**
-     * Open in browser: GET /resume/deploy-fingerprint
-     */
     public function deployFingerprint()
     {
         $template = resource_path('resume-builder/resume12.html');
@@ -180,100 +84,39 @@ class ResumeBuilderController extends Controller
             'mapper_version' => ResumeTemplateDataMapper::VERSION,
             'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
             'post_render_version' => Resume12PostRenderFix::VERSION,
-            'controller_file' => __FILE__,
-            'controller_mtime' => @date('c', filemtime(__FILE__)),
-            'resume12_template_path' => $template,
-            'resume12_template_mtime' => is_file($template) ? date('c', filemtime($template)) : null,
             'resume12_has_php_marker' => str_contains($body, 'resume12-php-sections-v1'),
-            'resume12_has_legacy_education_if' => str_contains($body, '{{#if Education}}'),
-            'resume12_has_php_placeholder' => str_contains($body, 'Resume12SkillsHtml'),
             'base_path' => base_path(),
             'public_path' => public_path(),
-            'expected_post_render_version' => Resume12PostRenderFix::VERSION,
         ]);
     }
 
-    /**
-     * If Postman response is missing these fields, you are NOT hitting Laravel (old Node still running).
-     *
-     * @param  array<string, mixed>  $data
-     * @return array<string, mixed>
-     */
-    protected function resumeApiMeta(array $data): array
-    {
-        $firstSkill = '';
-        if (is_array($data['Skills'] ?? null) && isset($data['Skills'][0]['skillName'])) {
-            $firstSkill = (string) $data['Skills'][0]['skillName'];
-        }
-
-        $meta = [
-            'resume_engine' => 'laravel',
-            'mapper_version' => ResumeTemplateDataMapper::VERSION,
-            'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
-            'post_render_version' => Resume12PostRenderFix::VERSION,
-            'debug_first_skill' => $firstSkill,
-            'debug_education_course' => is_array($data['Education'] ?? null)
-                ? (string) ($data['Education'][0]['course'] ?? '')
-                : '',
-            'template_count' => ResumeTemplatesInstaller::resumeTemplateCount(),
-        ];
-
-        if ($firstSkill === '' && ! empty($data['Skills'] ?? null)) {
-            $meta['mapping_warning'] = 'Skills present but skillName empty — run php artisan resume:verify-deploy on server';
-        }
-
-        return $meta;
-    }
-
-    /**
-     * Live deploy check (Laravel route — not a standalone .php file).
-     * GET /api/resume/mapper-check
-     * GET /resume/mapper-check
-     */
     public function mapperCheck()
     {
-        $mapped = ResumeTemplateDataMapper::map([
-            'Skills' => [['name' => 'PHP / Laravel', 'expertise' => '90']],
-            'Education' => [['degree' => 'BSc CS', 'institution' => 'State Uni', 'startYear' => '2013', 'endYear' => '2017', 'grade' => '3.8']],
-            'Experience' => [['designation' => 'Lead', 'company' => 'Tech', 'startDate' => '2020', 'endDate' => 'Present', 'description' => 'APIs']],
-            'Language' => [['language' => 'English', 'level' => 'Native']],
-            'Interests' => ['Chess', 'Writing'],
-            'Projects' => [['title' => 'Resume Builder', 'role' => 'Lead', 'description' => 'PDF']],
-            'Achivement' => [['title' => 'Award', 'description' => 'Cloud']],
+        $mapped = ResumeTemplateDataMapper::fromApiPayload([
+            'format' => 'resume12.html',
+            'Personal Details' => ['Name' => 'T', 'jobTitle' => 'Dev'],
+            'Skills' => [['name' => 'PHP', 'expertise' => '90']],
+            'Education' => [['degree' => 'BSc', 'institution' => 'Uni', 'startYear' => '2013', 'endYear' => '2017']],
         ]);
 
         return response()->json([
             'status' => true,
             'resume_engine' => 'laravel',
             'mapper_version' => ResumeTemplateDataMapper::VERSION,
-            'controller_file' => __FILE__,
-            'controller_mtime' => @date('c', filemtime(__FILE__)),
-            'base_path' => base_path(),
-            'public_path' => public_path(),
-            'template_count' => ResumeTemplatesInstaller::resumeTemplateCount(),
-            'template_exists' => is_file(resource_path('resume-builder/resume31.html')),
             'debug_first_skill' => $mapped['Skills'][0]['skillName'] ?? null,
-            'debug_education_course' => $mapped['Education'][0]['course'] ?? null,
             'sample_mapped' => $mapped,
-            'node_still_running_hint' => 'If POST /api/resume/create returns only status+result, stop Node/PM2 and route to Laravel public/index.php',
         ]);
     }
 
     public function createCV(Request $request)
     {
-        $pdffile = (string) round(microtime(true) * 1000).'.pdf';
-        $outputPath = public_path($pdffile);
+        ['payload' => $payload, 'data' => $data] = $this->resumePdf->prepare($request);
+        $html = $this->resumePdf->renderHtml($payload, $data);
+        $pdf = $this->resumePdf->createPdfFile($html);
+        $base64 = base64_encode((string) file_get_contents($pdf['path']));
+        @unlink($pdf['path']);
 
-        $data = (new ResumeDataNormalizer)->normalize($request->all(), 'Personal Details');
-        $templatePath = $this->handlebars->resolveTemplatePath((string) $request->input('format'));
-        $html = $this->handlebars->render($templatePath, $data);
-
-        $this->browser->savePdf($html, $outputPath);
-
-        $base64 = base64_encode((string) file_get_contents($outputPath));
-        @unlink($outputPath);
-
-        return response()->json([
+        return response()->json($this->resumePdf->apiMeta($data) + [
             'status' => true,
             'result' => $base64,
         ]);
@@ -281,18 +124,13 @@ class ResumeBuilderController extends Controller
 
     public function createResumeForWeb(Request $request)
     {
-        $pdffile = (string) round(microtime(true) * 1000).'.pdf';
-        $outputPath = public_path('resume-web/'.$pdffile);
+        ['payload' => $payload, 'data' => $data] = $this->resumePdf->prepare($request);
+        $html = $this->resumePdf->renderHtml($payload, $data);
+        $pdf = $this->resumePdf->createPdfFile($html, public_path('resume-web'));
 
-        $data = (new ResumeDataNormalizer)->normalize($request->all(), 'personal_details');
-        $templatePath = $this->handlebars->resolveTemplatePath((string) $request->input('format'));
-        $html = $this->handlebars->render($templatePath, $data);
-
-        $this->browser->savePdf($html, $outputPath);
-
-        return response()->json([
+        return response()->json($this->resumePdf->apiMeta($data) + [
             'status' => true,
-            'result' => $pdffile,
+            'result' => $pdf['filename'],
         ]);
     }
 
@@ -497,5 +335,4 @@ class ResumeBuilderController extends Controller
             'message' => 'Laravel resume API is working',
         ]);
     }
-
 }

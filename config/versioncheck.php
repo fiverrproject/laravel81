@@ -65,7 +65,7 @@ return [
         'name' => 'Festival Post Maker IOS (KAJAL)',
         'playStore' => 'IOS (Apple) Kajol',
         'version' => '0.0.1',
-        'appLink' => 'http://159.89.204.188:3000/',
+        'appLink' => 'https://resumesmaker.com/',
         'flag' => 0,
         'adappShow' => 0,
         'is_hide' => '1',

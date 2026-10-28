@@ -1,14 +1,12 @@
 # Server blank Skills / Education — fix checklist
 
-Local Laravel works. Server PDF shows **Experience description only** and empty Skills, Education, Language, etc.
+**Full Hostinger steps (resumesmaker.com): read [HOSTINGER.md](./HOSTINGER.md) only.**
 
-That pattern means **Postman JSON is reaching the template without field mapping** (same as old **Node.js** `index.js`).
-
-Laravel code is correct locally. The server is either **not running that code** or **missing files**.
+Quick test: `https://resumesmaker.com/test-api` must **not** say `Port 3000 API is working`.
 
 ---
 
-## Step 1 — Postman (mandatory, 10 seconds)
+## Step 1 — Postman (10 seconds)
 
 `POST https://YOUR-DOMAIN/api/resume/create`  
 Header: `Content-Type: application/json`  
@@ -31,7 +29,7 @@ Only 2 keys = **not Laravel**. Uploading Laravel files does nothing until this c
 {
   "status": true,
   "resume_engine": "laravel",
-  "mapper_version": "laravel-resume-mapper-v7",
+  "mapper_version": "laravel-resume-mapper-v9",
   "debug_first_skill": "PHP / Laravel",
   "debug_education_course": "Bachelor of Science in Computer Science",
   "mapped": { ... }

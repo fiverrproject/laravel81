@@ -38,9 +38,6 @@ return [
 
     'chrome' => [
         'path' => env('CHROME_PATH', '/usr/bin/google-chrome'),
-        'node_path' => env('NODE_BINARY_PATH'),
-        'npm_path' => env('NPM_BINARY_PATH'),
-        'node_modules_path' => env('NODE_MODULES_PATH', base_path('node_modules')),
     ],
 
 ];
