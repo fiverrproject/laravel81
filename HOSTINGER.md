@@ -9,8 +9,22 @@
 
 Live proof (test anytime): open **`https://resumesmaker.com/test-api`**
 
-- **Wrong (what you have now):** `{"success":true,"message":"Port 3000 API is working"}` → **Node**
+- **Wrong (what you have now):** `{"success":true,"message":"Port 3000 API is working"}` → **Node** (Laravel upload is ignored)
 - **Correct (Laravel):** `"message":"Laravel resume API is working"` and `"resume_engine":"laravel"`
+
+**Also check Postman response headers** (not only JSON body):
+
+| Header | Laravel (correct) | Node (wrong) |
+|--------|-------------------|--------------|
+| `X-Resume-Engine` | `laravel` | missing |
+| `X-Mapper-Version` | `laravel-resume-mapper-v9` | missing |
+
+**Postman body for `POST /resume/create`:**
+
+| Response | Meaning |
+|----------|---------|
+| Only `"status"` + `"result"` (2 keys) | **Node** — Skills/Language will stay empty |
+| Includes `"resume_engine":"laravel"` and `"debug_first_skill"` | **Laravel** — PDF should match local |
 
 Until `/test-api` shows Laravel, PDF will stay broken no matter how many PHP files you upload.
 
