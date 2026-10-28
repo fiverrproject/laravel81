@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If the file exists under Laravel public/, serve it (PDF, JS, images)
+    RewriteCond %{DOCUMENT_ROOT}/server/public%{REQUEST_URI} -f
+    RewriteRule ^(.*)$ server/public/$1 [L]
+
+    # Everything else → Laravel front controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ server/public/index.php [L]
+</IfModule>
