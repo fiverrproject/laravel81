@@ -25,7 +25,8 @@ class DetectChrome extends Command
             return 0;
         } catch (Throwable $e) {
             $this->error($e->getMessage());
-            $this->warn('Hostinger shared plans often have NO Chrome. Options: VPS, or ask support for Chromium path.');
+            $this->warn('Hostinger often disables shell_exec — set CHROME_PATH manually after: ls -la /usr/bin/chromium*');
+            $this->warn('If no Chromium exists, shared hosting cannot run Chrome PDF; use VPS or ask Hostinger support.');
 
             return 1;
         }
