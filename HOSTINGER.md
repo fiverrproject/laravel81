@@ -97,7 +97,22 @@ cd ~/domains/resumesmaker.com/public_html/server
 
 This repo is **PHP only**. There is no Node resume server and no npm install inside `server/`.
 
-PDF and festival/status JPEGs use **chrome-php/chrome** (PHP talks to **Google Chrome** only). Set `CHROME_PATH` in `.env`. No Node.js, no `npm install`, no port-3000 API.
+PDF uses **chrome-php/chrome** (needs **Chrome or Chromium** on the server).
+
+After deploy, SSH:
+
+```bash
+cd ~/domains/resumesmaker.com/public_html/server
+/opt/alt/php81/usr/bin/php artisan resume:detect-chrome
+```
+
+- If it prints `CHROME_PATH=...`, put that line in **`server/.env`**, then:
+  ```bash
+  /opt/alt/php81/usr/bin/php artisan config:clear
+  ```
+- If detect **fails**, Hostinger shared hosting may not include Chrome — use **VPS**, install `chromium-browser`, or ask Hostinger support for the Chromium binary path.
+
+Do **not** set `CHROME_PATH=/usr/bin/google-chrome` unless that file exists (`ls -la` on SSH).
 
 ---
 
@@ -111,7 +126,7 @@ Keep **PHP 8.1** in hPanel. SSH often uses PHP 7.3 — always:
 chmod -R 775 storage bootstrap/cache
 ```
 
-`.env`: `APP_URL=https://resumesmaker.com`, `CHROME_PATH=/usr/bin/google-chrome` (for PDF).
+`.env`: `APP_URL=https://resumesmaker.com`, `CHROME_PATH=` (auto) or path from `resume:detect-chrome`.
 
 Templates: upload `resources/resume-builder/` → `server/resources/resume-builder/`.
 

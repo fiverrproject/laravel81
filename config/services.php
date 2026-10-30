@@ -37,7 +37,8 @@ return [
     ],
 
     'chrome' => [
-        'path' => env('CHROME_PATH', '/usr/bin/google-chrome'),
+        // Leave empty to auto-detect (recommended on Hostinger). Set only if detect-chrome prints a path.
+        'path' => env('CHROME_PATH'),
     ],
 
 ];

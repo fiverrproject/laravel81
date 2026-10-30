@@ -11,16 +11,13 @@ use RuntimeException;
  */
 class BrowserRenderService
 {
+    protected ?string $resolvedChromePath = null;
+
     /**
      * @return array<string, mixed>
      */
     protected function browserOptions(int $width = 1920, int $height = 1080): array
     {
-        $chromePath = config('services.chrome.path');
-        if (! empty($chromePath) && ! is_file($chromePath)) {
-            throw new RuntimeException("Chrome not found at {$chromePath}. Set CHROME_PATH in .env");
-        }
-
         return [
             'headless' => true,
             'noSandbox' => true,
@@ -29,18 +26,27 @@ class BrowserRenderService
                 '--disable-dev-shm-usage',
                 '--disable-gpu',
                 '--disable-software-rasterizer',
+                '--single-process',
             ],
             'sendSyncDefaultTimeout' => 120000,
-            'startupTimeout' => 60,
+            'startupTimeout' => 90,
         ];
+    }
+
+    protected function chromeBinary(): string
+    {
+        if ($this->resolvedChromePath !== null) {
+            return $this->resolvedChromePath;
+        }
+
+        $this->resolvedChromePath = ChromePathResolver::resolve()['path'];
+
+        return $this->resolvedChromePath;
     }
 
     protected function createBrowser(int $width = 1920, int $height = 1080)
     {
-        $chromePath = config('services.chrome.path');
-        $factory = new BrowserFactory(
-            ! empty($chromePath) && is_file($chromePath) ? (string) $chromePath : null
-        );
+        $factory = new BrowserFactory($this->chromeBinary());
 
         return $factory->createBrowser($this->browserOptions($width, $height));
     }
