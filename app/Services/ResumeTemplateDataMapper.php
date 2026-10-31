@@ -8,7 +8,7 @@ namespace App\Services;
  */
 class ResumeTemplateDataMapper
 {
-    public const VERSION = 'laravel-resume-mapper-v9';
+    public const VERSION = 'laravel-resume-mapper-v10';
 
     /**
      * Full pipeline: raw API payload → template-ready array.
@@ -187,11 +187,16 @@ class ResumeTemplateDataMapper
             }
             $name = (string) ($row['name'] ?? $row['language'] ?? $row['lang'] ?? '');
             $level = (string) ($row['level'] ?? $row['proficiency'] ?? '');
+            $expertise = $row['expertise'] ?? $row['percent'] ?? $row['percentage'] ?? null;
             if ($name === '') {
                 continue;
             }
             $full = $level !== '' ? $name.' ('.$level.')' : $name;
-            $language[] = ['name' => $full, 'language' => $name, 'level' => $level];
+            $entry = ['name' => $full, 'language' => $name, 'level' => $level];
+            if ($expertise !== null && $expertise !== '') {
+                $entry['expertise'] = (string) $expertise;
+            }
+            $language[] = $entry;
         }
         $data['Language'] = $language !== [] ? $language : '';
 

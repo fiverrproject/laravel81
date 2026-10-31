@@ -45,7 +45,11 @@ class ResumePdfService
             $html = Resume12PostRenderFix::apply($html, $data, $payload);
         }
 
-        $html = ResumeWkhtmlCssFix::apply($html);
+        if ($this->isProfessional($payload)) {
+            $html = ResumeProfessionalPrintFix::apply($html);
+        } else {
+            $html = ResumeWkhtmlCssFix::apply($html);
+        }
 
         if ($this->isResume30($payload)) {
             $html = Resume30PrintFix::apply($html);
@@ -99,6 +103,7 @@ class ResumePdfService
             'post_render_version' => Resume12PostRenderFix::VERSION,
             'resume30_print_fix' => Resume30PrintFix::VERSION,
             'latest_print_fix' => ResumeLatestPrintFix::VERSION,
+            'professional_print_fix' => ResumeProfessionalPrintFix::VERSION,
             'image_embedder_version' => ResumeImageEmbedder::VERSION,
             'wkhtml_css_fix' => ResumeWkhtmlCssFix::VERSION,
             'debug_first_skill' => $firstSkill,
@@ -164,5 +169,13 @@ class ResumePdfService
     protected function isLatest(array $payload): bool
     {
         return stripos((string) ($payload['format'] ?? ''), 'latest.html') !== false;
+    }
+
+    /**
+     * @param  array<string, mixed>  $payload
+     */
+    protected function isProfessional(array $payload): bool
+    {
+        return stripos((string) ($payload['format'] ?? ''), 'professional.html') !== false;
     }
 }

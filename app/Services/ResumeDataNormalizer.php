@@ -252,12 +252,18 @@ class ResumeDataNormalizer
 
             $name = (string) ($row['name'] ?? $row['language'] ?? $row['lang'] ?? '');
             $level = (string) ($row['level'] ?? $row['proficiency'] ?? '');
+            $plainName = (string) ($row['name'] ?? $row['language'] ?? $row['lang'] ?? '');
+            $expertise = $row['expertise'] ?? $row['percent'] ?? $row['percentage'] ?? null;
             if ($name !== '' && $level !== '') {
                 $name = $name.' ('.$level.')';
             }
 
             if ($name !== '') {
-                $out[] = ['name' => $name];
+                $entry = ['name' => $name, 'language' => $plainName !== '' ? $plainName : $name, 'level' => $level];
+                if ($expertise !== null && $expertise !== '') {
+                    $entry['expertise'] = is_numeric($expertise) ? (int) $expertise : (string) $expertise;
+                }
+                $out[] = $entry;
             }
         }
 

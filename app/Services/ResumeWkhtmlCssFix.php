@@ -12,7 +12,7 @@ class ResumeWkhtmlCssFix
 
     public static function apply(string $html): string
     {
-        $html = self::expandCssVariables($html);
+        $html = ResumePrintHtmlNormalizer::expandCssVariables($html);
 
         if (stripos($html, 'id="resume-wkhtml-css-fix"') === false) {
             $html = self::injectFallbacks($html);
@@ -22,33 +22,6 @@ class ResumeWkhtmlCssFix
         $html = self::rewriteInlineStyles($html);
 
         return $html;
-    }
-
-    /** wkhtmltopdf does not support CSS custom properties. */
-    protected static function expandCssVariables(string $html): string
-    {
-        $vars = [];
-        if (preg_match_all('/--([a-zA-Z0-9_-]+)\s*:\s*([^;}{]+)/', $html, $m, PREG_SET_ORDER)) {
-            foreach ($m as $row) {
-                $vars[trim($row[1])] = trim($row[2]);
-            }
-        }
-        if ($vars === []) {
-            return $html;
-        }
-
-        return (string) preg_replace_callback(
-            '/var\(\s*--([a-zA-Z0-9_-]+)\s*(?:,\s*([^)]+))?\)/',
-            static function (array $match) use ($vars): string {
-                $name = $match[1];
-                if (isset($vars[$name]) && $vars[$name] !== '') {
-                    return $vars[$name];
-                }
-
-                return isset($match[2]) ? trim($match[2]) : $match[0];
-            },
-            $html
-        );
     }
 
     protected static function rewriteStyleTags(string $html): string

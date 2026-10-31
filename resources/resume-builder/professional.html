@@ -312,7 +312,8 @@
             <h2>Language</h2>
             <hr class="hr1">
             {{#each Language}}
-            <p class="p2" style="word-break: break-all;">{{name}}</p>
+            <p class="p2" style="word-break: break-all;">{{language}}{{#unless language}}{{name}}{{/unless}}</p>
+            <div class="lang-progress"><div class="lang-progress-fill" style="width: {{expertise}}%;"></div></div>
             {{/each}}
             <br>
             {{/if}}
@@ -326,10 +327,6 @@
             <div class="col-div-12">
                {{#if skillName}}
                <p class="p2" style="word-break: break-all;">{{skillName}}</p>
-               <!-- <div id="progress"></div> -->
-
-               <progress value="{{expertise}}" max="100"> </progress><span class="f-clr-size">
-                  {{expertise}}%</span>
                {{/if}}
             </div>
             {{/each}}
@@ -360,6 +357,25 @@
 
          <br>
 
+         {{#if Experience}}
+         <br>
+         <h2 class="heading">Work Experience</h2>
+         <hr class="hr2">
+         {{#each Experience}}
+         <br>
+         <div class="col-div-12">
+            <p class="p5 word-break">{{jobTitle}}</p>
+         </div>
+         <div class="col-div-12">
+            {{#if from}}<p class="span1">{{from}} {{#if to}}- {{to}} {{/if}}</p>{{/if}}
+            {{#if organization}}<p class="span1 word-break">{{organization}}</p>{{/if}}
+            {{#if description}}<p class="span1 word-break">{{description}}</p>{{/if}}
+            {{#if present}}<p class="span1 word-break">Present</p>{{/if}}
+         </div>
+         <div class="clearfix"></div>
+         {{/each}}
+         {{/if}}
+
          {{#if Education}}
          <br>
          <h2 class="heading">My Education</h2>
@@ -380,24 +396,6 @@
          {{/each}}
          {{/if}}
          <div class="clearfix"></div>
-         {{#if Experience}}
-         <br>
-         <h2 class="heading">Work Experience</h2>
-         <hr class="hr2">
-         {{#each Experience}}
-         <br>
-         <div class="col-div-12">
-            <p class="p5 word-break">{{jobTitle}}</p>
-         </div>
-         <div class="col-div-12">
-            {{#if from}}<p class="span1">{{from}} {{#if to}}- {{to}} {{/if}}</p>{{/if}}
-            {{#if organization}}<p class="span1 word-break">{{organization}}</p>{{/if}}
-            {{#if description}}<p class="span1 word-break">{{description}}</p>{{/if}}
-            {{#if present}}<p class="span1 word-break">Present</p>{{/if}}
-         </div>
-         <div class="clearfix"></div>
-         {{/each}}
-         {{/if}}
 
          {{#if Projects}}
          <br>

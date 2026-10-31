@@ -7,16 +7,44 @@ namespace App\Services;
  */
 class ResumePrintHtmlNormalizer
 {
-    public const VERSION = 'resume-print-normalizer-v3';
+    public const VERSION = 'resume-print-normalizer-v4';
 
     public static function apply(string $html): string
     {
         $html = self::stripExternalFontImports($html);
+        $html = self::expandCssVariables($html);
         $html = self::normalizeRgb($html);
         $html = self::normalizeGradientColors($html);
         $html = self::injectPrintColorAdjust($html);
 
         return $html;
+    }
+
+    /** wkhtmltopdf / Qt WebKit do not support CSS custom properties. */
+    public static function expandCssVariables(string $html): string
+    {
+        $vars = [];
+        if (preg_match_all('/--([a-zA-Z0-9_-]+)\s*:\s*([^;}{]+)/', $html, $m, PREG_SET_ORDER)) {
+            foreach ($m as $row) {
+                $vars[trim($row[1])] = trim($row[2]);
+            }
+        }
+        if ($vars === []) {
+            return $html;
+        }
+
+        return (string) preg_replace_callback(
+            '/var\(\s*--([a-zA-Z0-9_-]+)\s*(?:,\s*([^)]+))?\)/',
+            static function (array $match) use ($vars): string {
+                $name = $match[1];
+                if (isset($vars[$name]) && $vars[$name] !== '') {
+                    return $vars[$name];
+                }
+
+                return isset($match[2]) ? trim($match[2]) : $match[0];
+            },
+            $html
+        );
     }
 
     protected static function stripExternalFontImports(string $html): string
@@ -63,7 +91,7 @@ class ResumePrintHtmlNormalizer
     protected static function injectPrintColorAdjust(string $html): string
     {
         $styles = <<<'CSS'
-<style id="resume-print-normalizer-v3">
+<style id="resume-print-normalizer-v4">
   @page { size: A4 portrait; margin: 0; }
   html, body {
     margin: 0;
