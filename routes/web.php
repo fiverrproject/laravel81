@@ -5,7 +5,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResumeBuilderController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/', function () {
+    // return view('welcome');
+    View::addExtension('html', 'php');
+    return view('index');
+});
 
 
 Route::middleware('resume.api.identity')->group(function () {
@@ -31,3 +36,4 @@ Route::get('/{any}', function () {
 
     return response('Frontend not found', 404);
 })->where('any', '^(?!api(?:/|$))(?!resume/create$)(?!resume/createweb$)(?!resume/mapper-check$)(?!resume/deploy-fingerprint$)(?!test-api$)(?!cv/create$)(?!get/chatgpt-data$)(?!festival/create$)(?!statusMaker/create$)(?!invitationCard/create$)(?!instagram$)(?!versioncheck/index\.php$).*');
+
