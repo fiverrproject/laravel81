@@ -45,21 +45,7 @@ class ResumePdfService
             $html = Resume12PostRenderFix::apply($html, $data, $payload);
         }
 
-        if ($this->isProfessional($payload)) {
-            $html = ResumeProfessionalPrintFix::apply($html);
-        } elseif ($this->isResume2($payload)) {
-            $html = Resume2PrintFix::apply($html);
-        } else {
-            $html = ResumeWkhtmlCssFix::apply($html);
-        }
-
-        if ($this->isResume30($payload)) {
-            $html = Resume30PrintFix::apply($html);
-        }
-
-        if ($this->isLatest($payload)) {
-            $html = ResumeLatestPrintFix::apply($html);
-        }
+        $html = ResumeUniversalPrintFix::apply($html, $format);
 
         return $html;
     }
@@ -103,12 +89,13 @@ class ResumePdfService
             'mapper_version' => ResumeTemplateDataMapper::VERSION,
             'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
             'post_render_version' => Resume12PostRenderFix::VERSION,
-            'resume30_print_fix' => Resume30PrintFix::VERSION,
-            'latest_print_fix' => ResumeLatestPrintFix::VERSION,
-            'professional_print_fix' => ResumeProfessionalPrintFix::VERSION,
-            'resume2_print_fix' => Resume2PrintFix::VERSION,
+            'universal_print_fix' => ResumeUniversalPrintFix::VERSION,
+            'resume30_print_fix' => ResumeUniversalPrintFix::VERSION,
+            'latest_print_fix' => ResumeUniversalPrintFix::VERSION,
+            'professional_print_fix' => ResumeUniversalPrintFix::VERSION,
+            'resume2_print_fix' => ResumeUniversalPrintFix::VERSION,
             'image_embedder_version' => ResumeImageEmbedder::VERSION,
-            'wkhtml_css_fix' => ResumeWkhtmlCssFix::VERSION,
+            'wkhtml_css_fix' => ResumeUniversalPrintFix::VERSION,
             'debug_first_skill' => $firstSkill,
             'debug_education_course' => is_array($data['Education'] ?? null)
                 ? (string) ($data['Education'][0]['course'] ?? '')
@@ -156,37 +143,5 @@ class ResumePdfService
     protected function isResume12(array $payload): bool
     {
         return stripos((string) ($payload['format'] ?? ''), 'resume12.html') !== false;
-    }
-
-    /**
-     * @param  array<string, mixed>  $payload
-     */
-    protected function isResume30(array $payload): bool
-    {
-        return stripos((string) ($payload['format'] ?? ''), 'resume30.html') !== false;
-    }
-
-    /**
-     * @param  array<string, mixed>  $payload
-     */
-    protected function isLatest(array $payload): bool
-    {
-        return stripos((string) ($payload['format'] ?? ''), 'latest.html') !== false;
-    }
-
-    /**
-     * @param  array<string, mixed>  $payload
-     */
-    protected function isProfessional(array $payload): bool
-    {
-        return stripos((string) ($payload['format'] ?? ''), 'professional.html') !== false;
-    }
-
-    /**
-     * @param  array<string, mixed>  $payload
-     */
-    protected function isResume2(array $payload): bool
-    {
-        return stripos((string) ($payload['format'] ?? ''), 'resume2.html') !== false;
     }
 }
