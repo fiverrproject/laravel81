@@ -311,7 +311,7 @@
                {{#if jobTitle}} <p class="work-name">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>{{/if}}
             </div>           
             <div class="user-pic-section">
-               <img class="img-size" src="{{profilePhoto}}" alt="profilePhoto">
+               <img class="img-size" src="{{{profilePhoto}}}" alt="profilePhoto">
             </div>           
          </div>
          {{else}}
@@ -451,7 +451,7 @@
             <!-- {{#if sign}}
                 <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 40px;">
                     <h2 class="color-t"> Signature</h2>
-                    <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+                    <img src="{{{sign}}}" alt="Signature" height="13%" width="20%">
                 </div>
                 {{/if}} -->
 
@@ -530,7 +530,7 @@
       {{#if sign}}
       <div style="display: flex; flex-direction: column; align-items: flex-end;">
          <h2 class="color-t"> Signature</h2>
-         <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+         <img src="{{{sign}}}" alt="Signature" height="13%" width="20%">
       </div>
       {{/if}}
    </div>

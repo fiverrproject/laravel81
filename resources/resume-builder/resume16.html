@@ -178,7 +178,7 @@
       <tr>
          {{#if profilePhoto}}
          <td class="w-20">            
-            <img class="imgs" style="max-height: 215px;" src="{{profilePhoto}}" alt="profilePhoto">            
+            <img class="imgs" style="max-height: 215px;" src="{{{profilePhoto}}}" alt="profilePhoto">            
          </td>
          <td class="w-50">
             <h2 class="m-0 h1">{{Name}}</h2>
@@ -368,7 +368,7 @@
             {{/if}}{{#if sign}}
             <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 40px;">
                <h2 class="color-t"> Signature</h2>
-               <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+               <img src="{{{sign}}}" alt="Signature" height="13%" width="20%">
             </div>
             {{/if}}
 

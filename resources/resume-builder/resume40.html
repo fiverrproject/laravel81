@@ -170,7 +170,7 @@
             {{#if profilePhoto}}
                 <div class="header-left">
                     <div class="col-3 p-20 resume-profile">
-                        <img class="profile-image" src="{{profilePhoto}}" alt="profilePhoto">
+                        <img class="profile-image" src="{{{profilePhoto}}}" alt="profilePhoto">
                     </div>
                 </div>
             {{/if}}
@@ -414,14 +414,14 @@
                     {{#if sign}}
                     <div class="information">
                         <p class="heading_right">SIGNATURE</p>
-                        <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+                        <img src="{{{sign}}}" alt="Signature" height="13%" width="20%">
                         </div>
                     </div>
                     {{/if}}
                     <!-- {{#if sign}}
                     <div style="display: flex; flex-direction: column; align-items: flex-end;">
                         <h2 class="color-t"> Signature</h2>
-                        <img src="{{sign}}" alt="Signature" height="13%" width="20%">
+                        <img src="{{{sign}}}" alt="Signature" height="13%" width="20%">
                     </div>
                     {{/if}} -->
                 </div>

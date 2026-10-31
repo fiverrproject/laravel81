@@ -22,8 +22,9 @@ class ResumePrintHtmlNormalizer
     protected static function stripExternalFontImports(string $html): string
     {
         $html = (string) preg_replace('/@import\s+url\s*\([^)]+\)\s*;?/i', '', $html);
+        $html = (string) preg_replace('/<link[^>]+fonts\.googleapis\.com[^>]*>/i', '', $html);
 
-        return (string) preg_replace('/<link[^>]+fonts\.googleapis\.com[^>]*>/i', '', $html);
+        return (string) preg_replace('/<link[^>]+rel=["\']?stylesheet["\']?[^>]*>/i', '', $html);
     }
 
     protected static function normalizeRgb(string $html): string

@@ -45,6 +45,8 @@ class ResumePdfService
             $html = Resume12PostRenderFix::apply($html, $data, $payload);
         }
 
+        $html = ResumeWkhtmlCssFix::apply($html);
+
         if ($this->isResume30($payload)) {
             $html = Resume30PrintFix::apply($html);
         }
@@ -98,6 +100,7 @@ class ResumePdfService
             'resume30_print_fix' => Resume30PrintFix::VERSION,
             'latest_print_fix' => ResumeLatestPrintFix::VERSION,
             'image_embedder_version' => ResumeImageEmbedder::VERSION,
+            'wkhtml_css_fix' => ResumeWkhtmlCssFix::VERSION,
             'debug_first_skill' => $firstSkill,
             'debug_education_course' => is_array($data['Education'] ?? null)
                 ? (string) ($data['Education'][0]['course'] ?? '')

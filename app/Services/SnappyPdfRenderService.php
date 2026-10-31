@@ -51,6 +51,10 @@ class SnappyPdfRenderService
 
         try {
             $snappy->generateFromHtml($html, $outputPath, [], true);
+        } catch (RuntimeException $e) {
+            if (! is_file($outputPath) || filesize($outputPath) === 0) {
+                throw $e;
+            }
         } finally {
             ResumeImageEmbedder::cleanup($imageFiles);
         }
