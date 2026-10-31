@@ -73,40 +73,40 @@ class ResumeBuilderController extends Controller
         ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
 
-    public function deployFingerprint()
-    {
-        $template = resource_path('resume-builder/resume12.html');
-        $body = is_file($template) ? (string) file_get_contents($template) : '';
+    // public function deployFingerprint()
+    // {
+    //     $template = resource_path('resume-builder/resume12.html');
+    //     $body = is_file($template) ? (string) file_get_contents($template) : '';
 
-        return response()->json([
-            'status' => true,
-            'resume_engine' => 'laravel',
-            'mapper_version' => ResumeTemplateDataMapper::VERSION,
-            'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
-            'post_render_version' => Resume12PostRenderFix::VERSION,
-            'resume12_has_php_marker' => str_contains($body, 'resume12-php-sections-v1'),
-            'base_path' => base_path(),
-            'public_path' => public_path(),
-        ]);
-    }
+    //     return response()->json([
+    //         'status' => true,
+    //         'resume_engine' => 'laravel',
+    //         'mapper_version' => ResumeTemplateDataMapper::VERSION,
+    //         'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
+    //         'post_render_version' => Resume12PostRenderFix::VERSION,
+    //         'resume12_has_php_marker' => str_contains($body, 'resume12-php-sections-v1'),
+    //         'base_path' => base_path(),
+    //         'public_path' => public_path(),
+    //     ]);
+    // }
 
-    public function mapperCheck()
-    {
-        $mapped = ResumeTemplateDataMapper::fromApiPayload([
-            'format' => 'resume12.html',
-            'Personal Details' => ['Name' => 'T', 'jobTitle' => 'Dev'],
-            'Skills' => [['name' => 'PHP', 'expertise' => '90']],
-            'Education' => [['degree' => 'BSc', 'institution' => 'Uni', 'startYear' => '2013', 'endYear' => '2017']],
-        ]);
+    // public function mapperCheck()
+    // {
+    //     $mapped = ResumeTemplateDataMapper::fromApiPayload([
+    //         'format' => 'resume12.html',
+    //         'Personal Details' => ['Name' => 'T', 'jobTitle' => 'Dev'],
+    //         'Skills' => [['name' => 'PHP', 'expertise' => '90']],
+    //         'Education' => [['degree' => 'BSc', 'institution' => 'Uni', 'startYear' => '2013', 'endYear' => '2017']],
+    //     ]);
 
-        return response()->json([
-            'status' => true,
-            'resume_engine' => 'laravel',
-            'mapper_version' => ResumeTemplateDataMapper::VERSION,
-            'debug_first_skill' => $mapped['Skills'][0]['skillName'] ?? null,
-            'sample_mapped' => $mapped,
-        ]);
-    }
+    //     return response()->json([
+    //         'status' => true,
+    //         'resume_engine' => 'laravel',
+    //         'mapper_version' => ResumeTemplateDataMapper::VERSION,
+    //         'debug_first_skill' => $mapped['Skills'][0]['skillName'] ?? null,
+    //         'sample_mapped' => $mapped,
+    //     ]);
+    // }
 
     public function createCV(Request $request)
     {
@@ -257,82 +257,82 @@ class ResumeBuilderController extends Controller
         ]);
     }
 
-    public function instagram(Request $request)
-    {
-        try {
-            $response = Http::asMultipart()->post('https://v3.saveig.app/api/ajaxSearch', [
-                ['name' => 'q', 'contents' => (string) $request->input('url')],
-                ['name' => 't', 'contents' => 'media'],
-                ['name' => 'lang', 'contents' => 'en'],
-            ]);
+    // public function instagram(Request $request)
+    // {
+    //     try {
+    //         $response = Http::asMultipart()->post('https://v3.saveig.app/api/ajaxSearch', [
+    //             ['name' => 'q', 'contents' => (string) $request->input('url')],
+    //             ['name' => 't', 'contents' => 'media'],
+    //             ['name' => 'lang', 'contents' => 'en'],
+    //         ]);
 
-            $result = $response->json();
+    //         $result = $response->json();
 
-            if (! is_array($result)) {
-                return response()->json([
-                    'status' => false,
-                    'error' => 'Invalid response from Instagram proxy.',
-                ]);
-            }
+    //         if (! is_array($result)) {
+    //             return response()->json([
+    //                 'status' => false,
+    //                 'error' => 'Invalid response from Instagram proxy.',
+    //             ]);
+    //         }
 
-            if (! empty($result['mess']) && is_string($result['mess']) && str_contains($result['mess'], 'Video is private')) {
-                return response()->json([
-                    'status' => false,
-                    'isPrivate' => true,
-                ]);
-            }
+    //         if (! empty($result['mess']) && is_string($result['mess']) && str_contains($result['mess'], 'Video is private')) {
+    //             return response()->json([
+    //                 'status' => false,
+    //                 'isPrivate' => true,
+    //             ]);
+    //         }
 
-            $data = $result['data'] ?? '';
-            if (! is_string($data) || $data === '') {
-                return response()->json([
-                    'status' => false,
-                    'error' => 'No media data found.',
-                ]);
-            }
+    //         $data = $result['data'] ?? '';
+    //         if (! is_string($data) || $data === '') {
+    //             return response()->json([
+    //                 'status' => false,
+    //                 'error' => 'No media data found.',
+    //             ]);
+    //         }
 
-            preg_match('/href="([^"]*)/', $data, $hrefMatch);
-            preg_match('/src="([^"]*)/', $data, $srcMatch);
+    //         preg_match('/href="([^"]*)/', $data, $hrefMatch);
+    //         preg_match('/src="([^"]*)/', $data, $srcMatch);
 
-            $downloadURL = $hrefMatch[1] ?? '';
-            $thumb = $srcMatch[1] ?? '';
-            $isImage = str_contains($data, 'Download Image');
+    //         $downloadURL = $hrefMatch[1] ?? '';
+    //         $thumb = $srcMatch[1] ?? '';
+    //         $isImage = str_contains($data, 'Download Image');
 
-            return response()->json([
-                'status' => true,
-                'html' => $data,
-                'data' => [
-                    'downloadURL' => $isImage ? $thumb : $downloadURL,
-                    'thumb' => $thumb,
-                    'media_formate' => $isImage ? '.jpg' : '.mp4',
-                ],
-            ]);
-        } catch (Throwable $error) {
-            return response()->json([
-                'status' => false,
-                'error' => $error->getMessage(),
-            ]);
-        }
-    }
+    //         return response()->json([
+    //             'status' => true,
+    //             'html' => $data,
+    //             'data' => [
+    //                 'downloadURL' => $isImage ? $thumb : $downloadURL,
+    //                 'thumb' => $thumb,
+    //                 'media_formate' => $isImage ? '.jpg' : '.mp4',
+    //             ],
+    //         ]);
+    //     } catch (Throwable $error) {
+    //         return response()->json([
+    //             'status' => false,
+    //             'error' => $error->getMessage(),
+    //         ]);
+    //     }
+    // }
 
-    public function versionCheck(Request $request)
-    {
-        $token = (string) $request->input('token', '');
-        $configs = config('versioncheck', []);
-        $result = $configs[$token] ?? new \stdClass;
+    // public function versionCheck(Request $request)
+    // {
+    //     $token = (string) $request->input('token', '');
+    //     $configs = config('versioncheck', []);
+    //     $result = $configs[$token] ?? new \stdClass;
 
-        return response()->json([
-            'status' => true,
-            'result' => $result,
-        ]);
-    }
+    //     return response()->json([
+    //         'status' => true,
+    //         'result' => $result,
+    //     ]);
+    // }
 
-    public function testApi()
-    {
-        return response()->json([
-            'success' => true,
-            'resume_engine' => 'laravel',
-            'mapper_version' => ResumeTemplateDataMapper::VERSION,
-            'message' => 'Laravel resume API is working',
-        ]);
-    }
+    // public function testApi()
+    // {
+    //     return response()->json([
+    //         'success' => true,
+    //         'resume_engine' => 'laravel',
+    //         'mapper_version' => ResumeTemplateDataMapper::VERSION,
+    //         'message' => 'Laravel resume API is working',
+    //     ]);
+    // }
 }
