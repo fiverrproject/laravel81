@@ -97,22 +97,16 @@ cd ~/domains/resumesmaker.com/public_html/server
 
 This repo is **PHP only**. There is no Node resume server and no npm install inside `server/`.
 
-PDF uses **chrome-php/chrome** (needs **Chrome or Chromium** on the server).
-
-After deploy, SSH:
+PDF uses **wkhtmltopdf** (WebKit — same idea as Chrome) so PDF matches files in **`resources/resume-builder/`**. Bundled via Composer:
 
 ```bash
-cd ~/domains/resumesmaker.com/public_html/server
-/opt/alt/php81/usr/bin/php artisan resume:detect-chrome
+composer require barryvdh/laravel-snappy h4cc/wkhtmltopdf-amd64
+/opt/alt/php81/usr/bin/php artisan resume:detect-pdf
 ```
 
-- If it prints `CHROME_PATH=...`, put that line in **`server/.env`**, then:
-  ```bash
-  /opt/alt/php81/usr/bin/php artisan config:clear
-  ```
-- If detect **fails**, Hostinger shared hosting may not include Chrome — use **VPS**, install `chromium-browser`, or ask Hostinger support for the Chromium binary path.
+Postman should show `"pdf_engine":"wkhtmltopdf"`. Set `PDF_ENGINE=dompdf` only if wkhtmltopdf is blocked (layout will break).
 
-Do **not** set `CHROME_PATH=/usr/bin/google-chrome` unless that file exists (`ls -la` on SSH).
+Do **not** rewrite template HTML for PDF — only `ResumePrintHtmlNormalizer` (RGB + fonts).
 
 ---
 

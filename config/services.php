@@ -37,8 +37,19 @@ return [
     ],
 
     'chrome' => [
-        // Leave empty to auto-detect (recommended on Hostinger). Set only if detect-chrome prints a path.
+        // Leave empty to auto-detect (VPS). Ignored when PDF uses DomPDF.
         'path' => env('CHROME_PATH'),
+    ],
+
+    'pdf' => [
+        // auto = wkhtmltopdf (bundled) on Hostinger — keeps resources/resume-builder layout
+        // wkhtmltopdf | chrome | dompdf
+        'engine' => env('PDF_ENGINE', 'auto'),
+    ],
+
+    'wkhtmltopdf' => [
+        'path' => env('WKHTMLTOPDF_PATH'),
+        'viewport' => env('WKHTML_VIEWPORT', '1240x1754'),
     ],
 
 ];

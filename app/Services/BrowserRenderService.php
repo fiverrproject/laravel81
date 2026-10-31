@@ -7,15 +7,50 @@ use HeadlessChromium\Exception\OperationTimedOut;
 use RuntimeException;
 
 /**
- * HTML → PDF/JPEG via headless Chrome (pure PHP chrome-php/chrome — no Node/npm).
+ * PDF: wkhtmltopdf (Hostinger, layout like templates) → Chrome (VPS) → DomPDF (last resort).
  */
 class BrowserRenderService
 {
+    public function __construct(
+        protected DomPdfRenderService $domPdf,
+        protected SnappyPdfRenderService $snappy
+    ) {}
+
     protected ?string $resolvedChromePath = null;
 
-    /**
-     * @return array<string, mixed>
-     */
+    public function pdfEngine(): string
+    {
+        $configured = strtolower(trim((string) config('services.pdf.engine', 'auto')));
+
+        return match ($configured) {
+            'chrome' => ChromePathResolver::tryResolve() !== null ? 'chrome' : $this->fallbackEngine(),
+            'wkhtmltopdf', 'snappy' => WkhtmltopdfPathResolver::tryResolve() !== null ? 'wkhtmltopdf' : $this->fallbackEngine(),
+            'dompdf' => 'dompdf',
+            default => $this->resolveAutoEngine(),
+        };
+    }
+
+    protected function resolveAutoEngine(): string
+    {
+        if (ChromePathResolver::tryResolve() !== null) {
+            return 'chrome';
+        }
+        if (WkhtmltopdfPathResolver::tryResolve() !== null) {
+            return 'wkhtmltopdf';
+        }
+
+        return 'dompdf';
+    }
+
+    protected function fallbackEngine(): string
+    {
+        if (WkhtmltopdfPathResolver::tryResolve() !== null) {
+            return 'wkhtmltopdf';
+        }
+
+        return 'dompdf';
+    }
+
     protected function browserOptions(int $width = 1920, int $height = 1080): array
     {
         return [
@@ -39,7 +74,12 @@ class BrowserRenderService
             return $this->resolvedChromePath;
         }
 
-        $this->resolvedChromePath = ChromePathResolver::resolve()['path'];
+        $path = ChromePathResolver::tryResolve();
+        if ($path === null) {
+            throw new RuntimeException('Chrome not available.');
+        }
+
+        $this->resolvedChromePath = $path;
 
         return $this->resolvedChromePath;
     }
@@ -53,9 +93,24 @@ class BrowserRenderService
 
     public function savePdf(string $html, string $outputPath, array $margins = ['top' => 0, 'right' => 0, 'bottom' => 0, 'left' => 0]): void
     {
-        $this->ensureDirectory(dirname($outputPath));
+        $engine = $this->pdfEngine();
 
+        if ($engine === 'wkhtmltopdf') {
+            $this->snappy->savePdf($html, $outputPath);
+
+            return;
+        }
+
+        $html = ResumePrintHtmlNormalizer::apply($html);
         $html = $this->withPdfPrintStyles($html);
+
+        if ($engine === 'dompdf') {
+            $this->domPdf->savePdfWithoutNormalize($html, $outputPath);
+
+            return;
+        }
+
+        $this->ensureDirectory(dirname($outputPath));
 
         $browser = $this->createBrowser();
         try {
@@ -85,9 +140,6 @@ class BrowserRenderService
         }
     }
 
-    /**
-     * Inject print CSS so resume backgrounds fill the page without white edges.
-     */
     protected function withPdfPrintStyles(string $html): string
     {
         $styles = <<<'CSS'
@@ -98,13 +150,6 @@ class BrowserRenderService
     padding: 0 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-  }
-  body {
-    min-height: 100%;
-  }
-  body.canvas {
-    min-height: 297mm;
-    background-attachment: fixed;
   }
 </style>
 CSS;
@@ -118,6 +163,12 @@ CSS;
 
     public function saveScreenshot(string $html, string $outputPath, int $width, int $height): void
     {
+        if (ChromePathResolver::tryResolve() === null) {
+            throw new RuntimeException(
+                'JPEG screenshots need Chrome on the server. Resume PDF uses wkhtmltopdf on Hostinger.'
+            );
+        }
+
         $this->ensureDirectory(dirname($outputPath));
 
         $browser = $this->createBrowser($width, $height);

@@ -197,11 +197,35 @@
       .left-part {
          width: 35%;
          padding: 10px;
+         box-sizing: border-box;
       }
 
-      .right-part {
-         width: 100%;
+      .header .right-part {
+         flex: 1;
+         width: auto;
+         min-width: 0;
          padding: 10px;
+         box-sizing: border-box;
+      }
+
+      .content .right-part {
+         flex: 1;
+         width: auto;
+         min-width: 0;
+         padding: 10px;
+         box-sizing: border-box;
+      }
+
+      .content.d-flex {
+         align-items: stretch;
+      }
+
+      .content .left-part {
+         flex: 0 0 35%;
+      }
+
+      .header .left-part {
+         flex: 0 0 35%;
       }
 
       .image {
@@ -214,8 +238,8 @@
       }
 
       .imgDiv {
-         height: 100%;
-         /* background: rgb(202 199 199 / 14%); */
+         min-height: 220px;
+         height: 220px;
          position: relative;
       }
 
@@ -339,7 +363,7 @@
       {{#if profilePhoto}}
       <div class="left-part">
          <div class="imgDiv">
-            <img class="image" src="{{profilePhoto}}" alt="profilePhoto">
+            <img class="image" src="{{{profilePhoto}}}" alt="profilePhoto">
          </div>
       </div>
       {{/if}}
@@ -403,6 +427,22 @@
             </div>
             {{/if}}
 
+            {{#if Education}}
+            <div class="education mt-16">
+               <div class="font-2 mb-10">Education</div>
+               {{#each Education}}
+               <ul class="top-ul" style="margin-bottom:0;">
+                  {{#if course}}<li class="font-3 mb-4" style="font-weight:500;"> {{course}}</li>{{/if}}
+               </ul>
+               <ul class="sub-ul">
+                  {{#if institute}}<li class="font-4 mb-4">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</li>{{/if}}
+                  {{#if yearOfPassing}}<li class="font-4 mb-4"> {{yearOfPassing}}</li>{{/if}}
+                  {{#if percentage}}<li class="font-4 mb-4"> {{percentage}}%</li>{{/if}}
+               </ul>
+               {{/each}}
+            </div>
+            {{/if}}
+
             {{#if Skills}}
             <div class="education mt-16">
                <div class="font-2 mb-10">Skills</div>
@@ -451,22 +491,6 @@
 
       <div class="right-part">
          <div class="section2">
-
-            {{#if Education}}
-            <div class="education">
-               <div class="font-2 mb-10">Education</div>
-               {{#each Education}}
-               <ul class="top-ul" style="margin-bottom:0;">
-                  {{#if course}}<li class="font-3 mb-4" style="font-weight:500;"> {{course}}</li>{{/if}}
-               </ul>
-               <ul class="sub-ul">
-                  {{#if institute}}<li class="font-4 mb-4">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</li>{{/if}}
-                  {{#if yearOfPassing}}<li class="font-4 mb-4"> {{yearOfPassing}}</li>{{/if}}
-                  {{#if percentage}}<li class="font-4 mb-4"> {{percentage}}%</li>{{/if}}
-               </ul>
-               {{/each}}
-            </div>
-            {{/if}}
 
             {{#if Experience}}
             <div class="education mt-16">

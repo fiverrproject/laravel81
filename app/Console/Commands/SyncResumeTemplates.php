@@ -7,27 +7,30 @@ use Illuminate\Console\Command;
 
 class SyncResumeTemplates extends Command
 {
-    protected $signature = 'resume:sync-templates';
+    protected $signature = 'resume:sync-templates {--force-zip : Overwrite HTML from resumeformat.zip}';
 
-    protected $description = 'Copy resume*.html templates into resources/resume-builder (run on Hostinger after deploy)';
+    protected $description = 'Install resume HTML from resumeformat.zip (matches design JPGs) into resources/resume-builder';
 
     public function handle(): int
     {
         $before = ResumeTemplatesInstaller::resumeTemplateCount();
-        $ok = ResumeTemplatesInstaller::ensureInstalled();
-        $after = ResumeTemplatesInstaller::resumeTemplateCount();
 
-        $this->info("Templates before: {$before}, after: {$after}");
-        $this->info('Path: '.resource_path('resume-builder'));
-
-        if (! $ok) {
-            $this->error('Could not find source templates. Upload resume-builder/ to resources/resume-builder/ or set RESUME_TEMPLATES_PATH in .env');
-
-            return 1;
+        if ($this->option('force-zip') || $before < 35) {
+            if (! ResumeTemplatesInstaller::installFromBundledZip()) {
+                $this->warn('resumeformat.zip missing or invalid at resources/resume-builder/resumeformat.zip');
+                ResumeTemplatesInstaller::ensureInstalled();
+            } else {
+                $this->info('Installed templates from resumeformat.zip');
+            }
+        } else {
+            $this->info('Templates already present (use --force-zip to refresh from zip)');
         }
 
-        $this->info('OK');
+        $after = ResumeTemplatesInstaller::resumeTemplateCount();
+        $this->info("Templates: {$before} → {$after}");
+        $this->info('Path: '.resource_path('resume-builder'));
+        $this->info('Design previews: compare PDF to JPG names in _resume-maker.zip (resume31.jpg = resume31.html)');
 
-        return 0;
+        return $after >= 35 ? 0 : 1;
     }
 }

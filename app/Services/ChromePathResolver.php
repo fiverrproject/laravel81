@@ -24,27 +24,32 @@ class ChromePathResolver
         '/opt/chromium.org/chromium/chromium',
     ];
 
+    public static function tryResolve(): ?string
+    {
+        foreach (self::orderedCandidates() as $candidate) {
+            if (self::isUsableBinary($candidate)) {
+                return $candidate;
+            }
+        }
+
+        return null;
+    }
+
     /**
      * @return array{path: string, tried: list<string>}
      */
     public static function resolve(): array
     {
-        $tried = [];
+        $tried = self::orderedCandidates();
+        $path = self::tryResolve();
 
-        foreach (self::orderedCandidates() as $candidate) {
-            if (in_array($candidate, $tried, true)) {
-                continue;
-            }
-            $tried[] = $candidate;
-            if (self::isUsableBinary($candidate)) {
-                return ['path' => $candidate, 'tried' => $tried];
-            }
+        if ($path !== null) {
+            return ['path' => $path, 'tried' => $tried];
         }
 
         throw new RuntimeException(
-            'Headless Chrome/Chromium not found. Set CHROME_PATH in server/.env to the full binary path. '
-            .'On SSH run: ls -la /usr/bin/google-chrome* /usr/bin/chromium* 2>/dev/null. '
-            .'Tried: '.implode(', ', $tried)
+            'Headless Chrome/Chromium not found. Use PDF_ENGINE=dompdf in .env (Hostinger shared hosting), '
+            .'or set CHROME_PATH if you have Chromium on a VPS. Tried: '.implode(', ', $tried)
         );
     }
 

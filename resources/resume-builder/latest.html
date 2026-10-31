@@ -36,12 +36,15 @@
       .resume {
          width: 800px;
          height: auto;
-         display: flex;
+         display: table;
+         table-layout: fixed;
          /*margin: 50px auto;*/
       }
 
       .resume .resume_left {
+         display: table-cell;
          width: 280px;
+         vertical-align: top;
          background: #0bb5f4;
       }
 
@@ -51,6 +54,7 @@
       }
 
       .resume .resume_left .resume_profile img {
+         display: block;
          width: 100%;
          height: 100%;
       }
@@ -162,7 +166,9 @@
       }
 
       .resume .resume_right {
+         display: table-cell;
          width: 520px;
+         vertical-align: top;
          background: #fff;
          padding: 17px;
       }
@@ -299,7 +305,7 @@
       <div class="resume_left">
          {{#if profilePhoto}}
          <div class="resume_profile">
-            <img src="{{profilePhoto}}" alt="profilePhoto">
+            <img src="{{{profilePhoto}}}" alt="profilePhoto">
          </div>
          {{/if}}
          <div class="resume_content">
@@ -367,10 +373,9 @@
                      <div class="skill_name word-break">
                         {{skillName}}
                      </div>
-                     <div style="display: flex;align-items: center; width: 100%">
-                        <!-- <span class="skill_progress" ></span> -->
-                        <progress value="{{expertise}}" max="100"></progress>
-                        <div class="skill_per">{{expertise}}%</div>
+                     <div style="width: 100%;">
+                        <progress value="{{expertise}}" max="100" style="width:70%; height:8px; vertical-align:middle;"></progress>
+                        <span class="skill_per">{{expertise}}%</span>
                      </div>
                   </li>
                   {{/if}}
@@ -513,7 +518,7 @@
          {{#if sign}}
          <div style="margin-top: 10px;">
             <p class="bold">Signature</p>
-            <img height="100px" width="100px" src="{{sign}}" alt="sign">
+            <img height="100px" width="100px" src="{{{sign}}}" alt="sign">
          </div>
          {{/if}}
       </div>

@@ -46,12 +46,13 @@ class ResumeDataNormalizer
         $interests = $this->normalizeInterests($payload['Interests'] ?? $payload['Hobby'] ?? $payload['Hobbies'] ?? []);
 
         return [
-            'Name' => $personal['Name'] ?? $personal['name'] ?? '',
-            'Address' => $personal['Address'] ?? $personal['address'] ?? '',
-            'Email' => $personal['Email'] ?? $personal['email'] ?? '',
-            'Phone' => $personal['Phone'] ?? $personal['phone'] ?? '',
-            'DOB' => $personal['DOB'] ?? $personal['dob'] ?? '',
-            'jobTitle' => $personal['jobTitle'] ?? $personal['JobTitle'] ?? $personal['job_title'] ?? '',
+            'Name' => (string) ($personal['Name'] ?? $personal['name'] ?? $payload['Name'] ?? $payload['name'] ?? ''),
+            'Address' => (string) ($personal['Address'] ?? $personal['address'] ?? $payload['Address'] ?? $payload['address'] ?? ''),
+            'Email' => (string) ($personal['Email'] ?? $personal['email'] ?? $payload['Email'] ?? $payload['email'] ?? ''),
+            'Phone' => (string) ($personal['Phone'] ?? $personal['phone'] ?? $payload['Phone'] ?? $payload['phone'] ?? ''),
+            'DOB' => (string) ($personal['DOB'] ?? $personal['dob'] ?? $payload['DOB'] ?? $payload['dob'] ?? ''),
+            'jobTitle' => (string) ($personal['jobTitle'] ?? $personal['JobTitle'] ?? $personal['job_title'] ?? $payload['jobTitle'] ?? $payload['JobTitle'] ?? $payload['designation'] ?? ''),
+            'designation' => (string) ($payload['designation'] ?? $personal['designation'] ?? $personal['jobTitle'] ?? $payload['jobTitle'] ?? ''),
             'Education' => $education !== [] ? $education : '',
             'Experience' => $experience !== [] ? $experience : '',
             'Skills' => $skills !== [] ? $skills : '',
@@ -62,7 +63,7 @@ class ResumeDataNormalizer
             'Interests' => $interests !== [] ? $interests : '',
             'sign' => $sign,
             'Objective' => $objective,
-            'profilePhoto' => $payload['profilePhoto'] ?? $payload['profile_photo'] ?? '',
+            'profilePhoto' => (string) ($payload['profilePhoto'] ?? $payload['profile_photo'] ?? $personal['profilePhoto'] ?? $personal['profile_photo'] ?? ''),
         ];
     }
 

@@ -20,15 +20,17 @@ class DetectChrome extends Command
             ['path' => $path, 'tried' => $tried] = ChromePathResolver::resolve();
             $this->info('OK — use this in .env:');
             $this->line('CHROME_PATH='.$path);
+            $this->line('PDF_ENGINE=chrome');
             $this->line('Tried: '.implode(', ', $tried));
 
             return 0;
         } catch (Throwable $e) {
-            $this->error($e->getMessage());
-            $this->warn('Hostinger often disables shell_exec — set CHROME_PATH manually after: ls -la /usr/bin/chromium*');
-            $this->warn('If no Chromium exists, shared hosting cannot run Chrome PDF; use VPS or ask Hostinger support.');
+            $this->warn($e->getMessage());
+            $this->info('No Chrome — use pure PHP PDF (recommended on Hostinger):');
+            $this->line('PDF_ENGINE=dompdf');
+            $this->line('Then: php artisan config:clear');
 
-            return 1;
+            return 0;
         }
     }
 }

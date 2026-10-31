@@ -45,6 +45,14 @@ class ResumePdfService
             $html = Resume12PostRenderFix::apply($html, $data, $payload);
         }
 
+        if ($this->isResume30($payload)) {
+            $html = Resume30PrintFix::apply($html);
+        }
+
+        if ($this->isLatest($payload)) {
+            $html = ResumeLatestPrintFix::apply($html);
+        }
+
         return $html;
     }
 
@@ -82,9 +90,14 @@ class ResumePdfService
 
         return [
             'resume_engine' => 'laravel',
+            'pdf_engine' => $this->browser->pdfEngine(),
+            'print_normalizer_version' => ResumePrintHtmlNormalizer::VERSION,
             'mapper_version' => ResumeTemplateDataMapper::VERSION,
             'section_html_version' => ResumeSectionHtmlBuilder::VERSION,
             'post_render_version' => Resume12PostRenderFix::VERSION,
+            'resume30_print_fix' => Resume30PrintFix::VERSION,
+            'latest_print_fix' => ResumeLatestPrintFix::VERSION,
+            'image_embedder_version' => ResumeImageEmbedder::VERSION,
             'debug_first_skill' => $firstSkill,
             'debug_education_course' => is_array($data['Education'] ?? null)
                 ? (string) ($data['Education'][0]['course'] ?? '')
@@ -132,5 +145,21 @@ class ResumePdfService
     protected function isResume12(array $payload): bool
     {
         return stripos((string) ($payload['format'] ?? ''), 'resume12.html') !== false;
+    }
+
+    /**
+     * @param  array<string, mixed>  $payload
+     */
+    protected function isResume30(array $payload): bool
+    {
+        return stripos((string) ($payload['format'] ?? ''), 'resume30.html') !== false;
+    }
+
+    /**
+     * @param  array<string, mixed>  $payload
+     */
+    protected function isLatest(array $payload): bool
+    {
+        return stripos((string) ($payload['format'] ?? ''), 'latest.html') !== false;
     }
 }
