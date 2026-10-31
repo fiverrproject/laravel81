@@ -230,6 +230,19 @@
          border-radius: 10px;
       }
 
+      .skill-row {
+         overflow: hidden;
+         width: 100%;
+      }
+
+      .skill-row .skillBar {
+         float: left;
+         border: none;
+         border-top: 8px rgb(70, 70, 70) solid;
+         height: 0;
+         margin: 3px 6px 3px 0;
+      }
+
       #microsoftOffice {
          width: 42%;
       }
@@ -436,7 +449,7 @@
             <div class="skills">
                {{#if skillName}}
                <p class="font-size" style="word-break: break-all;margin-bottom: 0px;margin-top: 0px;">{{skillName}}</p>
-               <div style="display: flex;">
+               <div class="skill-row">
                   <hr class="skillBar mr-1" style="width:{{expertise}}%;">
                   <span class="font-size" style="margin: 0px;">{{expertise}}%</span>
                </div>
@@ -479,37 +492,6 @@
          </div>
 
          <div>
-            {{#if Education}}
-            <div class="rightRow">
-               <h2 class="right"> Education</h2>
-            </div>
-            {{#each Education}}
-            <div class="containerHl">
-               <div class="years">
-                  {{#if course}}<h3 style="word-break: break-all;">{{course}} </h3>{{/if}}
-               </div>
-               <div>
-
-               </div>
-            </div>
-            <div class="containerText">
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div style="padding-left:10px; width: 100%;">
-                  {{#if institute}}<p style="word-break: break-all;" class="mt-10"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}} </p>{{/if}}
-                  {{#if yearOfPassing}}<p> {{yearOfPassing}}
-                  <p>{{/if}}
-                     {{#if percentage}}
-                  <p>{{percentage}}%</p>{{/if}}
-               </div>
-            </div>
-            {{/each}}
-            {{/if}}
-         </div>
-         <div>
             {{#if Experience}}
             <div class="rightRow">
                <h2 class="right"> Work Experience </h2>
@@ -535,6 +517,37 @@
                   {{#if present}}
                   <p class="jobText">Present</p>
                   {{/if}}
+               </div>
+            </div>
+            {{/each}}
+            {{/if}}
+         </div>
+         <div>
+            {{#if Education}}
+            <div class="rightRow">
+               <h2 class="right"> Education</h2>
+            </div>
+            {{#each Education}}
+            <div class="containerHl">
+               <div class="years">
+                  {{#if course}}<h3 style="word-break: break-all;">{{course}} </h3>{{/if}}
+               </div>
+               <div>
+
+               </div>
+            </div>
+            <div class="containerText">
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div class="verticalLines"> </div>
+               <div style="padding-left:10px; width: 100%;">
+                  {{#if institute}}<p style="word-break: break-all;" class="mt-10"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}} </p>{{/if}}
+                  {{#if yearOfPassing}}<p> {{yearOfPassing}}
+                  <p>{{/if}}
+                     {{#if percentage}}
+                  <p>{{percentage}}%</p>{{/if}}
                </div>
             </div>
             {{/each}}
