@@ -19,7 +19,9 @@ class HandlebarsService
             throw new RuntimeException("Template not found: {$templatePath}");
         }
 
-        $data = $this->prepareTemplateData($data);
+        if ($this->isResumeTemplate($templatePath)) {
+            $data = $this->prepareTemplateData($data);
+        }
 
         $htmlData = file_get_contents($templatePath);
 
@@ -27,16 +29,66 @@ class HandlebarsService
             $htmlData = $this->embedResume12PhpSections($htmlData, $data);
         }
 
-        $php = LightnCandy::compile($htmlData, [
-            'flags' => LightnCandy::FLAG_HANDLEBARS
-                | LightnCandy::FLAG_ERROR_EXCEPTION
-                | LightnCandy::FLAG_RUNTIMEPARTIAL
-                | LightnCandy::FLAG_BESTPERFORMANCE,
-        ]);
+        // Festival/status/invitation files embed multi-megabyte data URIs.
+        // LightnCandy's tokenizer is a single regex and skips {{name}} on those files.
+        [$htmlData, $images] = $this->extractEmbeddedImages($htmlData);
+
+        $previousBacktrack = ini_get('pcre.backtrack_limit');
+        $previousRecursion = ini_get('pcre.recursion_limit');
+        ini_set('pcre.backtrack_limit', '10000000');
+        ini_set('pcre.recursion_limit', '10000000');
+
+        try {
+            $php = LightnCandy::compile($htmlData, [
+                'flags' => LightnCandy::FLAG_HANDLEBARS
+                    | LightnCandy::FLAG_ERROR_EXCEPTION
+                    | LightnCandy::FLAG_RUNTIMEPARTIAL
+                    | LightnCandy::FLAG_BESTPERFORMANCE,
+            ]);
+        } finally {
+            ini_set('pcre.backtrack_limit', (string) $previousBacktrack);
+            ini_set('pcre.recursion_limit', (string) $previousRecursion);
+        }
+
+        if (! is_string($php) || $php === '') {
+            throw new RuntimeException('Template failed to compile: '.$templatePath);
+        }
 
         $renderer = LightnCandy::prepare($php);
+        $html = $renderer($data);
 
-        return $renderer($data);
+        if ($images !== []) {
+            $html = strtr($html, $images);
+        }
+
+        return $html;
+    }
+
+    protected function isResumeTemplate(string $templatePath): bool
+    {
+        return (bool) preg_match('#/resume-builder/resume[^/]+\.html$#', str_replace('\\', '/', $templatePath));
+    }
+
+    /**
+     * Pull data-URI images out so the Handlebars compiler sees a small template.
+     *
+     * @return array{0: string, 1: array<string, string>}
+     */
+    protected function extractEmbeddedImages(string $html): array
+    {
+        $images = [];
+        $html = preg_replace_callback(
+            '#data:image/[a-zA-Z0-9.+-]+;base64,[A-Za-z0-9+/=]+#',
+            function (array $match) use (&$images): string {
+                $token = '___HBIMG'.count($images).'___';
+                $images[$token] = $match[0];
+
+                return $token;
+            },
+            $html
+        );
+
+        return [$html ?? '', $images];
     }
 
     /**
