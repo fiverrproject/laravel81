@@ -52,4 +52,8 @@ return [
         'viewport' => env('WKHTML_VIEWPORT', '1240x1754'),
     ],
 
+    'wkhtmltoimage' => [
+        'path' => env('WKHTMLTOIMAGE_PATH'),
+    ],
+
 ];

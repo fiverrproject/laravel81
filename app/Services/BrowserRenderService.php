@@ -13,7 +13,8 @@ class BrowserRenderService
 {
     public function __construct(
         protected DomPdfRenderService $domPdf,
-        protected SnappyPdfRenderService $snappy
+        protected SnappyPdfRenderService $snappy,
+        protected SnappyImageRenderService $images
     ) {}
 
     protected ?string $resolvedChromePath = null;
@@ -164,9 +165,9 @@ CSS;
     public function saveScreenshot(string $html, string $outputPath, int $width, int $height): void
     {
         if (ChromePathResolver::tryResolve() === null) {
-            throw new RuntimeException(
-                'JPEG screenshots need Chrome on the server. Resume PDF uses wkhtmltopdf on Hostinger.'
-            );
+            $this->images->saveJpeg($html, $outputPath, $width, $height);
+
+            return;
         }
 
         $this->ensureDirectory(dirname($outputPath));

@@ -10,6 +10,7 @@
         "barryvdh/laravel-snappy": "^1.0",
         "chrome-php/chrome": "^1.16",
         "guzzlehttp/guzzle": "^7.2",
+        "h4cc/wkhtmltoimage-amd64": "^0.12.4",
         "h4cc/wkhtmltopdf-amd64": "^0.12.4",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
