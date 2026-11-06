@@ -72,12 +72,16 @@ class SnappyImageRenderService
 
         $html = str_ireplace(
             [
+                'display: inline-flex',
+                'display:inline-flex',
                 'display: flex',
                 'display:flex',
                 'flex-direction: column',
                 'flex-direction:column',
                 'flex-direction: row',
                 'flex-direction:row',
+                'justify-content: space-evenly',
+                'justify-content:space-evenly',
                 'justify-content: space-between',
                 'justify-content:space-between',
                 'justify-content: space-around',
@@ -96,14 +100,20 @@ class SnappyImageRenderService
                 'align-items:center',
                 'align-items: stretch',
                 'align-items:stretch',
+                'text-align-last: center',
+                'text-align-last:center',
             ],
             [
+                'display: -webkit-inline-box',
+                'display: -webkit-inline-box',
                 'display: -webkit-box',
                 'display: -webkit-box',
                 '-webkit-box-orient: vertical; -webkit-box-direction: normal',
                 '-webkit-box-orient: vertical; -webkit-box-direction: normal',
                 '-webkit-box-orient: horizontal; -webkit-box-direction: normal',
                 '-webkit-box-orient: horizontal; -webkit-box-direction: normal',
+                '-webkit-box-pack: justify',
+                '-webkit-box-pack: justify',
                 '-webkit-box-pack: justify',
                 '-webkit-box-pack: justify',
                 '-webkit-box-pack: justify',
@@ -122,9 +132,13 @@ class SnappyImageRenderService
                 '-webkit-box-align: center',
                 '-webkit-box-align: stretch',
                 '-webkit-box-align: stretch',
+                'text-align: center',
+                'text-align: center',
             ],
             $html
         );
+
+        $html = $this->replaceFlexGap($html);
 
         if ($images !== []) {
             $html = strtr($html, $images);
@@ -132,12 +146,44 @@ class SnappyImageRenderService
 
         $styles = <<<CSS
 <style id="poster-screenshot-fix">
+  html { font-size: 16px !important; }
   html, body {
     margin: 0 !important;
     padding: 0 !important;
     width: {$width}px !important;
     height: {$height}px !important;
   }
+  .container, .bg, .container.bg {
+    width: {$width}px !important;
+    max-width: {$width}px !important;
+    height: {$height}px !important;
+    min-height: {$height}px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .logo img {
+    width: auto !important;
+    height: auto !important;
+    max-width: 200px !important;
+    max-height: 150px !important;
+    display: block;
+    margin: 16px auto 0 !important;
+  }
+  footer, .footer {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 18px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 3;
+  }
+  .svg-icon, .svgicon {
+    display: -webkit-inline-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+  }
+  .wk-gap-h > * + * { margin-left: 16px; }
+  .wk-gap-v > * + * { margin-top: 12px; }
 </style>
 CSS;
 
@@ -146,6 +192,32 @@ CSS;
         }
 
         return $styles.$html;
+    }
+
+    /**
+     * Old WebKit has no flex gap. Tag the box and space its children.
+     */
+    protected function replaceFlexGap(string $html): string
+    {
+        return preg_replace_callback(
+            '/<([a-z0-9]+)([^>]*?\sgap\s*:\s*[^>;"]+[^>]*)>/i',
+            function (array $match): string {
+                $tag = $match[1];
+                $attrs = $match[2];
+                $vertical = stripos($attrs, 'vertical') !== false;
+                $class = $vertical ? 'wk-gap-v' : 'wk-gap-h';
+                $attrs = preg_replace('/gap\s*:\s*[^;"]+;?\s*/i', '', $attrs) ?? $attrs;
+
+                if (preg_match('/\sclass\s*=\s*"([^"]*)"/i', $attrs) === 1) {
+                    $attrs = preg_replace('/\sclass\s*=\s*"([^"]*)"/i', ' class="$1 '.$class.'"', $attrs, 1) ?? $attrs;
+                } else {
+                    $attrs .= ' class="'.$class.'"';
+                }
+
+                return '<'.$tag.$attrs.'>';
+            },
+            $html
+        ) ?? $html;
     }
 
     /**
