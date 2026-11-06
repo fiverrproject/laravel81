@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\BrowserRenderService;
 use App\Services\HandlebarsService;
+use App\Services\LogoBackgroundRemover;
 use App\Services\Resume12PostRenderFix;
 use App\Services\ResumePdfService;
 use App\Services\ResumeSectionHtmlBuilder;
@@ -18,7 +19,8 @@ class ResumeBuilderController extends Controller
     public function __construct(
         protected HandlebarsService $handlebars,
         protected BrowserRenderService $browser,
-        protected ResumePdfService $resumePdf
+        protected ResumePdfService $resumePdf,
+        protected LogoBackgroundRemover $logos
     ) {}
 
     public function createResume(Request $request)
@@ -143,6 +145,9 @@ class ResumeBuilderController extends Controller
         $emptyLogo = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAALSURBVHicY2DABwAAHgAB9v3plgAAAABJRU5ErkJggg==';
         if ($companyLogo === $emptyLogo) {
             $companyLogo = '';
+        }
+        if ($companyLogo !== '') {
+            $companyLogo = $this->logos->makeTransparent($companyLogo);
         }
 
         $data = [
