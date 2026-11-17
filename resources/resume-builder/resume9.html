@@ -2,409 +2,349 @@
 
 <head>
    <title>Resume 9</title>
-
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <style>
-      .grid-container {
-         display: flex;
-         /*grid-template-columns: 30% 75%;*/
-      }
-
-      .grid-item {
-         width: 100%;
-         padding: 10px;
-      }
-
-      .grid-container1 {
-         display: grid;
-         grid-template-columns: 50% 50%;
-      }
-
-      .grid-item1 {
-         width: 100%;
-         padding-top: 10px;
-      }
-
-      .grid-container2 {
-         display: grid;
-         grid-template-columns: 33.33% 33.33% 33.33%;
-      }
-
-      .grid-item2 {
-         width: 100%;
-      }
-
-      .head-color {
-         background-color: rgb(30 62 92);
-         border-bottom: 4px solid rgb(2, 238, 255);
-         position: relative;
-      }
-
-      .header-name {
-         font-size: 35px;
-         margin: 35px 0px 0px 0px;
-         color: white;
-         font-weight: 500;
-      }
-
-      .head-title {
-         font-size: 25px;
-         margin: 0px 0px 3px 0px;
-         font-weight: 100;
-      }
-
-      .head-title1 {
-         font-size: 19px;
-         margin: 0px 0px 10px 0px;
-         font-weight: 100;
-         padding-left: 3px;
-      }
-
-      .heading-row {
-         width: 480px;
-         border: 1px solid rgb(2, 238, 255);
-         margin: 10px 0px;
-      }
-
-      .errow {
-         color: black;
-         font-size: 60px;
-         height: 73px;
-      }
-
-      .errow1 {
-         color: rgb(2, 238, 255);
-         font-size: 60px;
-         height: 73px;
-      }
-
-      .box {
-         right: 60px;
-         font-size: 165px;
-         position: absolute;
-         bottom: -75px;
-         color: rgb(30 62 92);
-         z-index: -1;
-      }
-
-      .box1 {
-         right: 60px;
-         font-size: 165px;
-         position: absolute;
-         bottom: -80px;
-         color: rgb(2, 238, 255);
-         z-index: -2;
-      }
-
-      .box2 {
-         right: 73px;
-         font-size: 101px;
-         position: absolute;
-         bottom: -49px;
-         color: rgb(30 62 92);
-         font-weight: bold;
-      }
-
-      .imgs {
-         border: 0px solid rgb(255, 255, 255);
-         border-radius: 50%;
-         width: 80%;
-         margin: 30px;
-      }
-
-      .p-text {
-         word-break: break-all;
-         padding-right: 50px;
-         padding-bottom: 15px;
-      }
-
-      .pl-10 {
-         padding-left: 20px;
-         font-weight: 300;
-         font-style: italic;
-
-      }
-
-      .display-h {
-         display: flex;
-         align-items: center;
-         height: 0px;
-      }
-
-      .line2 {
-         border-bottom: 2px solid black;
-         width: 200px;
-      }
-
-      .m-0-mr-2 {
-         margin: 0px 0px 2px 0px;
-      }
-
-      .m-0 {
-         margin: 0px;
-      }
-
-      .pl-15 {
-         padding-left: 10px;
-      }
-
-      .pl-20 {
-         padding-left: 17px;
-      } .
-
-      .mb-3 {
-         margin-bottom: 3px;
-         margin-top: 12px;
-      }
-
-      .h3-color {
-         color: rgb(30 62 92);
-      }
-
-      .color-muted {
+      body {
+         margin: 0;
+         padding: 0;
+         background: #fff;
+         font-family: Georgia, "Times New Roman", serif;
+         font-size: 18px;
          color: #454545;
       }
-
-      .foot-color {
-         background-color: rgb(30 62 92);
-         border-top: 4px solid rgb(2, 238, 255);
-         position: relative;
+      .r9-head {
+         width: 100%;
+         background-color: #1e3e5c;
+         color: #fff;
+         border-bottom: 4px solid #02eeff;
+         border-collapse: collapse;
       }
-
-      .box3 {
-         right: 60px;
-         font-size: 165px;
-         position: absolute;
-         top: -103px;
-         color: rgb(30 62 92);
-         z-index: -1;
+      .r9-photo-cell {
+         width: 210px;
+         padding: 18px 10px 18px 22px;
+         vertical-align: middle;
       }
-
-      .box4 {
-         right: 60px;
-         font-size: 165px;
-         position: absolute;
-         top: -109px;
-         color: rgb(2, 238, 255);
-         z-index: -2;
+      .r9-photo {
+         display: block;
+         width: 150px;
+         height: 150px;
+         border-radius: 50%;
+         background: #ddd;
+         border: 4px solid #fff;
       }
-
-      .box5 {
-         right: 73px;
-         font-size: 101px;
-         position: absolute;
-         top: -70px;
-         color: rgb(30 62 92);
+      .r9-name-cell {
+         vertical-align: middle;
+         padding: 18px 24px 14px 8px;
+         color: #fff;
+      }
+      .r9-name {
+         margin: 0;
+         font-size: 32px;
+         font-weight: 500;
+         color: #fff;
+      }
+      .r9-job {
+         margin: 4px 0 2px 0;
+         font-size: 22px;
+         font-style: italic;
+         font-weight: normal;
+         color: #fff;
+      }
+      .r9-dob {
+         margin: 0 0 8px 0;
+         font-size: 18px;
+         font-style: italic;
+         color: #fff;
+      }
+      .r9-rule {
+         width: 100%;
+         border-collapse: collapse;
+         margin: 0 0 8px 0;
+      }
+      .r9-line {
+         height: 2px;
+         background-color: #02eeff;
+         font-size: 0;
+         line-height: 0;
+         width: 100%;
+      }
+      .r9-arrow-td {
+         width: 18px;
+         padding: 0 0 0 2px;
+         vertical-align: middle;
+      }
+      .r9-arrow {
+         width: 0;
+         height: 0;
+         border-top: 7px solid transparent;
+         border-bottom: 7px solid transparent;
+         border-left: 14px solid #02eeff;
+      }
+      .r9-obj {
+         margin: 0;
+         font-size: 18px;
+         color: #fff;
+         word-wrap: break-word;
+      }
+      .r9-notch-cyan {
+         width: 0;
+         height: 0;
+         border-left: 42px solid transparent;
+         border-right: 42px solid transparent;
+         border-top: 28px solid #02eeff;
+         margin: 0 70px 0 auto;
+      }
+      .r9-notch {
+         width: 0;
+         height: 0;
+         border-left: 36px solid transparent;
+         border-right: 36px solid transparent;
+         border-top: 24px solid #1e3e5c;
+         margin: -24px 76px 0 auto;
+      }
+      .r9-body {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         padding: 8px 0 10px 0;
+      }
+      .r9-col {
+         width: 50%;
+         vertical-align: top;
+         padding: 8px 16px 12px 20px;
+      }
+      .r9-h {
+         margin: 0 0 4px 0;
+         font-size: 22px;
+         font-style: italic;
+         font-weight: 500;
+         color: #1e3e5c;
+      }
+      .r9-hline {
+         height: 2px;
+         background: #111;
+         font-size: 0;
+         line-height: 0;
+         width: 100%;
+      }
+      .r9-harrow-td {
+         width: 16px;
+         padding: 0 0 0 2px;
+         vertical-align: middle;
+      }
+      .r9-harrow {
+         width: 0;
+         height: 0;
+         border-top: 6px solid transparent;
+         border-bottom: 6px solid transparent;
+         border-left: 12px solid #111;
+      }
+      .r9-item {
+         margin: 8px 0 0 0;
+         font-size: 18px;
+         color: #1e3e5c;
          font-weight: bold;
       }
-
-      .word-break {
-         word-break: break-all;
+      .r9-sub {
+         margin: 1px 0 0 8px;
+         font-size: 15px;
+         color: #454545;
       }
-
-      .width-95 {
-         width: 95%;
+      .r9-foot {
+         width: 100%;
+         background-color: #1e3e5c;
+         color: #fff;
+         border-top: 4px solid #02eeff;
+         border-collapse: collapse;
+         margin-top: 8px;
       }
-
-      .width-97 {
-         width: 97%;
+      .r9-foot-title {
+         padding: 12px 20px 4px 20px;
+         font-size: 22px;
+         letter-spacing: 1px;
+         color: #fff;
       }
-
-      .font-italic {
-         font-style: italic;
+      .r9-foot-cols {
+         width: 100%;
+         border-collapse: collapse;
+      }
+      .r9-foot-cell {
+         width: 33%;
+         vertical-align: top;
+         padding: 6px 16px 18px 20px;
+         color: #fff;
+      }
+      .r9-foot-cell p {
+         margin: 0 0 4px 0;
+         color: #fff;
+         font-size: 18px;
+      }
+      .r9-vrule {
+         border-left: 2px solid #fff;
+      }
+      .r9-sign {
+         display: block;
+         width: 120px;
+         height: 48px;
+         margin: 8px 0 0 20px;
       }
    </style>
 </head>
 
 <body>
-   <div class="head-color">
-      <div class="grid-container" style="color: white;">
-         {{#if profilePhoto}}
-         <div class="grid-item">
-            <img class="imgs" style="max-height: 200px;" height="200px" src="{{{profilePhoto}}}" alt="profilePhoto">
-         </div>
-         {{/if}}
-         <div class="grid-item">
-            <h1 class="header-name">{{Name}}</h1>
-            <h1 class="head-title font-italic">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h1>
-            {{#if DOB}}
-            <h2 class="head-title1 font-italic">Dob : {{DOB}}</h2>
+   <table class="r9-head" cellpadding="0" cellspacing="0">
+      <tr>
+         <td class="r9-photo-cell">
+            {{#if profilePhoto}}
+            <img class="r9-photo" src="{{{profilePhoto}}}" alt="profilePhoto" />
             {{/if}}
-            <div style="display: flex; align-items: center; height: 0px;">
-               <div class="heading-row"></div>
-               <div class="errow1">➟</div>
-            </div>
-            {{#if Objective}}
-            <p class="p-text" style="text-align: justify;">{{Objective}} </p>
-            {{/if}}
-         </div>
-      </div>
-      <div class="box">◆
-      </div>
-      <div class="box1">◆
-      </div>
-      <div class="box2">―</div>
-   </div>
-   <div style="padding-top: 40px;">
-      <div class="grid-container1">
-         {{#if Education}}
-         <div class="grid-item1 width-97">
-            <h2 class="pl-10 m-0-mr-2 h3-color">Education</h2>
-            <div class="display-h">
-               <div class="line2"></div>
-               <div class="errow">➟</div>
-            </div>
+         </td>
+         <td class="r9-name-cell">
+            {{#if Name}}<p class="r9-name">{{Name}}</p>{{/if}}
+            {{#if jobTitle}}<p class="r9-job">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>{{/if}}
+            {{#if DOB}}<p class="r9-dob">Dob : {{DOB}}</p>{{/if}}
+            <table class="r9-rule" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td valign="middle"><div class="r9-line"></div></td>
+                  <td class="r9-arrow-td"><div class="r9-arrow"></div></td>
+               </tr>
+            </table>
+            {{#if Objective}}<p class="r9-obj">{{Objective}}</p>{{/if}}
+         </td>
+      </tr>
+   </table>
+   <div class="r9-notch-cyan"></div>
+   <div class="r9-notch"></div>
+
+   <table class="r9-body" cellpadding="0" cellspacing="0">
+      <tr>
+         <td class="r9-col">
+            {{#if Education}}
+            <p class="r9-h">Education</p>
+            <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Education}}
-            <p class="pl-10 mb-3 h3-color word-break"><b>{{course}}</b></p>
-            <p class="m-0 pl-20 color-muted word-break">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
-            {{#if percentage}}<p class="m-0 pl-20 color-muted word-break">{{percentage}}%</p>{{/if}}
-            <p class="m-0 pl-20 color-muted word-break">{{yearOfPassing}}</p>
+            {{#if course}}<p class="r9-item">{{course}}</p>{{/if}}
+            {{#if institute}}<p class="r9-sub">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>{{/if}}
+            {{#if percentage}}<p class="r9-sub">{{percentage}}%</p>{{/if}}
+            <p class="r9-sub">{{yearOfPassing}}</p>
             {{/each}}
-         </div>
-         {{/if}}
-         {{#if Experience}}
-         <div class="grid-item1 width-97">
-            <h2 class="pl-10 m-0-mr-2 h3-color">Experience</h2>
-            <div class="display-h">
-               <div class="line2"></div>
-               <div class="errow">➟</div>
-            </div>
+            {{/if}}
+         </td>
+         <td class="r9-col">
+            {{#if Experience}}
+            <p class="r9-h">Experience</p>
+            <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Experience}}
-            <p class="pl-10 mb-3 h3-color word-break"><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>
-            <p class="m-0 pl-20 color-muted word-break">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
-            {{#if from}}<p class="m-0 pl-20 color-muted word-break">{{from}} {{#if to}} - {{to}}{{/if}}</p>{{/if}}
-            <p class="m-0 pl-20 color-muted word-break">{{role}}</p>
-            <p class="m-0 pl-20 color-muted word-break">{{description}}</p>
-            {{#if present}}<p class="m-0 pl-20 color-muted">Present</p>{{/if}}
+            <p class="r9-item">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>
+            {{#if organization}}<p class="r9-sub">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>{{/if}}
+            {{#if from}}<p class="r9-sub">{{from}}{{#if to}} - {{to}}{{/if}}</p>{{/if}}
+            {{#if role}}<p class="r9-sub">{{role}}</p>{{/if}}
+            {{#if description}}<p class="r9-sub">{{description}}</p>{{/if}}
+            {{#if present}}<p class="r9-sub">Present</p>{{/if}}
             {{/each}}
-         </div>
-         {{/if}}
-         {{#if Skills}}
-         <div class="grid-item1 width-97">
-            <h2 class="pl-10 m-0-mr-2 h3-color">Skills</h2>
-            <div class="display-h">
-               <div class="line2"></div>
-               <div class="errow">➟</div>
-            </div>
+            {{/if}}
+         </td>
+      </tr>
+      <tr>
+         <td class="r9-col">
+            {{#if Skills}}
+            <p class="r9-h">Skills</p>
+            <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Skills}}
             {{#if skillName}}
-            <p class="pl-10 mb-3 h3-color word-break"><b>{{skillName}}</b></p>
-            {{#if expertise}}<p class="m-0 pl-20 color-muted">{{expertise}}%</p>{{/if}}
+            <p class="r9-item">{{skillName}}</p>
+            <p class="r9-sub">{{expertiseLabel}}%</p>
             {{/if}}
             {{/each}}
-         </div>
-         {{/if}}
-         {{#if Projects}}
-         <div class="grid-item1 width-97">
-            <h2 class="pl-10 m-0-mr-2 h3-color">Projects</h2>
-            <div class="display-h">
-               <div class="line2"></div>
-               <div class="errow">➟</div>
-            </div>
+            {{/if}}
+         </td>
+         <td class="r9-col">
+            {{#if Projects}}
+            <p class="r9-h">Projects</p>
+            <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Projects}}
-            <p class="pl-10 mb-3 h3-color word-break"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p>
-            <p class="m-0 pl-20 color-muted word-break">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
-            <p class="m-0 pl-20 color-muted word-break">{{duration}}</p>
-            <p class="m-0 pl-20 color-muted word-break">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
+            <p class="r9-item">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</p>
+            {{#if roles}}<p class="r9-sub">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>{{/if}}
+            {{#if projectDescription}}<p class="r9-sub">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>{{/if}}
+            {{#if duration}}<p class="r9-sub">{{duration}}</p>{{/if}}
             {{/each}}
-         </div>
-         {{/if}}
-         {{#if Language}}
-         <div class="grid-item1 width-97">
-            <h2 class="pl-10 m-0-mr-2 h3-color">Language</h2>
-            <div class="display-h">
-               <div class="line2"></div>
-               <div class="errow">➟</div>
-            </div>
+            {{/if}}
+         </td>
+      </tr>
+      <tr>
+         <td class="r9-col">
+            {{#if Language}}
+            <p class="r9-h">Language</p>
+            <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Language}}
-            <p class="pl-10 mb-3 h3-color word-break"><b>{{name}}</b></p>
+            {{#if name}}<p class="r9-item">{{name}}</p>{{/if}}
             {{/each}}
-         </div>
-         {{/if}}
-         {{#if Achivement}}
-         <div class="grid-item1 width-97">
-            <h2 class="pl-10 m-0-mr-2 h3-color">Achievement</h2>
-            <div class="display-h">
-               <div class="line2"></div>
-               <div class="errow">➟</div>
-            </div>
-            {{#each Achivement}}
-            <p class="pl-10 mb-3 h3-color word-break"><b>{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</b></p>
-            {{/each}}
-         </div>
-         {{/if}}
-         {{#if Interests}}
-         <div class="grid-item1 width-97">
-            <h2 class="pl-10 m-0-mr-2 h3-color">Interests</h2>
-            <div class="display-h">
-               <div class="line2"></div>
-               <div class="errow">➟</div>
-            </div>
+            {{/if}}
+         </td>
+         <td class="r9-col">
+            {{#if Interests}}
+            <p class="r9-h">Interests</p>
+            <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Interests}}
-            <p class="pl-10 mb-3 h3-color word-break"><b>{{hoby}}</b></p>
+            {{#if hoby}}<p class="r9-item">{{hoby}}</p>{{/if}}
             {{/each}}
-         </div>
-         {{/if}}
-
-         {{#if Reference}}
-         <div class="grid-item1 width-97">
-            <h2 class="pl-10 m-0-mr-2 h3-color">Reference</h2>
-            <div class="display-h">
-               <div class="line2"></div>
-               <div class="errow">➟</div>
-            </div>
+            {{/if}}
+         </td>
+      </tr>
+      <tr>
+         <td class="r9-col">
+            {{#if Achivement}}
+            <p class="r9-h">Achievement</p>
+            <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
+            {{#each Achivement}}
+            {{#if achivement}}<p class="r9-item">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>{{/if}}
+            {{/each}}
+            {{/if}}
+         </td>
+         <td class="r9-col">
+            {{#if Reference}}
+            <p class="r9-h">Reference</p>
+            <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Reference}}
-            <p class="pl-10 mb-3 h3-color word-break"><b>{{name}}</b></p>
-            <p class="m-0 pl-20 color-muted word-break">{{jobtitle}}</p>
-            <p class="m-0 pl-20 color-muted word-break">{{companyname}}</p>
-            <p class="m-0 pl-20 color-muted word-break">{{email}}</p>
-            <p class="m-0 pl-20 color-muted word-break">{{phone}}</p>
+            {{#if name}}<p class="r9-item">{{name}}</p>{{/if}}
+            {{#if jobtitle}}<p class="r9-sub">{{jobtitle}}</p>{{/if}}
+            {{#if companyname}}<p class="r9-sub">{{companyname}}</p>{{/if}}
+            {{#if email}}<p class="r9-sub">{{email}}</p>{{/if}}
+            {{#if phone}}<p class="r9-sub">{{phone}}</p>{{/if}}
             {{/each}}
-         </div>
-         {{/if}}
-      </div>
-      {{#if sign}}
-      <div>
-         <h2 class="pl-10 m-0-mr-2 h3-color">Signature</h2>
-         <div class="display-h">
-            <div style="border-bottom: 2px solid black; width:620px;"></div>
-            <div class="errow">➟</div>
-         </div>
-         <img src="{{{sign}}}" alt="Signature" height="13%" width="20%" style="margin-left: 500px;">
-      </div>
-      {{/if}}
-   </div>
-   <div class="foot-color" style="margin-top: 40px; padding-bottom: 25px;">
-      <div style="color: white;">
-         <h2 class="pl-10">Contact</h2>
-         <div class="grid-container2">
-            {{#if Phone}}
-            <div class="grid-item2" style="border-right: 2px solid white;padding-right: 10px !important;">
-               <p class="pl-10 mb-3"><b>Phone</b></p>
-               <p class="m-0 pl-20 word-break width-95">{{Phone}}</p>
-            </div>
             {{/if}}
-            {{#if Address}}
-            <div class="grid-item2" style="border-right: 2px solid white;padding-right: 10px !important;">
-               <p class="pl-10 mb-3"><b>Address</b></p>
-               <p class="m-0 pl-20 word-break width-95">{{Address}}</p>
-            </div>
+            {{#if sign}}
+            <p class="r9-h" style="margin-top:12px;">Signature</p>
+            <img class="r9-sign" src="{{{sign}}}" alt="Signature" />
             {{/if}}
-            {{#if Email}}
-            <div class="grid-item2" style="padding-right: 10px !important;">
-               <p class="pl-10 mb-3"><b>E-mail</b></p>
-               <p class="pl-20 word-break">{{Email}}</p>
-            </div>
-            {{/if}}
-         </div>
-      </div>
-      <div class="box3">◆
-      </div>
-      <div class="box4">◆
-      </div>
-      <div class="box5">―</div>
-   </div>
+         </td>
+      </tr>
+   </table>
 
-
+   <div class="r9-notch-cyan"></div>
+   <div class="r9-notch"></div>
+   <table class="r9-foot" cellpadding="0" cellspacing="0">
+      <tr>
+         <td class="r9-foot-title" colspan="3">CONTACT</td>
+      </tr>
+      <tr>
+         <td>
+            <table class="r9-foot-cols" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r9-foot-cell">
+                     {{#if Phone}}<p><b>Phone</b></p><p>{{Phone}}</p>{{/if}}
+                  </td>
+                  <td class="r9-foot-cell r9-vrule">
+                     {{#if Address}}<p><b>Address</b></p><p>{{Address}}</p>{{/if}}
+                  </td>
+                  <td class="r9-foot-cell r9-vrule">
+                     {{#if Email}}<p><b>E-mail</b></p><p>{{Email}}</p>{{/if}}
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
 </body>
 
 </html>

@@ -8,7 +8,7 @@ namespace App\Services;
  */
 class ResumeUniversalPrintFix
 {
-    public const VERSION = 'resume-universal-print-fix-v9';
+    public const VERSION = 'resume-universal-print-fix-v28';
 
     public static function apply(string $html, ?string $format = null): string
     {
@@ -42,6 +42,16 @@ class ResumeUniversalPrintFix
   html, body {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    font-size: 18px !important;
+  }
+  p, li, td, th {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 20px;
   }
   img {
     max-width: 100%;
@@ -463,7 +473,7 @@ class ResumeUniversalPrintFix
     position: relative !important;
     top: auto !important;
     margin-top: 8px;
-    font-size: 15px !important;
+    font-size: 18px !important;
   }
   .flexContainer .leftRow {
     position: relative;
@@ -652,6 +662,667 @@ class ResumeUniversalPrintFix
   html[data-resume-format="resume4.html"] .header p {
     margin: 0;
     padding: 1px 8px;
+  }
+
+  /* --- resume5.html: table columns, solid gold/dark (wkhtml no flex/grid/8-digit hex) --- */
+  html[data-resume-format="resume5.html"],
+  html[data-resume-format="resume5.html"] body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-left h3 {
+    font-size: 22px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-left p {
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-name h1 {
+    font-size: 34px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-name h3 {
+    font-size: 22px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-objective h3 {
+    font-size: 22px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-objective p {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-card-title {
+    font-size: 22px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-card-body p {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-achv-title {
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-achv p {
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-page {
+    width: 100% !important;
+    height: 1120px !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-left {
+    width: 28% !important;
+    height: 1120px !important;
+    background-color: #2d2d2d !important;
+    color: #ffb629 !important;
+    vertical-align: top !important;
+    padding: 12px 8px 30px 10px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-right {
+    width: 72% !important;
+    background-color: #fff !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-photo {
+    display: block !important;
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important;
+    border: 5px solid #fff !important;
+    border-radius: 50% !important;
+    margin: 16px auto 12px auto !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume5.html"] .r5-name {
+    background-color: #ffb629 !important;
+    border-radius: 0 40px 0 0 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-bar-dark,
+  html[data-resume-format="resume5.html"] .r5-card-body,
+  html[data-resume-format="resume5.html"] .r5-achv-title {
+    background-color: #2d2d2d !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-bar-gold,
+  html[data-resume-format="resume5.html"] .r5-card-title,
+  html[data-resume-format="resume5.html"] .r5-fill,
+  html[data-resume-format="resume5.html"] .r5-achv {
+    background-color: #ffb629 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-cards {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 10px 14px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-block {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-title-pad {
+    padding: 0 16px !important;
+    text-align: center !important;
+    vertical-align: bottom !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-card-title {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 8px 8px !important;
+    text-align: center !important;
+    border: 4px solid #fff !important;
+    box-sizing: border-box !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-card-body {
+    padding: 16px 10px 14px 10px !important;
+    min-height: 170px;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-track {
+    background-color: #eee !important;
+    height: 14px !important;
+    overflow: hidden !important;
+    width: 96% !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-fill {
+    height: 14px !important;
+    min-height: 14px;
+    font-size: 15px !important;
+    line-height: 14px !important;
+  }
+  html[data-resume-format="resume5.html"] .r5-sign,
+  html[data-resume-format="resume5.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume6.html: two-column gray layout, black header, overlapping photo --- */
+  html[data-resume-format="resume6.html"],
+  html[data-resume-format="resume6.html"] body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-page {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    border: 1px solid #000 !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-header {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-top: 12px solid #a6a6a6 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-name-cell {
+    background-color: #000 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-name {
+    font-size: 34px !important;
+    color: #fff !important;
+    margin: 0 !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-job {
+    font-size: 18px !important;
+    letter-spacing: 5px !important;
+    color: #fff !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-photo {
+    display: block !important;
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important;
+    border-radius: 50% !important;
+    margin: 0 auto -70px auto !important;
+    object-fit: cover;
+    border: 3px solid #fff !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-body {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-col-left,
+  html[data-resume-format="resume6.html"] col.r6-col-left {
+    width: 30% !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-col-right,
+  html[data-resume-format="resume6.html"] col.r6-col-right {
+    width: 70% !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-left,
+  html[data-resume-format="resume6.html"] .r6-right {
+    background-color: #a6a6a6 !important;
+    vertical-align: top !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-left {
+    width: 30% !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-right {
+    width: 70% !important;
+    border-left: 1px solid #5a5454 !important;
+  }
+  html[data-resume-format="resume6.html"] h2 {
+    font-size: 22px !important;
+    margin: 0 0 8px 0 !important;
+  }
+  html[data-resume-format="resume6.html"] p {
+    font-size: 18px !important;
+    word-break: normal !important;
+    word-wrap: break-word !important;
+  }
+  html[data-resume-format="resume6.html"] .r6-sign,
+  html[data-resume-format="resume6.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume7.html: pink banners, contact icons, experience 30/70 --- */
+  html[data-resume-format="resume7.html"],
+  html[data-resume-format="resume7.html"] body {
+    margin: 0 !important;
+    padding: 10px 12px 14px 12px !important;
+    background: #fff !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-name {
+    font-size: 32px !important;
+    color: #ff3968 !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-job,
+  html[data-resume-format="resume7.html"] .r7-contact-text,
+  html[data-resume-format="resume7.html"] .r7-h {
+    color: #ff3968 !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-icon {
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    background-color: #ff3968 !important;
+    color: #fff !important;
+    border-radius: 50% !important;
+    text-align: center !important;
+    line-height: 22px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-icon svg {
+    display: block !important;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 5px auto 0 auto !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-pink {
+    background-color: #ff3968 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-dates {
+    width: 30% !important;
+    color: #fff !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-jobbody {
+    width: 70% !important;
+    color: #fff !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-skill-box {
+    width: 48% !important;
+    float: left !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-track {
+    background-color: #e9ecef !important;
+    height: 10px !important;
+    overflow: hidden !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-fill {
+    background-color: #ff3968 !important;
+    height: 10px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume7.html"] .r7-sign,
+  html[data-resume-format="resume7.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume8.html: pink sidebar, skill bars, timeline --- */
+  html[data-resume-format="resume8.html"],
+  html[data-resume-format="resume8.html"] body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-page {
+    width: 100% !important;
+    height: 1120px !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-left {
+    width: 32% !important;
+    background-color: #e91e63 !important;
+    color: #fff !important;
+    vertical-align: top !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-right {
+    width: 68% !important;
+    background: #fff !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-photo {
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume8.html"] .r8-sec-title {
+    font-size: 22px !important;
+    text-transform: uppercase !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-right .r8-sec-title {
+    color: #e91e63 !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-track {
+    height: 6px !important;
+    background-color: #f48fb1 !important;
+    overflow: hidden !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-fill {
+    height: 6px !important;
+    background-color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border: 2px solid #e91e63 !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-line {
+    width: 2px !important;
+    height: 48px !important;
+    background: #e91e63 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume8.html"] .r8-sign,
+  html[data-resume-format="resume8.html"] img[alt="sign"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume9.html: navy header/footer, 2-col body --- */
+  html[data-resume-format="resume9.html"],
+  html[data-resume-format="resume9.html"] body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-head,
+  html[data-resume-format="resume9.html"] .r9-foot {
+    background-color: #1e3e5c !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-head {
+    border-bottom: 4px solid #02eeff !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-foot {
+    border-top: 4px solid #02eeff !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-photo {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume9.html"] .r9-name {
+    font-size: 34px !important;
+    color: #fff !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-job {
+    font-size: 22px !important;
+    color: #fff !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-line {
+    background-color: #02eeff !important;
+    height: 2px !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-body {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-col {
+    width: 50% !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-h {
+    color: #1e3e5c !important;
+    font-size: 22px !important;
+    font-style: italic !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-hline {
+    background: #111 !important;
+    height: 2px !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-arrow {
+    width: 0 !important;
+    height: 0 !important;
+    border-top: 7px solid transparent !important;
+    border-bottom: 7px solid transparent !important;
+    border-left: 14px solid #02eeff !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-harrow {
+    width: 0 !important;
+    height: 0 !important;
+    border-top: 6px solid transparent !important;
+    border-bottom: 6px solid transparent !important;
+    border-left: 12px solid #111 !important;
+  }
+  html[data-resume-format="resume9.html"] .r9-sign,
+  html[data-resume-format="resume9.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume10.html: full-width beige header, photo overlap --- */
+  html[data-resume-format="resume10.html"],
+  html[data-resume-format="resume10.html"] body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-head,
+  html[data-resume-format="resume10.html"] .r10-head-l,
+  html[data-resume-format="resume10.html"] .r10-head-r {
+    background-color: #cbb594 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-head {
+    width: 100% !important;
+    height: 168px !important;
+    table-layout: fixed !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-head-l {
+    width: 35% !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-head-r {
+    width: 65% !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-page {
+    width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-left {
+    width: 35% !important;
+    background-color: #cdcdcd !important;
+    -webkit-print-color-adjust: exact !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-right {
+    width: 65% !important;
+    background-color: #fff !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-photo {
+    width: 168px !important;
+    height: 168px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume10.html"] .r10-name {
+    font-size: 40px !important;
+    color: #222 !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-h {
+    font-size: 22px !important;
+    font-weight: bold !important;
+    color: #111 !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-dia {
+    width: 7px !important;
+    height: 7px !important;
+    background-color: #111 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume10.html"] .r10-sign,
+  html[data-resume-format="resume10.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume11.html: teal sidebar, peach name banner --- */
+  html[data-resume-format="resume11.html"],
+  html[data-resume-format="resume11.html"] body {
+    margin: 0 !important;
+    padding: 10px !important;
+    background: #fff !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-page {
+    width: 100% !important;
+    height: 1100px !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-left {
+    width: 32% !important;
+    background-color: #699897 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-right {
+    width: 68% !important;
+    background-color: #fff !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-peach {
+    background-color: #fdceb8 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-photo {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume11.html"] .r11-name {
+    font-size: 34px !important;
+    color: #111 !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-h {
+    font-size: 22px !important;
+    font-weight: bold !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-tri {
+    border-left: 10px solid #699897 !important;
+    border-top: 6px solid transparent !important;
+    border-bottom: 6px solid transparent !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-lh,
+  html[data-resume-format="resume11.html"] .r11-lval,
+  html[data-resume-format="resume11.html"] .r11-litem {
+    color: #fff !important;
+  }
+  html[data-resume-format="resume11.html"] .r11-sign,
+  html[data-resume-format="resume11.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume12.html: light-blue main, navy profile card --- */
+  html[data-resume-format="resume12.html"],
+  html[data-resume-format="resume12.html"] body {
+    margin: 0 !important;
+    padding: 8px !important;
+    background: #fff !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-page,
+  html[data-resume-format="resume12.html"] .r12-main,
+  html[data-resume-format="resume12.html"] .r12-side,
+  html[data-resume-format="resume12.html"] .r12-rail {
+    background-color: #bad4e4 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-page {
+    width: 100% !important;
+    height: 1100px !important;
+    table-layout: fixed !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-main { width: 62% !important; vertical-align: top !important; }
+  html[data-resume-format="resume12.html"] .r12-side { width: 34% !important; vertical-align: top !important; }
+  html[data-resume-format="resume12.html"] .r12-rail { width: 4% !important; }
+  html[data-resume-format="resume12.html"] .r12-accent,
+  html[data-resume-format="resume12.html"] .r12-rail-top {
+    background-color: #2d3f65 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-namecard {
+    background-color: #fff !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-card {
+    background-color: #101f38 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-photo {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume12.html"] .r12-name {
+    font-size: 34px !important;
+    color: #111 !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-h {
+    font-size: 22px !important;
+    font-weight: bold !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-sh,
+  html[data-resume-format="resume12.html"] .r12-sval,
+  html[data-resume-format="resume12.html"] .r12-skill-name,
+  html[data-resume-format="resume12.html"] .r12-wval {
+    color: #fff !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-track {
+    background-color: #8b93a3 !important;
+    height: 10px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-fill {
+    background-color: #fff !important;
+    height: 10px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-pct {
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    width: 46px !important;
+    text-align: right !important;
+  }
+  html[data-resume-format="resume12.html"] .r12-sign,
+  html[data-resume-format="resume12.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
   }
 
   html[data-resume-format="resume3.html"] img[alt="sign"],

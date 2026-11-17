@@ -279,10 +279,13 @@ class ResumeSectionHtmlBuilder
             }
             $expInt = is_numeric($exp) ? (int) $exp : 0;
 
-            $html .= '<p class="m-0 mb-5 pl-10">'.self::e($name).'</p>';
-            $html .= '<div class="progress" style="width: 93%; margin-left: 10px;">';
-            $html .= '<div class="progress-bar bg-danger" style="width:'.$expInt.'%; color: white;">'.$expInt.'%</div>';
-            $html .= '</div>';
+            $html .= '<table width="100%" cellpadding="0" cellspacing="0" style="margin: 6px 0 8px 0;"><tr>';
+            $html .= '<td style="color:#fff;font-size:13px;">'.self::e($name).'</td>';
+            $html .= '<td style="color:#fff;font-size:13px;font-weight:bold;text-align:right;width:46px;white-space:nowrap;">'.$expInt.'%</td>';
+            $html .= '</tr><tr><td colspan="2">';
+            $html .= '<div style="height:10px;background-color:#8b93a3;overflow:hidden;width:100%;">';
+            $html .= '<div style="height:10px;width:'.$expInt.'%;background-color:#fff;">&nbsp;</div>';
+            $html .= '</div></td></tr></table>';
         }
         $html .= '</div>';
 

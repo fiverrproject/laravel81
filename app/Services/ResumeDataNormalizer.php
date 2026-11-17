@@ -50,7 +50,7 @@ class ResumeDataNormalizer
             'Address' => (string) ($personal['Address'] ?? $personal['address'] ?? $payload['Address'] ?? $payload['address'] ?? ''),
             'Email' => (string) ($personal['Email'] ?? $personal['email'] ?? $payload['Email'] ?? $payload['email'] ?? ''),
             'Phone' => (string) ($personal['Phone'] ?? $personal['phone'] ?? $payload['Phone'] ?? $payload['phone'] ?? ''),
-            'DOB' => (string) ($personal['DOB'] ?? $personal['dob'] ?? $payload['DOB'] ?? $payload['dob'] ?? ''),
+            'DOB' => self::indianDate((string) ($personal['DOB'] ?? $personal['dob'] ?? $payload['DOB'] ?? $payload['dob'] ?? '')),
             'jobTitle' => (string) ($personal['jobTitle'] ?? $personal['JobTitle'] ?? $personal['job_title'] ?? $payload['jobTitle'] ?? $payload['JobTitle'] ?? $payload['designation'] ?? ''),
             'designation' => (string) ($payload['designation'] ?? $personal['designation'] ?? $personal['jobTitle'] ?? $payload['jobTitle'] ?? ''),
             'Education' => $education !== [] ? $education : '',
@@ -374,5 +374,24 @@ class ResumeDataNormalizer
         }
 
         return true;
+    }
+
+    /**
+     * Convert ISO / slash dates to Indian DD-MM-YYYY. Leave already-Indian and free text alone.
+     */
+    public static function indianDate(string $value): string
+    {
+        $value = trim($value);
+        if ($value === '') {
+            return '';
+        }
+        if (preg_match('/^(\d{2})[\/\-](\d{2})[\/\-](\d{4})$/', $value, $m)) {
+            return $m[1].'-'.$m[2].'-'.$m[3];
+        }
+        if (preg_match('/^(\d{4})[\/\-](\d{2})[\/\-](\d{2})/', $value, $m)) {
+            return $m[3].'-'.$m[2].'-'.$m[1];
+        }
+
+        return $value;
     }
 }
