@@ -105,7 +105,7 @@
          font-weight: 500;
          color: var(--white);
          letter-spacing: 1px;
-         font-size: 20px;
+         font-size: 22px;
       }
 
       .hr1 {
@@ -117,7 +117,7 @@
       }
 
       .p1 {
-         font-size: 11px;
+         font-size: 16px;
          color: var(--white);
          letter-spacing: 1px;
          padding-top: 8px;
@@ -156,7 +156,7 @@
       }
 
       .content-box h3 {
-         font-size: 13px;
+         font-size: 16px;
          text-transform: uppercase;
          letter-spacing: 1px;
          padding-top: 10px;
@@ -165,7 +165,7 @@
       }
 
       .p2 {
-         font-size: 13px;
+         font-size: 16px;
          margin-bottom: 5px;
          margin-top: 5px;
          color: var(--white);
@@ -201,20 +201,28 @@
       }
 
       h1 {
-         font-size: 50px;
+         font-size: 36px;
          text-transform: uppercase;
          color: var(--black);
-         line-height: 50px;
+         line-height: 40px;
       }
 
       h1 span {
          color: var(--one);
       }
 
+      .pro-name {
+         font-size: 32px;
+         color: #54585d;
+         font-weight: 600;
+         text-transform: none;
+      }
+
       .p3 {
-         letter-spacing: 4px;
+         letter-spacing: 2px;
          color: #54585d;
          font-weight: 500;
+         font-size: 18px;
       }
 
       .heading {
@@ -222,7 +230,7 @@
          font-weight: 500;
          color: var(--one);
          letter-spacing: 1px;
-         font-size: 20px;
+         font-size: 22px;
       }
 
       .hr2 {
@@ -235,10 +243,11 @@
       .p5 {
          font-weight: 700;
          color: var(--black);
+         font-size: 18px;
       }
 
       .span1 {
-         font-size: 12px;
+         font-size: 16px;
          color: var(--black);
       }
 
@@ -247,12 +256,19 @@
       }
 
       .f-clr-size {
-         font-size: 11px;
+         font-size: 16px;
          color: white;
       }
 
       .word-break {
-         word-break: break-all;
+         word-wrap: break-word;
+         word-break: break-word;
+      }
+
+      .pro-sign {
+         display: block;
+         width: 120px;
+         height: 48px;
       }
 
       .showPosts {
@@ -289,23 +305,18 @@
             <h2>Profile Info</h2>
             <hr class="hr1">
             {{#if Objective}}
-            <p class="p1" style="word-break: break-all; text-align: justify;">{{Objective}}</p>
+            <p class="p1" style="word-wrap: break-word; text-align: justify;">{{Objective}}</p>
             {{/if}}{{#if Phone}}
-            <div style="color: #fff; margin-bottom: 5px;font-size: 12px; margin-top: 5px;"><strong>Phone:</strong>
+            <div class="p2"><strong>Phone:</strong>
                {{Phone}}</div>
             {{/if}}
             {{#if DOB}}
-            <div style="color: #fff; margin-bottom: 5px;font-size: 12px;margin-top: 5px;"><strong>DOB:</strong>{{DOB}}
+            <div class="p2"><strong>DOB:</strong> {{DOB}}
             </div>
             {{/if}}{{#if Email}}
-            <div style="color: #fff; margin-bottom: 5px;font-size: 12px; display: flex; justify-content: flex-start;">
-               <p style="padding-right: 5px;"> <strong>Email: </strong></p>
-               <p style="word-break: break-all;"> {{Email}}</p>
-            </div>
+            <div class="p2"><strong>Email:</strong> {{Email}}</div>
             {{/if}}{{#if Address}}
-            <div style="color: #fff; margin-bottom: 5px;font-size: 12px; display: flex; justify-content: flex-start;">
-               {{Address}}
-            </div>
+            <div class="p2">{{Address}}</div>
             {{/if}}
             {{#if Language}}
             <br>
@@ -350,7 +361,7 @@
       </div>
 
       <div class="right-box">
-         <h2 style="font-size: 25px; color: #54585d;">
+         <h2 class="pro-name">
             {{Name}}
          </h2>
          <p class="p3">{{jobTitle}}</p>
@@ -463,7 +474,7 @@
 
          <div class="col-div-12">
             <div>
-               <img src="{{{sign}}}" style="width: 110px; height: 110px;">
+               <img class="pro-sign" src="{{{sign}}}" alt="Signature" />
             </div>
          </div>
          <div class="clearfix"></div>

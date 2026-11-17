@@ -62,6 +62,7 @@ class ResumeTemplateDataMapper
                 'name' => $name,
                 'expertise' => $expertise,
                 'expertiseLabel' => (string) $expertise,
+                'skillStack' => (mb_strlen($name) > 9) ? '1' : '',
             ];
         }
         $data['Skills'] = $skills !== [] ? $skills : '';
@@ -240,6 +241,12 @@ class ResumeTemplateDataMapper
             }
         }
         $data['Interests'] = $interests !== [] ? $interests : '';
+
+        $hasSocial = trim((string) ($data['Facebook'] ?? '')) !== ''
+            || trim((string) ($data['Twitter'] ?? '')) !== ''
+            || trim((string) ($data['Youtube'] ?? '')) !== ''
+            || trim((string) ($data['Linkedin'] ?? '')) !== '';
+        $data['hasSocial'] = $hasSocial ? '1' : '';
 
         return $data;
     }

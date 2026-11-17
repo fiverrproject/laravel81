@@ -1,425 +1,333 @@
-<!DOCTYPE html>
-<html data-postman-fallbacks="1" lang="en">
+<html data-postman-fallbacks="1">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Resume 19</title>
-   <link rel="stylesheet" href="myStyle.css">
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <style>
-      .w-100 {
+      body {
+         margin: 0;
+         padding: 0;
+         background: #091425;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 18px;
+         color: #222;
+      }
+      .r19-wrap {
          width: 100%;
+         background-color: #091425;
+         border-collapse: collapse;
       }
-
-      .text-white {
-         color: white;
-      }
-
-      .text-dark {
-         color: black;
-      }
-
-      .bg-light {
-         background-color: white;
-      }
-
-      .main-container {
-         border: 1px solid black;
-         border-radius: 10px;
+      .r19-head {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
          background-color: #091425;
       }
-
-      /* Profile pic start */
-      .profile-pic-box {
-         background-color: white;
+      .r19-photo-td {
+         width: 220px;
+         vertical-align: top;
+         padding: 0 10px 8px 24px;
+      }
+      .r19-picbox {
+         width: 180px;
+         height: 180px;
+         background-color: #ffffff;
          border-radius: 0 0 20px 20px;
-         margin: 0px auto;
          text-align: center;
-         height: 200px;
-         width: 200px;
+         padding: 14px 0 0 0;
       }
-
-      .profile-pic-box img {
-         margin: 15px 0px;
+      .r19-photo {
+         display: block;
+         width: 152px;
+         height: 152px;
+         margin: 0 auto;
          border-radius: 20px;
-         height: 170px;
-         width: 170px;
+         background-color: #d9d9d9;
       }
-
-      .header-table {
-         margin: -3px;
+      .r19-name {
+         margin: 0;
+         font-size: 32px;
+         font-weight: bold;
+         color: #ffffff;
+      }
+      .r19-job {
+         margin: 6px 0 0 0;
+         font-size: 20px;
+         color: #ffffff;
+      }
+      .r19-body {
          width: 100%;
+         height: 920px;
+         border-collapse: collapse;
+         table-layout: fixed;
       }
-
-      .name {
-         color: white;
-         font-family: monospace;
-         font-size: 27px;
-         text-align: center;
-         padding: 20px 0px 0px 0px;
+      .r19-left {
+         width: 58%;
+         background-color: #ffffff;
+         vertical-align: top;
+         padding: 22px 18px 20px 20px;
+         border-radius: 0 48px 8px 0;
       }
-
-      .position-name {
-         color: white;
-         font-family: monospace;
-         font-size: 15px;
-         padding-left: 45px;
+      .r19-right {
+         width: 37%;
+         background-color: #091425;
+         vertical-align: top;
+         padding: 22px 16px 20px 22px;
+         color: #ffffff;
       }
-
-      /* Main Section start */
-      .section-table {
-         width: 100%;
-         margin-top: 35px;
-         display: flex;
-      }
-
-      /* Left card start */
-      .left-card {
-         font-family: monospace;
-         width: 60%;
-         border-radius: 0 50px 9px 0;
-         /* padding: 20px; */
-         padding: 20px 0px 20px 10px;
-      }
-
-      .left-card h2 {
-         margin: 20px 0 -9px 0;
-      }
-
-      .left-card h3 {
-         margin-left: 15px;
-      }
-
-      .left-card p {
-         color: #636363;
-         margin-left: 30px;
-         margin-right: 20px;
-         margin-top: 5px;
-         margin-bottom: 5px;
-      }
-
-      .left-card ul li {
-         color: #636363;
-         margin: 0 10px 0px 4px;
-         line-height: 17px;
-      }
-
-      .hr-line-left-card {
-         border-bottom: 2px solid black;
-         width: 90%;
-         margin-left: 1px;
-      }
-
-
-      /* Middle Card start */
-      .middle-card {
-         width: 40%;
-         padding: 20px 20px 66px 20px;
-         font-family: monospace;
-      }
-
-      .middle-card h2 {
-         margin: 20px 0 -7px 0;
-      }
-
-      .middle-card h3 {
-         margin: 10px 0 0 14px;
-      }
-
-      .middle-card p {
-         margin-left: 25px;
-      }
-
-      .hr-line-middle-card {
-         border-bottom: 2px solid white;
-         width: 100%;
-         margin-left: 1px;
-      }
-
-      .big-Dot {
-         font-size: 0;
-         padding: 5px;
-         margin-right: 10px;
-         border-radius: 50%;
-         background-color: white;
-         vertical-align: super;
-
-      }
-
-      /* Right card start */
-      .right-card {
+      .r19-edge {
          width: 5%;
-         border-radius: 50px 0 0 9px;
+         background-color: #ffffff;
+         border-radius: 48px 0 0 8px;
       }
-
-      /* Footer start */
-      footer {
-         border-top: 1px solid;
-         border-bottom-left-radius: 9px;
-         border-bottom-right-radius: 9px;
+      .r19-h {
+         margin: 14px 0 4px 0;
+         font-size: 20px;
+         font-weight: bold;
+         color: #111;
+         text-transform: uppercase;
+      }
+      .r19-h:first-child {
+         margin-top: 0;
+      }
+      .r19-line {
+         width: 92%;
+         height: 2px;
+         background-color: #111111;
+         margin: 0 0 8px 0;
+      }
+      .r19-title {
+         margin: 6px 0 4px 8px;
+         font-size: 18px;
+         font-weight: bold;
+         color: #111;
+      }
+      .r19-text {
+         margin: 0 0 6px 8px;
+         font-size: 16px;
+         color: #555;
+         word-wrap: break-word;
+      }
+      .r19-row {
          width: 100%;
-         background-color: #e7e7e7;
+         border-collapse: collapse;
+         margin: 0 0 2px 8px;
       }
-
-      .signature-text {
-         margin: 11px 70px 0 0;
-         display: flex;
-         justify-content: end;
+      .r19-dotcell {
+         width: 16px;
+         vertical-align: top;
+         padding: 7px 6px 0 0;
       }
-
-      .imgDiv {
-         display: flex;
-         justify-content: end;
+      .r19-dot {
+         width: 7px;
+         height: 7px;
+         background-color: #111111;
+         border-radius: 50%;
       }
-
-      .imgDiv img {
-         margin: -27px 58px 0px 0;
-         mix-blend-mode: darken;
+      .r19-bval {
+         font-size: 16px;
+         color: #444;
+         word-wrap: break-word;
+         vertical-align: top;
       }
-
-      h3 {
-         margin: 5px 15px 5px 15px !important;
+      .r19-rh {
+         margin: 16px 0 4px 0;
+         font-size: 18px;
+         font-weight: bold;
+         color: #ffffff;
+         text-transform: uppercase;
       }
-
-      ul {
-         margin-top: 5px;
-         margin-bottom: 5px;
+      .r19-rh:first-child {
+         margin-top: 0;
       }
-
-      .word-break {
-         word-break: break-all;
+      .r19-rline {
+         width: 100%;
+         height: 2px;
+         background-color: #ffffff;
+         margin: 0 0 10px 0;
       }
-
-      .disc li {
-         list-style-type: none;
-         position: relative;
+      .r19-rrow {
+         width: 100%;
+         border-collapse: collapse;
+         margin: 0 0 6px 0;
       }
-
-      .disc li:before {
-         position: absolute;
-         top: -17px;
-         left: -18px;
-         content: '\2022';
-         font-size: 3rem;
+      .r19-gdotcell {
+         width: 18px;
+         vertical-align: top;
+         padding: 6px 8px 0 0;
       }
-
-      .disc li p {
-         margin: 10px 0px 10px 15px !important;
+      .r19-gdot {
+         width: 10px;
+         height: 10px;
+         background-color: #e8c547;
+         border-radius: 50%;
+      }
+      .r19-rval {
+         font-size: 16px;
+         color: #ffffff;
+         word-wrap: break-word;
+         vertical-align: top;
+      }
+      .r19-sign-wrap {
+         text-align: right;
+         padding: 16px 8px 4px 8px;
+      }
+      .r19-sign-label {
+         margin: 0 0 4px 0;
+         font-size: 16px;
+         font-weight: bold;
+         color: #111;
+         text-align: right;
+      }
+      .r19-sign {
+         display: block;
+         width: 120px;
+         height: 48px;
+         margin: 0 0 0 auto;
       }
    </style>
 </head>
 
 <body>
-   <div class="main-container">
-      <table class="header-table">
-         <tr>
-            {{#if profilePhoto}}
-            <td style="text-align: center;">
-               <div class="profile-pic-box">
-                  <img class="imgs" src="{{{profilePhoto}}}" alt="profilePhoto">
-               </div>
-            </td>
-            <td style="text-align: center;">
-               <div class="name">{{Name}}</div>
-               <div class="name" style="font-size: 15px !important;">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>
-            </td>
-            {{else}}
-            <td style="text-align: center;">
-               <div class="name">{{Name}}</div>
-               <div class="name" style="font-size: 15px !important;">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>
-            </td>
-            {{/if}}
-         </tr>
-      </table>
+   <table class="r19-wrap" cellpadding="0" cellspacing="0">
+      <tr>
+         <td>
+            <table class="r19-head" cellpadding="0" cellspacing="0">
+               <tr>
+                  {{#if profilePhoto}}
+                  <td class="r19-photo-td"><div class="r19-picbox"><img class="r19-photo" src="{{{profilePhoto}}}" alt="profilePhoto" /></div></td>
+                  {{/if}}
+                  <td style="vertical-align:middle; padding: 24px 16px 16px 12px;">
+                     {{#if Name}}<p class="r19-name">{{Name}}</p>{{/if}}
+                     {{#if jobTitle}}<p class="r19-job">{{jobTitle}}</p>{{/if}}
+                  </td>
+               </tr>
+            </table>
 
-      <div class="section-table">
-         <!-- Left card start -->
-         <div class="left-card bg-light">
-            <div class="w-100">
-               {{#if Objective}}
-               <div>
-                  <h2>OBJECTIVE</h2>
-                  <hr class="hr-line-left-card">
-                  <p>{{Objective}}</p>
-               </div>
-               {{/if}}
-               {{#if Education}}
-               <div>
-                  <h2>EDUCATION</h2>
-                  <hr class="hr-line-left-card">
-                  {{#each Education}}
-                  <h3>{{course}}</h3>
-                  <ul>
-                     {{#if institute}}<li>{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</li>{{/if}}
-                     {{#if percentage}}<li>{{percentage}}%</li>{{/if}}
-                     {{#if yearOfPassing}}<li>{{yearOfPassing}}</li>{{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
-               {{#if Experience}}
-               <div>
-                  <h2>EXPERIENCE</h2>
-                  <hr class="hr-line-left-card">
-                  {{#each Experience}}
-                  <h3>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h3>
-                  <ul>
-                     {{#if organization}}<li>{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
-                     {{#if from}}<li>{{from}} {{#if to}} - {{to}}{{/if}}</li>{{/if}}
-                     {{#if role}}<li>{{role}}</li>{{/if}}
-                     {{#if description}}<li>{{description}}</li>{{/if}}
-                     {{#if present}}<li>Present</li>{{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}{{#if Projects}}
-               <div>
-                  <h2>PROJECTS</h2>
-                  <hr class="hr-line-left-card">
-                  {{#each Projects}}
-                  <h3>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</h3>
-                  <ul>
-                     {{#if roles}}<li>{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li>{{/if}}
-                     {{#if duration}}<li>{{duration}}</li>{{/if}}
-                     {{#if projectDescription}}<li>{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li>{{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}{{#if Achivement}}
-               <div>
-                  <h2>ACHIEVEMENT</h2>
-                  <hr class="hr-line-left-card">
-                  {{#each Achivement}}
-                  <ul>
-                     <li>
-                        {{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}
-                     </li>
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
-               {{#if Reference}}
-               <div>
-                  <h2>REFERENCE</h2>
-                  <hr class="hr-line-left-card">
-                  {{#each Reference}}
-                  {{#if name}}<h3>{{name}}</h3>{{/if}}
-                  <ul>
-                     {{#if jobtitle}}<li>{{jobtitle}}</li>{{/if}}
-                     {{#if companyname}}<li>{{companyname}}</li>{{/if}}
-                     {{#if email}}<li class="word-break">{{email}}</li>{{/if}}
-                     {{#if phone}}<li>{{phone}}</li>{{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
-            </div>
-         </div>
-         <!-- Left card end -->
+            <table class="r19-body" cellpadding="0" cellspacing="0">
+               <colgroup>
+                  <col style="width:58%;" />
+                  <col style="width:37%;" />
+                  <col style="width:5%;" />
+               </colgroup>
+               <tr>
+                  <td class="r19-left">
+                     {{#if Objective}}
+                     <p class="r19-h">Objective</p>
+                     <div class="r19-line"></div>
+                     <p class="r19-text">{{Objective}}</p>
+                     {{/if}}
 
-         <!-- Middle card start -->
-         <div class="middle-card">
-            <div class="text-white">
-               <div>
-                  <h2>PROFILE INFO</h2>
-                  <hr class="hr-line-middle-card">
-                  <ul class="disc">
+                     {{#if Education}}
+                     <p class="r19-h">Education</p>
+                     <div class="r19-line"></div>
+                     {{#each Education}}
+                     {{#if course}}<p class="r19-title">{{course}}</p>{{/if}}
+                     {{#if institute}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{institute}}</td></tr></table>{{/if}}
+                     {{#if percentage}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{percentage}}%</td></tr></table>{{/if}}
+                     {{#if yearOfPassing}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{yearOfPassing}}</td></tr></table>{{/if}}
+                     {{/each}}
+                     {{/if}}
+
+                     {{#if Experience}}
+                     <p class="r19-h">Experience</p>
+                     <div class="r19-line"></div>
+                     {{#each Experience}}
+                     <p class="r19-title">{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}</p>
+                     {{#if organization}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{organization}}</td></tr></table>{{/if}}
+                     {{#if from}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{from}}{{#if to}} - {{to}}{{/if}}</td></tr></table>{{/if}}
+                     {{#if role}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{role}}</td></tr></table>{{/if}}
+                     {{#if description}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{description}}</td></tr></table>{{/if}}
+                     {{#if present}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">Present</td></tr></table>{{/if}}
+                     {{/each}}
+                     {{/if}}
+
+                     {{#if Projects}}
+                     <p class="r19-h">Projects</p>
+                     <div class="r19-line"></div>
+                     {{#each Projects}}
+                     <p class="r19-title">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</p>
+                     {{#if roles}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{roles}}</td></tr></table>{{/if}}
+                     {{#if duration}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{duration}}</td></tr></table>{{/if}}
+                     {{#if projectDescription}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{projectDescription}}</td></tr></table>{{/if}}
+                     {{/each}}
+                     {{/if}}
+
+                     {{#if Achivement}}
+                     <p class="r19-h">Achievement</p>
+                     <div class="r19-line"></div>
+                     {{#each Achivement}}
+                     {{#if achivement}}<p class="r19-text">{{achivement}}</p>{{/if}}
+                     {{/each}}
+                     {{/if}}
+
+                     {{#if Reference}}
+                     <p class="r19-h">Reference</p>
+                     <div class="r19-line"></div>
+                     {{#each Reference}}
+                     {{#if name}}<p class="r19-title">{{name}}</p>{{/if}}
+                     {{#if jobtitle}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{jobtitle}}</td></tr></table>{{/if}}
+                     {{#if companyname}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{companyname}}</td></tr></table>{{/if}}
+                     {{#if email}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{email}}</td></tr></table>{{/if}}
+                     {{#if phone}}<table class="r19-row" cellpadding="0" cellspacing="0"><tr><td class="r19-dotcell"><div class="r19-dot"></div></td><td class="r19-bval">{{phone}}</td></tr></table>{{/if}}
+                     {{/each}}
+                     {{/if}}
+
+                     {{#if sign}}
+                     <div class="r19-sign-wrap">
+                        <p class="r19-sign-label">Signature</p>
+                        <img class="r19-sign" src="{{{sign}}}" alt="Signature" />
+                     </div>
+                     {{/if}}
+                  </td>
+                  <td class="r19-right">
+                     <p class="r19-rh">Profile Info</p>
+                     <div class="r19-rline"></div>
                      {{#if Phone}}
-                     <li>
-                        <p class="word-break">{{Phone}}</p>
-                     </li>
+                     <table class="r19-rrow" cellpadding="0" cellspacing="0"><tr><td class="r19-gdotcell"><div class="r19-gdot"></div></td><td class="r19-rval">{{Phone}}</td></tr></table>
                      {{/if}}
                      {{#if DOB}}
-                     <li>
-                        <p class="word-break">{{DOB}}</p>
-                     </li>
+                     <table class="r19-rrow" cellpadding="0" cellspacing="0"><tr><td class="r19-gdotcell"><div class="r19-gdot"></div></td><td class="r19-rval">{{DOB}}</td></tr></table>
                      {{/if}}
                      {{#if Email}}
-                     <li>
-                        <p class="word-break">{{Email}}</p>
-                     </li>
+                     <table class="r19-rrow" cellpadding="0" cellspacing="0"><tr><td class="r19-gdotcell"><div class="r19-gdot"></div></td><td class="r19-rval">{{Email}}</td></tr></table>
                      {{/if}}
                      {{#if Address}}
-                     <li>
-                        <p class="word-break">{{Address}}</p>
-                     </li>
+                     <table class="r19-rrow" cellpadding="0" cellspacing="0"><tr><td class="r19-gdotcell"><div class="r19-gdot"></div></td><td class="r19-rval">{{Address}}</td></tr></table>
                      {{/if}}
-                  </ul>
-               </div>
 
-               {{#if Skills}}
-               <div>
-                  <h2>SKILLS</h2>
-                  <hr class="hr-line-middle-card">
-                  {{#each Skills}}
-                  <ul class="disc">
+                     {{#if Skills}}
+                     <p class="r19-rh">Skill</p>
+                     <div class="r19-rline"></div>
+                     {{#each Skills}}
                      {{#if skillName}}
-                     <li>
-                        <p class="word-break">{{skillName}}</p>
-                     </li>
+                     <table class="r19-rrow" cellpadding="0" cellspacing="0"><tr><td class="r19-gdotcell"><div class="r19-gdot"></div></td><td class="r19-rval">{{skillName}}{{#if expertiseLabel}} ({{expertiseLabel}}%){{/if}}</td></tr></table>
                      {{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
-
-               {{#if Language}}
-               <div>
-                  <h2>LANGUAGE</h2>
-                  <hr class="hr-line-middle-card">
-                  {{#each Language}}
-                  <ul class="disc">
-                     {{#if name}}
-                     <li>
-                        <p class="word-break">{{name}}</p>
-                     </li>
+                     {{/each}}
                      {{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
 
-               {{#if Interests}}
-               <div>
-                  <h2>INTERESTS</h2>
-                  <hr class="hr-line-middle-card">
-                  {{#each Interests}}
-                  <ul class="disc">
-                     {{#if hoby}}
-                     <li>
-                        <p class="word-break">{{hoby}}</p>
-                     </li>
+                     {{#if Language}}
+                     <p class="r19-rh">Language</p>
+                     <div class="r19-rline"></div>
+                     {{#each Language}}
+                     {{#if name}}<table class="r19-rrow" cellpadding="0" cellspacing="0"><tr><td class="r19-gdotcell"><div class="r19-gdot"></div></td><td class="r19-rval">{{name}}</td></tr></table>{{/if}}
+                     {{/each}}
                      {{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
-            </div>
-         </div>
-         <!-- Middle card end -->
 
-         <!-- Right card start -->
-         <div class="right-card bg-light">
-            <div></div>
-         </div>
-         <!-- Right card end -->
-      </div>
-
-      <!-- Footer start -->
-      {{#if sign}}
-      <footer>
-         <div class="signature">
-            <div class="signature-text">
-               <h2>SIGNATURE</h2>
-            </div>
-            <div class="imgDiv">
-               <img style="height: 120px; width: 120px;" src="{{{sign}}}" alt="sign">
-            </div>
-         </div>
-      </footer>
-      {{/if}}
-      <!-- Footer end -->
-   </div>
+                     {{#if Interests}}
+                     <p class="r19-rh">Interests</p>
+                     <div class="r19-rline"></div>
+                     {{#each Interests}}
+                     {{#if hoby}}<table class="r19-rrow" cellpadding="0" cellspacing="0"><tr><td class="r19-gdotcell"><div class="r19-gdot"></div></td><td class="r19-rval">{{hoby}}</td></tr></table>{{/if}}
+                     {{/each}}
+                     {{/if}}
+                  </td>
+                  <td class="r19-edge">&nbsp;</td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
 </body>
 
 </html>

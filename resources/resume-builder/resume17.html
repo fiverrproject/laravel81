@@ -2,477 +2,417 @@
 
 <head>
    <title>Resume 17</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <style>
-      .imgs {
-         border: 0px solid rgb(255, 255, 255);
-         border-radius: 50%;
-         width: 160px;
-         margin: 25px 30px 25px 50px;
-         height: 160px;
+      body {
+         margin: 0;
+         padding: 0;
+         background: #fff;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 18px;
+         color: #222;
       }
-
-      .p-10 {
-         padding-left: 10px;
+      .r17-page {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
       }
-
-      .p-30 {
-         padding-left: 30px;
+      .r17-head {
+         width: 100%;
+         height: 188px;
+         background-color: #1a3a66;
+         border-collapse: collapse;
+         table-layout: fixed;
       }
-
-      .p-20 {
-         padding-left: 23px;
+      .r17-photo-td {
+         width: 210px;
+         vertical-align: middle;
+         padding: 18px 8px 18px 28px;
       }
-
-      .m-0 {
-         margin: 0px;
+      .r17-photo {
+         display: block;
+         width: 140px;
+         height: 140px;
+         border-radius: 70px;
+         background-color: #d9d9d9;
+         border: 4px solid #ffffff;
       }
-
-      .mt-mb-5 {
-         margin-top: 6px;
-         /* margin-bottom: 2px; */
+      .r17-name {
+         margin: 0;
+         font-size: 36px;
+         font-weight: bold;
+         color: #ffffff;
       }
-
-      .p-15 {
-         padding-left: 15px;
+      .r17-job {
+         margin: 6px 0 0 0;
+         font-size: 18px;
+         color: #ffffff;
       }
-
-      .m-4 {
-         margin: 5px 0px;
+      .r17-left {
+         width: 34%;
+         background-color: #c8eef4;
+         vertical-align: top;
+         padding: 16px 16px 24px 18px;
       }
-
-      .m-10 {
-         margin: 10px 0px;
+      .r17-right {
+         width: 66%;
+         background-color: #fff;
+         vertical-align: top;
+         padding: 14px 18px 20px 18px;
       }
-
-      .color-erow {
-         color: #042757e8 !important;
-         padding: 3px 1px 3px 5px !important;
-         background-color: white !important;
-         border-radius: 50% !important;
-         margin-right: 7px !important;
-         margin-left: -8px !important;
-         font-size: smaller !important;
+      .r17-lh {
+         margin: 14px 0 8px 0;
+         font-size: 20px;
+         font-weight: bold;
+         color: #1a3a66;
       }
-
-      .pb-3 {
-         padding-bottom: 3px;
-         padding-left: 25px;
+      .r17-lh:first-child {
+         margin-top: 0;
       }
-
-      .pb-3-pl-35 {
-         padding-bottom: 3px;
-         padding-left: 0px;
+      .r17-crow {
+         width: 100%;
+         border-collapse: collapse;
+         margin: 0 0 6px 0;
       }
-
-      .pb-3-pl-40 {
-         padding-bottom: 3px;
-         padding-left: 0px;
+      .r17-icon {
+         width: 22px;
+         vertical-align: top;
+         padding: 3px 6px 0 0;
       }
-
-      .box {
-         /* padding-top: 50px;
-      padding-bottom: 60px; */
-         background-color: #042757e8 !important;
-         /* padding-left: 37%;
-      position: absolute; */
-         max-width: 547px;
-         min-width: 547px;
-         z-index: 2;
-         max-height: 85px;
-         color: white;
-         /* word-break: break-all; */
-         /* padding-right: 5px; */
-      }
-
-      .font-size-45 {
-         font-size: 30px;
-         padding-right: 10px;
-         text-transform: capitalize;
-         font-weight: 600;
-         /* font-family: system-ui; */
-      }
-
-      .bg-color {
-         background-color: #c4edf4c7 !important;
-      }
-
-      .mt-15 {
-         margin-top: 15px;
-      }
-
-      .box1 {
-         width: 68%;
-         padding-top: 5px;
-         padding-left: 20px;
-      }
-
-      .word-break {
-         word-break: break-all;
-      }
-
-      .resume-timeline {
-         padding-left: 2rem;
-      }
-
-      .resume-timeline:before {
-         content: "";
-         display: inline-block;
-         width: 2px;
-         height: 100%;
-         background: #aab4c3;
-         left: 6px;
-         top: -2px;
-         position: absolute;
-      }
-
-      .position-relative {
-         position: relative !important;
-      }
-
-      .Heading-box {
-         background-color: #042757e8 !important;
-         border-radius: 50px !important;
-         padding: 3px 22px 4px 11px !important;
-         color: white !important;
-      }
-
-      .color-t {
-         color: #042757e8 !important;
-      }
-
-      td {
+      .r17-cval {
+         font-size: 16px;
+         color: #222;
+         word-wrap: break-word;
          vertical-align: top;
       }
-
-      .text-justify {
-         text-align: justify !important;
+      .r17-litem {
+         margin: 0 0 3px 4px;
+         font-size: 16px;
+         color: #222;
+         word-wrap: break-word;
       }
-
-      .align-inherit {
-         vertical-align: inherit
+      .r17-sname {
+         margin: 8px 0 3px 0;
+         font-size: 16px;
+         color: #222;
+         word-wrap: break-word;
       }
-
-      .progress {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         height: 1.0rem !important;
-         overflow: hidden;
-         font-size: 0.75rem;
-         background-color: rgb(204, 204, 204);
-         border-radius: 0.25rem;
+      .r17-skill {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         margin: 0 0 8px 0;
       }
-
-      .bg-danger {
-         background-color: #042757e8 !important;
+      .r17-track {
+         width: 100%;
+         height: 14px;
+         background-color: #d6d6d6;
+         border-collapse: collapse;
+         table-layout: fixed;
       }
-
-      .progress-bar {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-orient: vertical;
-         -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-         flex-direction: column;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         color: #030303;
-         text-align: center;
-         background-color: #007bff;
-         transition: width .6s ease;
+      .r17-fill {
+         height: 14px;
+         background-color: #1a3a66;
+         color: #ffffff;
+         font-size: 11px;
+         text-align: right;
+         line-height: 14px;
       }
-
-      .d-flex {
-         display: flex;
+      .r17-rest {
+         height: 14px;
+         font-size: 1px;
+         line-height: 14px;
       }
-
-      .color-white {
-         color: white !important;
+      .r17-spct {
+         width: 42px;
+         font-size: 14px;
+         color: #1a3a66;
+         text-align: right;
+         white-space: nowrap;
+         vertical-align: middle;
+         padding: 0 0 0 6px;
       }
-
-      .showPosts {
-         cursor: pointer;
-         list-style-type: none;
-         /* width: 200px; */
+      .r17-pill {
+         border-collapse: collapse;
+         margin: 12px 0 8px 0;
       }
-
-      .greekCross {
-         color: rgb(0, 0, 0);
-         font-size: 15px;
-         width: 1.5em;
-         float: left;
+      .r17-pill-l {
+         background-color: #1a3a66;
+         border-radius: 18px 0 0 18px;
+         padding: 4px 4px 4px 6px;
+         vertical-align: middle;
+         width: 30px;
       }
-
-      .showPosts>p {
-         /* font-size: 15px; */
-         margin-left: 1.5em;
+      .r17-pill-l svg {
+         display: block;
+      }
+      .r17-pill-r {
+         background-color: #1a3a66;
+         color: #ffffff;
+         font-size: 18px;
+         font-weight: bold;
+         border-radius: 0 18px 18px 0;
+         padding: 4px 16px 4px 4px;
+         vertical-align: middle;
+      }
+      .r17-sub {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         margin: 0 0 6px 0;
+      }
+      .r17-gutter {
+         width: 16px;
+         padding: 0;
+      }
+      .r17-title {
+         margin: 2px 0 3px 0;
+         font-size: 18px;
+         font-weight: bold;
+         color: #111;
+      }
+      .r17-text {
+         margin: 0 0 4px 0;
+         font-size: 18px;
+         color: #333;
+         word-wrap: break-word;
+      }
+      .r17-row {
+         width: 100%;
+         border-collapse: collapse;
+         margin: 0 0 2px 0;
+      }
+      .r17-arrcell {
+         width: 18px;
+         vertical-align: top;
+         padding: 4px 4px 0 0;
+      }
+      .r17-arrcell svg {
+         display: block;
+         margin-top: 3px;
+      }
+      .r17-bval {
+         font-size: 18px;
+         color: #222;
+         word-wrap: break-word;
+         vertical-align: top;
+      }
+      .r17-sign-wrap {
+         text-align: right;
+         padding: 16px 4px 4px 4px;
+      }
+      .r17-sign-label {
+         margin: 0 0 4px 0;
+         font-size: 18px;
+         font-weight: bold;
+         color: #1a3a66;
+         text-align: right;
+      }
+      .r17-sign {
+         display: block;
+         width: 120px;
+         height: 48px;
+         margin: 0 0 0 auto;
       }
    </style>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-   <table style="border-spacing: unset;">
-      {{#if profilePhoto}}
-      <tr class="box" style="background-color: #1a3a66 !important">
-         <td>
-            <img class="imgs" src="{{{profilePhoto}}}" alt="profilePhoto">
-         </td>
-         <td class="align-inherit">
-            <div class="">
-               <p class="m-0 font-size-45 color-white" style="color: white !important;"> {{Name}}</p>
-               <h3 class="m-0 color-white">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h3>
-            </div>
-         </td>
-      </tr> {{else}}
-      <tr class="box" style="background-color: #1a3a66 !important">
-         <td class="align-inherit" colspan="2">
-            <div style="padding: 15px 0px; text-align: center;">
-               <p class="m-0 font-size-45 color-white" style="color: white !important;"> {{Name}}</p>
-               <h3 class="m-0 color-white">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h3>
-            </div>
+   <table class="r17-head" cellpadding="0" cellspacing="0">
+      <tr>
+         {{#if profilePhoto}}
+         <td class="r17-photo-td"><img class="r17-photo" src="{{{profilePhoto}}}" alt="profilePhoto" /></td>
+         {{/if}}
+         <td style="vertical-align:middle; padding: 8px 16px 8px 8px;">
+            {{#if Name}}<p class="r17-name">{{Name}}</p>{{/if}}
+            {{#if jobTitle}}<p class="r17-job">{{jobTitle}}</p>{{/if}}
          </td>
       </tr>
-      {{/if}}
+   </table>
+
+   <table class="r17-page" cellpadding="0" cellspacing="0">
+      <colgroup>
+         <col style="width:34%;" />
+         <col style="width:66%;" />
+      </colgroup>
       <tr>
-         <td class="bg-color" style="background-color: #c4edf4c7 !important">
-            <div class="grid-item">
-               <div class="mt-15">
-                  <h3 class="p-10 m-0"> Profile</h3>
-                  {{#if Phone}}
-                  <p class="p-15 m-4 word-break">☎ {{Phone}}</p>
-                  {{/if}}{{#if DOB}}
-                  <p class="p-15 m-4 word-break"> <span style="font-size: larger;">♕ </span> {{DOB}}</p>
-                  {{/if}}{{#if Email}}
-                  <p class="p-15 m-4 word-break d-flex"> <span>⌧ </span> <span style="padding-left: 5px;">
-                        {{Email}}</span></p>
-                  {{/if}}{{#if Address}}
-                  <p class="p-15 m-4 word-break d-flex">⟰ <span></span> <span style="padding-left: 5px;">
-                        {{Address}}</span></p>
-                  {{/if}}
-               </div>
-               {{#if Language}}
-               <div class="mt-15">
-                  <h3 class="p-10 m-0">Language</h3>
-                  {{#each Language}}
-                  <ul style="padding-left: 12px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                     {{#if name}}
-                     <li class="showPosts">
-                        <span class="greekCross">⇒</span>
-                        <p class="m-0 word-break">{{name}}</p>
-                     </li>
-                     {{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}{{#if Skills}}
-               <div class="mt-15">
-                  <h3 class="p-10 m-0">Skills</h3>
-                  {{#each Skills}}
-                  {{#if skillName}}
-                  <p class="p-15 m-4 word-break">{{skillName}}</p>
-                  <div class="progress" style="width: 93%; margin-left: 10px; background-color: #dfdfdf !important;">
-                     <div class="progress-bar bg-danger" style="width:{{expertise}}%; color: white !important;">
-                        {{expertise}}%</div>
-                  </div>
-                  {{/if}}
-                  {{/each}}
-               </div>
-               {{/if}}{{#if Interests}}
-               <div class="mt-15">
-                  <h3 class="p-10 m-0">Interests</h3>
-                  {{#each Interests}}
-                  <ul style="padding-left: 12px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                     {{#if hoby}}
-                     <li class="showPosts">
-                        <span class="greekCross">⇒</span>
-                        <p class="m-0 word-break">{{hoby}}</p>
-                     </li>
-                     {{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
-            </div>
+         <td class="r17-left">
+            <p class="r17-lh">Profile</p>
+            {{#if Phone}}
+            <table class="r17-crow" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r17-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#1a3a66" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg></td>
+                  <td class="r17-cval">{{Phone}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if DOB}}
+            <table class="r17-crow" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r17-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#1a3a66" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg></td>
+                  <td class="r17-cval">{{DOB}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if Email}}
+            <table class="r17-crow" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r17-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#1a3a66" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg></td>
+                  <td class="r17-cval">{{Email}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if Address}}
+            <table class="r17-crow" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r17-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#1a3a66" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg></td>
+                  <td class="r17-cval">{{Address}}</td>
+               </tr>
+            </table>
+            {{/if}}
+
+            {{#if Language}}
+            <p class="r17-lh">Language</p>
+            {{#each Language}}
+            {{#if name}}<p class="r17-litem">{{name}}</p>{{/if}}
+            {{/each}}
+            {{/if}}
+
+            {{#if Skills}}
+            <p class="r17-lh">Skills</p>
+            {{#each Skills}}
+            {{#if skillName}}
+            <p class="r17-sname">{{skillName}}</p>
+            <table class="r17-skill" cellpadding="0" cellspacing="0">
+               <colgroup>
+                  <col style="width:82%;" />
+                  <col style="width:18%;" />
+               </colgroup>
+               <tr>
+                  <td>
+                     <table class="r17-track" cellpadding="0" cellspacing="0">
+                        <tr>
+                           <td class="r17-fill" style="width:{{expertiseLabel}}%;">&nbsp;</td>
+                           <td class="r17-rest">&nbsp;</td>
+                        </tr>
+                     </table>
+                  </td>
+                  <td class="r17-spct">{{expertiseLabel}}%</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{/each}}
+            {{/if}}
+
+            {{#if Interests}}
+            <p class="r17-lh">Interests</p>
+            {{#each Interests}}
+            {{#if hoby}}<p class="r17-litem">{{hoby}}</p>{{/if}}
+            {{/each}}
+            {{/if}}
          </td>
-         <td class="box1">
-            <div class="grid-item">
-               {{#if Objective}}
-               <div>
-                  <h3 class="m-10"> <span class="Heading-box"> <span class="color-erow"
-                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
-                        </span>Objective </span></h3>
-                  <div class="resume-timeline position-relative">
-                     <p class="m-0 pb-3-pl-35 text-justify">{{Objective}}</p>
-                  </div>
-               </div>
-               {{/if}}{{#if Education}}
-               <div>
-                  <h3 class="m-10"><span class="Heading-box"> <span class="color-erow"
-                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
-                        </span>Education </span></h3>
-                  <div class="resume-timeline position-relative">
-                     {{#each Education}}
-                     <p class="m-0 mt-mb-5 pb-3-pl-35"><b>{{course}}</b></p>
-                     <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                        {{#if institute}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if percentage}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{percentage}}%</p>
-                        </li>
-                        {{/if}}
-                        {{#if yearOfPassing}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{yearOfPassing}}</p>
-                        </li>
-                        {{/if}}
-                     </ul>
+         <td class="r17-right">
+            {{#if Objective}}
+            <table class="r17-pill" cellpadding="0" cellspacing="0"><tr><td class="r17-pill-l"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ffffff"/><polygon points="10,7 10,17 18,12" fill="#1a3a66"/></svg></td><td class="r17-pill-r">Objective</td></tr></table>
+            <table class="r17-sub" cellpadding="0" cellspacing="0"><colgroup><col style="width:16px;" /><col /></colgroup><tr><td class="r17-gutter">&nbsp;</td><td><p class="r17-text">{{Objective}}</p></td></tr></table>
+            {{/if}}
+
+            {{#if Education}}
+            <table class="r17-pill" cellpadding="0" cellspacing="0"><tr><td class="r17-pill-l"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ffffff"/><polygon points="10,7 10,17 18,12" fill="#1a3a66"/></svg></td><td class="r17-pill-r">Education</td></tr></table>
+            {{#each Education}}
+            <table class="r17-sub" cellpadding="0" cellspacing="0">
+               <colgroup><col style="width:16px;" /><col /></colgroup>
+               <tr>
+                  <td class="r17-gutter">&nbsp;</td>
+                  <td>
+                     {{#if course}}<p class="r17-title">{{course}}</p>{{/if}}
+                     {{#if institute}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{institute}}</td></tr></table>{{/if}}
+                     {{#if percentage}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{percentage}}%</td></tr></table>{{/if}}
+                     {{#if yearOfPassing}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{yearOfPassing}}</td></tr></table>{{/if}}
+                  </td>
+               </tr>
+            </table>
+            {{/each}}
+            {{/if}}
+
+            {{#if Experience}}
+            <table class="r17-pill" cellpadding="0" cellspacing="0"><tr><td class="r17-pill-l"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ffffff"/><polygon points="10,7 10,17 18,12" fill="#1a3a66"/></svg></td><td class="r17-pill-r">Experience</td></tr></table>
+            {{#each Experience}}
+            <table class="r17-sub" cellpadding="0" cellspacing="0">
+               <colgroup><col style="width:16px;" /><col /></colgroup>
+               <tr>
+                  <td class="r17-gutter">&nbsp;</td>
+                  <td>
+                     <p class="r17-title">{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}</p>
+                     {{#if organization}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{organization}}</td></tr></table>{{/if}}
+                     {{#if from}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{from}}{{#if to}} - {{to}}{{/if}}</td></tr></table>{{/if}}
+                     {{#if role}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{role}}</td></tr></table>{{/if}}
+                     {{#if description}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{description}}</td></tr></table>{{/if}}
+                     {{#if present}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">Present</td></tr></table>{{/if}}
+                  </td>
+               </tr>
+            </table>
+            {{/each}}
+            {{/if}}
+
+            {{#if Projects}}
+            <table class="r17-pill" cellpadding="0" cellspacing="0"><tr><td class="r17-pill-l"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ffffff"/><polygon points="10,7 10,17 18,12" fill="#1a3a66"/></svg></td><td class="r17-pill-r">Projects</td></tr></table>
+            {{#each Projects}}
+            <table class="r17-sub" cellpadding="0" cellspacing="0">
+               <colgroup><col style="width:16px;" /><col /></colgroup>
+               <tr>
+                  <td class="r17-gutter">&nbsp;</td>
+                  <td>
+                     <p class="r17-title">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</p>
+                     {{#if roles}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{roles}}</td></tr></table>{{/if}}
+                     {{#if duration}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{duration}}</td></tr></table>{{/if}}
+                     {{#if projectDescription}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{projectDescription}}</td></tr></table>{{/if}}
+                  </td>
+               </tr>
+            </table>
+            {{/each}}
+            {{/if}}
+
+            {{#if Reference}}
+            <table class="r17-pill" cellpadding="0" cellspacing="0"><tr><td class="r17-pill-l"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ffffff"/><polygon points="10,7 10,17 18,12" fill="#1a3a66"/></svg></td><td class="r17-pill-r">Reference</td></tr></table>
+            {{#each Reference}}
+            <table class="r17-sub" cellpadding="0" cellspacing="0">
+               <colgroup><col style="width:16px;" /><col /></colgroup>
+               <tr>
+                  <td class="r17-gutter">&nbsp;</td>
+                  <td>
+                     {{#if name}}<p class="r17-title">{{name}}</p>{{/if}}
+                     {{#if jobtitle}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{jobtitle}}</td></tr></table>{{/if}}
+                     {{#if companyname}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{companyname}}</td></tr></table>{{/if}}
+                     {{#if email}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{email}}</td></tr></table>{{/if}}
+                     {{#if phone}}<table class="r17-row" cellpadding="0" cellspacing="0"><tr><td class="r17-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#1a3a66"/></svg></td><td class="r17-bval">{{phone}}</td></tr></table>{{/if}}
+                  </td>
+               </tr>
+            </table>
+            {{/each}}
+            {{/if}}
+
+            {{#if Achivement}}
+            <table class="r17-pill" cellpadding="0" cellspacing="0"><tr><td class="r17-pill-l"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ffffff"/><polygon points="10,7 10,17 18,12" fill="#1a3a66"/></svg></td><td class="r17-pill-r">Achievement</td></tr></table>
+            <table class="r17-sub" cellpadding="0" cellspacing="0">
+               <colgroup><col style="width:16px;" /><col /></colgroup>
+               <tr>
+                  <td class="r17-gutter">&nbsp;</td>
+                  <td>
+                     {{#each Achivement}}
+                     {{#if achivement}}<p class="r17-text">{{achivement}}</p>{{/if}}
                      {{/each}}
-                  </div>
-               </div>
-               {{/if}}{{#if Experience}}
-               <div>
-                  <h3 class="m-10"><span class="Heading-box"><span class="color-erow"
-                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
-                        </span>Experience </span></h3>
-                  <div class="resume-timeline position-relative">
-                     {{#each Experience}}
-                     <p class="m-0 mt-mb-5 pb-3-pl-35"><b>{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>
-                     <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                        {{#if organization}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if from}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{from}} {{#if to}} - {{to}}{{/if}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if role}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{role}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if description}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{description}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if present}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">Present</p>
-                        </li>
-                        {{/if}}
-                     </ul>
-                     {{/each}}
-                  </div>
-               </div>
-               {{/if}}{{#if Projects}}
-               <div>
-                  <h3 class="m-10"><span class="Heading-box"> <span class="color-erow"
-                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
-                        </span>Projects </span></h3>
-                  <div class="resume-timeline position-relative">
-                     {{#each Projects}}
-                     <p class="m-0 mt-mb-5 pb-3-pl-35"><b>{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p>
-                     <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                        {{#if roles}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if duration}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{duration}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if projectDescription}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
-                        </li>
-                        {{/if}}
-                     </ul>
-                     {{/each}}
-                  </div>
-               </div>
-               {{/if}}{{#if Reference}}
-               <div>
-                  <h3 class="m-10"> <span class="Heading-box"><span class="color-erow"
-                           style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
-                        </span>Reference </span></h3>
-                  <div class="resume-timeline position-relative">
-                     {{#each Reference}}
-                     <p class="m-0 mt-mb-5 pb-3-pl-35"><b>{{name}}</b></p>
-                     <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                        {{#if jobtitle}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{jobtitle}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if companyname}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{companyname}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if email}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{email}}</p>
-                        </li>
-                        {{/if}}
-                        {{#if phone}}
-                        <li class="showPosts">
-                           <span class="greekCross color-t">⇒</span>
-                           <p class="m-0 word-break">{{phone}}</p>
-                        </li>
-                        {{/if}}
-                     </ul>
-                     {{/each}}
-                  </div>
-               </div>
-               {{/if}}{{#if Achivement}}
-               <h3 class="m-10"><span class="Heading-box"><span class="color-erow"
-                        style="color: #042757e8 !important; padding: 3px 1px 3px 5px !important; background-color: white !important; border-radius: 50% !important; margin-right: 7px !important; margin-left: -8px !important; font-size: smaller !important;">➤
-                     </span>Achievement</span></h3>
-               <div class="resume-timeline position-relative">
-                  {{#each Achivement}}
-                  <ul style="padding-left: 1px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                     {{#if achivement}}
-                     <li class="showPosts">
-                        <span class="greekCross color-t">⇒</span>
-                        <p class="m-0 word-break">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
-                     </li>
-                     {{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}{{#if sign}}
-               <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 40px;">
-                  <h3 class="m-10">Signature</h3>
-                  <img src="{{{sign}}}" alt="Signature" height="13%" width="20%">
-               </div>
-               {{/if}}
+                  </td>
+               </tr>
+            </table>
+            {{/if}}
+
+            {{#if sign}}
+            <div class="r17-sign-wrap">
+               <p class="r17-sign-label">Signature</p>
+               <img class="r17-sign" src="{{{sign}}}" alt="Signature" />
             </div>
+            {{/if}}
          </td>
       </tr>
    </table>

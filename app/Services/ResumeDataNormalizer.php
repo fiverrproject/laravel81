@@ -64,6 +64,11 @@ class ResumeDataNormalizer
             'sign' => $sign,
             'Objective' => $objective,
             'profilePhoto' => (string) ($payload['profilePhoto'] ?? $payload['profile_photo'] ?? $personal['profilePhoto'] ?? $personal['profile_photo'] ?? ''),
+            'Website' => (string) ($personal['Website'] ?? $personal['website'] ?? $payload['Website'] ?? $payload['website'] ?? ''),
+            'Facebook' => (string) ($personal['Facebook'] ?? $personal['facebook'] ?? $payload['Facebook'] ?? $payload['facebook'] ?? ''),
+            'Twitter' => (string) ($personal['Twitter'] ?? $personal['twitter'] ?? $payload['Twitter'] ?? $payload['twitter'] ?? ''),
+            'Youtube' => (string) ($personal['Youtube'] ?? $personal['youtube'] ?? $payload['Youtube'] ?? $payload['youtube'] ?? ''),
+            'Linkedin' => (string) ($personal['Linkedin'] ?? $personal['linkedin'] ?? $payload['Linkedin'] ?? $payload['linkedin'] ?? ''),
         ];
     }
 
