@@ -8,7 +8,7 @@ namespace App\Services;
  */
 class ResumeUniversalPrintFix
 {
-    public const VERSION = 'resume-universal-print-fix-v28';
+    public const VERSION = 'resume-universal-print-fix-v37';
 
     public static function apply(string $html, ?string $format = null): string
     {
@@ -1318,6 +1318,161 @@ class ResumeUniversalPrintFix
   }
   html[data-resume-format="resume12.html"] .r12-sign,
   html[data-resume-format="resume12.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume13.html: blue / cream / peach split --- */
+  html[data-resume-format="resume13.html"],
+  html[data-resume-format="resume13.html"] body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-blue {
+    background-color: #b3f0fc !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-cream,
+  html[data-resume-format="resume13.html"] .r13-nameband {
+    background-color: #ffffe9 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-peach {
+    background-color: #ffc3a9 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-card {
+    background-color: #fff !important;
+    left: 26% !important;
+    top: 100px !important;
+    width: 48% !important;
+    border: 1px solid #e6e6e6 !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-photo {
+    width: 140px !important;
+    height: 140px !important;
+    border-radius: 50% !important;
+    border: 5px solid #7fd4e6 !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume13.html"] .r13-name {
+    font-size: 28px !important;
+    text-align: center !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-body,
+  html[data-resume-format="resume13.html"] .r13-peach {
+    padding-top: 8px !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-gap {
+    height: 305px !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-h,
+  html[data-resume-format="resume13.html"] .r13-ph {
+    font-size: 22px !important;
+    font-weight: bold !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-text,
+  html[data-resume-format="resume13.html"] .r13-bval,
+  html[data-resume-format="resume13.html"] .r13-title {
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-tri {
+    border-left: 9px solid #1a8a9e !important;
+    border-top: 5px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-slash-cream {
+    border-top-color: #b3f0fc !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-slash-peach {
+    border-top-color: #ffffe9 !important;
+  }
+  html[data-resume-format="resume13.html"] .r13-sign,
+  html[data-resume-format="resume13.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume15.html: clean two-column with divider --- */
+  html[data-resume-format="resume15.html"],
+  html[data-resume-format="resume15.html"] body {
+    margin: 0 !important;
+    padding: 18px 22px 16px 22px !important;
+    background: #fff !important;
+    font-size: 18px !important;
+    color: #111 !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-page,
+  html[data-resume-format="resume15.html"] .r15-head {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-left {
+    width: 28% !important;
+    border-right: 2px solid #111 !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-right {
+    width: 72% !important;
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-name {
+    font-size: 36px !important;
+    font-weight: bold !important;
+    color: #111 !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-h {
+    font-size: 22px !important;
+    font-weight: bold !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-text,
+  html[data-resume-format="resume15.html"] .r15-bval,
+  html[data-resume-format="resume15.html"] .r15-title,
+  html[data-resume-format="resume15.html"] .r15-plain {
+    font-size: 18px !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-indent {
+    width: 18px !important;
+    padding: 0 !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-bcell {
+    width: 16px !important;
+    padding: 8px 8px 0 0 !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-dot {
+    background-color: #111 !important;
+    width: 7px !important;
+    height: 7px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-block {
+    margin: 0 0 10px 0 !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-pct {
+    width: auto !important;
+    table-layout: auto !important;
+    margin: 1px 0 6px 8px !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-pct-dot {
+    width: 12px !important;
+    padding: 4px 6px 0 0 !important;
+    vertical-align: middle !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-pct-val {
+    font-size: 18px !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    padding: 0 !important;
+  }
+  html[data-resume-format="resume15.html"] .r15-sign,
+  html[data-resume-format="resume15.html"] img[alt="Signature"] {
     width: 120px !important;
     height: 48px !important;
     max-width: 120px !important;

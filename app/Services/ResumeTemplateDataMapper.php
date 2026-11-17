@@ -75,7 +75,9 @@ class ResumeTemplateDataMapper
             $institute = (string) ($row['institute'] ?? $row['institution'] ?? $row['university'] ?? $row['college'] ?? '');
             $year = (string) ($row['yearOfPassing'] ?? $row['year'] ?? '');
             if ($year === '') {
-                $year = trim(($row['startYear'] ?? '').((($row['startYear'] ?? '') && ($row['endYear'] ?? '')) ? ' - ' : '').($row['endYear'] ?? ''));
+                $start = (string) ($row['startYear'] ?? $row['from'] ?? $row['startDate'] ?? '');
+                $end = (string) ($row['endYear'] ?? $row['to'] ?? $row['endDate'] ?? '');
+                $year = trim($start.(($start !== '' && $end !== '') ? ' - ' : '').$end);
             }
             $percentage = $row['percentage'] ?? $row['grade'] ?? $row['score'] ?? '';
             if (is_string($percentage)) {
