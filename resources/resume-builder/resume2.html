@@ -11,6 +11,16 @@
          margin-bottom: 0px;
       }
 
+      html, body {
+         margin: 0;
+         padding: 0;
+         background: #fff;
+      }
+
+      body {
+         padding: 12mm 10mm 14mm 10mm;
+      }
+
       img {
          display: block;
       }
@@ -231,16 +241,43 @@
       }
 
       .skill-row {
-         overflow: hidden;
+         display: table;
          width: 100%;
+         table-layout: fixed;
+      }
+
+      .skill-bar-wrap {
+         display: table-cell;
+         width: 78%;
+         vertical-align: middle;
+      }
+
+      .skill-pct {
+         display: table-cell;
+         width: 22%;
+         vertical-align: middle;
+         white-space: nowrap;
+         padding-left: 4px;
+         text-align: left;
+      }
+
+      .skill-track {
+         width: 100%;
+         height: 8px;
+         background: #c8c8c8;
+         border-radius: 10px;
+         overflow: hidden;
       }
 
       .skill-row .skillBar {
-         float: left;
+         display: block;
+         float: none;
          border: none;
-         border-top: 8px rgb(70, 70, 70) solid;
-         height: 0;
-         margin: 3px 6px 3px 0;
+         height: 8px;
+         margin: 0;
+         max-width: 100%;
+         background: rgb(70, 70, 70);
+         border-radius: 10px;
       }
 
       #microsoftOffice {
@@ -393,6 +430,60 @@
       .text-justify {
          text-align: justify !important;
       }
+
+      .flexContainer {
+         display: table;
+         width: 100%;
+         table-layout: fixed;
+      }
+
+      .leftColumn {
+         display: table-cell;
+         width: 28%;
+         vertical-align: top;
+         background-color: #C0D8DE;
+      }
+
+      .rightColumn {
+         display: table-cell;
+         width: 72%;
+         vertical-align: top;
+      }
+
+      .leftColumn > .leftRow > img {
+         display: block;
+         width: 100%;
+         height: 225px;
+         object-fit: cover;
+      }
+
+      .years {
+         width: 90%;
+         display: block;
+      }
+
+      .signature-block {
+         text-align: right;
+         padding: 16px 24px 24px;
+      }
+
+      .signature-block .left1sing {
+         display: block;
+         width: 100%;
+         text-align: right;
+         margin: 0 0 8px;
+      }
+
+      .signature-img {
+         display: block;
+         margin-left: auto;
+         margin-right: 0;
+         width: 120px;
+         height: 48px;
+         max-width: 120px;
+         max-height: 48px;
+         object-fit: contain;
+      }
    </style>
 </head>
 
@@ -448,10 +539,14 @@
             {{#each Skills}}
             <div class="skills">
                {{#if skillName}}
-               <p class="font-size" style="word-break: break-all;margin-bottom: 0px;margin-top: 0px;">{{skillName}}</p>
+               <p class="font-size" style="word-break: break-word;margin-bottom: 0px;margin-top: 0px;">{{skillName}}</p>
                <div class="skill-row">
-                  <hr class="skillBar mr-1" style="width:{{expertise}}%;">
-                  <span class="font-size" style="margin: 0px;">{{expertise}}%</span>
+                  <div class="skill-bar-wrap">
+                     <div class="skill-track">
+                        <div class="skillBar" style="width:{{expertise}}%;"></div>
+                     </div>
+                  </div>
+                  <span class="skill-pct font-size">{{expertise}}%</span>
                </div>
                {{/if}}
             </div>
@@ -644,13 +739,9 @@
 
          <div>
             {{#if sign}}
-            <div class="rightRow">
+            <div class="signature-block">
                <h2 class="left1sing">Signature</h2>
-            </div>
-            <div class="containerHl" style="display: flex; flex-direction: row-reverse">
-               <div>
-                  <img width="120px" src="{{{sign}}}" alt="Signature">
-               </div>
+               <img class="signature-img" src="{{{sign}}}" alt="Signature">
             </div>
             {{/if}}
          </div>

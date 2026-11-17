@@ -56,10 +56,12 @@ class ResumeTemplateDataMapper
             if ($exp === '' || $exp === null) {
                 $exp = 0;
             }
+            $expertise = is_numeric($exp) ? (int) $exp : 0;
             $skills[] = [
                 'skillName' => $name,
                 'name' => $name,
-                'expertise' => is_numeric($exp) ? (int) $exp : 0,
+                'expertise' => $expertise,
+                'expertiseLabel' => (string) $expertise,
             ];
         }
         $data['Skills'] = $skills !== [] ? $skills : '';
@@ -185,14 +187,11 @@ class ResumeTemplateDataMapper
             if (! is_array($row)) {
                 continue;
             }
-            $name = (string) ($row['name'] ?? $row['language'] ?? $row['lang'] ?? '');
-            $level = (string) ($row['level'] ?? $row['proficiency'] ?? '');
-            $expertise = $row['expertise'] ?? $row['percent'] ?? $row['percentage'] ?? null;
-            if ($name === '') {
+            $entry = self::languageLabel($row);
+            if ($entry['name'] === '') {
                 continue;
             }
-            $full = $level !== '' ? $name.' ('.$level.')' : $name;
-            $entry = ['name' => $full, 'language' => $name, 'level' => $level];
+            $expertise = $row['expertise'] ?? $row['percent'] ?? $row['percentage'] ?? null;
             if ($expertise !== null && $expertise !== '') {
                 $entry['expertise'] = (string) $expertise;
             }
@@ -241,5 +240,35 @@ class ResumeTemplateDataMapper
         $data['Interests'] = $interests !== [] ? $interests : '';
 
         return $data;
+    }
+
+    /**
+     * Build language display once. Mapping can run twice (normalize + map) so this must be idempotent.
+     *
+     * @param  array<string, mixed>  $row
+     * @return array{name: string, language: string, level: string}
+     */
+    public static function languageLabel(array $row): array
+    {
+        $level = trim((string) ($row['level'] ?? $row['proficiency'] ?? ''));
+        $plain = trim((string) ($row['language'] ?? $row['lang'] ?? ''));
+        $name = trim((string) ($row['name'] ?? ''));
+        $source = $plain !== '' ? $plain : $name;
+
+        if ($level !== '') {
+            $source = (string) preg_replace('/\s*\('.preg_quote($level, '/').'\)+/u', '', $source);
+            $source = trim($source);
+        } else {
+            $source = (string) preg_replace('/(\s*\(([^)]+)\))\s*\(\2\)+/u', ' ($2)', $source);
+            $source = trim($source);
+        }
+
+        $display = ($source !== '' && $level !== '') ? $source.' ('.$level.')' : $source;
+
+        return [
+            'name' => $display,
+            'language' => $source !== '' ? $source : $display,
+            'level' => $level,
+        ];
     }
 }

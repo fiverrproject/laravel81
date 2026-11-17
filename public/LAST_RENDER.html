@@ -1,292 +1,942 @@
-<html data-postman-fallbacks="1">
+<html data-resume-format="resume3.html" data-postman-fallbacks="1">
 
 <head>
-   <title>Resume 12</title>
-
+   <title>Resume 3</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <style>
-      .imgs {
-         border: 0px solid rgb(255, 255, 255);
-         border-radius: 50%;
-         width: 200px;
-         height: 200px;
-         margin: -152px 30px 25px 30px;
+      /* 
+// Online Responsive Resume
+// Made with ❤ by @Pawan_Mall
+// http://www.pawanmall.net 
+*/
+
+      * {
+         margin: 0;
+         padding: 0;
       }
 
-      .p-10 {
-         padding-left: 10px;
+      body {
+         background: #f2f2f2;
+         font-size: 62.5%;
+         /* padding: 10px; */
       }
 
-      .m-0 {
-         margin: 0px;
+      .myResume-Contact-Info h1 {
+         font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;        
+         font-size: 32px;
+         line-height: 35px;
       }
 
-      .p-15 {
-         padding-left: 15px;
+      .myResume-Contact-Info>h3 {
+         font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+         color: #484848;
+         margin-bottom: 10px;
+         text-decoration: underline;
       }
 
-      .m-4 {
-         margin: 10px 0px;
+      .myResume-Contact-Info>h6 {
+         font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+         color: #777;
+         font-weight: normal;
+         font-size: 1em;
       }
 
-      .color-erow {
-         color: #699897;
-      }
-
-      .pb-3 {
-         padding-bottom: 3px;
-         padding-left: 25px;
-      }
-
-      .box {
-         background-color: rgb(45 63 101) !important;
-         position: absolute;
-         z-index: -1;
-         max-height: 85px;
+      .myResume {
+         background: #fff;
          width: 100%;
-         padding: 100px;
+         font-family: "Balthazar", "Droid Serif", serif;
+         color: #565656;
+         font-size: 1.8em;
+         line-height: 1.4em;
+         padding: 18px 0 28px 0;
+         box-sizing: border-box;
       }
 
-      .font-size-45 {
-         font-size: 44px;
-         padding-right: 10px;
-      }
-
-      .bg-color {
-         background-color: rgb(16 31 56) !important;
-         color: white;
-         margin-top: 130px;
-         border-top-left-radius: 27px;
-         border-top-right-radius: 27px;
-      }
-
-      .bg-color2 {
-         background-color: rgb(16 31 56) !important;
-         color: white;
-         border-top-left-radius: 27px;
-         border-top-right-radius: 27px;
-      }
-
-      .mt-15 {
-         margin-top: 15px;
-      }
-
-      .box1 {
-         width: 70%;
-         padding-top: 198px;
-         position: relative;
-         z-index: -2;
-      }
-
-      .bg-color1 {
-         background-color: #bad4e4;
-      }
-
-      .m-0 {
-         margin: 0px;
-      }
-
-      .pl-10 {
-         padding-left: 10px;
-      }
-
-      .pl-20 {
-         padding-left: 20px;
-         padding-right: 5px;
-      }
-
-      .pl-30 {
-         padding-left: 30px;
-         padding-right: 5px;
-      }
-
-      .mb-5 {
-         margin-bottom: 5px;
-         margin-top: 5px;
-      }
-
-      p {
-         font-size: 19px;
-      }
-
-      .progress {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         height: 0.9rem;
-         overflow: hidden;
-         font-size: .75rem;
-         background-color: #bbbbbb;
-         border-radius: 0.25rem;
-      }
-
-      .bg-danger {
-         background-color: rgb(45 63 101) !important;
-      }
-
-      .progress-bar {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-orient: vertical;
-         -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-         flex-direction: column;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         color: #030303;
-         text-align: center;
-         background-color: #007bff;
-         transition: width .6s ease;
-      }
-
-      .box-1 {
-         background-color: white !important;
-         margin: 0px 33px;
-         border-bottom-right-radius: 25px;
-         border-bottom-left-radius: 25px;
-         padding: 29px 107px 10px 29px;
-         position: absolute;
-         z-index: -1;
-         width: 80%;
-         min-height: 250px;
-      }
-
-      .name {
-         width: 77%;
-         font-size: 45px;
-         margin: 95px 0px 0px 0px;
-         font-style: italic;
-         word-break: break-all;
-      }
-
-      .box-2 {
-         background-color: #bad4e4;
-         padding-top: 90px;
-      }
-
-      .box-3 {
-         background-color: rgb(45 63 101);
-         border-top-left-radius: 27px;
-         border-top-right-radius: 27px;
-         padding-top: 50px;
-         margin-top: 50px;
-      }
-
-      .box-31 {
-         background-color: rgb(45 63 101);
-         border-top-left-radius: 27px;
-         border-top-right-radius: 27px;
-         padding-top: 10px;
+      .myResume-Contact-Info {
+         width: 62%;
          margin-top: 10px;
-      }
-
-      .box-4 {
-         background-color: rgb(16 31 56);
-         border-top-left-radius: 27px;
-         border-top-right-radius: 27px;
-         padding-bottom: 15px;
-      }
-
-      .box-5 {
-         background-color: rgb(45 63 101);
-         border-top-left-radius: 27px;
-         border-top-right-radius: 27px;
-         padding-bottom: 15px;
-      }
-
-      .word-break {
-         word-break: break-all;
-      }
-
-      .text-justify {
-         text-align: justify !important;
-      }
-
-      .d-flex {
-         display: flex;
-      }
-
-      .showPosts {
-         cursor: pointer;
-         list-style-type: none;
-         /* width: 200px; */
-      }
-
-      .greekCross {
-         color: #000000;
-         font-size: 17px;
-         width: 1.5em;
+         margin-bottom: 10px;
+         padding-left: 24px;
+         box-sizing: border-box;
          float: left;
       }
 
-      .showPosts>p {
-         /* font-size: 15px; */
-         margin-left: 1.5em;
+      .clear {
+         clear: both;
+      }
+
+      .myResume-Profile-Pic {
+         width: 34%;
+         float: right;
+         margin: 10px 18px 10px auto;
+         text-align: right;
+      }
+
+      .myResume-Profile-Pic img {
+         width: 140px;
+         height: 155px;
+         object-fit: cover;
+         border-radius: 3px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+         background-color: #fff;
+         border: 1px solid #ccc;
+         padding: 0px;
+      }
+
+      .myResume-Profile-Intro {
+         width: 100%;
+         text-align: justify;
+         margin-top: 0px;
+      }
+
+      .myResume-Skills {
+         width: 100%;
+         text-align: justify;
+         margin-top: 0px;
+      }
+
+      .myResume-Education {
+         width: 100%;
+         margin-top: 0px;
+      }
+
+      .myResume-Education>ul>li {
+         list-style-type: circle;
+      }
+
+      .myResume-Experience {
+         width: 100%;
+         margin-top: 0px;
+      }
+
+      .myResume-Experience>ul>li {
+         list-style-type: circle;
+      }
+
+      h1.title {
+         text-transform: uppercase;
+         font-size: 150%;
+         background-color: #CCC;
+         padding: 8px 18px 8px 24px;
+         border-radius: 0 40px 40px 0;
+         width: 86%;
+         margin: 12px 0 10px 0;
+         color: #fff;
+         text-shadow: 1px 1px 3px #000;
+         position: static;
+         left: auto;
+         box-sizing: border-box;
+      }
+
+      .myResume-Skills-left {
+         display: block;
+         float: left;
+         padding-bottom: 20px;
+         /* margin-left: 30px; */
+         margin-left: 30px;
+      }
+
+      .myResume-Skills-right {
+         display: block;
+         float: left;
+         margin-left: 30px;
+      }
+
+
+      ul.myResume-Skills-left,
+      ul.myResume-Skills-right {
+         display: block;
+      }
+
+      ul.myResume-Skills-left>li {
+         padding-left: 10px;
+         list-style-type: circle;
+         vertical-align: top;
+         font-family: "Balthazar", "Droid Serif", serif;
+      }
+
+      ul.myResume-Skills-right>li {
+         padding-left: 10px;
+         list-style-type: circle;
+         vertical-align: top;
+         font-family: "Balthazar", "Droid Serif", serif;
+      }
+
+      ul.myResume-Skills-left>li:first-child {
+         list-style-type: none;
+         font-weight: bolder;
+         font-size: 20px;
+         /* text-decoration: underline; */
+      }
+
+      ul.myResume-Skills-right>li:first-child {
+         list-style-type: none;
+         font-weight: bolder;
+         font-size: 20px;
+         text-decoration: underline;
+      }
+      .text-justify {
+         text-align: justify;
+      }
+
+      .word-break,
+      .objective-text {
+         word-break: normal !important;
+         word-wrap: break-word !important;
+         overflow-wrap: break-word !important;
+         white-space: normal !important;
+      }
+      .objective-text {
+         display: block;
+         width: 520px;
+         max-width: 520px;
+         margin: 0 24px 10px 24px;
+         text-align: justify;
+      }
+      .signature-img {
+         display: block;
+         width: 120px;
+         height: 48px;
+         max-width: 120px;
+         max-height: 48px;
+         object-fit: contain;
+         margin: 8px 0 0 24px;
       }
    </style>
-</head>
+<style id="resume-universal-print-fix">
+  /* --- Global print --- */
+  html, body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  img {
+    max-width: 100%;
+  }
 
-<body style="width: 100%;">
-   <div class="box">
-   </div>
-   <div class="box-1">
-      <h1 class="name">John Doe</h1>
-      <h3 style="width: 77%; max-width: 77%; min-height: 22;" class="word-break">Senior Full Stack Developer</h3>
-   </div>
-   <table style="width: 100%; margin-left: -2px;">
-      <tr>
-         <td class="box1">
-            <div class="grid-item box-2">
-               <div>
-                  <h2 class="pl-10">Objective</h2>
-                  <p class="m-0 pl-20 word-break" style="text-align: justify;">Results-driven Software Engineer with 6+ years of experience designing scalable web applications and RESTful APIs.</p>
-               </div>
-               <div><h2 class="pl-10">Education</h2><p class="m-0 pl-20 word-break"><b>Bachelor of Science in Computer Science</b></p><ul style="padding-left: 22px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">State University — 3.8 GPA</p></li><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">2013 - 2017</p></li></ul></div><div><h2 class="pl-10">Experience</h2><p class="m-0 pl-20 word-break"><b>Lead Backend Developer</b></p><ul style="padding-left: 22px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Tech Solutions Inc.</p></li><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">2020</p></li><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Architected microservices, managed database optimization, and handled high-throughput API endpoints.</p></li></ul><p class="m-0 pl-20 word-break"><b>Junior Web Developer</b></p><ul style="padding-left: 22px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Digital Agency</p></li><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">2017 - 2020</p></li><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Built responsive user interfaces and integrated third-party REST services.</p></li></ul></div><div><h2 class="pl-10">Projects</h2><p class="m-0 pl-20 word-break"><b>Automated Resume Builder</b></p><ul style="padding-left: 22px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Lead Architect</p></li><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Engineered a headless PDF generator rendering complex templates using Puppeteer and Laravel.</p></li></ul></div><div><h2 class="pl-10">Achievement</h2><ul style="padding-left: 22px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Employee of the Year 2023 - Awarded for exceptional contribution to cloud infrastructure migration.</p></li></ul></div><div><h2 class="pl-10">Reference</h2><p class="m-0 pl-20 word-break"><b>Jane Smith</b></p><ul style="padding-left: 22px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Engineering Director</p></li><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">Tech Solutions Inc.</p></li><li class="showPosts"><span class="greekCross">✴</span><p class="m-0 word-break">janesmith@techsolutions.com</p></li></ul></div><!-- resume12-php-sections-v1 -->            </div>
-         </td>
-        
-         <td class="box-3 align-inherit">
-               <div class="bg-color2">
-           
-               <div>
-                  <h2 style="text-align: center; padding:10px ;"><u>Profile Info</u></h2>
+  /* --- resume8 / latest-style .resume columns --- */
+  .resume {
+    display: table !important;
+    width: 800px !important;
+    max-width: 800px;
+    table-layout: fixed;
+  }
+  .resume .resume_left,
+  .resume .resume_right {
+    display: table-cell !important;
+    vertical-align: top;
+  }
+  .resume .resume_left {
+    width: 280px !important;
+  }
+  .resume .resume_right {
+    width: 520px !important;
+  }
+  .resume .resume_left .resume_profile {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+  }
+  .resume .resume_left .resume_profile img {
+    display: block;
+    width: 280px;
+    height: 280px;
+  }
+  html[data-resume-format="latest.html"] .resume,
+  html[data-resume-format="latest.html"] body .resume {
+    height: 1123px !important;
+  }
+  html[data-resume-format="latest.html"] .resume .resume_left {
+    background: #0bb5f4 !important;
+  }
 
-                  <ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;">
-                     <li class="showPosts mb-5">
-                        <span class="greekCross" style="color: white;">☎</span>
-                        <p class="m-0 word-break">+1 555-123-4567</p>
-                     </li>
-                     <li class="showPosts mb-5">
-                        <span class="greekCross" style="color: white;">♕</span>
-                        <p class="m-0 word-break">1995-08-15</p>
-                     </li>
-                     <li class="showPosts mb-5">
-                        <span class="greekCross" style="color: white;">⌧</span>
-                        <p class="m-0 word-break">johndoe@example.com</p>
-                     </li>
-                     <li class="showPosts mb-5">
-                        <span class="greekCross"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#ffffff"
-                                class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                            </svg></span>
-                        <p class="m-0 word-break">123 Main Street, New York, NY 10001</p>
-                     </li>
-                  </ul>
-                  <!-- 
-            <p class="m-0 mb-5 pl-10 word-break d-flex"><span style="padding-right: 0px;">☎ </span> <span style="padding-left: 2px;"> +1 555-123-4567</span></p>
-            <p class="m-0 mb-5 pl-10 word-break d-flex"><span style="padding-right: 5px;"><b>♕ </b></span> <span>1995-08-15</span></p>
-            <p class="m-0 mb-5 pl-10 word-break d-flex"><span style="padding-right: 3px;">⌧ </span> johndoe@example.com</p>
-            <p class="m-0 mb-5 pl-10 word-break d-flex"><span style="padding-right: 8px;">⟰ </span> 123 Main Street, New York, NY 10001</p> -->
-               </div>
-               <div style="padding-bottom: 15px;"><h2 style="text-align: center;padding-top: 30px;"><u>Skills</u></h2><p class="m-0 mb-5 pl-10">PHP / Laravel</p><div class="progress" style="width: 93%; margin-left: 10px;"><div class="progress-bar bg-danger" style="width:90%; color: white;">90%</div></div><p class="m-0 mb-5 pl-10">Node.js</p><div class="progress" style="width: 93%; margin-left: 10px;"><div class="progress-bar bg-danger" style="width:85%; color: white;">85%</div></div><p class="m-0 mb-5 pl-10">MySQL</p><div class="progress" style="width: 93%; margin-left: 10px;"><div class="progress-bar bg-danger" style="width:80%; color: white;">80%</div></div><p class="m-0 mb-5 pl-10">Docker</p><div class="progress" style="width: 93%; margin-left: 10px;"><div class="progress-bar bg-danger" style="width:70%; color: white;">70%</div></div></div><div class="box-4"><h2 style="text-align: center;"><u>Language</u></h2><ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross" style="color: white;">✴</span><p class="m-0 word-break">English (Native)</p></li></ul><ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross" style="color: white;">✴</span><p class="m-0 word-break">Spanish (Intermediate)</p></li></ul></div><div class="box-5"><h2 style="text-align: center;padding-top: 30px;"><u>Interests</u></h2><ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross" style="color: white;">✴</span><p class="m-0 word-break">Open Source Contributing</p></li></ul><ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross" style="color: white;">✴</span><p class="m-0 word-break">Chess</p></li></ul><ul style="padding-left: 10px; margin-top: 0px; margin-bottom: 0px; padding-right: 5px;"><li class="showPosts"><span class="greekCross" style="color: white;">✴</span><p class="m-0 word-break">Technical Writing</p></li></ul></div>
-            </div>
-         </td>
-         <td style="width: 3.9%; position: relative; z-index: -2;" class="bg-color1">
-            <div style="margin-top: 200px;"></div>
-         </td>
-      </tr>
-   </table>
+  /* --- Bootstrap-style d-flex two-column (resume30, etc.) --- */
+  .content.d-flex,
+  .container.d-flex,
+  .main.d-flex,
+  .main-content.d-flex,
+  .header.d-flex,
+  .two-column,
+  .two-column.d-flex {
+    display: block !important;
+    width: 100% !important;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .content.d-flex::after,
+  .header.d-flex::after,
+  .two-column::after,
+  .main-container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .content.d-flex > .left-part,
+  .content.d-flex > .right-part,
+  .header.d-flex > .left-part,
+  .header.d-flex > .right-part,
+  .header > .left-part,
+  .header > .right-part,
+  .content .left-part,
+  .content .right-part,
+  .header .left-part,
+  .header .right-part,
+  .container.d-flex > .left-part,
+  .container.d-flex > .right-part,
+  .container.d-flex > .left,
+  .container.d-flex > .right,
+  .two-column > .column1,
+  .two-column > .column2 {
+    float: left;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+  .header > .left-part,
+  .content > .left-part,
+  .content.d-flex > .left-part,
+  .header .left-part,
+  .content .left-part {
+    width: 35%;
+  }
+  .header > .right-part,
+  .content > .right-part,
+  .content.d-flex > .right-part,
+  .header .right-part,
+  .content .right-part {
+    width: 65% !important;
+  }
+  .two-column > .column1 {
+    width: 40%;
+  }
+  .two-column > .column2 {
+    width: 60%;
+  }
+  html[data-resume-format="resume30.html"] .header,
+  .header.d-flex {
+    display: block;
+    overflow: hidden;
+    background: #000 !important;
+    color: #fff !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume30.html"] .header .contact-info,
+  html[data-resume-format="resume30.html"] .header .font-1,
+  html[data-resume-format="resume30.html"] .header .font-3,
+  html[data-resume-format="resume30.html"] .header .font-4,
+  .header.d-flex .contact-info {
+    color: #fff !important;
+  }
+  html[data-resume-format="resume30.html"] .header .imgDiv,
+  .header.d-flex .imgDiv {
+    min-height: 220px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+  html[data-resume-format="resume30.html"] .header .image,
+  .header.d-flex .image {
+    position: static !important;
+    transform: none !important;
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  /* --- resume20 / resume21 main-container --- */
+  .main-container {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .main-container > .left-part {
+    float: left;
+    width: 35%;
+    box-sizing: border-box;
+  }
+  .main-container > .right-part {
+    float: left;
+    width: 65%;
+    box-sizing: border-box;
+  }
+
+  /* --- CSS grid → table (resume25, resume7, …) --- */
+  .grid-container,
+  .grid-container1,
+  .grid-container2 {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed;
+  }
+  .grid-item,
+  .grid-item1,
+  .grid-item2,
+  .grid-item-1,
+  .grid-item-2 {
+    display: table-cell !important;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  .grid-container .grid-item-1,
+  .grid-container1 .grid-item1:first-child {
+    width: 35%;
+  }
+  .grid-container .grid-item-2,
+  .grid-container1 .grid-item1 + .grid-item1 {
+    width: 65%;
+  }
+  .grid-container1 .grid-item1 {
+    width: 50%;
+  }
+
+  /* --- professional.html --- */
+  .resume-main {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    background: #c3266f !important;
+    background: linear-gradient(#c3266f, #743578) !important;
+  }
+  .resume-main::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .left-box {
+    float: left;
+    width: 35%;
+    box-sizing: border-box;
+    min-height: 1120px;
+  }
+  .right-box {
+    float: right;
+    width: 65%;
+    box-sizing: border-box;
+    background: #fff !important;
+    margin: 50px 0;
+    border-radius: 50px 0 0 50px;
+    padding: 30px 50px;
+    box-shadow: -7px 2px 15px 2px rgba(84, 88, 93, 0.32);
+  }
+  .content-box h2,
+  .content-box .p1,
+  .content-box .p2,
+  .left-box .content-box div,
+  .left-box .content-box p {
+    color: #fff !important;
+  }
+  .lang-progress {
+    background: #a5a5a5;
+    border-radius: 13px;
+    height: 8px;
+    width: 100%;
+    margin: 4px 0 10px;
+    overflow: hidden;
+  }
+  .lang-progress-fill {
+    background: #fff;
+    height: 100%;
+    border-radius: 9px;
+  }
+
+  /* --- resume2.html --- */
+  html[data-resume-format="resume2.html"],
+  html[data-resume-format="resume2.html"] body {
+    background: #fff !important;
+  }
+  html[data-resume-format="resume2.html"] body {
+    margin: 0 !important;
+    padding: 12mm 10mm 14mm 10mm !important;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .flexContainer,
+  .flexContainer {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn,
+  .flexContainer > .leftColumn {
+    display: table-cell !important;
+    float: none !important;
+    width: 28% !important;
+    vertical-align: top;
+    background-color: #C0D8DE !important;
+    padding: 0 !important;
+  }
+  html[data-resume-format="resume2.html"] .rightColumn,
+  .flexContainer > .rightColumn {
+    display: table-cell !important;
+    float: none !important;
+    width: 72% !important;
+    vertical-align: top;
+    padding: 0 !important;
+  }
+  html[data-resume-format="resume2.html"] #LeftBottom {
+    padding: 12px 16px 24px 16px !important;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .rightRow {
+    padding: 18px 22px 10px 22px !important;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .containerHl {
+    padding: 0 22px 6px 22px !important;
+  }
+  html[data-resume-format="resume2.html"] .containerText {
+    padding: 0 22px 10px 36px !important;
+    margin-bottom: 8px !important;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn .font-size,
+  html[data-resume-format="resume2.html"] .leftColumn span.font-size {
+    display: block;
+    padding: 3px 0;
+    word-break: break-word !important;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn hr {
+    margin: 4px 0 !important;
+    width: 100%;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn .skills {
+    padding: 6px 0 !important;
+    margin-bottom: 4px !important;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn h2 {
+    margin: 10px 0 6px !important;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn img,
+  .flexContainer .leftColumn img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 225px !important;
+    object-fit: cover;
+  }
+  .containerHl {
+    display: block !important;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .years,
+  .flexContainer .years {
+    display: block !important;
+    width: 90% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    background: #C0D8DE !important;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .years h3 {
+    word-break: break-word;
+    font-size: 0.95em;
+    line-height: 1.2;
+  }
+  .jobs {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .containerText {
+    display: block !important;
+    width: 100%;
+    padding: 0 24px 0 40px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .containerText > .verticalLines,
+  html[data-resume-format="resume2.html"] .containerText > .verticalLinesEdu {
+    display: block !important;
+    float: left;
+    width: 3px !important;
+    min-height: 56px;
+    height: 56px;
+    vertical-align: top;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    margin: 0 1px;
+    padding: 0;
+  }
+  html[data-resume-format="resume2.html"] .containerText > div:last-child {
+    display: block !important;
+    float: left;
+    overflow: hidden;
+    vertical-align: top;
+    padding-left: 10px !important;
+    width: 78% !important;
+    box-sizing: border-box;
+  }
+  .skill-row {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed;
+    overflow: visible;
+  }
+  html[data-resume-format="resume2.html"] .skill-bar-wrap {
+    display: table-cell !important;
+    width: 78% !important;
+    vertical-align: middle;
+  }
+  html[data-resume-format="resume2.html"] .skill-pct {
+    display: table-cell !important;
+    width: 22% !important;
+    vertical-align: middle;
+    white-space: nowrap !important;
+    padding-left: 4px !important;
+  }
+  html[data-resume-format="resume2.html"] .skill-track {
+    width: 100% !important;
+    height: 8px !important;
+    background: #c8c8c8 !important;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  html[data-resume-format="resume2.html"] .skill-row .skillBar,
+  html[data-resume-format="resume2.html"] .skills .skillBar {
+    display: block !important;
+    float: none !important;
+    border: none !important;
+    height: 8px !important;
+    margin: 0 !important;
+    max-width: 100%;
+    background: rgb(70, 70, 70) !important;
+    border-radius: 10px;
+  }
+  .skill-row .skillBar,
+  .skills .skillBar {
+    display: block !important;
+    float: none !important;
+    border: none;
+    height: 8px;
+    margin: 4px 0 !important;
+    max-width: 100%;
+  }
+  #LeftBottom,
+  .flexContainer .leftColumn {
+    background-color: #C0D8DE !important;
+  }
+  #rightHeader {
+    background-color: rgb(213, 213, 215) !important;
+  }
+  html[data-resume-format="resume2.html"] #Profession {
+    position: relative !important;
+    top: auto !important;
+    margin-top: 8px;
+    font-size: 15px !important;
+  }
+  .flexContainer .leftRow {
+    position: relative;
+  }
+  #dotContainer.over {
+    position: relative !important;
+    bottom: auto !important;
+    margin: 6px auto;
+  }
+  html[data-resume-format="resume2.html"] .HeaderHr {
+    position: relative !important;
+    left: auto !important;
+    width: 30%;
+    display: inline-block;
+    margin: 4px 2%;
+  }
+  html[data-resume-format="resume2.html"] .signature-block {
+    text-align: right !important;
+    padding: 20px 22px 8px 22px !important;
+  }
+  html[data-resume-format="resume2.html"] .signature-block .left1sing {
+    display: block !important;
+    text-align: right !important;
+    margin: 0 0 8px !important;
+  }
+  html[data-resume-format="resume2.html"] .signature-img,
+  html[data-resume-format="resume2.html"] img[alt="Signature"] {
+    display: block !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume3.html: pill headers flush left, wrap objective, fixed signature --- */
+  html[data-resume-format="resume3.html"],
+  html[data-resume-format="resume3.html"] body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  html[data-resume-format="resume3.html"] .myResume {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px 0 28px 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-shadow: none !important;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Contact-Info {
+    float: left;
+    width: 62% !important;
+    margin: 8px 0 16px 0 !important;
+    padding-left: 24px !important;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Profile-Pic {
+    float: right;
+    width: 34% !important;
+    margin: 8px 18px 16px 0 !important;
+    text-align: right;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Profile-Pic img {
+    width: 140px !important;
+    height: 155px !important;
+    max-width: 140px !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume3.html"] h1.title {
+    position: static !important;
+    left: auto !important;
+    display: block !important;
+    width: 86% !important;
+    max-width: 86% !important;
+    margin: 12px 0 10px 0 !important;
+    padding: 8px 18px 8px 24px !important;
+    box-sizing: border-box;
+    background-color: #ccc !important;
+    color: #fff !important;
+    border-radius: 0 40px 40px 0 !important;
+    text-align: left !important;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Profile-Intro,
+  html[data-resume-format="resume3.html"] .myResume-Skills,
+  html[data-resume-format="resume3.html"] .myResume-Education,
+  html[data-resume-format="resume3.html"] .myResume-Experience {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 8px 0 !important;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Profile-Intro > p,
+  html[data-resume-format="resume3.html"] .objective-text {
+    display: block !important;
+    width: 680px !important;
+    max-width: 680px !important;
+    margin: 0 24px 10px 24px !important;
+    padding: 0 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: justify !important;
+    line-height: 1.35em !important;
+  }
+  html[data-resume-format="resume3.html"] .word-break {
+    word-break: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Education > ul,
+  html[data-resume-format="resume3.html"] .myResume-Experience > ul,
+  html[data-resume-format="resume3.html"] .myResume-Education p,
+  html[data-resume-format="resume3.html"] .myResume-Experience p {
+    margin-left: 24px;
+    margin-right: 18px;
+    width: auto !important;
+    max-width: 680px;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  html[data-resume-format="resume3.html"] img[alt="sign"],
+  html[data-resume-format="resume3.html"] .signature-img {
+    display: block !important;
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    margin: 8px 0 0 24px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- Skill / progress bars --- */
+  .progress {
+    display: block;
+    overflow: hidden;
+    width: 95%;
+  }
+  .progress-bar {
+    display: block;
+    float: left;
+    height: 1rem;
+    min-width: 0;
+  }
+  progress {
+    display: block;
+    width: 100%;
+    height: 8px;
+    margin: 4px 0 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 13px;
+    background: #a5a5a5;
+  }
+  progress::-webkit-progress-bar {
+    background: #a5a5a5;
+    border-radius: 13px;
+  }
+  progress::-webkit-progress-value {
+    background: #fff;
+    border-radius: 9px;
+  }
+</style></head>
+
+<body>
+   <div class="myResume">     
+      <div class="myResume-Contact-Info" style="width: 90% !important;">
+         <h1 class="word-break">John Doe</h1>
+         <h4 class="word-break">Senior Full Stack Developer</h4>
+         <h6 class="word-break" style="margin-top: 15px !important;">+1 555-123-4567</h6>
+          
+         <h6 class="word-break">1995-08-15</h6>
+          
+         <h6 class="word-break">johndoe@example.com</h6>
+         
+         <h6 class="word-break">123 Main Street, New York, NY 10001</h6>
+      </div>
+      <div class="clear"></div>
+      <div class="myResume-Profile-Intro" style="margin-bottom: 10px;">
+         <h1 class="title">Objective</h1>
+         <p class="objective-text">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Results-driven Software Engineer with 6+ years of experience designing scalable web applications and RESTful APIs.</p>
+      </div>
+      <div class="myResume-Education" style="margin-bottom: 10px;">
+         <h1 class="title word-break">Skills</h1>
+         <ul>
+            <li class="text-justify word-break"><b>PHP / Laravel</b></li>
+            <p>90%</p>
+         </ul>
+         <ul>
+            <li class="text-justify word-break"><b>Node.js</b></li>
+            <p>85%</p>
+         </ul>
+         <ul>
+            <li class="text-justify word-break"><b>MySQL</b></li>
+            <p>80%</p>
+         </ul>
+         <ul>
+            <li class="text-justify word-break"><b>Docker</b></li>
+            <p>70%</p>
+         </ul>
+      </div>
+      <div class="clear"></div>
+      <div class="myResume-Education">
+         <h1 class="title">Education</h1>
+         <ul>
+            <li class="word-break"><b>Bachelor of Science in Computer Science</b></li>
+            
+            <p class="word-break">State University — 3.8 GPA</p>
+            
+            <p class="word-break">2013 - 2017</p>
+            <br>
+         </ul>
+      </div>
+      <div class="myResume-Experience">
+         <h1 class="title">Experience</h1>
+         <ul>
+            <li class="word-break"><b>Lead Backend Developer</b></li>
+            
+            <p class="word-break">Tech Solutions Inc.</p>
+            
+            <p class="word-break">2020</p>
+             
+            <p class="word-break">Architected microservices, managed database optimization, and handled high-throughput API endpoints.</p>
+            <p>Present</p>
+            <br>
+         </ul>
+         <ul>
+            <li class="word-break"><b>Junior Web Developer</b></li>
+            
+            <p class="word-break">Digital Agency</p>
+            
+            <p class="word-break">2017 - 2020</p>
+             
+            <p class="word-break">Built responsive user interfaces and integrated third-party REST services.</p>
+            <br>
+         </ul>
+      </div>
+      <div class="myResume-Education" style="margin-bottom: 10px;">
+         <h1 class="title">Language</h1>
+         <ul>
+            <li class="word-break"><b>English (Native)</b></li>
+         </ul>
+         <ul>
+            <li class="word-break"><b>Spanish (Intermediate)</b></li>
+         </ul>
+      </div>
+      <div class="myResume-Education">
+         <h1 class="title">Projects</h1>
+         <ul>
+            <li class="word-break"><b>Automated Resume Builder</b></li>
+             
+            <p class="word-break">Lead Architect</p>
+             
+            <p class="word-break">Engineered a headless PDF generator rendering complex templates using Puppeteer and Laravel.</p>
+            <br>
+         </ul>
+      </div>
+      <div class="myResume-Education" style="margin-bottom: 10px;">
+         <h1 class="title">Achievement</h1>
+         <ul>
+            <li class="word-break"><b>Employee of the Year 2023 - Awarded for exceptional contribution to cloud infrastructure migration.</b></li>
+         </ul>
+      </div>
+      <div class="myResume-Education">
+         <h1 class="title">Reference</h1>
+         <ul>
+            <li class="word-break"><b>Jane Smith</b></li>
+             
+            <p class="word-break">Engineering Director</p>
+             
+            <p class="word-break">Tech Solutions Inc.</p>
+             
+            <p class="word-break">janesmith@techsolutions.com</p>
+                         <br>
+         </ul>
+      </div>
+      <div class="myResume-Education">
+         <h1 class="title">Interests</h1>
+         <ul>
+            <li class="word-break"><b>Open Source Contributing</b></li>
+         </ul>
+                  <ul>
+            <li class="word-break"><b>Chess</b></li>
+         </ul>
+                  <ul>
+            <li class="word-break"><b>Technical Writing</b></li>
+         </ul>
+         <br>
+      </div>
+      <div class="myResume-Education">
+         <h1 class="title" style="margin-bottom: 0px;">Signature</h1>
+         <img class="signature-img" src="file:///tmp/sign-sample.png" alt="sign">
+      </div>
+   </div>
 </body>
 
 </html>

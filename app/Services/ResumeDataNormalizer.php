@@ -250,16 +250,10 @@ class ResumeDataNormalizer
                 continue;
             }
 
-            $name = (string) ($row['name'] ?? $row['language'] ?? $row['lang'] ?? '');
-            $level = (string) ($row['level'] ?? $row['proficiency'] ?? '');
-            $plainName = (string) ($row['name'] ?? $row['language'] ?? $row['lang'] ?? '');
+            $entry = ResumeTemplateDataMapper::languageLabel($row);
             $expertise = $row['expertise'] ?? $row['percent'] ?? $row['percentage'] ?? null;
-            if ($name !== '' && $level !== '') {
-                $name = $name.' ('.$level.')';
-            }
 
-            if ($name !== '') {
-                $entry = ['name' => $name, 'language' => $plainName !== '' ? $plainName : $name, 'level' => $level];
+            if ($entry['name'] !== '') {
                 if ($expertise !== null && $expertise !== '') {
                     $entry['expertise'] = is_numeric($expertise) ? (int) $expertise : (string) $expertise;
                 }

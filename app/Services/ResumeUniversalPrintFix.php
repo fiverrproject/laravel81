@@ -8,7 +8,7 @@ namespace App\Services;
  */
 class ResumeUniversalPrintFix
 {
-    public const VERSION = 'resume-universal-print-fix-v1';
+    public const VERSION = 'resume-universal-print-fix-v9';
 
     public static function apply(string $html, ?string $format = null): string
     {
@@ -276,41 +276,96 @@ class ResumeUniversalPrintFix
   }
 
   /* --- resume2.html --- */
+  html[data-resume-format="resume2.html"],
+  html[data-resume-format="resume2.html"] body {
+    background: #fff !important;
+  }
+  html[data-resume-format="resume2.html"] body {
+    margin: 0 !important;
+    padding: 12mm 10mm 14mm 10mm !important;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .flexContainer,
   .flexContainer {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn,
+  .flexContainer > .leftColumn {
+    display: table-cell !important;
+    float: none !important;
+    width: 28% !important;
+    vertical-align: top;
+    background-color: #C0D8DE !important;
+    padding: 0 !important;
+  }
+  html[data-resume-format="resume2.html"] .rightColumn,
+  .flexContainer > .rightColumn {
+    display: table-cell !important;
+    float: none !important;
+    width: 72% !important;
+    vertical-align: top;
+    padding: 0 !important;
+  }
+  html[data-resume-format="resume2.html"] #LeftBottom {
+    padding: 12px 16px 24px 16px !important;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .rightRow {
+    padding: 18px 22px 10px 22px !important;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume2.html"] .containerHl {
+    padding: 0 22px 6px 22px !important;
+  }
+  html[data-resume-format="resume2.html"] .containerText {
+    padding: 0 22px 10px 36px !important;
+    margin-bottom: 8px !important;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn .font-size,
+  html[data-resume-format="resume2.html"] .leftColumn span.font-size {
     display: block;
+    padding: 3px 0;
+    word-break: break-word !important;
+  }
+  html[data-resume-format="resume2.html"] .leftColumn hr {
+    margin: 4px 0 !important;
     width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
   }
-  .flexContainer::after {
-    content: "";
-    display: table;
-    clear: both;
+  html[data-resume-format="resume2.html"] .leftColumn .skills {
+    padding: 6px 0 !important;
+    margin-bottom: 4px !important;
   }
-  .leftColumn {
-    float: left;
-    width: 25%;
-    box-sizing: border-box;
+  html[data-resume-format="resume2.html"] .leftColumn h2 {
+    margin: 10px 0 6px !important;
   }
-  .rightColumn {
-    float: left;
-    width: 75%;
-    box-sizing: border-box;
+  html[data-resume-format="resume2.html"] .leftColumn img,
+  .flexContainer .leftColumn img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 225px !important;
+    object-fit: cover;
   }
   .containerHl {
-    display: block;
+    display: block !important;
     width: 100%;
     overflow: hidden;
-    padding: 0 2vw;
+    padding: 0 24px;
     box-sizing: border-box;
   }
-  .years {
-    display: inline-block;
-    vertical-align: top;
-    width: 22%;
-    min-width: 130px;
+  html[data-resume-format="resume2.html"] .years,
+  .flexContainer .years {
+    display: block !important;
+    width: 90% !important;
+    min-width: 0 !important;
     box-sizing: border-box;
     background: #C0D8DE !important;
+    border-radius: 12px;
+    text-align: center;
   }
   .years h3 {
     word-break: break-word;
@@ -318,45 +373,84 @@ class ResumeUniversalPrintFix
     line-height: 1.2;
   }
   .jobs {
-    display: inline-block;
-    vertical-align: top;
-    width: 80%;
+    display: block;
+    width: 100%;
     box-sizing: border-box;
   }
   .containerText {
-    display: table !important;
+    display: block !important;
     width: 100%;
-    table-layout: fixed;
-    padding: 0 2vw 0 4.1vw;
-    margin-bottom: 1vw;
+    padding: 0 24px 0 40px;
+    margin-bottom: 12px;
+    overflow: hidden;
     box-sizing: border-box;
   }
-  .containerText > .verticalLines,
-  .containerText > .verticalLinesEdu {
-    display: table-cell !important;
-    width: 12px;
-    min-height: 48px;
+  html[data-resume-format="resume2.html"] .containerText > .verticalLines,
+  html[data-resume-format="resume2.html"] .containerText > .verticalLinesEdu {
+    display: block !important;
+    float: left;
+    width: 3px !important;
+    min-height: 56px;
+    height: 56px;
     vertical-align: top;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    margin: 0;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    margin: 0 1px;
+    padding: 0;
   }
-  .containerText > div:last-child {
-    display: table-cell !important;
+  html[data-resume-format="resume2.html"] .containerText > div:last-child {
+    display: block !important;
+    float: left;
+    overflow: hidden;
     vertical-align: top;
-    padding-left: 10px;
+    padding-left: 10px !important;
+    width: 78% !important;
+    box-sizing: border-box;
   }
   .skill-row {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed;
+    overflow: visible;
+  }
+  html[data-resume-format="resume2.html"] .skill-bar-wrap {
+    display: table-cell !important;
+    width: 78% !important;
+    vertical-align: middle;
+  }
+  html[data-resume-format="resume2.html"] .skill-pct {
+    display: table-cell !important;
+    width: 22% !important;
+    vertical-align: middle;
+    white-space: nowrap !important;
+    padding-left: 4px !important;
+  }
+  html[data-resume-format="resume2.html"] .skill-track {
+    width: 100% !important;
+    height: 8px !important;
+    background: #c8c8c8 !important;
+    border-radius: 10px;
     overflow: hidden;
-    width: 100%;
+  }
+  html[data-resume-format="resume2.html"] .skill-row .skillBar,
+  html[data-resume-format="resume2.html"] .skills .skillBar {
+    display: block !important;
+    float: none !important;
+    border: none !important;
+    height: 8px !important;
+    margin: 0 !important;
+    max-width: 100%;
+    background: rgb(70, 70, 70) !important;
+    border-radius: 10px;
   }
   .skill-row .skillBar,
   .skills .skillBar {
-    float: left;
+    display: block !important;
+    float: none !important;
     border: none;
-    border-top: 8px rgb(70, 70, 70) solid;
-    height: 0;
-    margin: 3px 6px 3px 0;
+    height: 8px;
+    margin: 4px 0 !important;
+    max-width: 100%;
   }
   #LeftBottom,
   .flexContainer .leftColumn {
@@ -365,10 +459,11 @@ class ResumeUniversalPrintFix
   #rightHeader {
     background-color: rgb(213, 213, 215) !important;
   }
-  #Profession {
+  html[data-resume-format="resume2.html"] #Profession {
     position: relative !important;
     top: auto !important;
     margin-top: 8px;
+    font-size: 15px !important;
   }
   .flexContainer .leftRow {
     position: relative;
@@ -378,15 +473,196 @@ class ResumeUniversalPrintFix
     bottom: auto !important;
     margin: 6px auto;
   }
-  .HeaderHr {
+  html[data-resume-format="resume2.html"] .HeaderHr {
     position: relative !important;
     left: auto !important;
     width: 30%;
     display: inline-block;
     margin: 4px 2%;
   }
-  .containerHl[style*="flex"] {
+  html[data-resume-format="resume2.html"] .signature-block {
+    text-align: right !important;
+    padding: 20px 22px 8px 22px !important;
+  }
+  html[data-resume-format="resume2.html"] .signature-block .left1sing {
     display: block !important;
+    text-align: right !important;
+    margin: 0 0 8px !important;
+  }
+  html[data-resume-format="resume2.html"] .signature-img,
+  html[data-resume-format="resume2.html"] img[alt="Signature"] {
+    display: block !important;
+    float: none !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume3.html: pill headers flush left, wrap objective, fixed signature --- */
+  html[data-resume-format="resume3.html"],
+  html[data-resume-format="resume3.html"] body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  html[data-resume-format="resume3.html"] .myResume {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px 0 28px 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-shadow: none !important;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Contact-Info {
+    float: left;
+    width: 62% !important;
+    margin: 8px 0 16px 0 !important;
+    padding-left: 24px !important;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Profile-Pic {
+    float: right;
+    width: 34% !important;
+    margin: 8px 18px 16px 0 !important;
+    text-align: right;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Profile-Pic img {
+    width: 140px !important;
+    height: 155px !important;
+    max-width: 140px !important;
+    object-fit: cover;
+  }
+  html[data-resume-format="resume3.html"] h1.title {
+    position: static !important;
+    left: auto !important;
+    display: block !important;
+    width: 86% !important;
+    max-width: 86% !important;
+    margin: 12px 0 10px 0 !important;
+    padding: 8px 18px 8px 24px !important;
+    box-sizing: border-box;
+    background-color: #ccc !important;
+    color: #fff !important;
+    border-radius: 0 40px 40px 0 !important;
+    text-align: left !important;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Profile-Intro,
+  html[data-resume-format="resume3.html"] .myResume-Skills,
+  html[data-resume-format="resume3.html"] .myResume-Education,
+  html[data-resume-format="resume3.html"] .myResume-Experience {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 8px 0 !important;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Profile-Intro > p,
+  html[data-resume-format="resume3.html"] .objective-text {
+    display: block !important;
+    width: 680px !important;
+    max-width: 680px !important;
+    margin: 0 24px 10px 24px !important;
+    padding: 0 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: justify !important;
+    line-height: 1.4em !important;
+  }
+  html[data-resume-format="resume3.html"] .word-break {
+    word-break: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  html[data-resume-format="resume3.html"] .myResume-Education > ul,
+  html[data-resume-format="resume3.html"] .myResume-Experience > ul,
+  html[data-resume-format="resume3.html"] .myResume-Education p,
+  html[data-resume-format="resume3.html"] .myResume-Experience p {
+    margin-left: 24px;
+    margin-right: 24px;
+    width: auto !important;
+    max-width: 680px;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  html[data-resume-format="resume3.html"] table.skill-line {
+    width: 680px !important;
+    margin: 2px 24px 4px 24px !important;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  html[data-resume-format="resume3.html"] table.skill-line td.skill-name {
+    text-align: left;
+    vertical-align: top;
+    padding: 1px 10px 1px 0;
+  }
+  html[data-resume-format="resume3.html"] table.skill-line td.skill-pct {
+    width: 72px !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+    vertical-align: top;
+  }
+
+  /* --- resume4.html: dotted header box + always-show skill % --- */
+  html[data-resume-format="resume4.html"],
+  html[data-resume-format="resume4.html"] body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  html[data-resume-format="resume4.html"] .resume4-wrap {
+    padding: 16px 14px 20px 14px !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    overflow: visible !important;
+  }
+  html[data-resume-format="resume4.html"] .header {
+    border: 2px dotted #000 !important;
+    border-style: dotted !important;
+    border-width: 2px !important;
+    border-color: #000 !important;
+    -webkit-border-radius: 20px !important;
+    border-radius: 20px !important;
+    padding: 16px 14px 18px 14px !important;
+    margin: 4px 2px 14px 2px !important;
+    background: #fff !important;
+    background-color: #fff !important;
+    text-align: center !important;
+    overflow: visible !important;
+    width: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume4.html"] .header h2,
+  html[data-resume-format="resume4.html"] .header p {
+    margin: 0;
+    padding: 1px 8px;
+  }
+
+  html[data-resume-format="resume3.html"] img[alt="sign"],
+  html[data-resume-format="resume3.html"] .signature-img {
+    display: block !important;
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    margin: 8px 0 0 24px !important;
+    object-fit: contain !important;
   }
 
   /* --- Skill / progress bars --- */
