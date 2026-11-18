@@ -18,6 +18,18 @@
          border-radius: 3px;
       }
 
+      .r4-signhead {
+         margin: 0 0 12px 0;
+      }
+
+      .r4-sign {
+         display: inline-block;
+         width: 120px !important;
+         height: 48px !important;
+         max-width: 120px !important;
+         max-height: 48px !important;
+      }
+
       .header {
          border: 2px dotted #000;
          border-style: dotted;
@@ -179,8 +191,8 @@
          {{/if}}
          {{#if sign}}
          <div class="text-center">
-            <h3 class="box">Signature</h3>
-            <img width="16%" height="auto" src="{{{sign}}}">
+            <h3 class="box r4-signhead">Signature</h3>
+            <img class="r4-sign" width="120" height="48" src="{{{sign}}}" alt="Signature" />
          </div>
          {{/if}}
       </div>

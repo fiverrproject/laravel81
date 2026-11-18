@@ -1,712 +1,334 @@
-<!DOCTYPE html>
-<html data-postman-fallbacks="1" lang="en">
+<html data-postman-fallbacks="1">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Resume 25</title>
-
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-
-      *,
-      *::after,
-      *::before {
+      html, body {
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
+      }
+      body {
          margin: 0;
          padding: 0;
-         font: inherit;
-         box-sizing: border-box;
+         background: #ffffff;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 18px;
+         color: #4a5558;
       }
-
-      :root {
-         --bg--light: hsl(200, 10%, 92%);
-         --bg--base: #ffffff;
-         --primary--dark: hsl(188, 21%, 58%);
-         --primary--accent: hsl(188, 86%, 41%);
-         --secondary--dark: hsl(207, 41%, 44%);
-         --secondary--light: hsl(200, 22%, 78%);
-         --text-clr-200: hsl(195, 6%, 34%);
-         --text-clr-300: hsl(197, 8%, 54%);
-         --text-clr-400: hsl(199, 8%, 70%);
-         --border-clr: hsl(200, 10%, 83%);
-         --fs--base: 1rem;
-         --fs--01: 0.889rem;
-         --fs--02: 1.125rem;
-         --fs--03: 1.266rem;
-         --fs-title--s: 2.027rem;
-         --fs-title--m: 1.802rem;
-         --fs-title--l: 2.566rem;
-         --fs-title--xl: 3.247rem;
-         --space--025: 0.25rem;
-         --space--05: 0.5rem;
-         --space--075: 0.75rem;
-         --space--1: 1rem;
-         --space--15: 1.5rem;
-         --space--2: 2rem;
+      .r25-page {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
       }
-
-      .break-word {
-         word-break: break-word !important;
+      .r25-left {
+         width: 32%;
+         background-color: #ffffff;
+         vertical-align: top;
+         padding: 22px 12px 24px 12px;
+         border-right: 1px solid #e6e6e6;
       }
-
-      .break-all {
-         word-break: break-all !important;
+      .r25-right {
+         width: 68%;
+         background-color: #ffffff;
+         vertical-align: top;
+         padding: 0;
       }
-
-      picture,
-      img {
+      .r25-photo-wrap {
+         width: 186px;
+         margin: 8px auto 22px auto;
+         border: 4px solid #c4c4c4;
+         background-color: #ffffff;
+         padding: 5px;
+      }
+      .r25-photo {
          display: block;
-         max-width: 100%;
-         object-fit: cover;
+         width: 186px;
+         height: 186px;
+         max-width: 186px;
+         max-height: 186px;
+         border: 3px solid #e6e6e6;
+         border-radius: 0;
+         background-color: #c8c8c8;
       }
-
-      /* 
-        body {
-            display: grid;
-            place-items: center;
-            font-family: "Roboto", sans-serif;
-            min-block-size: 100vh;
-            background: hsl(200, 10%, 92%);
-        } */
-
-      .container {
-         border: 1px solid hsl(200, 10%, 92%);
+      .r25-lpill {
+         background-color: #e8eef0;
+         color: #0eb4c4;
+         font-size: 18px;
+         font-weight: bold;
+         padding: 4px 12px 4px 12px;
+         margin: 14px 0 8px 0;
+         -webkit-print-color-adjust: exact;
       }
-
-      .header {
-         grid-area: header;
-         display: grid;
-         place-content: center;
-         position: relative;
-         min-height: 20rem;
-         isolation: isolate;
+      .r25-crow {
+         width: 100%;
+         border-collapse: collapse;
+         margin: 0 0 6px 0;
       }
-
-      .header::after {
-         z-index: -1;
-         content: "";
-         position: absolute;
-         inset: 0;
-         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 75%);
-         background-color: var(--primary--accent);
+      .r25-icon {
+         width: 22px;
+         vertical-align: top;
+         padding: 3px 6px 0 0;
       }
-
-      .primary--heading {
+      .r25-cval {
+         font-size: 15px;
+         color: #6a7578;
+         word-wrap: break-word;
+         vertical-align: top;
+      }
+      .r25-sname {
+         margin: 6px 0 3px 0;
+         font-size: 14px;
+         font-weight: bold;
+         color: #4a5558;
+      }
+      .r25-bar {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         background-color: #e8eef0;
+         height: 14px;
+         margin: 0 0 8px 0;
+         -webkit-print-color-adjust: exact;
+      }
+      .r25-fill {
+         background-color: #0eb4c4;
+         color: #ffffff;
+         font-size: 11px;
+         text-align: right;
+         height: 14px;
+         padding: 0 4px 0 0;
+         -webkit-print-color-adjust: exact;
+      }
+      .r25-item {
+         margin: 0 0 2px 4px;
+         font-size: 15px;
+         color: #6a7578;
+         word-wrap: break-word;
+      }
+      .r25-banner {
+         background-color: #0eb4c4;
          text-align: center;
-         margin-inline: 0.5rem;
+         padding: 48px 16px 28px 16px;
+         -webkit-print-color-adjust: exact;
+      }
+      .r25-name {
+         margin: 0 0 12px 0;
+         font-size: 32px;
+         font-weight: bold;
+         letter-spacing: 3px;
+         color: #ffffff;
          text-transform: uppercase;
-         font-weight: 900;
-         margin-block-end: 0.75rem;
-         font-size: clamp(2rem, -0.29rem + 5.73vw, 3.38rem);
       }
-
-      .heading--deco {
-         display: inline-flex;
-         margin-inline-start: 0.75rem;
-         align-self: flex-start;
-         letter-spacing: calc(0.01rem + 0.3vw);
-         color: #fff;
-      }
-
-      .secondary--heading {
+      .r25-job {
+         display: inline-block;
+         margin: 0;
+         background-color: #ffffff;
+         color: #7a8a8e;
+         font-size: 18px;
          font-style: italic;
-         background-color: #fff;
-         margin-inline: auto;
-         padding-inline: 1em;
-         color: var(--text-clr-300);
-         font-size: clamp(1.4rem, 0.86rem + 1.35vw, 1.73rem);
+         padding: 4px 18px 4px 18px;
+         -webkit-print-color-adjust: exact;
       }
-
-
-      .image {
-         outline: 3px solid #fff;
-         height: 200px;
-         width: 200px;
-         outline-offset: -0.5rem;
+      .r25-wedge {
+         width: 0;
+         height: 0;
+         border-top: 42px solid #0eb4c4;
+         border-left: 700px solid #ffffff;
+         -webkit-print-color-adjust: exact;
       }
-
-      .details {
-         margin: 16px;
+      .r25-body {
+         padding: 8px 22px 20px 22px;
       }
-
-      .details [role="list"] {
-         list-style: none;
+      .r25-pillrow {
+         width: auto;
+         border-collapse: collapse;
+         margin: 12px 0 8px 0;
       }
-
-      .title {
-         margin-block-end: var(--space--1);
-         max-width: 20ch;
-         background-color: var(--bg--light);
-         padding: var(--space--025) var(--space--1);
-         color: var(--primary--accent);
-         font-weight: 500;
-         margin-top: 15px;
-         font-size: 1.3rem;
-      }
-
-      .contact__information [role="listitem"] {
-         display: flex;
-         align-items: center;
-         gap: var(--space--05);
-         height: 2.5rem;
-         overflow: hidden;
-      }
-
-      .icon {
-         /* display: inline-grid; */
-         /* aspect-ratio: 1; */
-         height: 100%;
-         place-content: center;
-         color: var(--primary--accent);
-         font-size: 1.25em;
-
-      }
-
-      .text {
-         font-weight: 500;
-         color: var(--text-clr-300);
-         word-break: break-word;
-      }
-
-      .education :has([role="list"]):nth-last-of-type(2) {
-         margin-block-end: 1rem;
-      }
-
-      .sub--title {
-         font-weight: 600;
-         margin-block-end: var(--space--025);
-         text-transform: uppercase;
-         color: var(--primary--accent);
-      }
-
-      .sublistitem {
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         min-height: 3rem;
-      }
-
-      .hoby {
-         /* display: flex; */
-         flex-direction: column;
-         justify-content: center;
-      }
-
-      .sublistitem>*:last-of-type {
-         color: var(--text-clr-300);
-         font-weight: 400;
-      }
-
-      .sub--text {
-         font-size: var(--fs--01);
-         text-transform: uppercase;
-         font-weight: 600;
-         color: var(--text-clr-200);
-      }
-
-      .main {
-         grid-area: main;
-         display: flex;
-         justify-content: space-between;
-         flex-direction: column;
-      }
-
-      /* .about__me {
-            flex: 0 1 auto;
-        } */
-
-      .about__me p {
-         /* max-width: 55ch; */
-         /* text-align:justify; */
-         color: var(--text-clr-200);
-      }
-
-      .skills__content--flow {
-         display: flex;
-         gap: var(--space--05);
-      }
-
-      .skills__content--flow>* {
-         flex: 1;
-      }
-
-      .special__skills {
-         display: inline-flex;
-         flex-direction: column;
-         list-style: none;
-         gap: 0.25rem;
-         counter-reset: special-counter;
-      }
-
-      .special__skills li {
-         font-size: var(--fs--01);
+      .r25-pill {
+         background-color: #e8eef0;
+         color: #0eb4c4;
+         font-size: 18px;
          font-weight: bold;
-         counter-increment: special-counter;
+         padding: 4px 14px 4px 14px;
+         -webkit-print-color-adjust: exact;
       }
-
-      .special__skills li::before {
-         content: counter(special-counter);
-         background-color: var(--primary--accent);
-         outline: 2px solid #fff;
-         outline-offset: -0.25rem;
-         display: inline-grid;
-         place-content: center;
-         margin-inline: 0.5rem;
-         border-radius: 50%;
-         font-size: 1.125rem;
-         aspect-ratio: 1;
-         color: #fff;
-         height: 1.75rem;
+      .r25-text {
+         margin: 0 0 8px 8px;
+         font-size: 16px;
+         color: #4a5558;
+         word-wrap: break-word;
       }
-
-      .special__skills>* {
-         color: var(--text-clr-300);
-      }
-
-      .skill__diagram {
-         /* margin-top: 0.5rem; */
-         padding: 10px;
-      }
-
-      .diagram {
-         background-color: var(--bg--light);
-      }
-
-      .diagram--id {
-         background-color: #fff;
-         color: var(--text-clr-200);
+      .r25-title {
+         margin: 4px 0 4px 8px;
+         font-size: 15px;
          font-weight: bold;
-         font-size: var(--fs--01);
-         line-height: 1.6;
+         color: #3a4448;
+         text-transform: uppercase;
       }
-
-      .skill-bar {
-         justify-content: end;
-         color: #fff;
-         /* padding: 0.25rem 0; */
-         display: inline-flex;
-         background-color: var(--primary--accent);
+      .r25-sub {
+         margin: 0 0 2px 8px;
+         font-size: 15px;
+         color: #6a7578;
+         word-wrap: break-word;
       }
-
-
-      .entities {
-         color: var(--primary--accent) !important;
+      .r25-sign-wrap {
+         text-align: right;
+         padding: 16px 4px 4px 4px;
       }
-
-      .footer {
-         grid-area: footer;
-         margin-top: 1rem;
-         background-color: var(--primary--accent);
-         height: 5rem;
+      .r25-sign-label {
+         margin: 0 0 4px 0;
+         font-size: 16px;
+         font-weight: bold;
+         color: #111111;
       }
-
-      .grid-container {
-         display: grid;
-         grid-template-columns: 35% 65%;
-      }
-
-      .grid-item-1 {
-         padding: 15px;
-         border-right: 2px solid var(--border-clr);
-         background-color: var(--bg--base);
-      }
-
-      .grid-item-2 {
-         padding: 15px;
-      }
-
-      .mb-16 {
-         margin-bottom: 1.3rem;
-      }
-
-      .mb-10 {
-         margin-bottom: 10px;
-      }
-
-      .mb-8 {
-         margin-bottom: 8px;
-      }
-
-      .mb-5 {
-         margin-bottom: 5px;
-      }
-
-      .ps-15 {
-         padding-left: 15px;
-      }
-
-      .d-flex {
-         display: flex;
-      }
-
-      .icon-width {
-         width: 2rem;
-      }
-
-      .text-info {
-         width: 13rem;
-      }
-
-      .pl-20 {
-         padding-left: 10px;
-      }
-
-      .pl-35 {
-         padding-left: 25px;
-      }
-
-      .showPosts {
-         cursor: pointer !important;
-         list-style-type: none !important;
-         /* width: 200px; */
-      }
-
-      .greekCross {
-         color: var(--primary--accent) !important;
-         font-size: 13px !important;
-         width: 1.5em !important;
-         float: left !important;
-      }
-
-      .showPosts>p {
-         /* font-size: 15px; */
-         margin-left: 1.5em !important;
+      .r25-sign {
+         display: block;
+         width: 120px;
+         height: 48px;
+         margin: 0 0 0 auto;
       }
    </style>
 </head>
 
 <body>
-   <div class="container">
-      <div class="grid-container">
-         <div class="grid-item-1">
-            <aside class="aside">
-               {{#if profilePhoto}}
-               <figure style="display:flex; align-items: center;justify-content: center; height:300px;">
-                  <div class="image__container">
-                     <img class="image" src="{{{profilePhoto}}}" alt="profilePhoto">
-                  </div>
-               </figure>
-               {{/if}}
+   <table class="r25-page" cellpadding="0" cellspacing="0">
+      <tr>
+         <td class="r25-left">
+            {{#if profilePhoto}}
+            <div class="r25-photo-wrap"><img class="r25-photo" src="{{{profilePhoto}}}" alt="profilePhoto" /></div>
+            {{/if}}
 
-               <article class="details">
-                  <ul role="list" class="contact__information mb-16">
-                     <h3 class="title mb-10">Contact</h3>
-                     {{#if Phone}}
-                     <li class="d-flex mb-5">
-                        <span class="icon icon-width">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                              class="bi bi-telephone" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                           </svg>
-                        </span>
-                        <span class="text text-info">{{Phone}}</span>
-                     </li>
-                     {{/if}}
-                     {{#if DOB}}
-                     <li class="d-flex mb-5" style="word-break: break-word;">
-                        <span class="icon icon-width">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                              class="bi bi-calendar" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                           </svg>
-                        </span>
-                        <span class="text text-info">{{DOB}}</span>
-                     </li>
-                     {{/if}}
-                     {{#if Email}}
-                     <li class="d-flex mb-5" style="word-break: break-all;">
-                        <span class="icon icon-width">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                              class="bi bi-envelope-at" viewBox="0 0 16 16">
-                              <path
-                                 d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
-                              <path
-                                 d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
-                           </svg>
-                        </span>
-                        <span class="text text-info">{{Email}}</span>
-                     </li>
-                     {{/if}}
+            <p class="r25-lpill">Contact</p>
+            {{#if Email}}
+            <table class="r25-crow" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r25-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#0eb4c4" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z"/></svg></td>
+                  <td class="r25-cval">{{Email}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if DOB}}
+            <table class="r25-crow" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r25-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#0eb4c4" d="M3 0h1v2h8V0h1v2h2v14H1V2h2V0zm11 6H2v9h12V6z"/></svg></td>
+                  <td class="r25-cval">{{DOB}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if Address}}
+            <table class="r25-crow" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r25-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#0eb4c4" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/></svg></td>
+                  <td class="r25-cval">{{Address}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if Phone}}
+            <table class="r25-crow" cellpadding="0" cellspacing="0">
+               <tr>
+                  <td class="r25-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#0eb4c4" d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/></svg></td>
+                  <td class="r25-cval">{{Phone}}</td>
+               </tr>
+            </table>
+            {{/if}}
 
+            {{#if Skills}}
+            <p class="r25-lpill">Skills</p>
+            {{#each Skills}}
+            {{#if skillName}}
+            <p class="r25-sname">{{skillName}}</p>
+            <table class="r25-bar" cellpadding="0" cellspacing="0"><tr><td class="r25-fill" style="width:{{expertiseLabel}}%;">{{expertiseLabel}}%</td><td>&nbsp;</td></tr></table>
+            {{/if}}
+            {{/each}}
+            {{/if}}
 
+            {{#if Interests}}
+            <p class="r25-lpill">Interests</p>
+            {{#each Interests}}
+            {{#if hoby}}<p class="r25-item">&gt; {{hoby}}</p>{{/if}}
+            {{/each}}
+            {{/if}}
 
-                     {{#if Address}}
-                     <li class="d-flex mb-5">
-                        <span class="icon icon-width">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                              class="bi bi-geo-alt" viewBox="0 0 16 16">
-                              <path
-                                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                           </svg>
-                        </span>
-                        <span class="text text-info">{{Address}}</span>
-                     </li>
-                     {{/if}}
-
-
-                  </ul>
-
-                  <ul class="education mb-16">
-                     {{#if Skills}}
-                     <h3 class="title mb-10">Skills</h3>
-                     <div class="skills__content--flow ">
-                        <section class="skill__diagram" style="padding-top:0">
-                           {{#each Skills}}
-                           {{#if skillName}}
-                           <figcaption class="diagram mb-8">
-                              <h5 class="diagram--id" style="word-break: break-all;">{{skillName}}</h5> <span
-                                 class="skill-bar" style="width:{{expertise}}%;">{{expertise}}%</span>
-                           </figcaption>
-                           {{else}}{{#if name}}
-                           <figcaption class="diagram mb-8">
-                              <h5 class="diagram--id" style="word-break: break-all;">{{name}}</h5> <span
-                                 class="skill-bar" style="width:{{#if expertise}}{{expertise}}{{else}}0{{/if}}%;">{{#if expertise}}{{expertise}}{{else}}0{{/if}}%</span>
-                           </figcaption>
-                           {{/if}}{{/if}}
-                           {{/each}}
-                        </section>
-                     </div>
-                     {{/if}}
-
-                     {{#if Interests}}
-                     <h3 class="title mb-10">Interests</h3>
-                     <li style="list-style: none;">
-                        {{#each Interests}}
-                        <ul role="list" class="sublist">
-                           <li class="hoby pl-20 showPosts">
-                              <span class="greekCross">&gt;</span>
-                              <p class="text break-all"> {{#if hoby}}{{hoby}}{{else}}{{this}}{{/if}}</p>
-                           </li>
-                        </ul>
-                        {{/each}}
-                     </li>
-                     {{/if}}
-
-                     {{#if Language}}
-                     <h3 class="title mb-10">Language</h3>
-                     <li style="list-style: none;">
-                        {{#each Language}}
-                        <ul role="list" class="sublist">
-                           <li class="hoby pl-20 showPosts">
-                              <span class="greekCross">&gt;</span>
-                              <p class="text break-all"> {{#if name}}{{name}}{{else}}{{language}}{{#if level}} ({{level}}){{/if}}{{/if}}</p>
-                           </li>
-                        </ul>
-                        {{/each}}
-                     </li>
-                     {{/if}}
-                  </ul>
-
-               </article>
-            </aside>
-         </div>
-
-         <div class="grid-item-2">
-            <header class="header" style="height:300px;">
-               {{#if Name}} <h1 class="primary--heading"><span class="heading--deco"
-                     style="font-size:2rem">{{Name}}</span></h1>{{/if}}
-               <h2 class="secondary--heading">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h2>
-            </header>
-            <main>
+            {{#if Language}}
+            <p class="r25-lpill">Language</p>
+            {{#each Language}}
+            {{#if name}}<p class="r25-item">&gt; {{name}}</p>{{/if}}
+            {{/each}}
+            {{/if}}
+         </td>
+         <td class="r25-right">
+            <div class="r25-banner">
+               {{#if Name}}<p class="r25-name">{{Name}}</p>{{/if}}
+               {{#if jobTitle}}<span class="r25-job">{{jobTitle}}</span>{{/if}}
+            </div>
+            <div class="r25-wedge"></div>
+            <div class="r25-body">
                {{#if Objective}}
-               <article class="about__me">
-                  <h3 class="title mb-10">Objective</h3>
-                  <p class="ps-15"> {{Objective}}</p>
-               </article>
+               <table class="r25-pillrow" cellpadding="0" cellspacing="0"><tr><td class="r25-pill">Objective</td><td>&nbsp;</td></tr></table>
+               <p class="r25-text">{{Objective}}</p>
                {{/if}}
 
-               <div class="education mb-16">
-                  {{#if Education}}
-                  <h3 class="title mb-10">Education</h3>
-                  <div role="listitem" style="list-style: none;">
-                     {{#each Education}}
-                     <div class="sublist ps-15" style="margin-bottom: 0px;">
-                        <div role="listitem" class="sublistitem">
-                           {{#if course}}<span class="text sub--text pl-20"
-                              style=" font-size: var(--fs--01); text-transform: uppercase; font-weight: 600; color: var(--text-clr-200);">{{course}}</span>{{else}}{{#if degree}}<span class="text sub--text pl-20"
-                              style=" font-size: var(--fs--01); text-transform: uppercase; font-weight: 600; color: var(--text-clr-200);">{{degree}}</span>{{/if}}{{/if}}
-                           <ul role="list" class="sublist">
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>
-                              </li>
-                              {{#if percentage}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{percentage}}%</p>
-                              </li>
-                              {{/if}}
-                              {{#if yearOfPassing}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{yearOfPassing}}</p>
-                              </li>
-                              {{/if}}
-                           </ul>
+               {{#if Education}}
+               <table class="r25-pillrow" cellpadding="0" cellspacing="0"><tr><td class="r25-pill">Education</td><td>&nbsp;</td></tr></table>
+               {{#each Education}}
+               {{#if course}}<p class="r25-title">{{course}}</p>{{/if}}
+               {{#if institute}}<p class="r25-sub">&gt; {{institute}}</p>{{/if}}
+               {{#if percentage}}<p class="r25-sub">&gt; {{percentage}}%</p>{{/if}}
+               {{#if yearOfPassing}}<p class="r25-sub">&gt; {{yearOfPassing}}</p>{{/if}}
+               {{/each}}
+               {{/if}}
 
-                        </div>
-                     </div>
-                     {{/each}}
-                  </div>
-                  {{/if}}
+               {{#if Experience}}
+               <table class="r25-pillrow" cellpadding="0" cellspacing="0"><tr><td class="r25-pill">Work Experience</td><td>&nbsp;</td></tr></table>
+               {{#each Experience}}
+               <p class="r25-title">{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}</p>
+               {{#if organization}}<p class="r25-sub">&gt; {{organization}}</p>{{/if}}
+               {{#if from}}<p class="r25-sub">&gt; {{from}}{{#if to}} - {{to}}{{/if}}</p>{{/if}}
+               {{#if role}}<p class="r25-sub">&gt; {{role}}</p>{{/if}}
+               {{#if description}}<p class="r25-sub">&gt; {{description}}</p>{{/if}}
+               {{#if present}}<p class="r25-sub">&gt; present</p>{{/if}}
+               {{/each}}
+               {{/if}}
 
-                  {{#if Experience}}
-                  <h3 class="title mb-10">Work Experience</h3>
-                  <div role="listitem" style="list-style: none;">
-                     {{#each Experience}}
-                     <div class="sublist ps-15" style="margin-bottom: 15px;">
-                        <div role="listitem" class="sublistitem">
-                           <span class="text sub--text pl-20"
-                              style=" font-size: var(--fs--01); text-transform: uppercase; font-weight: 600; color: var(--text-clr-200);">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</span>
-                           <ul role="list" class="sublist">
-                              {{#if organization}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
-                              </li>
-                              {{/if}}
-                              {{#if from}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{from}} {{#if to}} - {{to}}{{/if}}</p>
-                              </li>
-                              {{/if}}
-                              {{#if role}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{role}}</p>
-                              </li>
-                              {{/if}}
-                              {{#if description}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{description}}</p>
-                              </li>
-                              {{/if}}
-                              {{#if present}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> Present</p>
-                              </li>
-                              {{/if}}
-                           </ul>
-                        </div>
-                     </div>
-                     {{/each}}
-                  </div>
-                  {{/if}}
+               {{#if Projects}}
+               <table class="r25-pillrow" cellpadding="0" cellspacing="0"><tr><td class="r25-pill">Projects</td><td>&nbsp;</td></tr></table>
+               {{#each Projects}}
+               <p class="r25-title">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</p>
+               {{#if roles}}<p class="r25-sub">&gt; {{roles}}</p>{{/if}}
+               {{#if projectDescription}}<p class="r25-sub">&gt; {{projectDescription}}</p>{{/if}}
+               {{#if duration}}<p class="r25-sub">&gt; {{duration}}</p>{{/if}}
+               {{/each}}
+               {{/if}}
 
-                  {{#if Projects}}
-                  <h3 class="title mb-10">Projects</h3>
-                  <div role="listitem" style="list-style: none;">
-                     {{#each Projects}}
-                     <div class="sublist ps-15" style="margin-bottom: 15px;">
-                        <div role="listitem" class="sublistitem">
-                           {{#if projectTitle}}<span class="text sub--text pl-20"
-                              style=" font-size: var(--fs--01); text-transform: uppercase; font-weight: 600; color: var(--text-clr-200);">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</span>{{else}}{{#if title}}<span class="text sub--text pl-20"
-                              style=" font-size: var(--fs--01); text-transform: uppercase; font-weight: 600; color: var(--text-clr-200);">{{title}}</span>{{/if}}{{/if}}
-                           <ul role="list" class="sublist">
-                              {{#if roles}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>
-                              </li>
-                              {{/if}}
+               {{#if Achivement}}
+               <table class="r25-pillrow" cellpadding="0" cellspacing="0"><tr><td class="r25-pill">Achievement</td><td>&nbsp;</td></tr></table>
+               {{#each Achivement}}
+               {{#if achivement}}<p class="r25-sub">&gt; {{achivement}}</p>{{/if}}
+               {{/each}}
+               {{/if}}
 
-                              {{#if duration}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{duration}}</p>
-                              </li>
-                              {{/if}}
-                              {{#if projectDescription}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>
-                              </li>
-                              {{/if}}
-                           </ul>
+               {{#if Reference}}
+               <table class="r25-pillrow" cellpadding="0" cellspacing="0"><tr><td class="r25-pill">Reference</td><td>&nbsp;</td></tr></table>
+               {{#each Reference}}
+               {{#if name}}<p class="r25-title">{{name}}</p>{{/if}}
+               {{#if jobtitle}}<p class="r25-sub">&gt; {{jobtitle}}</p>{{/if}}
+               {{#if companyname}}<p class="r25-sub">&gt; {{companyname}}</p>{{/if}}
+               {{#if email}}<p class="r25-sub">&gt; {{email}}</p>{{/if}}
+               {{#if phone}}<p class="r25-sub">&gt; {{phone}}</p>{{/if}}
+               {{/each}}
+               {{/if}}
 
-                        </div>
-                     </div>
-                     {{/each}}
-                  </div>
-                  {{/if}}
-
-                  {{#if Achivement}}
-                  <h3 class="title mb-10">Achievement</h3>
-                  <li style="list-style: none;">
-                     {{#each Achivement}}
-                     <ul role="list" class="sublist ps-15" style="margin-bottom: 15px;">
-                        {{#if achivement}}
-                        <ul role="list" class="sublist">
-
-                           <li class="hoby pl-20 showPosts">
-                              <span class="greekCross">&gt;</span>
-                              <p class="text break-all"> {{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>
-                           </li>
-                        </ul>
-                        {{/if}}
-                     </ul>
-                     {{/each}}
-                  </li>
-                  {{/if}}
-
-                  {{#if Reference}}
-                  <h3 class="title mb-10">Reference</h3>
-                  <div style="list-style: none;">
-                     {{#each Reference}}
-                     <div role="list" class="sublist ps-15" style="margin-bottom: 15px;">
-                        <div class="sublistitem">
-                           {{#if name}}<span class="text sub--text pl-20"
-                              style=" font-size: var(--fs--01); text-transform: uppercase; font-weight: 600; color: var(--text-clr-200);">{{name}}</span>{{/if}}
-                           <ul role="list" class="sublist">
-                              {{#if jobtitle}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{jobtitle}}</p>
-                              </li>
-                              {{/if}}
-
-                              {{#if companyname}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{companyname}}</p>
-                              </li>
-                              {{/if}}
-                              {{#if email}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{email}}</p>
-                              </li>
-                              {{/if}}
-                              {{#if phone}}
-                              <li class="hoby pl-20 showPosts">
-                                 <span class="greekCross">&gt;</span>
-                                 <p class="text break-all"> {{phone}}</p>
-                              </li>
-                              {{/if}}
-                           </ul>
-                        </div>
-                     </div>
-                     {{/each}}
-                  </div>
-                  {{/if}}
-               </div>
                {{#if sign}}
-               <div class="signature" style="text-align: end;">
-                  <h3 style="margin-bottom: 3px; font-size:1.3rem; font-weight:500;">Signature</h3>
-                  <img width="20%" src="{{{sign}}}" alt="Signature" style="display:inline">
+               <div class="r25-sign-wrap">
+                  <p class="r25-sign-label">Signature</p>
+                  <img class="r25-sign" src="{{{sign}}}" alt="Signature" />
                </div>
                {{/if}}
-            </main>
-
-         </div>
-      </div>
-   </div>
+            </div>
+         </td>
+      </tr>
+   </table>
 </body>
 
 </html>

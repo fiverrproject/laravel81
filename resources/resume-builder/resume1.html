@@ -10,9 +10,13 @@
       /* CSS Document */
       body,
       td,
-      th {
+      th,
+      p,
+      li,
+      strong,
+      div {
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 12px;
+         font-size: 16px !important;
          color: #000000;
       }
 
@@ -21,6 +25,37 @@
          margin-top: 0px;
          margin-right: 0px;
          margin-bottom: 0px;
+      }
+
+      .r1-gap {
+         height: 14px;
+         font-size: 1px !important;
+         line-height: 14px;
+         padding: 0;
+      }
+
+      .r1-h {
+         padding: 6px 10px;
+         white-space: nowrap;
+         font-size: 18px !important;
+      }
+
+      .r1-h strong {
+         font-size: 18px !important;
+      }
+
+      .r1-th,
+      .r1-th strong {
+         padding: 6px 8px;
+         white-space: nowrap;
+         word-break: normal;
+         font-size: 16px !important;
+      }
+
+      .r1-td {
+         padding: 5px 8px;
+         word-break: normal;
+         font-size: 16px !important;
       }
 
       .pad {
@@ -52,16 +87,24 @@
       }
 
       .fs-3 {
-         font-size: x-large;
+         font-size: 26px !important;
+      }
+
+      .r1-sign {
+         display: inline-block;
+         width: 120px !important;
+         height: 48px !important;
+         max-width: 120px !important;
+         max-height: 48px !important;
       }
    </style>
 </head>
 
 <body>
-   <table align="center" border="0" width="850">
+   <table align="center" border="0" width="100%" cellpadding="0" cellspacing="0">
       <tr>
-         <td>
-            <table border="0" class="bor" width="850">
+         <td style="padding: 12px 16px;">
+            <table border="0" class="bor" width="100%" cellpadding="0" cellspacing="0">
                <tr>{{#if Name}}
                   <td colspan="2" height="60">
                      <div align="center">
@@ -88,7 +131,7 @@
                </tr>
                {{#if Objective}}
                <tr>
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         CAREER OBJECTIVE
                      </strong>
@@ -100,7 +143,10 @@
                   </td>
                </tr>
                <tr>
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-gap" colspan="2" height="14" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         PERSONAL DETAILS
                      </strong>
@@ -108,7 +154,7 @@
                </tr>
                <tr>
                   <td bgcolor="#FFFFFF" colspan="2">
-                     <table align="center" border="0" width="829">
+                     <table align="center" border="0" width="100%" cellpadding="2" cellspacing="0">
                         {{#if Name}}
                         <tr>
                            <ul>
@@ -192,10 +238,13 @@
                      </table>
                   </td>
                </tr>
+               {{/if}}
+               {{#if Education}}
                <tr>
-                  {{/if}}
-                  {{#if Education}}
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-gap" colspan="2" height="14" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         EDUCATIONAL PROFILE
                      </strong>
@@ -203,63 +252,40 @@
                </tr>
                <tr>
                   <td colspan="2">
-                     <table border="1" bordercolor="#000000" width="850">
-
+                     <table border="1" bordercolor="#000000" width="100%" cellpadding="4" cellspacing="0">
+                        <col width="28%" /><col width="42%" /><col width="16%" /><col width="14%" />
                         <tr>
-                           <td>
-                              <div align="center">
-                                 <strong>
-                                    Course
-                                 </strong>
-                              </div>
-                           </td>
-                           <td>
-                              <div align="center">
-                                 <strong>
-                                    Educational Institutation
-                                 </strong>
-                              </div>
-                           </td>
-                           <td>
-                              <div align="center">
-                                 <strong>
-                                    Year of pass
-                                 </strong>
-                              </div>
-                           </td>
-                           <td>
-                              <p align="center">
-                                 <strong>
-                                    % of Marks
-                                 </strong>
-                              </p>
-                           </td>
+                           <td class="r1-th" align="center"><strong>Course</strong></td>
+                           <td class="r1-th" align="center"><strong>Educational Institutation</strong></td>
+                           <td class="r1-th" align="center"><strong>Year of pass</strong></td>
+                           <td class="r1-th" align="center"><strong>% of Marks</strong></td>
                         </tr>
                         {{#each Education}}
-                        <tr align="center" class="word-break">
-                           <td>
+                        <tr align="center">
+                           <td class="r1-td">
                               {{course}}
                            </td>
-                           <td>
+                           <td class="r1-td">
                               {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}
                            </td>
-                           <td>
-                              <div align="center">
-                                 {{yearOfPassing}}
-                              </div>
+                           <td class="r1-td" align="center">
+                              {{yearOfPassing}}
                            </td>
-                           <td>
+                           <td class="r1-td">
                               {{percentage}}
                            </td>
                         </tr>
                         {{/each}}
                      </table>
                   </td>
-                  {{/if}}
                </tr>
+               {{/if}}
                {{#if Experience}}
                <tr>
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-gap" colspan="2" height="14" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         EXPERIENCE
                      </strong>
@@ -268,58 +294,27 @@
                <tr>
                   <td colspan="2">
                      {{#each Experience}}
-                     <table border="1" bordercolor="#000000" width="100%">
+                     <table border="1" bordercolor="#000000" width="100%" cellpadding="4" cellspacing="0">
+                        <col width="28%" /><col width="38%" /><col width="20%" /><col width="14%" />
                         <tr>
-                           <td style="width: 25%;">
-                              <div align="center" class="word-break">
-                                 <strong>
-                                    JobTitle
-                                 </strong>
-                              </div>
-                           </td>
-                           <td style="width: 50%;">
-                              <div align="center" class="word-break">
-                                 <strong>
-                                    Organization
-                                 </strong>
-                              </div>
-                           </td>
-                           <td style="width: 18%;">
-                              <div align="center" class="word-break">
-                                 <strong>
-                                    From - To
-                                 </strong>
-                              </div>
-                           </td>
-                           <td style="width: 8%;">
-                              <p align="center" class="word-break">
-                                 <strong>
-                                    Present
-                                 </strong>
-                              </p>
-                           </td>
+                           <td class="r1-th" align="center" width="28%"><strong>JobTitle</strong></td>
+                           <td class="r1-th" align="center" width="38%"><strong>Organization</strong></td>
+                           <td class="r1-th" align="center" width="20%"><strong>From - To</strong></td>
+                           <td class="r1-th" align="center" width="14%"><strong>Present</strong></td>
                         </tr>
                         <tr>
-                           <td align="center" class="word-break">
+                           <td class="r1-td" align="center">
                               {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}
                            </td>
-                           <td align="center" class="word-break">
+                           <td class="r1-td" align="center">
                               {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}
                            </td>
-                           {{#if from}}
-                           <td align="center" class="word-break">
-                              {{from}}{{#if to}} - {{to}}{{/if}}
+                           <td class="r1-td" align="center" style="white-space:nowrap;">
+                              {{#if from}}{{from}}{{#if to}} - {{to}}{{/if}}{{/if}}
                            </td>
-                           {{/if}}
-                           {{#if present}}
-                           <td align="center" class="word-break">
-                              Working
+                           <td class="r1-td" align="center" style="white-space:nowrap;">
+                              {{#if present}}Working{{else}}No{{/if}}
                            </td>
-                           {{else}}
-                           <td align="center" class="word-break">
-                              No
-                           </td>
-                           {{/if}}
                         </tr>
                      </table>
                      {{#if role}}
@@ -335,9 +330,12 @@
                </tr>
                {{/if}}
 
+               {{#if Skills}}
                <tr>
-                  {{#if Skills}}
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-gap" colspan="2" height="14" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         TECHNICAL SKILLS
                      </strong>
@@ -369,11 +367,14 @@
                         {{/each}}
                      </table>
                   </td>
-                  {{/if}}
                </tr>
+               {{/if}}
                {{#if Projects}}
                <tr>
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-gap" colspan="2" height="14" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         PROJECTS
                      </strong>
@@ -381,11 +382,11 @@
                </tr>
                <tr>
                   <td bgcolor="#FFFFFF" colspan="2" height="17">
-                     <table align="center" border="0" width="829">
+                     <table align="center" border="0" width="100%" cellpadding="2" cellspacing="0">
                         <tr>
                            <td>
                               {{#each Projects}}
-                              <table width="831">
+                              <table width="100%" cellpadding="2" cellspacing="0">
                                  <tr>
                                     <td width="450">
                                        <strong>
@@ -432,7 +433,10 @@
 
                {{#if Interests}}
                <tr>
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-gap" colspan="2" height="14" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         HOBBIES
                      </strong>
@@ -440,7 +444,7 @@
                </tr>
                <tr>
                   <td bgcolor="#FFFFFF" colspan="2">
-                     <table align="center" border="0" width="829">
+                     <table align="center" border="0" width="100%" cellpadding="2" cellspacing="0">
                         <tr>
                            <ul>
                               {{#each Interests}}
@@ -456,9 +460,12 @@
                   </td>
                </tr>
                {{/if}}
+               {{#if Achivement}}
                <tr>
-                  {{#if Achivement}}
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-gap" colspan="2" height="14" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         ACHIEVEMENT
                      </strong>
@@ -482,12 +489,15 @@
                         {{/each}}
                      </table>
                   </td>
-                  {{/if}}
                </tr>
+               {{/if}}
 
                {{#if Reference}}
                <tr>
-                  <td bgcolor="#CCCCCC" colspan="2">
+                  <td class="r1-gap" colspan="2" height="14" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td class="r1-h" bgcolor="#CCCCCC" colspan="2">
                      <strong>
                         REFERENCE
                      </strong>
@@ -496,7 +506,7 @@
                <tr>
                   <td colspan="2">
                      {{#each Reference}}
-                     <table align="center" border="0" width="829">
+                     <table align="center" border="0" width="100%" cellpadding="2" cellspacing="0">
                         {{#if name}}
                         <tr>
                            <ul>
@@ -603,16 +613,9 @@
                <tr>
                   <td bgcolor="#FFFFFF" width="58%">
                   </td>
-                  <td bgcolor="#FFFFFF" width="42%" style="float: right; margin-right: 60px;">
-                     <p style="float: right;"> <strong>SIGNATURE </strong></p>
-                  </td>
-               </tr>
-               <tr>
-                  <td bgcolor="#FFFFFF" width="58%">
-                  </td>
-                  <td bgcolor="#FFFFFF" width="42%" style="float: right;margin-top: -8px;">
-                     <img src="{{{sign}}}" alt="Signature"
-                        style="width: 80%;float: right; margin-right: 20px;margin-top: -17px;">
+                  <td bgcolor="#FFFFFF" width="42%" align="right" valign="top">
+                     <p style="margin: 8px 20px 4px 0;"><strong>SIGNATURE</strong></p>
+                     <img class="r1-sign" width="120" height="48" src="{{{sign}}}" alt="Signature" />
                   </td>
                </tr>
                {{/if}}

@@ -8,7 +8,7 @@ namespace App\Services;
  */
 class ResumeUniversalPrintFix
 {
-    public const VERSION = 'resume-universal-print-fix-v54';
+    public const VERSION = 'resume-universal-print-fix-v58';
 
     public static function apply(string $html, ?string $format = null): string
     {
@@ -721,6 +721,104 @@ class ResumeUniversalPrintFix
   }
   html[data-resume-format="resume20.html"] .r20-sign,
   html[data-resume-format="resume20.html"] img[alt="Signature"] {
+    width: 120px !important;
+    height: 48px !important;
+    max-width: 120px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- resume21.html: dark sidebar, gold rules, square photo --- */
+  html[data-resume-format="resume21.html"],
+  html[data-resume-format="resume21.html"] body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #2a2e36 !important;
+    background: linear-gradient(90deg, #2a2e36 37%, #ffffff 37%) !important;
+    font-size: 18px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-page {
+    width: 100% !important;
+    height: 297mm !important;
+    table-layout: fixed !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-headl,
+  html[data-resume-format="resume21.html"] .r21-left {
+    width: 37% !important;
+    background-color: #2a2e36 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-headl {
+    vertical-align: middle !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-headr {
+    width: 63% !important;
+    background-color: #ffffff !important;
+    vertical-align: middle !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-left,
+  html[data-resume-format="resume21.html"] .r21-right {
+    vertical-align: top !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-right {
+    width: 63% !important;
+    background-color: #ffffff !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-photo-wrap {
+    width: 178px !important;
+    border: 16px solid #ffffff !important;
+    background-color: #ffffff !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-photo,
+  html[data-resume-format="resume21.html"] img[alt="profilePhoto"] {
+    width: 178px !important;
+    height: 213px !important;
+    max-width: 178px !important;
+    max-height: 213px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-namebar {
+    background-color: #2a2e36 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-name,
+  html[data-resume-format="resume21.html"] .r21-job,
+  html[data-resume-format="resume21.html"] .r21-lh {
+    color: #ffffff !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-name { font-size: 32px !important; font-weight: bold !important; }
+  html[data-resume-format="resume21.html"] .r21-h { font-size: 20px !important; font-weight: bold !important; }
+  html[data-resume-format="resume21.html"] .r21-gold,
+  html[data-resume-format="resume21.html"] .r21-rgold {
+    background-color: #f4d644 !important;
+    height: 2px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-gsq {
+    background-color: #f4d644 !important;
+    width: 8px !important;
+    height: 8px !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-row,
+  html[data-resume-format="resume21.html"] .r21-srow,
+  html[data-resume-format="resume21.html"] .r21-tl {
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-bcell,
+  html[data-resume-format="resume21.html"] .r21-gsqcell {
+    width: 16px !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-tlrail {
+    width: 22px !important;
+  }
+  html[data-resume-format="resume21.html"] .r21-sign,
+  html[data-resume-format="resume21.html"] img[alt="Signature"] {
     width: 120px !important;
     height: 48px !important;
     max-width: 120px !important;

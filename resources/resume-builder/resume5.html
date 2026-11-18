@@ -11,21 +11,21 @@
          background: #fff;
          color: #222;
          font-family: Arial, Helvetica, sans-serif;
-         font-size: 15px;
+         font-size: 18px;
       }
-      .r5-page {
+      .r5-sheet {
          width: 100%;
-         height: 1120px;
          border-collapse: collapse;
          table-layout: fixed;
       }
-      .r5-left {
+      .r5-side {
          width: 28%;
-         height: 1120px;
-         background-color: #2d2d2d;
-         color: #ffb629;
+         background-color: #1a365d;
+         color: #f7f3eb;
          vertical-align: top;
          padding: 12px 10px 24px 10px;
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
       }
       .r5-right {
          width: 72%;
@@ -33,42 +33,69 @@
          vertical-align: top;
          padding: 10px 12px 16px 8px;
       }
-      .r5-photo {
+      .r5-picwrap {
+         width: 160px;
+         height: 160px;
+         margin: 16px auto 12px auto;
+         text-align: center;
+      }
+      .r5-pic {
          display: block;
-         width: 150px;
-         height: 150px;
-         border: 5px solid #fff;
-         border-radius: 50%;
-         margin: 18px auto 16px auto;
-         background: #ddd;
+         width: 150px !important;
+         height: 150px !important;
+         max-width: 150px !important;
+         max-height: 150px !important;
+         margin: 16px auto 12px auto;
+         border: 5px solid #ffffff;
+         border-radius: 80px;
+         background-color: #dddddd;
       }
-      .r5-left h3 {
-         color: #ffb629;
+      .r5-side h3 {
+         color: #c9a227;
          margin: 12px 0 6px 8px;
-         font-size: 20px;
+         font-size: 22px !important;
       }
-      .r5-left ul {
-         padding-left: 8px;
-         margin: 0 0 8px 0;
+      .r5-side .r5-txt,
+      .r5-side .r5-sub {
+         color: #f7f3eb;
       }
-      .r5-left p {
-         margin: 2px 0 6px 0;
-         color: #ffb629;
-         font-size: 18px;
+      .r5-arr {
+         width: 16px;
+         vertical-align: top;
+         padding: 4px 2px 0 0;
+         line-height: 10px;
+      }
+      .r5-arr svg {
+         display: block;
+         width: 10px !important;
+         height: 10px !important;
+      }
+      .r5-item {
+         margin: 0 0 10px 0;
+      }
+      .r5-txt {
+         margin: 0 0 4px 0;
+         font-size: 18px !important;
+         line-height: 23px;
+         color: #f7f3eb;
          word-wrap: break-word;
          word-break: normal;
       }
-      .showPosts {
-         list-style-type: none;
-         overflow: hidden;
+      .r5-sub {
+         margin: 0 0 4px 18px;
+         font-size: 18px !important;
+         line-height: 23px;
+         color: #f7f3eb;
+         word-wrap: break-word;
+         word-break: normal;
       }
-      .greekCross {
-         color: #ffb629;
-         float: left;
-         width: 1em;
-      }
-      .pl {
-         padding-left: 4px;
+      .r5-ht {
+         font-weight: bold;
+         font-size: 20px !important;
+         line-height: 24px;
+         color: #c9a227;
+         word-wrap: break-word;
+         word-break: normal;
       }
       .r5-topbars {
          width: 100%;
@@ -81,21 +108,22 @@
          font-size: 1px;
          line-height: 1px;
       }
-      .r5-bar-dark { background-color: #2d2d2d; }
-      .r5-bar-gold { background-color: #ffb629; }
-      .r5-name {
-         background-color: #ffb629;
+      .r5-strip-n { background-color: #1a365d; -webkit-print-color-adjust: exact; }
+      .r5-strip-g { background-color: #c9a227; -webkit-print-color-adjust: exact; }
+      .r5-banner {
+         background-color: #c9a227;
          border-radius: 0 40px 0 0;
          -webkit-border-radius: 0 40px 0 0;
          padding: 16px 18px 14px 18px;
          text-align: center;
          margin: 8px 0 12px 0;
+         -webkit-print-color-adjust: exact;
       }
-      .r5-name h1 {
+      .r5-banner h1 {
          margin: 0;
          font-size: 32px;
       }
-      .r5-name h3 {
+      .r5-banner h3 {
          margin: 4px 0 0 0;
          font-weight: normal;
          font-size: 20px;
@@ -109,7 +137,7 @@
       }
       .r5-objective p {
          margin: 0;
-         font-size: 15px;
+         font-size: 18px !important;
          line-height: 1.4;
          text-align: justify;
          word-wrap: break-word;
@@ -130,8 +158,8 @@
          text-align: center;
          vertical-align: bottom;
       }
-      .r5-card-title {
-         background-color: #ffb629;
+      .r5-ctitle {
+         background-color: #c9a227;
          color: #111;
          text-align: center;
          padding: 8px 8px;
@@ -141,16 +169,16 @@
          border: 4px solid #fff;
          box-sizing: border-box;
       }
-      .r5-card-body {
-         background-color: #2d2d2d;
-         color: #ffb629;
+      .r5-cbody {
+         background-color: #1a365d;
+         color: #f7f3eb;
          padding: 16px 10px 14px 10px;
          min-height: 170px;
          vertical-align: top;
       }
-      .r5-card-body p {
+      .r5-cbody p {
          margin: 2px 0;
-         color: #ffb629;
+         color: #f7f3eb;
          font-size: 18px;
          line-height: 1.35;
          word-wrap: break-word;
@@ -165,24 +193,24 @@
          overflow: hidden;
          margin-top: 3px;
       }
-      .r5-fill {
-         height: 14px;
-         background-color: #ffb629;
+      .r5-sfill {
+         height: 16px;
+         background-color: #c9a227;
          color: #111;
-         font-size: 11px;
+         font-size: 13px;
          text-align: center;
-         line-height: 14px;
+         line-height: 16px;
       }
-      .r5-achv {
-         background-color: #ffb629;
+      .r5-award {
+         background-color: #c9a227;
          margin: 8px 8px 6px 8px;
          padding: 22px 12px 12px 12px;
          text-align: center;
          position: relative;
       }
-      .r5-achv-title {
-         background-color: #2d2d2d;
-         color: #ffb629;
+      .r5-award-h {
+         background-color: #1a365d;
+         color: #f7f3eb;
          display: inline-block;
          padding: 8px 28px;
          margin-top: -36px;
@@ -190,10 +218,10 @@
          font-weight: bold;
          font-size: 18px;
       }
-      .r5-achv p {
+      .r5-award p {
          margin: 4px 0;
          color: #111;
-         font-size: 15px;
+         font-size: 18px !important;
          word-wrap: break-word;
       }
       .r5-sign {
@@ -210,69 +238,89 @@
 </head>
 
 <body>
-   <table class="r5-page" cellpadding="0" cellspacing="0">
+   <table class="r5-sheet" cellpadding="0" cellspacing="0" width="100%">
       <tr>
-         <td class="r5-left">
+         <td class="r5-side" bgcolor="#1a365d" valign="top">
             {{#if profilePhoto}}
-            <img class="r5-photo" src="{{{profilePhoto}}}" alt="profilePhoto" />
+            <div class="r5-picwrap">
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160" height="160" viewBox="0 0 160 160">
+                  <defs>
+                     <clipPath id="r5clip"><circle cx="80" cy="80" r="72" /></clipPath>
+                  </defs>
+                  <circle cx="80" cy="80" r="80" fill="#ffffff" />
+                  <image x="8" y="8" width="144" height="144" clip-path="url(#r5clip)" xlink:href="{{{profilePhoto}}}" preserveAspectRatio="xMidYMid slice" />
+               </svg>
+            </div>
             {{/if}}
             <h3>Profile</h3>
-            <ul>
-               {{#if Phone}}
-               <li class="showPosts"><span class="greekCross">➳</span>
-                  <p class="pl word-breck">{{Phone}}</p>
-               </li>
-               {{/if}}
-               {{#if DOB}}
-               <li class="showPosts"><span class="greekCross">➳</span>
-                  <p class="pl word-breck">{{DOB}}</p>
-               </li>
-               {{/if}}
-               {{#if Email}}
-               <li class="showPosts"><span class="greekCross">➳</span>
-                  <p class="pl word-breck">{{Email}}</p>
-               </li>
-               {{/if}}
-               {{#if Address}}
-               <li class="showPosts"><span class="greekCross">➳</span>
-                  <p class="pl word-breck">{{Address}}</p>
-               </li>
-               {{/if}}
-            </ul>
+            {{#if Phone}}
+            <table cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                  <td class="r5-txt" valign="top">{{Phone}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if DOB}}
+            <table cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                  <td class="r5-txt" valign="top">{{DOB}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if Email}}
+            <table cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                  <td class="r5-txt" valign="top">{{Email}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if Address}}
+            <table cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                  <td class="r5-txt" valign="top">{{Address}}</td>
+               </tr>
+            </table>
+            {{/if}}
             {{#if Language}}
             <h3>Language</h3>
-            <ul>
-               {{#each Language}}
-               {{#if name}}
-               <li class="showPosts"><span class="greekCross">➳</span>
-                  <p class="pl word-breck">{{name}}</p>
-               </li>
-               {{/if}}
-               {{/each}}
-            </ul>
+            {{#each Language}}
+            {{#if name}}
+            <table cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                  <td class="r5-txt" valign="top">{{name}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{/each}}
             {{/if}}
             {{#if Interests}}
             <h3>Interests</h3>
-            <ul>
-               {{#each Interests}}
-               {{#if hoby}}
-               <li class="showPosts"><span class="greekCross">➳</span>
-                  <p class="pl word-breck">{{hoby}}</p>
-               </li>
-               {{/if}}
-               {{/each}}
-            </ul>
+            {{#each Interests}}
+            {{#if hoby}}
+            <table cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                  <td class="r5-txt" valign="top">{{hoby}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{/each}}
             {{/if}}
          </td>
          <td class="r5-right">
             <table class="r5-topbars">
                <tr>
-                  <td class="r5-bar-dark" width="32%">.</td>
-                  <td class="r5-bar-gold" width="36%">.</td>
-                  <td class="r5-bar-dark" width="32%">.</td>
+                  <td class="r5-strip-n" width="32%">.</td>
+                  <td class="r5-strip-g" width="36%">.</td>
+                  <td class="r5-strip-n" width="32%">.</td>
                </tr>
             </table>
-            <div class="r5-name">
+            <div class="r5-banner">
                {{#if Name}}<h1 class="word-breck">{{Name}}</h1>{{/if}}
                {{#if jobTitle}}<h3 class="word-breck">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</h3>{{/if}}
             </div>
@@ -288,15 +336,24 @@
                      {{#if Education}}
                      <table class="r5-block" cellpadding="0" cellspacing="0">
                         <tr>
-                           <td class="r5-title-pad"><div class="r5-card-title">Education</div></td>
+                           <td class="r5-title-pad"><div class="r5-ctitle">Education</div></td>
                         </tr>
                         <tr>
-                           <td class="r5-card-body">
+                           <td class="r5-cbody">
                         {{#each Education}}
-                        {{#if course}}<p class="word-breck"><b>➳ {{course}}</b></p>{{/if}}
-                        {{#if institute}}<p class="word-breck">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>{{/if}}
-                        {{#if percentage}}<p class="word-breck">{{percentage}}%</p>{{/if}}
-                        <p class="word-breck">{{yearOfPassing}}</p>
+                        <div class="r5-item">
+                        {{#if course}}
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                           <tr>
+                              <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                              <td class="r5-ht" valign="top">{{course}}</td>
+                           </tr>
+                        </table>
+                        {{/if}}
+                        {{#if institute}}<div class="r5-sub">{{institute}}</div>{{/if}}
+                        {{#if percentage}}<div class="r5-sub">{{percentage}}%</div>{{/if}}
+                        {{#if yearOfPassing}}<div class="r5-sub">{{yearOfPassing}}</div>{{/if}}
+                        </div>
                         {{/each}}
                            </td>
                         </tr>
@@ -307,17 +364,26 @@
                      {{#if Experience}}
                      <table class="r5-block" cellpadding="0" cellspacing="0">
                         <tr>
-                           <td class="r5-title-pad"><div class="r5-card-title">Experience</div></td>
+                           <td class="r5-title-pad"><div class="r5-ctitle">Experience</div></td>
                         </tr>
                         <tr>
-                           <td class="r5-card-body">
+                           <td class="r5-cbody">
                         {{#each Experience}}
-                        {{#if jobTitle}}<p class="word-breck"><b>➳ {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</b></p>{{/if}}
-                        {{#if organization}}<p class="word-breck">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>{{/if}}
-                        {{#if from}}<p class="word-breck">{{from}}{{#if to}} - {{to}}{{/if}}</p>{{/if}}
-                        {{#if role}}<p class="word-breck">{{role}}</p>{{/if}}
-                        {{#if description}}<p class="word-breck">{{description}}</p>{{/if}}
-                        {{#if present}}<p>Present</p>{{/if}}
+                        <div class="r5-item">
+                        {{#if jobTitle}}
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                           <tr>
+                              <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                              <td class="r5-ht" valign="top">{{jobTitle}}</td>
+                           </tr>
+                        </table>
+                        {{/if}}
+                        {{#if organization}}<div class="r5-sub">{{organization}}</div>{{/if}}
+                        {{#if from}}<div class="r5-sub">{{from}}{{#if to}} - {{to}}{{/if}}</div>{{/if}}
+                        {{#if role}}<div class="r5-sub">{{role}}</div>{{/if}}
+                        {{#if description}}<div class="r5-sub">{{description}}</div>{{/if}}
+                        {{#if present}}<div class="r5-sub">Present</div>{{/if}}
+                        </div>
                         {{/each}}
                            </td>
                         </tr>
@@ -330,16 +396,16 @@
                      {{#if Skills}}
                      <table class="r5-block" cellpadding="0" cellspacing="0">
                         <tr>
-                           <td class="r5-title-pad"><div class="r5-card-title">Skills</div></td>
+                           <td class="r5-title-pad"><div class="r5-ctitle">Skills</div></td>
                         </tr>
                         <tr>
-                           <td class="r5-card-body">
+                           <td class="r5-cbody">
                         {{#each Skills}}
                         {{#if skillName}}
                         <div class="r5-skill-row">
-                           <p class="word-breck"><b>{{skillName}}</b></p>
+                           <div class="r5-ht">{{skillName}}</div>
                            <div class="r5-track">
-                              <div class="r5-fill" style="width:{{expertise}}%;">{{expertiseLabel}}%</div>
+                              <div class="r5-sfill" style="width:{{expertise}}%;">{{expertise}}%</div>
                            </div>
                         </div>
                         {{/if}}
@@ -353,15 +419,22 @@
                      {{#if Projects}}
                      <table class="r5-block" cellpadding="0" cellspacing="0">
                         <tr>
-                           <td class="r5-title-pad"><div class="r5-card-title">Projects</div></td>
+                           <td class="r5-title-pad"><div class="r5-ctitle">Projects</div></td>
                         </tr>
                         <tr>
-                           <td class="r5-card-body">
+                           <td class="r5-cbody">
                         {{#each Projects}}
-                        {{#if projectTitle}}<p class="word-breck"><b>➳ {{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</b></p>{{/if}}
-                        {{#if roles}}<p class="word-breck">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>{{/if}}
-                        {{#if duration}}<p class="word-breck">{{duration}}</p>{{/if}}
-                        {{#if projectDescription}}<p class="word-breck">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</p>{{/if}}
+                        <div class="r5-item">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                           <tr>
+                              <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                              <td class="r5-ht" valign="top">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</td>
+                           </tr>
+                        </table>
+                        {{#if roles}}<div class="r5-sub">{{roles}}</div>{{/if}}
+                        {{#if duration}}<div class="r5-sub">{{duration}}</div>{{/if}}
+                        {{#if projectDescription}}<div class="r5-sub">{{projectDescription}}</div>{{/if}}
+                        </div>
                         {{/each}}
                            </td>
                         </tr>
@@ -371,8 +444,8 @@
                </tr>
             </table>
             {{#if Achivement}}
-            <div class="r5-achv">
-               <div class="r5-achv-title">Achievement</div>
+            <div class="r5-award">
+               <div class="r5-award-h">Achievement</div>
                {{#each Achivement}}
                {{#if achivement}}<p class="word-breck">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>{{/if}}
                {{/each}}
@@ -381,16 +454,25 @@
             {{#if Reference}}
             <table class="r5-block" cellpadding="0" cellspacing="0" style="margin: 8px 10px;">
                <tr>
-                  <td class="r5-title-pad"><div class="r5-card-title">Reference</div></td>
+                  <td class="r5-title-pad"><div class="r5-ctitle">Reference</div></td>
                </tr>
                <tr>
-                  <td class="r5-card-body">
+                  <td class="r5-cbody">
                {{#each Reference}}
-               {{#if name}}<p class="word-breck"><b>➳ {{name}}</b></p>{{/if}}
-               {{#if jobtitle}}<p class="word-breck">{{jobtitle}}</p>{{/if}}
-               {{#if companyname}}<p class="word-breck">{{companyname}}</p>{{/if}}
-               {{#if email}}<p class="word-breck">{{email}}</p>{{/if}}
-               {{#if phone}}<p class="word-breck">{{phone}}</p>{{/if}}
+               <div class="r5-item">
+               {{#if name}}
+               <table cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r5-arr" valign="top" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="#c9a227"/></svg></td>
+                     <td class="r5-ht" valign="top">{{name}}</td>
+                  </tr>
+               </table>
+               {{/if}}
+               {{#if jobtitle}}<div class="r5-sub">{{jobtitle}}</div>{{/if}}
+               {{#if companyname}}<div class="r5-sub">{{companyname}}</div>{{/if}}
+               {{#if email}}<div class="r5-sub">{{email}}</div>{{/if}}
+               {{#if phone}}<div class="r5-sub">{{phone}}</div>{{/if}}
+               </div>
                {{/each}}
                   </td>
                </tr>
@@ -399,10 +481,10 @@
             {{#if sign}}
             <table class="r5-block" cellpadding="0" cellspacing="0" style="margin: 8px 10px;">
                <tr>
-                  <td class="r5-title-pad"><div class="r5-card-title">Signature</div></td>
+                  <td class="r5-title-pad"><div class="r5-ctitle">Signature</div></td>
                </tr>
                <tr>
-                  <td class="r5-card-body" style="text-align:center;">
+                  <td class="r5-cbody" style="text-align:center;">
                <img class="r5-sign" src="{{{sign}}}" alt="Signature" />
                   </td>
                </tr>

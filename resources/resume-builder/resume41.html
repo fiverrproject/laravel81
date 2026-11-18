@@ -1,280 +1,294 @@
-<!DOCTYPE html>
-<html data-postman-fallbacks="1" lang="en">
+<html data-postman-fallbacks="1">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Resume 41</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Marck+Script&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300&display=swap"
-      rel="stylesheet">
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <style>
+      html, body {
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
+      }
       body {
-         font-family: 'Raleway', sans-serif;
+         margin: 0;
+         padding: 0;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 18px;
+         color: #222222;
+         background: #ffffff;
       }
-
-      .d-flex {
-         display: flex;
+      .r41-page {
+         width: 100%;
+         border-collapse: collapse;
       }
-
-      .justify-content-end {
-         justify-content: end;
+      .r41-inner {
+         padding: 40px 40px 40px 40px;
       }
-
-      .justify-content-space-between {
-         justify-content: space-between;
+      .r41-wrap {
+         width: 100%;
+         border-collapse: collapse;
       }
-
-      .name {
-         font-size: 25px;
-         text-transform: uppercase;
+      .r41-name {
+         margin: 0;
+         font-size: 28px;
+         font-weight: bold;
+         letter-spacing: 1px;
          color: #087d7e;
-         font-weight: 800;
+         text-transform: uppercase;
+         text-align: right;
       }
-
-      .education {
-         font-size: 13px;
-         font-weight: 600;
+      .r41-job {
+         margin: 2px 0 14px 0;
+         font-size: 18px;
+         font-weight: bold;
+         color: #111111;
+         text-align: right;
       }
-
-      .text-end {
-         text-align: end;
+      .r41-lab {
+         font-weight: bold;
+         color: #087d7e;
       }
-
-      .head {
+      .r41-cline {
+         margin: 0 0 6px 0;
+         font-size: 16px;
+         color: #222222;
+         line-height: 22px;
+         word-wrap: break-word;
+      }
+      .r41-bar {
          background-color: #087d7e;
-         color: white;
-         padding: 10px 0px 5px 10px;
+         color: #ffffff;
          font-size: 20px;
-         font-weight: 600;
-         margin-top: 10px;
-         text-transform: uppercase;
+         font-weight: bold;
+         letter-spacing: 1px;
+         padding: 8px 12px 7px 12px;
+         -webkit-print-color-adjust: exact;
       }
-
-      .education1 {
-         box-shadow: 0px 0px 10px #0c0c0c4d;
-         margin-top: 10px;
-         padding: 10px
+      .r41-box {
+         border: 1px solid #d5d5d5;
+         padding: 12px 14px;
+         margin: 6px 0 12px 0;
+         background-color: #ffffff;
       }
-
-      .pt-5 {
-         padding-top: 5px;
+      .r41-obj {
+         margin: 0;
+         font-size: 16px;
+         color: #333333;
+         line-height: 22px;
       }
-
-      .f-w-600 {
-         font-weight: 600;
+      .r41-3 {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         margin: 6px 0 12px 0;
+      }
+      .r41-3td {
+         width: 33%;
+         vertical-align: top;
+         padding: 0 3px 0 0;
+      }
+      .r41-cell {
+         border: 1px solid #d5d5d5;
+         padding: 8px 10px;
+         margin: 0 0 6px 0;
+         font-size: 16px;
+         color: #333333;
+         word-wrap: break-word;
+         background-color: #ffffff;
+      }
+      .r41-row {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+      }
+      .r41-ttl {
+         font-size: 17px;
+         font-weight: bold;
          color: #087d7e;
+         padding: 0 8px 4px 0;
+         vertical-align: top;
       }
-
-      .grid-container1 {
-         display: grid;
-         grid-template-columns: 50% 50%;
-         padding-bottom: 5px;
+      .r41-date {
+         font-size: 15px;
+         color: #333333;
+         text-align: right;
+         white-space: nowrap;
+         vertical-align: top;
+         padding: 0 0 4px 8px;
+      }
+      .r41-sub {
+         margin: 0 0 2px 10px;
+         font-size: 16px;
+         color: #333333;
+         line-height: 21px;
+      }
+      .r41-signwrap {
+         text-align: right;
+         margin: 8px 4px 0 0;
+      }
+      .r41-sign {
+         display: inline-block;
+         width: 120px !important;
+         height: 48px !important;
+         max-width: 120px !important;
+         max-height: 48px !important;
       }
    </style>
 </head>
 
 <body>
-   <div>
-      <div>
-         <div class="text-end">
-            {{#if Name}} <div class="name">{{Name}}</div>{{/if}}
-            {{#if jobTitle}} <div class="education">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div> {{/if}}
-         </div>
-      <div>
+   <table class="r41-page" cellpadding="40" cellspacing="0" width="100%">
+      <tr>
+         <td class="r41-inner" valign="top">
+            {{#if Name}}<p class="r41-name" align="right">{{Name}}</p>{{/if}}
+            {{#if jobTitle}}<p class="r41-job" align="right">{{jobTitle}}</p>{{/if}}
 
-      </div>
-         <div class="head">Contact</div>
-         <div class="education1">
-            <div class="grid-container1">
+            {{#if Phone}}<p class="r41-cline"><span class="r41-lab">Ph:</span> {{Phone}}</p>{{/if}}
+            {{#if DOB}}<p class="r41-cline"><span class="r41-lab">DOB:</span> {{DOB}}</p>{{/if}}
+            {{#if Email}}<p class="r41-cline"><span class="r41-lab">Email:</span> {{Email}}</p>{{/if}}
+            {{#if Address}}<p class="r41-cline"><span class="r41-lab">Address:</span> {{Address}}</p>{{/if}}
 
-               {{#if Phone}}
-               <div class="d-flex" style="word-break: break-all; align-items: start;">
-                  <label class="f-w-600" style="width: 10%;">Ph: </label> 
-                  <p style="width: 85%; margin: 0px;">{{Phone}}</p>
-               </div>
-               {{/if}}
-
-               {{#if DOB}}
-               <div class="d-flex" style="word-break: break-all; align-items: start;">
-                  <label class="f-w-600" style="width: 13%;">DOB: </label> 
-                  <p style="width: 85%; margin: 0px;">{{DOB}}</p>
-               </div>
-               {{/if}}
-
-               {{#if Email}}
-               <div class="d-flex" style="word-break: break-all; align-items: start;">
-                  <label class="f-w-600" style="width: 15%;">Email: </label> 
-                  <p style="width: 85%; margin: 0px;">{{Email}}</p>
-               </div>
-               {{/if}}
-               
-               {{#if Address}}
-               <div class="d-flex" style="word-break: break-all; align-items: start;">
-                  <label class="f-w-600" style="width: 20%;">Address: </label> 
-                  <p style="width:80%; margin: 0px;">{{Address}}</p>
-               </div>
-               {{/if}}
-            </div>
-         </div>
-      </div>
-
-      <div>
-         {{#if Objective}}
-         <div>
-            <div class="head">OBJECTIVE</div>
-            <div class="education1">
-               <div>
-                  {{#if Objective}} <div class="pt-5">{{Objective}}</div>{{/if}}
-               </div>
-            </div>
-         </div>
-         {{/if}}
-
-         <div style="display: flex;">
-            {{#if Skills}}
-            <div style="width: 33%;">
-               <div class="head">SKILLS</div>
-               {{#each Skills}}
-               <div class="education1" style="padding-left: 10px;margin-bottom: 10px;">
-                  {{#if skillName}} <div class="pt-5" style="word-break: break-all;">{{skillName}}</div>{{/if}}
-               </div>
-               {{/each}}
-            </div>
-            {{/if}}
-            {{#if Interests}}
-            <div style="width: 33%;">
-               <div class="head">INTERESTS</div>
-               {{#each Interests}}
-               <div class="education1" style="padding-left: 10px;margin-bottom: 10px;">
-                  {{#if hoby}} <div class="pt-5" style="word-break: break-all;">{{hoby}}</div>{{/if}}
-               </div>
-               {{/each}}
+            {{#if Objective}}
+            <table class="r41-wrap" cellpadding="0" cellspacing="0" width="100%" style="margin-top:10px;">
+               <tr>
+                  <td class="r41-bar" bgcolor="#087d7e">OBJECTIVE</td>
+               </tr>
+            </table>
+            <div class="r41-box">
+               <p class="r41-obj">{{Objective}}</p>
             </div>
             {{/if}}
 
-            {{#if Language}}
-            <div style="width: 33%;">
-               <div class="head">LANGUAGE</div>
-               {{#each Language}}
-               <div class="education1" style="padding-left: 10px;margin-bottom: 10px;">
-                  {{#if name}} <div class="pt-5" style="word-break: break-all;" style="word-break: break-all;">{{name}}
-                  </div>{{/if}}
-               </div>
-               {{/each}}
-            </div>
-            {{/if}}
-         </div>
+            <table class="r41-3" cellpadding="0" cellspacing="0" width="100%">
+               <col width="33%" /><col width="33%" /><col width="34%" />
+               <tr>
+                  <td class="r41-bar" bgcolor="#087d7e" style="border-right:1px solid #066668;">SKILLS</td>
+                  <td class="r41-bar" bgcolor="#087d7e" style="border-right:1px solid #066668;">INTERESTS</td>
+                  <td class="r41-bar" bgcolor="#087d7e">LANGUAGE</td>
+               </tr>
+               <tr>
+                  <td class="r41-3td" valign="top" style="padding:6px 4px 0 0;">
+                     {{#if Skills}}
+                     {{#each Skills}}
+                     {{#if skillName}}<div class="r41-cell">{{skillName}}</div>{{/if}}
+                     {{/each}}
+                     {{/if}}
+                  </td>
+                  <td class="r41-3td" valign="top" style="padding:6px 4px 0 4px;">
+                     {{#if Interests}}
+                     {{#each Interests}}
+                     {{#if hoby}}<div class="r41-cell">{{hoby}}</div>{{/if}}
+                     {{/each}}
+                     {{/if}}
+                  </td>
+                  <td class="r41-3td" valign="top" style="padding:6px 0 0 4px;">
+                     {{#if Language}}
+                     {{#each Language}}
+                     {{#if name}}<div class="r41-cell">{{name}}</div>{{/if}}
+                     {{/each}}
+                     {{/if}}
+                  </td>
+               </tr>
+            </table>
 
-         {{#if Education}}
-         <div>
-            <div class="head">EDUCATION</div>
-
-            <div class="education1">
+            {{#if Education}}
+            <table class="r41-wrap" cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r41-bar" bgcolor="#087d7e">EDUCATION</td>
+               </tr>
+            </table>
+            <div class="r41-box">
                {{#each Education}}
-               <div style="float: right;">
-                  {{#if yearOfPassing}} <div class="pt-5">{{yearOfPassing}}</div>{{/if}}
-               </div>
-               {{#if course}} <div class="f-w-600">{{course}}</div>{{/if}}
-               <div style="padding-left: 10px;margin-bottom: 10px;">
-                  {{#if institute}} <div class="pt-5">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</div>{{/if}}
-                  {{#if percentage}} <div class="pt-5">{{percentage}}</div>{{/if}}
-               </div>
-
+               <table class="r41-row" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r41-ttl" valign="top">{{#if course}}{{course}}{{/if}}</td>
+                     <td class="r41-date" valign="top">{{#if yearOfPassing}}{{yearOfPassing}}{{/if}}</td>
+                  </tr>
+               </table>
+               {{#if institute}}<p class="r41-sub">{{institute}}</p>{{/if}}
+               {{#if percentage}}<p class="r41-sub">{{percentage}}%</p>{{/if}}
                {{/each}}
             </div>
-         </div>
-         {{/if}}
+            {{/if}}
 
-         {{#if Experience}}
-         <div>
-            <div class="head">EXPERIENCE</div>
-            <div class="education1">
+            {{#if Experience}}
+            <table class="r41-wrap" cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r41-bar" bgcolor="#087d7e">EXPERIENCE</td>
+               </tr>
+            </table>
+            <div class="r41-box">
                {{#each Experience}}
-               <div style="float: right;">
-                  {{#if from}} <div class="pt-5">{{from}} - {{#if to}} {{to}} {{else}} Present {{/if}}</div>{{/if}}
-               </div>
-               {{#if jobTitle}} <div class="f-w-600">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</div>{{/if}}
-               <div style="padding-left: 10px;margin-bottom: 10px;">
-                  {{#if organization}} <div class="pt-5">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</div>{{/if}}
-                  {{#if role}} <div class="pt-5">{{role}}</div>{{/if}}
-                  {{#if description}} <div class="pt-5">{{description}}</div>{{/if}}
-               </div>
+               <table class="r41-row" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r41-ttl" valign="top">{{#if jobTitle}}{{jobTitle}}{{/if}}</td>
+                     <td class="r41-date" valign="top">{{#if from}}{{from}} - {{#if to}}{{to}}{{else}}Present{{/if}}{{/if}}</td>
+                  </tr>
+               </table>
+               {{#if organization}}<p class="r41-sub">{{organization}}</p>{{/if}}
+               {{#if role}}<p class="r41-sub">{{role}}</p>{{/if}}
+               {{#if description}}<p class="r41-sub">{{description}}</p>{{/if}}
                {{/each}}
             </div>
-         </div>
-         {{/if}}
+            {{/if}}
 
-         {{#if Projects}}
-         <div>
-            <div class="head">PROJECTS</div>
-            <div class="education1">
+            {{#if Projects}}
+            <table class="r41-wrap" cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r41-bar" bgcolor="#087d7e">PROJECTS</td>
+               </tr>
+            </table>
+            <div class="r41-box">
                {{#each Projects}}
-               <div style="float: right;">
-                  {{#if duration}} <div class="pt-5">{{duration}}</div>{{/if}}
-               </div>
-               {{#if projectTitle}} <div class="f-w-600">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</div>{{/if}}
-               <div style="padding-left: 10px;margin-bottom: 10px;">
-                  {{#if roles}} <div class="pt-5">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</div>{{/if}}
-                  {{#if projectDescription}} <div class="pt-5">{{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</div>{{/if}}
-               </div>
+               <table class="r41-row" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r41-ttl" valign="top">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</td>
+                     <td class="r41-date" valign="top">{{#if duration}}{{duration}}{{/if}}</td>
+                  </tr>
+               </table>
+               {{#if roles}}<p class="r41-sub">{{roles}}</p>{{/if}}
+               {{#if projectDescription}}<p class="r41-sub">{{projectDescription}}</p>{{/if}}
                {{/each}}
             </div>
-         </div>
-         {{/if}}
+            {{/if}}
 
-         {{#if Achivement}}
-         <div>
-            <div class="head">ACHIEVEMENT</div>
-            <div class="education1">
+            {{#if Achivement}}
+            <table class="r41-wrap" cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r41-bar" bgcolor="#087d7e">ACHIEVEMENT</td>
+               </tr>
+            </table>
+            <div class="r41-box">
                {{#each Achivement}}
-               <div>
-                  {{#if achivement}} <div class="pt-5">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</div>{{/if}}
-               </div>
+               {{#if achivement}}<p class="r41-sub" style="margin-left:0;">{{achivement}}</p>{{/if}}
                {{/each}}
             </div>
-         </div>
-         {{/if}}
+            {{/if}}
 
-         {{#if Reference}}
-         <div>
-            <div class="head">REFERENCE</div>
-            <div class="education1">
+            {{#if Reference}}
+            <table class="r41-wrap" cellpadding="0" cellspacing="0" width="100%">
+               <tr>
+                  <td class="r41-bar" bgcolor="#087d7e">REFERENCE</td>
+               </tr>
+            </table>
+            <div class="r41-box">
                {{#each Reference}}
-
-               {{#if name}} <div class="f-w-600">{{name}}</div>{{/if}}
-               <div style="padding-left: 10px;margin-bottom: 10px;">
-                  {{#if jobtitle}} <div class="pt-5">{{jobtitle}}</div>{{/if}}
-                  {{#if companyname}} <div class="pt-5">{{companyname}}</div>{{/if}}
-                  {{#if email}} <div class="pt-5">{{email}}</div>{{/if}}
-                  {{#if phone}} <div class="pt-5">{{phone}}</div>{{/if}}
-               </div>
+               {{#if name}}<div class="r41-ttl">{{name}}</div>{{/if}}
+               {{#if jobtitle}}<p class="r41-sub">{{jobtitle}}</p>{{/if}}
+               {{#if companyname}}<p class="r41-sub">{{companyname}}</p>{{/if}}
+               {{#if email}}<p class="r41-sub">{{email}}</p>{{/if}}
+               {{#if phone}}<p class="r41-sub">{{phone}}</p>{{/if}}
                {{/each}}
             </div>
-         </div>
-         {{/if}}
+            {{/if}}
 
-         {{#if sign}}
-         <div style="display: flex; flex-direction: column;">
-            <div class="head" style="display: flex; justify-content: flex-end;">
-               <div style="align-items: end; padding-right: 10px;">SIGNATURE </div>
+            {{#if sign}}
+            <div class="r41-signwrap">
+               <img class="r41-sign" width="120" height="48" src="{{{sign}}}" alt="Signature" />
             </div>
-            <div class="" style="display: flex; justify-content: flex-end;">
-               <img src="{{{sign}}}" alt="Signature" height="10%" width="15%">
-
-            </div>
-         </div>
-         {{/if}}
-         <!-- {{#if sign}}
-            <div style="display: flex; flex-direction: column; align-items: flex-end;">
-                <h2 class="color-t"> SIGNATURE</h2>
-                <img src="{{{sign}}}" alt="Signature" height="10%" width="15%">
-            </div>
-            {{/if}} -->
-      </div>
-   </div>
+            {{/if}}
+         </td>
+      </tr>
+   </table>
 </body>
 
 </html>

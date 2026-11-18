@@ -1,421 +1,504 @@
-<!DOCTYPE html>
-<html data-postman-fallbacks="1" lang="en">
+<html data-postman-fallbacks="1">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Resume 34</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <style>
-      .container {
-         /* width: 100%; */
-         height: 100%;
-         box-shadow: 0 0 5px rgb(0 0 0 / 10%);
-         font-family: 'Poppins', sans-serif;
-         position: relative;
+      html, body {
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
       }
-
-      .left-part {
-         width: 65%;
-         padding: 15px;
-         border-right: 5px solid #c4d7d7;
-      }
-
-      .right-part {
-         width: 35%;
-         padding: 15px;
-         border-right: 5px solid #c4d7d7;
-      }
-
-      .header {
-         align-items: center;
-         padding-bottom: 25px;
-         padding-top: 15px;
-         background: linear-gradient(180deg, #a2c5c35e 50%, rgb(251 251 251 / 0%) 20%);
-      }
-
-      .header1 {
-         padding: 25px 0px;
-         margin-bottom: 20px;
-         background: #a2c5c35e;
-      }
-
-      .left-header {
-         width: 65%;
-         padding: 15px;
-      }
-
-      .right-header {
-         width: 35%;
-         padding: 15px;
-      }
-
-      .image {
-         border: none;
-         width: 200px;
-         height: 200px;
-         position: absolute;
-         left: 6%;
-         top: 6%;
-      }
-
-      .font1 {
-         font-size: 25px;
-         font-weight: 700;
-      }
-
-      .font2 {
-         font-size: 1.2rem;
-         font-weight: 600;
-      }
-
-      .font3 {
-         font-size: 1rem;
-         font-weight: 600;
-      }
-
-      .font4 {
-         font-size: .9rem;
-      }
-
-      .imgDiv {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         width: 200px;
-         height: 200px;
-         position: relative;
-         background: black;
-      }
-
-      .mt-20 {
-         margin-top: 1.4rem;
-      }
-
-      .mb-5 {
-         margin-bottom: 5px;
-      }
-
-      .mb-8 {
-         margin-bottom: 8px;
-      }
-
-      .pl-15 {
-         padding-left: 15px;
-      }
-
-      .mb-16 {
-         margin-bottom: 1rem;
-      }
-
-      .mb-10 {
-         margin-bottom: 10px;
-      }
-
-      .icon-width {
-         width: 2rem;
-         font-weight: 600 !important;
-      }
-
-      .info-text {
-         width: 18rem;
-      }
-
-      .d-flex {
-         display: flex;
-      }
-
-      .break-word {
-         word-break: break-word;
-      }
-
-      .break-all {
-         word-break: break-all;
-      }
-
-      .progress {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         height: 1rem;
-         overflow: hidden;
-         font-size: .75rem;
-         background-color: rgb(70, 69, 67);
-         border-radius: 0.25rem;
-      }
-
-      .progress-bar {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-orient: vertical;
-         -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-         flex-direction: column;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         color: #030303;
-         text-align: center;
-         background-color: #8ab1b1;
-         transition: width .6s ease;
-      }
-
-      .top-ul {
-         list-style-type: square;
-         padding-left: 30px !important;
-      }
-
-      .sub-ul {
-         list-style-type: disc;
-         padding-left: 47px !important;
-         margin-top: 0 !important;
-      }
-
-      .heading-border {
-         border-bottom: 2px solid #678181;
-         width: 20%;
-      }
-
-      ul {
+      body {
          margin: 0;
          padding: 0;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 18px;
+         color: #222222;
+         background: #ffffff;
       }
-
-      .signature {
-         background: #c4d7d787;
-         margin-top: 10px;
-         padding: 4px;
+      .r34-page {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+      }
+      .r34-headl {
+         width: 62%;
+         vertical-align: middle;
+         padding: 28px 20px 20px 28px;
+         text-align: center;
+      }
+      .r34-headr {
+         width: 38%;
+         vertical-align: top;
+         padding: 18px 24px 8px 8px;
+         text-align: right;
+      }
+      .r34-left {
+         width: 62%;
+         vertical-align: top;
+         padding: 8px 22px 18px 28px;
+      }
+      .r34-right {
+         width: 38%;
+         vertical-align: top;
+         padding: 8px 22px 18px 18px;
+         border-left: 4px solid #c4d7d7;
+      }
+      .r34-name {
+         margin: 0 0 6px 0;
+         font-size: 32px;
+         font-weight: bold;
+         letter-spacing: 2px;
+         color: #111111;
+         text-transform: uppercase;
+      }
+      .r34-job {
+         margin: 0;
+         font-size: 16px;
+         color: #333333;
+      }
+      .r34-frame {
+         border-collapse: collapse;
+         margin: 0 0 0 auto;
+      }
+      .r34-bar {
+         width: 12px;
+         background-color: #111111;
+         -webkit-print-color-adjust: exact;
+      }
+      .r34-topbar {
+         height: 12px;
+         background-color: #111111;
+         font-size: 1px;
+         line-height: 12px;
+         -webkit-print-color-adjust: exact;
+      }
+      .r34-photo {
+         display: block;
+         width: 168px !important;
+         height: 168px !important;
+         max-width: 168px !important;
+         max-height: 168px !important;
+         border: 0;
+         border-radius: 0;
+         -webkit-border-radius: 0;
+         background-color: #d0d0d0;
+      }
+      .r34-h {
+         margin: 14px 0 8px 0;
+         font-size: 18px;
+         font-weight: bold;
+         letter-spacing: 1px;
+         color: #111111;
+         border-bottom: 2px solid #a2c5c3;
+         display: inline-block;
+         padding: 0 0 3px 0;
+      }
+      .r34-obj {
+         margin: 0 0 10px 0;
+         font-size: 15px;
+         color: #403838;
+         line-height: 20px;
+         word-wrap: break-word;
+      }
+      .r34-item,
+      .r34-nest,
+      .r34-crow {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         margin: 0 0 2px 0;
+      }
+      .r34-nest {
+         width: 94%;
+         margin: 0 0 8px 16px;
+      }
+      .r34-mark {
+         width: 14px;
+         max-width: 14px;
+         font-size: 1px;
+         line-height: 8px;
+         vertical-align: top;
+         padding: 5px 0 0 0;
+      }
+      .r34-mark svg {
+         display: block;
+         width: 8px;
+         height: 8px;
+      }
+      .r34-title {
+         font-size: 16px;
+         font-weight: bold;
+         color: #111111;
+         padding: 0 0 2px 4px;
+         line-height: 19px;
+         word-wrap: break-word;
+      }
+      .r34-txt {
+         font-size: 15px;
+         color: #333333;
+         vertical-align: top;
+         padding: 0 0 2px 4px;
+         line-height: 18px;
+         word-wrap: break-word;
+      }
+      .r34-icon {
+         width: 22px;
+         vertical-align: top;
+         padding: 2px 6px 6px 0;
+      }
+      .r34-cval {
+         font-size: 14px;
+         color: #222222;
+         word-wrap: break-word;
+         vertical-align: top;
+         padding: 0 0 6px 0;
+      }
+      .r34-sname {
+         font-size: 14px;
+         color: #333333;
+         padding: 0 0 4px 0;
+      }
+      .r34-skill {
+         margin: 0 0 12px 0;
+      }
+      .r34-track {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         height: 12px;
+         background-color: #e6ecec;
+         -webkit-print-color-adjust: exact;
+      }
+      .r34-fill {
+         background-color: #8faba8;
+         color: #ffffff;
+         font-size: 10px;
+         text-align: center;
+         height: 12px;
+         -webkit-print-color-adjust: exact;
+      }
+      .r34-signbox {
+         background-color: #e4ecec;
+         text-align: center;
+         padding: 14px 8px;
+         margin: 16px 0 0 0;
+         -webkit-print-color-adjust: exact;
+      }
+      .r34-sign-label {
+         margin: 0 0 4px 0;
+         font-size: 18px;
+         font-weight: bold;
+         color: #111111;
+      }
+      .r34-sign {
+         display: block;
+         width: 120px !important;
+         height: 48px !important;
+         max-width: 120px !important;
+         max-height: 48px !important;
+         margin: 0 auto;
+      }
+      .r34-wrap {
+         margin: 0 0 2px 0;
       }
    </style>
 </head>
 
 <body>
-   <div class="container">
-      {{#if profilePhoto}}
-      <div class="header d-flex" style="align-items:center;">
-         <div class="left-header">
-            <div class="my-name">
-               <div class="font1" style="text-align: center; text-transform: uppercase;">{{Name}}</div>
-               <div class="font5" style="text-align: center; font-size: 1rem; color:black; margin-top:5px;">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}
-               </div>
-               <div class="border-grey" style="margin-top: 15px;"></div>
-            </div>
-         </div>
-
-         <div class="right-header">
-            <div class="imgDiv">
-               <img class="image" src="{{{profilePhoto}}}" alt="profilePhoto">
-            </div>
-         </div>
-      </div>
-      {{else}}
-      <div class="header1">
-         <div class="my-name">
-            <div class="font1" style="text-align: center; text-transform: uppercase;">
-               {{Name}}
-            </div>
-            <div class="font5" style="text-align: center; font-size: 1rem; color:black; margin-top:5px;">
-               {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}
-            </div>
-         </div>
-      </div>
-      {{/if}}
-
-      <div class="main d-flex">
-         <div class="left-part">
+   <table class="r34-page" cellpadding="0" cellspacing="0">
+      <tr>
+         <td class="r34-headl" width="62%">
+            {{#if Name}}<p class="r34-name">{{Name}}</p>{{/if}}
+            {{#if jobTitle}}<p class="r34-job">{{jobTitle}}</p>{{/if}}
+         </td>
+         <td class="r34-headr" width="38%">
+            {{#if profilePhoto}}
+            <table class="r34-frame" cellpadding="0" cellspacing="0" align="right">
+               <tr>
+                  <td class="r34-bar" width="12"></td>
+                  <td valign="top">
+                     <table cellpadding="0" cellspacing="0">
+                        <tr><td class="r34-topbar">&nbsp;</td></tr>
+                        <tr>
+                           <td>
+                              <img class="r34-photo" width="168" height="168" src="{{{profilePhoto}}}" alt="profilePhoto" />
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+            {{/if}}
+         </td>
+      </tr>
+      <tr>
+         <td class="r34-left" width="62%">
             {{#if Education}}
-            <div>
-               <div class="font2 heading-right mb-16 heading-border" style="padding-bottom:5px;">EDUCATION</div>
-               {{#each Education}}
-               <div class="mb-10">
-                  <ul class="top-ul" style="margin-bottom:0">
-                     <li class="font3 mb-4">{{course}}</li>
-                  </ul>
-
-                  <ul class="sub-ul">
-                     {{#if institute}}<li class="font4 mb-4"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}} {{#if yearOfPassing}} |
-                        {{yearOfPassing}}{{/if}}
-                     </li>{{/if}}
-                     {{#if percentage}}<li class="font4"> {{percentage}}%</li>{{/if}}
-                  </ul>
-               </div>
-               {{/each}}
-            </div>
+            <div class="r34-wrap"><span class="r34-h">EDUCATION</span></div>
+            {{#each Education}}
+            <table class="r34-item" width="100%" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
+                  <td class="r34-title" valign="top">{{#if course}}{{course}}{{/if}}</td>
+               </tr>
+            </table>
+            <table class="r34-nest" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               {{#if institute}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{institute}}{{#if yearOfPassing}} | {{yearOfPassing}}{{/if}}</td>
+               </tr>
+               {{/if}}
+               {{#if percentage}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{percentage}}%</td>
+               </tr>
+               {{/if}}
+            </table>
+            {{/each}}
             {{/if}}
 
             {{#if Experience}}
-            <div class="mt-20">
-               <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">EXPERIENCE</div>
-               {{#each Experience}}
-               <div class="mb-10">
-                  <ul class="top-ul" style="margin-bottom:0;">
-                     {{#if organization}}<li class="font3 mb-4"> {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
-                  </ul>
-                  <ul class="sub-ul">
-                     {{#if jobTitle}}<li class="font4 mb-4">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</li>{{/if}}
-                     {{#if from}}<li class="font4 mb-4"> {{from}} {{#if to}} - {{to}}{{/if}}</li>{{/if}}
-                     {{#if role}}<li class="font4 mb-4"> {{role}}</li>{{/if}}
-                     {{#if description}}<li class="font4 mb-4">{{description}}</li>{{/if}}
-                     {{#if organization}}<li class="font4 mb-4">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</li>{{/if}}
-                     {{#if present}}<li class="font4">Present</li>{{/if}}
-                  </ul>
-               </div>
-               {{/each}}
-            </div>
+            <div class="r34-wrap"><span class="r34-h">EXPERIENCE</span></div>
+            {{#each Experience}}
+            <table class="r34-item" width="100%" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
+                  <td class="r34-title" valign="top">{{#if organization}}{{organization}}{{/if}}</td>
+               </tr>
+            </table>
+            <table class="r34-nest" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               {{#if jobTitle}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{jobTitle}}</td>
+               </tr>
+               {{/if}}
+               {{#if from}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{from}}{{#if to}} - {{to}}{{else}}{{#if endDate}} - {{endDate}}{{/if}}{{/if}}</td>
+               </tr>
+               {{/if}}
+               {{#if role}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{role}}</td>
+               </tr>
+               {{/if}}
+               {{#if description}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{description}}</td>
+               </tr>
+               {{/if}}
+               {{#if organization}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{organization}}</td>
+               </tr>
+               {{/if}}
+               {{#if present}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">Present</td>
+               </tr>
+               {{/if}}
+            </table>
+            {{/each}}
             {{/if}}
 
             {{#if Projects}}
-            <div class="mt-20">
-               <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">PROJECTS</div>
-               {{#each Projects}}
-               <div class="mb-10">
-                  <ul class="top-ul" style="margin-bottom:0">
-                     <li class="font3 mb-4">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</li>
-                  </ul>
-
-                  <ul class="sub-ul">
-                     {{#if roles}}<li class="font4 mb-4">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</li>{{/if}}
-                     {{#if duration}}<li class="font4 mb-4">{{duration}}</li>{{/if}}
-                     {{#if projectDescription}}<li class="font4 mb-4"> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}}</li>{{/if}}
-                  </ul>
-               </div>
-               {{/each}}
-            </div>
+            <div class="r34-wrap"><span class="r34-h">PROJECTS</span></div>
+            {{#each Projects}}
+            <table class="r34-item" width="100%" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
+                  <td class="r34-title" valign="top">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</td>
+               </tr>
+            </table>
+            <table class="r34-nest" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               {{#if roles}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{roles}}</td>
+               </tr>
+               {{/if}}
+               {{#if duration}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{duration}}</td>
+               </tr>
+               {{/if}}
+               {{#if projectDescription}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{projectDescription}}</td>
+               </tr>
+               {{/if}}
+            </table>
+            {{/each}}
             {{/if}}
 
             {{#if Achivement}}
-            <div class="mt-20">
-               <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">ACHIEVEMENT</div>
-               {{#each Achivement}}
-               <div class="mb-10">
-                  <ul class="top-ul" style="margin-bottom:0">
-                     {{#if achivement}}<li class="font3 mb-4" style="font-weight: 500;">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</li>{{/if}}
-                  </ul>
-               </div>
-               {{/each}}
-            </div>
+            <div class="r34-wrap"><span class="r34-h">ACHIEVEMENT</span></div>
+            {{#each Achivement}}
+            {{#if achivement}}
+            <table class="r34-item" width="100%" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{achivement}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{/each}}
             {{/if}}
 
             {{#if Reference}}
-            <div class="mt-20">
-               <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">REFERENCE</div>
-               {{#each Reference}}
-               <div class="mb-10">
-                  {{#if name}}
-                  <ul class="top-ul" style="margin-bottom:0;">
-                     <li class="font3 mb-4">{{name}}</li>
-                  </ul>
-                  {{/if}}
+            <div class="r34-wrap"><span class="r34-h">REFERENCE</span></div>
+            {{#each Reference}}
+            <table class="r34-item" width="100%" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
+                  <td class="r34-title" valign="top">{{#if name}}{{name}}{{/if}}</td>
+               </tr>
+            </table>
+            <table class="r34-nest" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               {{#if jobtitle}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{jobtitle}}</td>
+               </tr>
+               {{/if}}
+               {{#if companyname}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{companyname}}</td>
+               </tr>
+               {{/if}}
+               {{#if email}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{email}}</td>
+               </tr>
+               {{/if}}
+               {{#if phone}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{phone}}</td>
+               </tr>
+               {{/if}}
+            </table>
+            {{/each}}
+            {{/if}}
 
-                  <ul class="sub-ul">
-                     {{#if jobtitle}}<li class="font4 mb-4">{{jobtitle}}</li>{{/if}}
-                     {{#if companyname}}<li class="font4 mb-4">{{companyname}}</li>{{/if}}
-                     {{#if email}}<li class="font4 mb-4">{{email}}</li>{{/if}}
-                     {{#if phone}}<li class="font4 mb-4">{{phone}}</li>{{/if}}
-                  </ul>
-               </div>
+            <div class="r34-signbox">
+               <p class="r34-sign-label">Signature</p>
+               {{#if sign}}<img class="r34-sign" width="120" height="48" src="{{{sign}}}" alt="Signature" />{{/if}}
+            </div>
+         </td>
+         <td class="r34-right" width="38%">
+            {{#if Objective}}
+            <div class="r34-wrap"><span class="r34-h">OBJECTIVE</span></div>
+            <p class="r34-obj">{{Objective}}</p>
+            {{/if}}
+
+            <div class="r34-wrap"><span class="r34-h">CONTACT</span></div>
+            {{#if Phone}}
+            <table class="r34-crow" cellpadding="0" cellspacing="0">
+               <col width="22" /><col />
+               <tr>
+                  <td class="r34-icon" width="22" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#333333" d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/></svg></td>
+                  <td class="r34-cval" valign="top">{{Phone}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if DOB}}
+            <table class="r34-crow" cellpadding="0" cellspacing="0">
+               <col width="22" /><col />
+               <tr>
+                  <td class="r34-icon" width="22" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#333333" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg></td>
+                  <td class="r34-cval" valign="top">{{DOB}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if Email}}
+            <table class="r34-crow" cellpadding="0" cellspacing="0">
+               <col width="22" /><col />
+               <tr>
+                  <td class="r34-icon" width="22" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#333333" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z"/></svg></td>
+                  <td class="r34-cval" valign="top">{{Email}}</td>
+               </tr>
+            </table>
+            {{/if}}
+            {{#if Address}}
+            <table class="r34-crow" cellpadding="0" cellspacing="0">
+               <col width="22" /><col />
+               <tr>
+                  <td class="r34-icon" width="22" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#333333" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/></svg></td>
+                  <td class="r34-cval" valign="top">{{Address}}</td>
+               </tr>
+            </table>
+            {{/if}}
+
+            {{#if Skills}}
+            <div class="r34-wrap"><span class="r34-h">SKILLS</span></div>
+            {{#each Skills}}
+            {{#if skillName}}
+            <div class="r34-skill">
+               <div class="r34-sname">{{skillName}}</div>
+               <table class="r34-track" cellpadding="0" cellspacing="0"><tr>
+                  <td class="r34-fill" style="width:{{expertiseLabel}}%;">{{expertiseLabel}}%</td>
+                  <td>&nbsp;</td>
+               </tr></table>
+            </div>
+            {{/if}}
+            {{/each}}
+            {{/if}}
+
+            {{#if Language}}
+            <div class="r34-wrap"><span class="r34-h">LANGUAGE</span></div>
+            <table class="r34-item" width="100%" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               {{#each Language}}
+               {{#if name}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{name}}</td>
+               </tr>
+               {{/if}}
                {{/each}}
-            </div>
+            </table>
             {{/if}}
 
-            {{#if sign}}
-            <div class="signature" style="text-align: center;">
-               <h3 style="margin-bottom: 3px" class="font2">SIGNATURE</h3>
-               <img width="20%" src="{{{sign}}}" alt="Signature">
-            </div>
+            {{#if Interests}}
+            <div class="r34-wrap"><span class="r34-h">INTEREST</span></div>
+            <table class="r34-item" width="100%" cellpadding="0" cellspacing="0">
+               <col width="14" /><col />
+               {{#each Interests}}
+               {{#if hoby}}
+               <tr>
+                  <td class="r34-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
+                  <td class="r34-txt" valign="top">{{hoby}}</td>
+               </tr>
+               {{/if}}
+               {{/each}}
+            </table>
             {{/if}}
-         </div>
-         <div class="right-part">
-            <div class="contact">
-               {{#if Objective}}
-               <div class="objective">
-                  <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">OBJECTIVE</div>
-                  <div class="font5">{{Objective}}</div>
-               </div>
-               {{/if}}
-
-               <div class="contact-me mt-20">
-                  <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">CONTACT</div>
-                  {{#if Phone}}
-                  <div class="font4 mb-8 d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg"
-                           width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
-                           <path
-                              d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
-                           <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                        </svg> </span> <span class="info-text break-all">{{Phone}}</span></div>
-                  {{/if}}
-
-                  {{#if DOB}}
-                  <div class="font4 mb-8 d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg"
-                           width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-                           <path
-                              d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                        </svg> </span> <span class="info-text">{{DOB}}</span></div>
-                  {{/if}}
-
-                  {{#if Email}}
-                  <div class="font4 mb-8 d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg"
-                           width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                           <path
-                              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
-                        </svg> </span> <span class="info-text break-all">{{Email}}</span></div>
-                  {{/if}}
-
-                  {{#if Address}}
-                  <div class="font4 mb-8 d-flex"><span class="icon-width"> <svg xmlns="http://www.w3.org/2000/svg"
-                           width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                           <path
-                              d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-                           <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                        </svg> </span><span class="info-text">{{Address}}</span></div>
-                  {{/if}}
-               </div>
-
-               {{#if Skills}}
-               <div class="mt-20">
-                  <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">SKILLS</div>
-                  {{#each Skills}}
-                  <div class="mb-16">
-                     {{#if skillName}}
-                     <div>
-                        <div class="font4 mb-8 break-all">{{skillName}}</div>
-                     </div>
-
-                     <div class="progress" style="width: 99%; margin-top:5px;">
-                        <div class="progress-bar" style="width:{{expertise}}%;">{{expertise}}%</div>
-                     </div>
-                     {{/if}}
-                  </div>
-                  {{/each}}
-               </div>
-               {{/if}}
-
-               {{#if Language}}
-               <div class="mt-20">
-                  <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">LANGUAGE</div>
-                  {{#each Language}}
-                  <ul class="top-ul" style="margin-bottom:0">
-                     {{#if name}}<li class="font3 mb-5 break-all" style="font-weight:500;">{{name}}</li>{{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
-
-               {{#if Interests}}
-               <div class="mt-20">
-                  <div class="font2 heading-right heading-border mb-16" style="padding-bottom:5px;">INTEREST</div>
-                  {{#each Interests}}
-                  <ul class="top-ul" style="margin-bottom:0">
-                     {{#if hoby}}<li class="font3 mb-5 break-all" style="font-weight:500;">{{hoby}}</li>{{/if}}
-                  </ul>
-                  {{/each}}
-               </div>
-               {{/if}}
-            </div>
-         </div>
-      </div>
-   </div>
-   </div>
+         </td>
+      </tr>
+   </table>
 </body>
 
 </html>

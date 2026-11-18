@@ -1,754 +1,435 @@
-<!DOCTYPE html>
 <html data-postman-fallbacks="1">
 
 <head>
    <title>Resume 2</title>
-
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <style>
-      * {
-         box-sizing: border-box;
-         margin-top: 0px;
-         margin-bottom: 0px;
-      }
-
       html, body {
          margin: 0;
          padding: 0;
-         background: #fff;
+         background: #ffffff;
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
       }
-
       body {
-         padding: 12mm 10mm 14mm 10mm;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 16px;
+         color: #111111;
       }
-
-      img {
-         display: block;
-      }
-
-      hr {
-         border-top: 1px rgb(30, 30, 30) solid;
+      .r2-page {
          width: 100%;
-         margin-top: 0.4vw;
-         margin-bottom: 0.4vw;
-      }
-
-      .HeaderHr {
-         position: absolute;
-         z-index: 2;
-         border: 1px solid black;
-         width: 4vw;
-         bottom: 0vw;
-         margin-left: auto;
-         margin-right: auto;
-      }
-
-      #leftHr {
-         left: 6.2vw;
-      }
-
-      #rightHr {
-         left: 13.7vw;
-      }
-
-      .over {
-         color: white;
-         position: absolute;
-         z-index: 2;
-         width: 100%;
-         text-align: center;
-         margin-left: auto;
-         margin-right: auto;
-      }
-
-      .dot {
-         height: 0.5vw;
-         width: 0.5vw;
-         background-color: rgba(0, 0, 0, 0);
-         border-radius: 50%;
-         border: 3px solid black;
-         display: inline-block;
-      }
-
-      #middleOne {
-         background-color: white;
-      }
-
-      #dotContainer {
-         bottom: 0vw;
-      }
-
-      #Profession {
-         top: -0.2vw;
-         font-family: "Lato";
-         letter-spacing: 0.05em;
-         font-weight: 200;
-      }
-
-      h1 {
-         font-family: "Fjalla One";
-         font-size: 2.2em;
-         letter-spacing: 0.2em;
-         font-weight: 900;
-         margin: 0;
-         padding-bottom: 0.5vw;
-      }
-
-      h2 {
-         font-family: "Fjalla One";
-         font-weight: 600;
-         font-size: 1.6em;
-         letter-spacing: 0.2vw;
-      }
-
-      h3 {
-         font-family: "Lato";
-         font-size: 1em;
-         margin: 0;
-      }
-
-      h4 {
-         font-family: "Lato";
-         font-size: 0.9em;
-         margin: 0;
-         font-style: italic;
-         font-weight: 400;
-      }
-
-      .left {
-         display: inline-block;
-         width: 100%;
-         text-align: center;
-      }
-
-      .right {
-         display: inline-block;
-         width: 100%;
-         text-align: left;
-         margin-bottom: 0.5vw;
-      }
-
-      .left1sing {
-         display: inline-block;
-         width: 100%;
-         text-align: right;
-         margin-bottom: 0.5vw;
-      }
-
-      .flexContainer {
-         display: flex;
-         flex-direction: row;
-         flex-wrap: no-wrap;
-         align-items: stretch;
-         justify-content: center;
-      }
-
-      .leftColumn {
-         width: 25%;
-      }
-
-      .leftRow {
-         position: relative;
-         margin: 0px;
-         padding-bottom: 0px;
-         letter-spacing: 0.06vw;
-         font-size: 0.85vw;
-         font-family: "Lato";
-      }
-
-      #name {
-         color: black;
-         font-family: "Permanent Marker";
-         font-size: 1.5vw;
-         font-weight: 600;
-         position: absolute;
-         z-index: 2;
-         top: 23vw;
-         width: 100%;
-         text-align: center;
-      }
-
-      #Cone {
-         width: 24.1vw;
-         height: 11.14vw;
-         background-color: rgb(213, 213, 215);
-         /* background: conic-gradient(rgb(56, 23, 6) 6%, rgb(0, 0, 0) 20%, white 0 80%, rgb(0, 0, 0) 0 81%, rgb(56, 23, 6) 92%); */
-      }
-
-      .Triangle1 {
-         position: absolute;
-         z-index: 1;
-         width: 0;
-         height: 0;
-         border-bottom: 4.25vw solid black;
-         top: 20px;
-      }
-
-      #LeftTriangle {
-         left: 0;
-         top: 40px;
-         border-right: 12.8vw solid transparent;
-      }
-
-      #RightTriangle {
-         left: 11.45vw;
-         border-left: 12.7vw solid transparent;
-         top: 40px;
-      }
-
-      .Triangle2 {
-         position: absolute;
-         z-index: 2;
-         top: 25px;
-         width: 0;
-         height: 0;
-         border-bottom: 4.01vw solid #C0D8DE;
-      }
-
-      #LeftTriangle2 {
-         left: 0;
-         border-right: 12vw solid transparent;
-         top: 45px;
-      }
-
-      #RightTriangle2 {
-         left: 12.2vw;
-         border-left: 11.98vw solid transparent;
-         top: 46px;
-      }
-
-      #LeftBottom {
-         top: -1.4vw;
-         padding: 0 1.1vw 3.4vw 1.1vw;
-         margin: 0;
-         background-color: #C0D8DE;
-      }
-
-      .skills {
-         /*position: relative;*/
-         /*background-color: white;*/
-         margin-bottom: 0.5vw;
-         padding: 0.3vw;
-         font-size: .7vw;
-      }
-
-      .skillBar {
-         /*position: absolute;*/
-         border-top: 8px rgb(70, 70, 70) solid;
-         /*top: 0.175vw;*/
-         /*margin-left: 50%;*/
-         /*max-width: 48%;*/
-         border-radius: 10px;
-      }
-
-      .skill-row {
-         display: table;
-         width: 100%;
+         border-collapse: collapse;
          table-layout: fixed;
       }
-
-      .skill-bar-wrap {
-         display: table-cell;
-         width: 78%;
-         vertical-align: middle;
-      }
-
-      .skill-pct {
-         display: table-cell;
-         width: 22%;
-         vertical-align: middle;
-         white-space: nowrap;
-         padding-left: 4px;
-         text-align: left;
-      }
-
-      .skill-track {
-         width: 100%;
-         height: 8px;
-         background: #c8c8c8;
-         border-radius: 10px;
-         overflow: hidden;
-      }
-
-      .skill-row .skillBar {
-         display: block;
-         float: none;
-         border: none;
-         height: 8px;
-         margin: 0;
-         max-width: 100%;
-         background: rgb(70, 70, 70);
-         border-radius: 10px;
-      }
-
-      #microsoftOffice {
-         width: 42%;
-      }
-
-      #adobeAnalytics {
-         width: 32%;
-      }
-
-      #googleAnalytics {
-         width: 20%;
-      }
-
-      #googleAds {
-         width: 10%;
-      }
-
-      #htmlCssJavascript {
-         width: 15%;
-      }
-
-      #projectManagement {
-         width: 40%;
-      }
-
-      #productDevelopment {
-         width: 29%;
-      }
-
-      #problemSolving {
-         width: 42%;
-      }
-
-      #mediaManagement {
-         width: 30%;
-      }
-
-      #businessAnalysis {
-         width: 36%;
-      }
-
-      #consumerCommunication {
-         width: 39%;
-      }
-
-      #negotiation {
-         width: 36%;
-      }
-
-      .rightColumn {
-         width: 76%;
-         flex: none;
-      }
-
-      .rightRow {
-         padding: 2vw 3vw;
-         position: relative;
-         z-index: 0;
-      }
-
-      .rightText {
-         letter-spacing: 0.1em;
-         font-size: 1.1em;
-         font-family: "Lato";
-         text-align: justify;
-         text-justify: inter-word;
-      }
-
-      #rightHeader {
-         background-color: rgb(213, 213, 215);
-      }
-
-      .containerHl {
-         /* display: flex; */
-         padding: 0vw 2vw;
-         align-items: center;
-         margin-top: 0;
-         margin-bottom: 0;
-      }
-
-      .years {
-         border: 1px solid black;
-         background: #C0D8DE;
-         border-radius: 1vw;
-         width: 90%;
-         height: 100%;
-         text-align: center;
-         margin: 0.1vw 5% 0.1vw 2%;
-         padding: 0.55vw 0.2vw 0.2vw 0.2vw;
-      }
-
-      .jobs {
-         width: 82%;
-         /* padding: 0.3vw; */
-      }
-
-      .containerText {
-         display: flex;
-         padding: 0vw 2vw;
-         align-items: stretch;
-         margin-bottom: 1vw;
-         padding-left: 4.1vw;
-         min-height: 0;
-      }
-
-      .verticalLines {
-         border-left: 1px solid black;
-         border-right: 1px solid black;
-         min-height: 4.8vw;
-         width: 1.2%;
-         margin: 0 0.2vw;
-         text-align: center;
-      }
-
-      .verticalLinesEdu {
-         border-left: 1px solid black;
-         border-right: 1px solid black;
-         min-height: 3vw;
-         width: 1.2%;
-         margin: 0 0.2vw;
-         text-align: center;
-      }
-
-      .jobText {
-         width: 97%;
-         /* padding: 0.3vw; */
-         /* margin-left: 3.3vw; */
-         font-family: "Lato";
-         font-size: 1em;
-         letter-spacing: 0.05em;
-      }
-
-      .font-size {
-         font-size: 12px;
-      }
-
-      .mr-1 {
-         margin: 3px;
-      }
-
-      .fs-15 {
-         font-size: 15px;
-      }
-
-      .mt-10 {
-         margin-top: 10px;
-      }
-
-      .text-justify {
-         text-align: justify !important;
-      }
-
-      .flexContainer {
-         display: table;
-         width: 100%;
-         table-layout: fixed;
-      }
-
-      .leftColumn {
-         display: table-cell;
+      .r2-left {
          width: 28%;
          vertical-align: top;
-         background-color: #C0D8DE;
+         background-color: #c0d8de;
       }
-
-      .rightColumn {
-         display: table-cell;
+      .r2-right {
          width: 72%;
          vertical-align: top;
+         background-color: #ffffff;
       }
-
-      .leftColumn > .leftRow > img {
+      .r2-photo {
          display: block;
-         width: 100%;
-         height: 225px;
+         width: 100% !important;
+         height: 210px !important;
+         max-width: 100% !important;
+         max-height: 210px !important;
          object-fit: cover;
       }
-
-      .years {
-         width: 90%;
-         display: block;
+      .r2-gray {
+         background-color: #d5d5d7;
+         text-align: center;
+         padding: 0 0 8px 0;
       }
-
-      .signature-block {
-         text-align: right;
-         padding: 16px 24px 24px;
+      .r2-name {
+         margin: 8px 8px 2px 8px;
+         font-size: 24px !important;
+         font-weight: bold;
+         color: #111111;
+         text-align: center;
+         word-wrap: break-word;
       }
-
-      .signature-block .left1sing {
-         display: block;
+      .r2-job {
+         margin: 0 8px 10px 8px;
+         font-size: 16px !important;
+         font-weight: bold;
+         color: #111111;
+         text-align: center;
+         word-wrap: break-word;
+      }
+      .r2-v {
          width: 100%;
-         text-align: right;
-         margin: 0 0 8px;
+         height: 28px;
+         background-color: #c0d8de;
+         border-top: 18px solid #111111;
       }
-
-      .signature-img {
+      .r2-side {
+         padding: 10px 14px 20px 14px;
+         background-color: #c0d8de;
+      }
+      .r2-lh {
+         margin: 12px 0 4px 0;
+         font-size: 20px !important;
+         font-weight: bold;
+         letter-spacing: 1px;
+         text-align: center;
+         color: #111111;
+      }
+      .r2-line {
+         border: 0;
+         border-top: 1px solid #333333;
+         margin: 3px 0 5px 0;
+         width: 100%;
+      }
+      .r2-item {
          display: block;
-         margin-left: auto;
-         margin-right: 0;
-         width: 120px;
-         height: 48px;
-         max-width: 120px;
-         max-height: 48px;
-         object-fit: contain;
+         font-size: 16px !important;
+         color: #222222;
+         word-wrap: break-word;
+         padding: 2px 0 1px 0;
+      }
+      .r2-skill {
+         margin: 0 0 4px 0;
+         padding: 0;
+      }
+      .r2-sname {
+         margin: 0 0 2px 0;
+         font-size: 16px !important;
+         color: #222222;
+         word-wrap: break-word;
+      }
+      .r2-srow {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+      }
+      .r2-sw {
+         width: 78%;
+         vertical-align: middle;
+         padding: 0;
+      }
+      .r2-sp {
+         width: 22%;
+         vertical-align: middle;
+         padding: 0 0 0 4px;
+         font-size: 14px !important;
+         white-space: nowrap;
+         color: #222222;
+      }
+      .r2-track {
+         width: 100%;
+         height: 8px;
+         background-color: #c8c8c8;
+         overflow: hidden;
+      }
+      .r2-fill {
+         height: 8px;
+         background-color: #464646;
+         font-size: 1px !important;
+         line-height: 1px !important;
+      }
+      .r2-head {
+         background-color: #d5d5d7;
+         padding: 16px 22px 14px 22px;
+      }
+      .r2-resume {
+         margin: 0 0 4px 0;
+         font-size: 32px !important;
+         font-weight: bold;
+         letter-spacing: 8px;
+         color: #111111;
+      }
+      .r2-objh {
+         margin: 0 0 6px 0;
+         font-size: 22px !important;
+         font-weight: bold;
+         color: #111111;
+      }
+      .r2-obj {
+         margin: 0;
+         font-size: 16px !important;
+         color: #222222;
+         line-height: 22px;
+         text-align: justify;
+      }
+      .r2-body {
+         padding: 12px 20px 16px 20px;
+      }
+      .r2-rh {
+         margin: 12px 0 10px 0;
+         font-size: 22px !important;
+         font-weight: bold;
+         letter-spacing: 2px;
+         color: #111111;
+      }
+      .r2-pill {
+         width: 100%;
+         border-collapse: collapse;
+      }
+      .r2-pilltd {
+         background-color: #c0d8de;
+         border: 1px solid #333333;
+         border-radius: 14px;
+         text-align: center;
+         padding: 6px 10px;
+         font-size: 16px !important;
+         font-weight: bold;
+         color: #111111;
+         -webkit-print-color-adjust: exact;
+      }
+      .r2-block {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         margin: 0 0 12px 0;
+      }
+      .r2-vline {
+         width: 4px !important;
+         border-left: 1px solid #111111;
+         font-size: 1px !important;
+         line-height: 1px !important;
+         vertical-align: top;
+         padding: 0;
+      }
+      .r2-txt {
+         vertical-align: top;
+         padding: 2px 0 4px 8px;
+         font-size: 16px !important;
+         color: #222222;
+         line-height: 20px;
+      }
+      .r2-txt p {
+         margin: 0 0 2px 0;
+         font-size: 16px !important;
+      }
+      .r2-signwrap {
+         text-align: right;
+         padding: 10px 4px 0 0;
+      }
+      .r2-sign {
+         display: inline-block;
+         width: 120px !important;
+         height: 48px !important;
+         max-width: 120px !important;
+         max-height: 48px !important;
       }
    </style>
 </head>
 
 <body>
-   <div class="flexContainer">
-      <div class="leftColumn" style="background-color:#C0D8DE;"> <!--start of the container for the left column-->
-         <div class=leftRow> <!-- start of the container for the pic-->
-            {{#if profilePhoto}}
-            <img src="{{{profilePhoto}}}" alt="ddp" width=100% height="225px">
-            {{/if}}
-            <hr class="HeaderHr" id="leftHr">
-            <hr class="HeaderHr" id="rightHr">
-            <div class="over" id="dotContainer">
-               <span class="dot"></span>
-               <span class="dot" id="middleOne"></span>
-               <span class="dot"></span>
+   <table class="r2-page" cellpadding="0" cellspacing="0" width="100%">
+      <col width="28%" />
+      <col width="72%" />
+      <tr>
+         <td class="r2-left" valign="top" bgcolor="#c0d8de">
+            <div class="r2-gray">
+               {{#if profilePhoto}}
+               <img class="r2-photo" width="220" height="210" src="{{{profilePhoto}}}" alt="profilePhoto" />
+               {{/if}}
+               {{#if Name}}<p class="r2-name">{{Name}}</p>{{/if}}
+               {{#if jobTitle}}<p class="r2-job">{{jobTitle}}</p>{{/if}}
             </div>
-         </div>
+            <div class="r2-side">
+               <p class="r2-lh">Personal Details</p>
+               <hr class="r2-line" />
+               {{#if DOB}}<span class="r2-item">{{DOB}}</span><hr class="r2-line" />{{/if}}
+               {{#if Email}}<span class="r2-item">{{Email}}</span><hr class="r2-line" />{{/if}}
+               {{#if Phone}}<span class="r2-item">{{Phone}}</span><hr class="r2-line" />{{/if}}
+               {{#if Address}}<span class="r2-item">{{Address}}</span><hr class="r2-line" />{{/if}}
 
-         <div class=leftRow>
-            <div id=Cone> </div>
-            <!-- <p id="name"></p> -->
-            <p class="over" id="Profession"
-               style="color: black; word-break: break-all; font-size: 15px; padding: 13px 25px 0px 25px;">
-               <b>{{Name}}</b>
-            </p>
-            <div class="Triangle1" id=LeftTriangle> </div>
-            <div class="Triangle2" id=LeftTriangle2> </div>
-            <div class="Triangle1" id=RightTriangle> </div>
-            <div class="Triangle2" id=RightTriangle2> </div>
-         </div>
-         <div class=leftRow id="LeftBottom">
-            <br>
-            <h2 class="left fs-15"> Personal Details </h2>
-            <hr>
-            {{#if jobTitle}}
-            <span class="font-size" style="word-break: break-all;"> {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</span>
-            <hr>
-            {{/if}}{{#if Phone}}
-            <span class="font-size" style="word-break: break-all;"> {{Phone}} </span>
-            <hr>
-            {{/if}}
-            {{#if DOB}}
-            <span class="font-size" style="word-break: break-all;"> {{DOB}}</span>
-            <hr>
-            {{/if}}{{#if Email}}
-            <span class="font-size" style="word-break: break-all;"> {{Email}} </span>
-            <hr>{{/if}}{{#if Address}}
-            <span class="font-size" style="word-break: break-all;"> {{Address}} </span>
-            <hr>{{/if}} <br>
-            {{#if Skills}}
-            <h2 class="left fs-15"> Skills </h2>
-            {{#each Skills}}
-            <div class="skills">
+               {{#if Skills}}
+               <p class="r2-lh">Skills</p>
+               {{#each Skills}}
                {{#if skillName}}
-               <p class="font-size" style="word-break: break-word;margin-bottom: 0px;margin-top: 0px;">{{skillName}}</p>
-               <div class="skill-row">
-                  <div class="skill-bar-wrap">
-                     <div class="skill-track">
-                        <div class="skillBar" style="width:{{expertise}}%;"></div>
-                     </div>
-                  </div>
-                  <span class="skill-pct font-size">{{expertise}}%</span>
+               <div class="r2-skill">
+                  <p class="r2-sname">{{skillName}}</p>
+                  <table class="r2-srow" cellpadding="0" cellspacing="0" width="100%">
+                     <tr>
+                        <td class="r2-sw">
+                           <div class="r2-track">
+                              <div class="r2-fill" style="width:{{expertise}}%;">&nbsp;</div>
+                           </div>
+                        </td>
+                        <td class="r2-sp">{{expertise}}%</td>
+                     </tr>
+                  </table>
                </div>
                {{/if}}
-            </div>
-            {{/each}}
-            {{/if}}
-            <div>
+               {{/each}}
+               {{/if}}
+
                {{#if Language}}
-               <h2 class="left fs-15"> Language </h2>
-               <hr>
+               <p class="r2-lh">Language</p>
+               <hr class="r2-line" />
                {{#each Language}}
-               {{#if name}}<span class="font-size" style="word-break: break-all;"> {{name}}</span>{{/if}}
-               <hr>
+               {{#if name}}<span class="r2-item">{{name}}</span><hr class="r2-line" />{{/if}}
+               {{/each}}
+               {{/if}}
+
+               {{#if Interests}}
+               <p class="r2-lh">Interests</p>
+               <hr class="r2-line" />
+               {{#each Interests}}
+               {{#if hoby}}<span class="r2-item">{{hoby}}</span><hr class="r2-line" />{{/if}}
                {{/each}}
                {{/if}}
             </div>
+         </td>
+         <td class="r2-right" valign="top">
+            <div class="r2-head">
+               <p class="r2-resume">RESUME</p>
+               {{#if Objective}}
+               <p class="r2-objh">Objective</p>
+               <p class="r2-obj">{{Objective}}</p>
+               {{/if}}
+            </div>
+            <div class="r2-body">
+               {{#if Experience}}
+               <p class="r2-rh">WORK EXPERIENCE</p>
+               {{#each Experience}}
+               <table class="r2-pill" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r2-pilltd" bgcolor="#c0d8de">{{#if jobTitle}}{{jobTitle}}{{/if}}</td>
+                  </tr>
+               </table>
+               <table class="r2-block" cellpadding="0" cellspacing="0" width="100%">
+                  <col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="96%" />
+                  <tr>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-txt" valign="top">
+                        {{#if from}}<p>{{from}}{{#if to}} - {{to}}{{/if}}</p>{{/if}}
+                        {{#if role}}<p>{{role}}</p>{{/if}}
+                        {{#if organization}}<p>{{organization}}</p>{{/if}}
+                        {{#if description}}<p>{{description}}</p>{{/if}}
+                        {{#if present}}<p>Present</p>{{/if}}
+                     </td>
+                  </tr>
+               </table>
+               {{/each}}
+               {{/if}}
 
-            <br>
-            {{#if Interests}}
-            <h2 class="left fs-15"> Interests </h2>
-            <hr>
-            {{#each Interests}}
-            {{#if hoby}}<span class="font-size" style="word-break: break-all;"> {{hoby}}</span>{{/if}}
-            <hr>
-            {{/each}}
-            {{/if}}
-            <br>
-         </div>
-      </div>
+               {{#if Education}}
+               <p class="r2-rh">EDUCATION</p>
+               {{#each Education}}
+               <table class="r2-pill" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r2-pilltd" bgcolor="#c0d8de">{{#if course}}{{course}}{{/if}}</td>
+                  </tr>
+               </table>
+               <table class="r2-block" cellpadding="0" cellspacing="0" width="100%">
+                  <col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="96%" />
+                  <tr>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-txt" valign="top">
+                        {{#if institute}}<p>{{institute}}</p>{{/if}}
+                        {{#if yearOfPassing}}<p>{{yearOfPassing}}</p>{{/if}}
+                        {{#if percentage}}<p>{{percentage}}%</p>{{/if}}
+                     </td>
+                  </tr>
+               </table>
+               {{/each}}
+               {{/if}}
 
-      <div class="rightColumn">
+               {{#if Projects}}
+               <p class="r2-rh">Projects</p>
+               {{#each Projects}}
+               <table class="r2-pill" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r2-pilltd" bgcolor="#c0d8de">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</td>
+                  </tr>
+               </table>
+               <table class="r2-block" cellpadding="0" cellspacing="0" width="100%">
+                  <col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="96%" />
+                  <tr>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-txt" valign="top">
+                        {{#if duration}}<p>{{duration}}</p>{{/if}}
+                        {{#if roles}}<p>{{roles}}</p>{{/if}}
+                        {{#if projectDescription}}<p>{{projectDescription}}</p>{{/if}}
+                     </td>
+                  </tr>
+               </table>
+               {{/each}}
+               {{/if}}
 
-         <div class="rightRow" id="rightHeader">
-            <h1> RESUME </h1>
-            {{#if Objective}}
-            <!-- <h2 class="right"> Objective</h2> -->
-            <span class="rightText text-justify" style="text-align: justify;">{{Objective}}</span>
-            {{/if}}
-         </div>
+               {{#if Achivement}}
+               <p class="r2-rh">Achievement</p>
+               {{#each Achivement}}
+               {{#if achivement}}
+               <table class="r2-pill" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r2-pilltd" bgcolor="#c0d8de">Achievement</td>
+                  </tr>
+               </table>
+               <table class="r2-block" cellpadding="0" cellspacing="0" width="100%">
+                  <col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="96%" />
+                  <tr>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-txt" valign="top">
+                        <p>{{achivement}}</p>
+                     </td>
+                  </tr>
+               </table>
+               {{/if}}
+               {{/each}}
+               {{/if}}
 
-         <div>
-            {{#if Experience}}
-            <div class="rightRow">
-               <h2 class="right"> Work Experience </h2>
-            </div>
-            {{#each Experience}}
-            <div class="containerHl">
-               <div class="years">
-                  <h3 style="word-break: break-all;"> {{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}} </h3>
-               </div>
-            </div>
-            <div class="containerText">
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div style="padding-left:10px; width: 100%;">
-                  {{#if from}}<p style="word-break: break-all;" class="mt-10"> {{from}}{{#if to}} - {{to}}{{/if}}
-                  <p>{{/if}}
-                  <p> {{role}}</p>
-                  <p> {{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>
-                  <p class="jobText">{{description}} </p>
-                  {{#if present}}
-                  <p class="jobText">Present</p>
-                  {{/if}}
-               </div>
-            </div>
-            {{/each}}
-            {{/if}}
-         </div>
-         <div>
-            {{#if Education}}
-            <div class="rightRow">
-               <h2 class="right"> Education</h2>
-            </div>
-            {{#each Education}}
-            <div class="containerHl">
-               <div class="years">
-                  {{#if course}}<h3 style="word-break: break-all;">{{course}} </h3>{{/if}}
-               </div>
-               <div>
+               {{#if Reference}}
+               <p class="r2-rh">Reference</p>
+               {{#each Reference}}
+               <table class="r2-pill" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                     <td class="r2-pilltd" bgcolor="#c0d8de">{{companyname}}</td>
+                  </tr>
+               </table>
+               <table class="r2-block" cellpadding="0" cellspacing="0" width="100%">
+                  <col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="4" /><col width="96%" />
+                  <tr>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-vline" valign="top">&nbsp;</td>
+                     <td class="r2-txt" valign="top">
+                        {{#if jobtitle}}<p>{{jobtitle}}</p>{{/if}}
+                        {{#if name}}<p>{{name}}</p>{{/if}}
+                        {{#if email}}<p>{{email}}</p>{{/if}}
+                        {{#if phone}}<p>{{phone}}</p>{{/if}}
+                     </td>
+                  </tr>
+               </table>
+               {{/each}}
+               {{/if}}
 
+               {{#if sign}}
+               <div class="r2-signwrap">
+                  <p class="r2-rh" style="text-align:right; margin-bottom:4px;">Signature</p>
+                  <img class="r2-sign" width="120" height="48" src="{{{sign}}}" alt="Signature" />
                </div>
+               {{/if}}
             </div>
-            <div class="containerText">
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div style="padding-left:10px; width: 100%;">
-                  {{#if institute}}<p style="word-break: break-all;" class="mt-10"> {{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}} </p>{{/if}}
-                  {{#if yearOfPassing}}<p> {{yearOfPassing}}
-                  <p>{{/if}}
-                     {{#if percentage}}
-                  <p>{{percentage}}%</p>{{/if}}
-               </div>
-            </div>
-            {{/each}}
-            {{/if}}
-         </div>
-         <div>
-            {{#if Projects}}
-            <div class="rightRow">
-               <h2 class="right">Projects</h2>
-            </div>
-            {{#each Projects}}
-            <div class="containerHl">
-               <div class="years">
-                  <h3 style="word-break: break-all;">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</h3>
-               </div>
-               <div class="jobs">
-                  <h4></h4>
-               </div>
-            </div>
-            <div class="containerText">
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div style="padding-left:10px; width: 100%;">
-                  <p style="word-break: break-all;" class="mt-10"> {{duration}}
-                  <p>
-                  <p style="word-break: break-all;"> {{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}} </p>
-                  <p style="word-break: break-all;"> {{#if projectDescription}}{{#if projectDescription}}{{projectDescription}}{{else}}{{description}}{{/if}}{{else}}{{description}}{{/if}} </p>
-               </div>
-            </div>
-            {{/each}}
-            {{/if}}
-
-         </div>
-
-         <div>
-            {{#if Achivement}}
-            <div class="rightRow">
-               <h2 class="right">Achievement</h2>
-            </div>
-            <div class="containerHl">
-               <div class="years mt-10">
-                  <h3>Achivement</h3>
-               </div>
-               <div class="jobs">
-               </div>
-            </div>
-            {{#each Achivement}}
-            <div class="containerText">
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div style="padding-left:10px ; width: 100%;">
-                  <p class="jobText" style="word-break: break-all; "> {{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}} </p>
-               </div>
-            </div>
-            {{/each}}
-            {{/if}}
-         </div>
-         <div>
-            {{#if Reference}}
-            <div class="rightRow">
-               <h2 class="right">Reference</h2>
-            </div>
-            {{#each Reference}}
-            <div class="containerHl">
-               <div class="years">
-                  <h3 style="word-break: break-all;">{{companyname}}</h3>
-               </div>
-               <div class="jobs">
-               </div>
-            </div>
-            <div class="containerText">
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div class="verticalLines"> </div>
-               <div style="padding-left:10px; width: 100%;">
-                  <p style="word-break: break-all;" class="mt-10"> {{jobtitle}}
-                  <p>
-                  <p style="word-break: break-all;"> {{name}} </p>
-                  <p style="word-break: break-all;">{{email}} </p>
-                  <p>{{phone}} </p>
-               </div>
-            </div>
-            {{/each}}
-            {{/if}}
-         </div>
-
-         <div>
-            {{#if sign}}
-            <div class="signature-block">
-               <h2 class="left1sing">Signature</h2>
-               <img class="signature-img" src="{{{sign}}}" alt="Signature">
-            </div>
-            {{/if}}
-         </div>
-
-      </div>
-   </div>
-
+         </td>
+      </tr>
+   </table>
 </body>
 
 </html>
