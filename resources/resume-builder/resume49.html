@@ -1,0 +1,75 @@
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>Resume 49</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <style>
+      html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { margin: 0; padding: 0; font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #2c2416; background: #faf6ef; }
+      .r49-page { width: 100%; border-collapse: collapse; table-layout: fixed; }
+      .r49-pad { padding: 22px 40px 18px 40px; background-color: #faf6ef; }
+      .r49-center { text-align: center; }
+      .r49-photo svg { display: block; width: 120px !important; height: 120px !important; margin: 0 auto 12px auto; }
+      .r49-name { margin: 0 0 4px 0; font-size: 32px; font-weight: bold; color: #2c2416; line-height: 36px; text-align: center; }
+      .r49-job { margin: 0 0 10px 0; font-size: 13px; letter-spacing: 4px; color: #b8952a; text-transform: uppercase; text-align: center; }
+      .r49-gold { width: 80px; height: 1px; background-color: #b8952a; font-size: 1px; line-height: 1px; margin: 0 auto 14px auto; -webkit-print-color-adjust: exact; }
+      .r49-ctab { width: 86%; margin: 0 auto 16px auto; border-collapse: collapse; table-layout: fixed; }
+      .r49-cval { font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #3a3224; padding: 2px 8px 8px 8px; text-align: center; word-wrap: break-word; }
+      .r49-h { margin: 16px 0 8px 0; font-size: 12px; font-weight: bold; letter-spacing: 3px; color: #b8952a; text-transform: uppercase; text-align: center; }
+      .r49-obj { margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #3a3224; line-height: 22px; text-align: center; word-wrap: break-word; }
+      .r49-title { margin: 0 0 2px 12px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #2c2416; line-height: 20px; }
+      .r49-list { width: 96%; border-collapse: collapse; table-layout: auto !important; margin: 0 0 8px 12px; page-break-inside: avoid; }
+      .r49-line { font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #444036; padding: 0 0 2px 14px; text-indent: -14px; line-height: 20px; word-wrap: break-word; }
+      .r49-line svg { display: inline; width: 6px !important; height: 6px !important; vertical-align: 2px; margin: 0 6px 0 0; }
+      .r49-sname { font-family: Arial, Helvetica, sans-serif; font-size: 15px; margin: 0 0 3px 12px; }
+      .r49-track { width: 96%; border-collapse: collapse; table-layout: fixed; height: 5px; margin: 0 0 10px 12px; background-color: #ead9a8; -webkit-print-color-adjust: exact; }
+      .r49-fill { background-color: #b8952a; height: 5px; font-size: 1px; -webkit-print-color-adjust: exact; }
+      .r49-rest { background-color: #ead9a8; height: 5px; font-size: 1px; }
+      .r49-spct { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #b8952a; text-align: right; margin: 0 12px 0 0; padding: 0 0 6px 0; }
+      .r49-signwrap { text-align: center; margin: 18px 0 0 0; }
+      .r49-sign-label { margin: 0 0 4px 0; font-size: 11px; letter-spacing: 3px; color: #b8952a; text-transform: uppercase; }
+      .r49-sign { display: inline-block; width: 120px !important; height: 48px !important; max-width: 120px !important; max-height: 48px !important; }
+   </style>
+</head>
+<body>
+   <table class="r49-page" cellpadding="0" cellspacing="0">
+      <tr>
+         <td class="r49-pad" valign="top" bgcolor="#faf6ef">
+            <div class="r49-center">
+               {{#if profilePhoto}}
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+                  <defs><clipPath id="r49clip"><circle cx="60" cy="60" r="54" /></clipPath></defs>
+                  <circle cx="60" cy="60" r="60" fill="#b8952a" />
+                  <image x="6" y="6" width="108" height="108" clip-path="url(#r49clip)" xlink:href="{{{profilePhoto}}}" preserveAspectRatio="xMidYMid slice" />
+               </svg>
+               {{/if}}
+            </div>
+            {{#if Name}}<p class="r49-name">{{Name}}</p>{{/if}}
+            {{#if jobTitle}}<p class="r49-job">{{jobTitle}}</p>{{/if}}
+            <div class="r49-gold">&nbsp;</div>
+            <table class="r49-ctab" cellpadding="0" cellspacing="0" align="center">
+               <col width="50%" /><col width="50%" />
+               <tr>
+                  <td class="r49-cval">{{Phone}}</td>
+                  <td class="r49-cval">{{Email}}</td>
+               </tr>
+               <tr>
+                  <td class="r49-cval">{{DOB}}</td>
+                  <td class="r49-cval">{{Address}}</td>
+               </tr>
+            </table>
+            {{#if Objective}}<p class="r49-h">Profile</p><p class="r49-obj">{{Objective}}</p>{{/if}}
+            {{#if Experience}}<p class="r49-h">Experience</p>{{#each Experience}}{{#if jobTitle}}<p class="r49-title">{{jobTitle}}</p>{{/if}}<table class="r49-list" cellpadding="0" cellspacing="0">{{#if organization}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{organization}}</td></tr>{{/if}}{{#if from}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{from}}{{#if to}} - {{to}}{{else}}{{#if present}} - Present{{else}}{{#if endDate}} - {{endDate}}{{/if}}{{/if}}{{/if}}</td></tr>{{/if}}{{#if role}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{role}}</td></tr>{{/if}}{{#if description}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{description}}</td></tr>{{/if}}</table>{{/each}}{{/if}}
+            {{#if Education}}<p class="r49-h">Education</p>{{#each Education}}{{#if course}}<p class="r49-title">{{course}}</p>{{/if}}<table class="r49-list" cellpadding="0" cellspacing="0">{{#if institute}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{institute}}</td></tr>{{/if}}{{#if yearOfPassing}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{yearOfPassing}}</td></tr>{{/if}}{{#if percentage}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{percentage}}%</td></tr>{{/if}}</table>{{/each}}{{/if}}
+            {{#if Skills}}<p class="r49-h">Skills</p>{{#each Skills}}{{#if skillName}}<div class="r49-sname">{{skillName}}</div><table class="r49-track" cellpadding="0" cellspacing="0"><tr><td class="r49-fill" height="5" style="width:{{expertiseLabel}}%;font-size:1px;">&#160;</td><td class="r49-rest" height="5" style="font-size:1px;">&#160;</td></tr></table><div class="r49-spct">{{expertiseLabel}}%</div>{{/if}}{{/each}}{{/if}}
+            {{#if Projects}}<p class="r49-h">Projects</p>{{#each Projects}}{{#if projectTitle}}<p class="r49-title">{{projectTitle}}</p>{{else}}{{#if title}}<p class="r49-title">{{title}}</p>{{/if}}{{/if}}<table class="r49-list" cellpadding="0" cellspacing="0">{{#if roles}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{roles}}</td></tr>{{/if}}{{#if duration}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{duration}}</td></tr>{{/if}}{{#if projectDescription}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{projectDescription}}</td></tr>{{/if}}</table>{{/each}}{{/if}}
+            {{#if Language}}<p class="r49-h">Language</p><table class="r49-list" cellpadding="0" cellspacing="0">{{#each Language}}{{#if name}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{name}}</td></tr>{{/if}}{{/each}}</table>{{/if}}
+            {{#if Interests}}<p class="r49-h">Interests</p><table class="r49-list" cellpadding="0" cellspacing="0">{{#each Interests}}{{#if hoby}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{hoby}}</td></tr>{{/if}}{{/each}}</table>{{/if}}
+            {{#if Achivement}}<p class="r49-h">Achievement</p>{{#each Achivement}}{{#if achivement}}<table class="r49-list" cellpadding="0" cellspacing="0"><tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{achivement}}</td></tr></table>{{/if}}{{/each}}{{/if}}
+            {{#if Reference}}<p class="r49-h">Reference</p>{{#each Reference}}{{#if name}}<p class="r49-title">{{name}}</p>{{/if}}<table class="r49-list" cellpadding="0" cellspacing="0">{{#if jobtitle}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{jobtitle}}</td></tr>{{/if}}{{#if companyname}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{companyname}}</td></tr>{{/if}}{{#if email}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{email}}</td></tr>{{/if}}{{#if phone}}<tr><td class="r49-line"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><rect width="6" height="6" fill="#b8952a"/></svg> {{phone}}</td></tr>{{/if}}</table>{{/each}}{{/if}}
+            <div class="r49-signwrap"><p class="r49-sign-label">Signature</p>{{#if sign}}<img class="r49-sign" width="120" height="48" src="{{{sign}}}" alt="Signature" />{{/if}}</div>
+         </td>
+      </tr>
+   </table>
+</body>
+</html>

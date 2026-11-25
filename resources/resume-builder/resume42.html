@@ -1,0 +1,459 @@
+<html data-postman-fallbacks="1">
+
+<head>
+   <title>Resume 42</title>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <style>
+      html, body {
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
+      }
+      body {
+         margin: 0;
+         padding: 0;
+         font-family: Georgia, "Times New Roman", serif;
+         font-size: 18px;
+         color: #222222;
+         background: #ffffff;
+      }
+      .r42-page {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+      }
+      .r42-headl {
+         width: 34%;
+         background-color: #1b2a4a;
+         vertical-align: middle;
+         padding: 18px 14px 16px 16px;
+         text-align: center;
+         -webkit-print-color-adjust: exact;
+      }
+      .r42-headr {
+         width: 66%;
+         background-color: #1b2a4a;
+         vertical-align: middle;
+         padding: 20px 22px 16px 10px;
+         -webkit-print-color-adjust: exact;
+      }
+      .r42-gold {
+         height: 6px;
+         background-color: #c4a35a;
+         font-size: 1px;
+         line-height: 6px;
+         -webkit-print-color-adjust: exact;
+      }
+      .r42-photo svg {
+         display: block;
+         width: 148px !important;
+         height: 148px !important;
+         margin: 0 auto;
+      }
+      .r42-name {
+         margin: 0 0 4px 0;
+         font-size: 32px;
+         font-weight: bold;
+         letter-spacing: 1px;
+         color: #ffffff;
+         line-height: 36px;
+      }
+      .r42-job {
+         margin: 0 0 12px 0;
+         font-size: 16px;
+         letter-spacing: 2px;
+         color: #c4a35a;
+         text-transform: uppercase;
+      }
+      .r42-crow {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: auto !important;
+         margin: 0 0 5px 0;
+      }
+      .r42-icon {
+         width: 22px;
+         vertical-align: top;
+         padding: 3px 8px 0 0;
+         font-size: 1px;
+      }
+      .r42-icon svg {
+         display: block;
+         width: 14px !important;
+         height: 14px !important;
+      }
+      .r42-cval {
+         font-size: 16px;
+         color: #ffffff;
+         vertical-align: top;
+         line-height: 20px;
+         word-wrap: break-word;
+      }
+      .r42-left {
+         width: 34%;
+         background-color: #f4f1ea;
+         vertical-align: top;
+         padding: 16px 14px 20px 16px;
+         -webkit-print-color-adjust: exact;
+      }
+      .r42-right {
+         width: 66%;
+         background-color: #ffffff;
+         vertical-align: top;
+         padding: 16px 20px 18px 18px;
+      }
+      .r42-h {
+         margin: 0 0 8px 0;
+         font-size: 15px;
+         font-weight: bold;
+         letter-spacing: 2px;
+         color: #1b2a4a;
+         border-bottom: 2px solid #c4a35a;
+         padding: 0 0 4px 0;
+         text-transform: uppercase;
+      }
+      .r42-sec {
+         margin: 0 0 16px 0;
+      }
+      .r42-obj {
+         margin: 0 0 0 12px;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 16px;
+         color: #333333;
+         line-height: 22px;
+         word-wrap: break-word;
+      }
+      .r42-title {
+         margin: 0 0 2px 12px;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 16px;
+         font-weight: bold;
+         color: #1b2a4a;
+         line-height: 20px;
+      }
+      .r42-list {
+         width: 96%;
+         border-collapse: collapse;
+         table-layout: auto !important;
+         margin: 0 0 8px 12px;
+         page-break-inside: avoid;
+      }
+      .r42-line {
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 16px;
+         color: #333333;
+         padding: 0 0 2px 14px;
+         text-indent: -14px;
+         line-height: 20px;
+         word-wrap: break-word;
+         vertical-align: top;
+      }
+      .r42-line svg {
+         display: inline;
+         width: 8px !important;
+         height: 8px !important;
+         vertical-align: 2px;
+         margin: 0 6px 0 0;
+      }
+      .r42-sname {
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 16px;
+         color: #1b2a4a;
+         padding: 0 0 3px 0;
+         margin: 0 0 0 12px;
+         line-height: 20px;
+      }
+      .r42-track {
+         width: 96%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         height: 8px;
+         margin: 0 0 10px 12px;
+         background-color: #ddd6c8;
+         -webkit-print-color-adjust: exact;
+      }
+      .r42-fill {
+         background-color: #1b2a4a;
+         height: 8px;
+         font-size: 1px;
+         line-height: 8px;
+         -webkit-print-color-adjust: exact;
+      }
+      .r42-rest {
+         background-color: #ddd6c8;
+         height: 8px;
+         font-size: 1px;
+         line-height: 8px;
+      }
+      .r42-spct {
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 13px;
+         color: #1b2a4a;
+         text-align: right;
+         padding: 0 0 8px 0;
+         margin: 0 12px 0 0;
+      }
+      .r42-signwrap {
+         text-align: right;
+         margin: 18px 0 0 0;
+      }
+      .r42-sign-label {
+         margin: 0 0 4px 0;
+         font-size: 14px;
+         font-weight: bold;
+         letter-spacing: 2px;
+         color: #1b2a4a;
+         text-transform: uppercase;
+      }
+      .r42-sign {
+         display: inline-block;
+         width: 120px !important;
+         height: 48px !important;
+         max-width: 120px !important;
+         max-height: 48px !important;
+      }
+   </style>
+</head>
+
+<body>
+   <table class="r42-page" cellpadding="0" cellspacing="0">
+      <tr>
+         <td class="r42-headl" width="34%" bgcolor="#1b2a4a">
+            {{#if profilePhoto}}
+            <div class="r42-photo">
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="148" height="148" viewBox="0 0 148 148">
+                  <defs>
+                     <clipPath id="r42clip"><circle cx="74" cy="74" r="66" /></clipPath>
+                  </defs>
+                  <circle cx="74" cy="74" r="74" fill="#c4a35a" />
+                  <image x="8" y="8" width="132" height="132" clip-path="url(#r42clip)" xlink:href="{{{profilePhoto}}}" preserveAspectRatio="xMidYMid slice" />
+               </svg>
+            </div>
+            {{/if}}
+         </td>
+         <td class="r42-headr" width="66%" bgcolor="#1b2a4a">
+            {{#if Name}}<p class="r42-name">{{Name}}</p>{{/if}}
+            {{#if jobTitle}}<p class="r42-job">{{jobTitle}}</p>{{/if}}
+            {{#if Phone}}
+            <table class="r42-crow" cellpadding="0" cellspacing="0"><tr>
+               <td class="r42-icon" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#c4a35a" d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/></svg></td>
+               <td class="r42-cval" valign="top">{{Phone}}</td>
+            </tr></table>
+            {{/if}}
+            {{#if Email}}
+            <table class="r42-crow" cellpadding="0" cellspacing="0"><tr>
+               <td class="r42-icon" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#c4a35a" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z"/></svg></td>
+               <td class="r42-cval" valign="top">{{Email}}</td>
+            </tr></table>
+            {{/if}}
+            {{#if DOB}}
+            <table class="r42-crow" cellpadding="0" cellspacing="0"><tr>
+               <td class="r42-icon" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#c4a35a" d="M3.5 0h1v1h7V0h1v1H14a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1.5V0zM1 4v10h14V4H1z"/></svg></td>
+               <td class="r42-cval" valign="top">{{DOB}}</td>
+            </tr></table>
+            {{/if}}
+            {{#if Address}}
+            <table class="r42-crow" cellpadding="0" cellspacing="0"><tr>
+               <td class="r42-icon" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#c4a35a" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/></svg></td>
+               <td class="r42-cval" valign="top">{{Address}}</td>
+            </tr></table>
+            {{/if}}
+         </td>
+      </tr>
+      <tr>
+         <td colspan="2" class="r42-gold" bgcolor="#c4a35a" height="6">&#160;</td>
+      </tr>
+      <tr>
+         <td class="r42-left" width="34%" valign="top" bgcolor="#f4f1ea">
+            {{#if Skills}}
+            <div class="r42-sec">
+               <p class="r42-h">Skills</p>
+               {{#each Skills}}
+               {{#if skillName}}
+               <div class="r42-sname">{{skillName}}</div>
+               <table class="r42-track" cellpadding="0" cellspacing="0" width="96%"><tr>
+                  <td class="r42-fill" height="8" style="width:{{expertiseLabel}}%;font-size:1px;line-height:8px;">&#160;</td>
+                  <td class="r42-rest" height="8" style="font-size:1px;line-height:8px;">&#160;</td>
+               </tr></table>
+               <div class="r42-spct">{{expertiseLabel}}%</div>
+               {{/if}}
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Language}}
+            <div class="r42-sec">
+               <p class="r42-h">Language</p>
+               <table class="r42-list" cellpadding="0" cellspacing="0">
+                  {{#each Language}}
+                  {{#if name}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{name}}</td>
+                  </tr>
+                  {{/if}}
+                  {{/each}}
+               </table>
+            </div>
+            {{/if}}
+
+            {{#if Interests}}
+            <div class="r42-sec">
+               <p class="r42-h">Interests</p>
+               <table class="r42-list" cellpadding="0" cellspacing="0">
+                  {{#each Interests}}
+                  {{#if hoby}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{hoby}}</td>
+                  </tr>
+                  {{/if}}
+                  {{/each}}
+               </table>
+            </div>
+            {{/if}}
+         </td>
+         <td class="r42-right" width="66%" valign="top">
+            {{#if Objective}}
+            <div class="r42-sec">
+               <p class="r42-h">Profile</p>
+               <p class="r42-obj">{{Objective}}</p>
+            </div>
+            {{/if}}
+
+            {{#if Education}}
+            <div class="r42-sec">
+               <p class="r42-h">Education</p>
+               {{#each Education}}
+               {{#if course}}<p class="r42-title">{{course}}</p>{{/if}}
+               <table class="r42-list" cellpadding="0" cellspacing="0">
+                  {{#if institute}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{institute}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if yearOfPassing}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{yearOfPassing}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if percentage}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{percentage}}%</td>
+                  </tr>
+                  {{/if}}
+               </table>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Experience}}
+            <div class="r42-sec">
+               <p class="r42-h">Experience</p>
+               {{#each Experience}}
+               {{#if jobTitle}}<p class="r42-title">{{jobTitle}}</p>{{/if}}
+               <table class="r42-list" cellpadding="0" cellspacing="0">
+                  {{#if organization}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{organization}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if from}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{from}}{{#if to}} - {{to}}{{else}}{{#if present}} - Present{{else}}{{#if endDate}} - {{endDate}}{{/if}}{{/if}}{{/if}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if role}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{role}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if description}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{description}}</td>
+                  </tr>
+                  {{/if}}
+               </table>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Projects}}
+            <div class="r42-sec">
+               <p class="r42-h">Projects</p>
+               {{#each Projects}}
+               {{#if projectTitle}}<p class="r42-title">{{projectTitle}}</p>{{else}}{{#if title}}<p class="r42-title">{{title}}</p>{{/if}}{{/if}}
+               <table class="r42-list" cellpadding="0" cellspacing="0">
+                  {{#if roles}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{roles}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if duration}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{duration}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if projectDescription}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{projectDescription}}</td>
+                  </tr>
+                  {{/if}}
+               </table>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Achivement}}
+            <div class="r42-sec">
+               <p class="r42-h">Achievement</p>
+               {{#each Achivement}}
+               {{#if achivement}}
+               <table class="r42-list" cellpadding="0" cellspacing="0">
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{achivement}}</td>
+                  </tr>
+               </table>
+               {{/if}}
+               {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if Reference}}
+            <div class="r42-sec">
+               <p class="r42-h">Reference</p>
+               {{#each Reference}}
+               {{#if name}}<p class="r42-title">{{name}}</p>{{/if}}
+               <table class="r42-list" cellpadding="0" cellspacing="0">
+                  {{#if jobtitle}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{jobtitle}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if companyname}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{companyname}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if email}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{email}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if phone}}
+                  <tr>
+                     <td class="r42-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#c4a35a"/></svg> {{phone}}</td>
+                  </tr>
+                  {{/if}}
+               </table>
+               {{/each}}
+            </div>
+            {{/if}}
+
+            <div class="r42-signwrap">
+               <p class="r42-sign-label">Signature</p>
+               {{#if sign}}<img class="r42-sign" width="120" height="48" src="{{{sign}}}" alt="Signature" />{{/if}}
+            </div>
+         </td>
+      </tr>
+   </table>
+</body>
+
+</html>

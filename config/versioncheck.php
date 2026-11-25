@@ -43,6 +43,15 @@ $cvBuilderAppData = [
     ['id' => '19', 'name' => 'Resume 40', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume39.jpg', 'route' => '/resume/resume39', 'fileName' => 'resume39.html', 'flag' => '0'],
     ['id' => '19', 'name' => 'Resume 41', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume40.jpg', 'route' => '/resume/resume40', 'fileName' => 'resume40.html', 'flag' => '0'],
     ['id' => '19', 'name' => 'Resume 42', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume41.jpg', 'route' => '/resume/resume41', 'fileName' => 'resume41.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 43', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume42.jpg', 'route' => '/resume/resume42', 'fileName' => 'resume42.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 44', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume43.jpg', 'route' => '/resume/resume43', 'fileName' => 'resume43.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 45', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume44.jpg', 'route' => '/resume/resume44', 'fileName' => 'resume44.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 46', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume45.jpg', 'route' => '/resume/resume45', 'fileName' => 'resume45.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 47', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume46.jpg', 'route' => '/resume/resume46', 'fileName' => 'resume46.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 48', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume47.jpg', 'route' => '/resume/resume47', 'fileName' => 'resume47.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 49', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume48.jpg', 'route' => '/resume/resume48', 'fileName' => 'resume48.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 50', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume49.jpg', 'route' => '/resume/resume49', 'fileName' => 'resume49.html', 'flag' => '0'],
+    ['id' => '19', 'name' => 'Resume 51', 'image' => 'https://nrninfotech.com/versioncheck/resume-maker/resume50.jpg', 'route' => '/resume/resume50', 'fileName' => 'resume50.html', 'flag' => '0'],
 ];
 
 return [
