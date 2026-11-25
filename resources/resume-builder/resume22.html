@@ -46,7 +46,7 @@
       }
       .r22-job {
          margin: 2px 0 0 0;
-         font-size: 16px;
+         font-size: 18px;
          color: #646363;
       }
       .r22-left {
@@ -81,19 +81,19 @@
       }
       .r22-lab {
          margin: 8px 0 0 0;
-         font-size: 16px;
+         font-size: 18px;
          font-weight: bold;
          color: #ffffff;
       }
       .r22-val {
          margin: 0 0 4px 0;
-         font-size: 15px;
+         font-size: 18px;
          color: #ffffff;
          word-wrap: break-word;
       }
       .r22-sname {
          margin: 8px 0 3px 0;
-         font-size: 15px;
+         font-size: 18px;
          color: #ffffff;
       }
       .r22-bar {
@@ -136,23 +136,25 @@
          -webkit-print-color-adjust: exact;
       }
       .r22-text {
-         margin: 0 0 8px 0;
-         font-size: 16px;
+         margin: 0 0 8px 20px;
+         font-size: 18px;
          color: #333333;
          word-wrap: break-word;
       }
       .r22-split {
-         width: 100%;
+         width: 96%;
          border-collapse: collapse;
          table-layout: fixed;
-         margin: 0 0 8px 0;
+         margin: 0 0 8px 20px;
+         page-break-inside: avoid;
       }
       .r22-year {
          width: 28%;
          vertical-align: top;
          padding: 4px 8px 0 8px;
-         font-size: 16px;
+         font-size: 18px;
          color: #646363;
+         line-height: 22px;
       }
       .r22-detail {
          width: 72%;
@@ -160,33 +162,40 @@
          padding: 0 0 0 6px;
       }
       .r22-title {
-         margin: 2px 0 4px 0;
-         font-size: 16px;
+         margin: 2px 0 4px 20px;
+         font-size: 18px;
          font-weight: bold;
          color: #333333;
       }
+      .r22-detail .r22-title {
+         margin-left: 0;
+      }
       .r22-row {
-         width: 100%;
+         width: 96%;
          border-collapse: collapse;
-         table-layout: fixed;
-         margin: 0 0 2px 0;
+         table-layout: auto !important;
+         margin: 0 0 2px 20px;
+         page-break-inside: avoid;
       }
-      .r22-bcell {
-         width: 14px;
-         vertical-align: top;
-         padding: 6px 6px 0 0;
+      .r22-detail .r22-row {
+         margin-left: 0;
+         width: 100%;
       }
-      .r22-dot {
-         width: 6px;
-         height: 6px;
-         background-color: #333333;
-         border-radius: 4px;
-      }
-      .r22-bval {
-         font-size: 16px;
+      .r22-line {
+         font-size: 18px;
          color: #333333;
          word-wrap: break-word;
          vertical-align: top;
+         padding: 0 0 2px 14px;
+         text-indent: -14px;
+         line-height: 22px;
+      }
+      .r22-line svg {
+         display: inline;
+         width: 6px !important;
+         height: 6px !important;
+         vertical-align: 2px;
+         margin: 0 8px 0 0;
       }
       .r22-foot {
          background-color: #339caa;
@@ -286,11 +295,11 @@
             {{#each Education}}
             <table class="r22-split" cellpadding="0" cellspacing="0">
                <tr>
-                  <td class="r22-year">{{yearOfPassing}}</td>
-                  <td class="r22-detail">
+                  <td class="r22-year" valign="top">{{yearOfPassing}}</td>
+                  <td class="r22-detail" valign="top">
                      {{#if course}}<p class="r22-title">{{course}}</p>{{/if}}
-                     {{#if institute}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{institute}}</td></tr></table>{{/if}}
-                     {{#if percentage}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{percentage}}</td></tr></table>{{/if}}
+                     {{#if institute}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{institute}}</td></tr></table>{{/if}}
+                     {{#if percentage}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{percentage}}%</td></tr></table>{{/if}}
                   </td>
                </tr>
             </table>
@@ -303,13 +312,13 @@
             {{#each Experience}}
             <table class="r22-split" cellpadding="0" cellspacing="0">
                <tr>
-                  <td class="r22-year">{{from}}</td>
-                  <td class="r22-detail">
+                  <td class="r22-year" valign="top">{{from}}</td>
+                  <td class="r22-detail" valign="top">
                      <p class="r22-title">{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}</p>
-                     {{#if organization}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{organization}}</td></tr></table>{{/if}}
-                     {{#if role}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{role}}</td></tr></table>{{/if}}
-                     {{#if description}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{description}}</td></tr></table>{{/if}}
-                     {{#if present}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">present</td></tr></table>{{/if}}
+                     {{#if organization}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{organization}}</td></tr></table>{{/if}}
+                     {{#if role}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{role}}</td></tr></table>{{/if}}
+                     {{#if description}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{description}}</td></tr></table>{{/if}}
+                     {{#if present}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> present</td></tr></table>{{/if}}
                   </td>
                </tr>
             </table>
@@ -321,9 +330,9 @@
             <div class="r22-tline"></div>
             {{#each Projects}}
             <p class="r22-title">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</p>
-            {{#if roles}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{roles}}</td></tr></table>{{/if}}
-            {{#if projectDescription}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{projectDescription}}</td></tr></table>{{/if}}
-            {{#if duration}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{duration}}</td></tr></table>{{/if}}
+            {{#if roles}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{roles}}</td></tr></table>{{/if}}
+            {{#if projectDescription}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{projectDescription}}</td></tr></table>{{/if}}
+            {{#if duration}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{duration}}</td></tr></table>{{/if}}
             {{/each}}
             {{/if}}
 
@@ -340,10 +349,10 @@
             <div class="r22-tline"></div>
             {{#each Reference}}
             {{#if name}}<p class="r22-title">{{name}}</p>{{/if}}
-            {{#if jobtitle}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{jobtitle}}</td></tr></table>{{/if}}
-            {{#if companyname}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{companyname}}</td></tr></table>{{/if}}
-            {{#if email}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{email}}</td></tr></table>{{/if}}
-            {{#if phone}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-bcell"><div class="r22-dot"></div></td><td class="r22-bval">{{phone}}</td></tr></table>{{/if}}
+            {{#if jobtitle}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{jobtitle}}</td></tr></table>{{/if}}
+            {{#if companyname}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{companyname}}</td></tr></table>{{/if}}
+            {{#if email}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{email}}</td></tr></table>{{/if}}
+            {{#if phone}}<table class="r22-row" cellpadding="0" cellspacing="0"><tr><td class="r22-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#333333"/></svg> {{phone}}</td></tr></table>{{/if}}
             {{/each}}
             {{/if}}
          </td>

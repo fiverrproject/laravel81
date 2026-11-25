@@ -233,20 +233,20 @@
                   <td class="r3-li" valign="top">{{institute}}</td>
                </tr>
                {{/if}}
-               {{#if percentage}}
-               <tr>
-                  <td class="r3-dot" valign="top" width="16">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="none" stroke="#555555" stroke-width="1.2"/></svg>
-                  </td>
-                  <td class="r3-li" valign="top">{{percentage}}</td>
-               </tr>
-               {{/if}}
                {{#if yearOfPassing}}
                <tr>
                   <td class="r3-dot" valign="top" width="16">
                      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="none" stroke="#555555" stroke-width="1.2"/></svg>
                   </td>
                   <td class="r3-li" valign="top">{{yearOfPassing}}</td>
+               </tr>
+               {{/if}}
+               {{#if percentage}}
+               <tr>
+                  <td class="r3-dot" valign="top" width="16">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="none" stroke="#555555" stroke-width="1.2"/></svg>
+                  </td>
+                  <td class="r3-li" valign="top">{{percentage}}%</td>
                </tr>
                {{/if}}
             </table>

@@ -24,28 +24,25 @@
          vertical-align: middle;
          padding: 16px 8px 16px 28px;
       }
-      .r18-photo {
+      .r18-picwrap svg {
          display: block;
-         width: 148px;
-         height: 148px;
-         border-radius: 74px;
-         background-color: #d9d9d9;
-         border: 4px solid #ffffff;
+         width: 148px !important;
+         height: 148px !important;
       }
-      .r18-name {
+      .r18-nm {
          margin: 0;
-         font-size: 40px;
+         font-size: 42px;
          font-weight: bold;
          color: #ffffff;
       }
-      .r18-job {
+      .r18-jb {
          margin: 6px 0 6px 0;
-         font-size: 22px;
+         font-size: 24px;
          color: #ffffff;
       }
-      .r18-obj {
+      .r18-ob {
          margin: 0;
-         font-size: 20px;
+         font-size: 22px;
          color: #ffffff;
          word-wrap: break-word;
       }
@@ -69,66 +66,83 @@
          border-collapse: collapse;
          margin: 14px 0 8px 0;
       }
-      .r18-tabc {
+      .r18-tabh {
          background-color: #111111;
          color: #ffffff;
-         font-size: 22px;
+         font-size: 24px;
          font-weight: bold;
-         padding: 5px 22px 5px 12px;
+         padding: 6px 22px 6px 12px;
       }
       .r18-crow {
          width: 100%;
          border-collapse: collapse;
+         table-layout: auto !important;
          margin: 0 0 6px 8px;
+         page-break-inside: avoid;
       }
       .r18-icon {
-         width: 22px;
+         width: 22px !important;
          vertical-align: top;
-         padding: 3px 6px 0 0;
+         padding: 4px 6px 0 0;
+         line-height: 14px;
       }
-      .r18-cval {
-         font-size: 20px;
+      .r18-icon svg {
+         display: block;
+         width: 14px !important;
+         height: 14px !important;
+      }
+      .r18-cv {
+         font-size: 22px;
          color: #222;
          word-wrap: break-word;
          vertical-align: top;
+         line-height: 26px;
+         padding: 0 0 2px 0;
       }
-      .r18-item {
+      .r18-it {
          margin: 0 0 3px 12px;
-         font-size: 20px;
+         font-size: 22px;
          color: #222;
          word-wrap: break-word;
       }
-      .r18-sname {
+      .r18-sn {
          margin: 4px 0 2px 12px;
-         font-size: 20px;
+         font-size: 22px;
          color: #222;
          word-wrap: break-word;
       }
       .r18-row {
          width: 100%;
          border-collapse: collapse;
+         table-layout: auto !important;
          margin: 0 0 2px 10px;
+         page-break-inside: avoid;
       }
-      .r18-arrcell {
-         width: 18px;
-         vertical-align: top;
-         padding: 4px 4px 0 0;
-      }
-      .r18-bval {
-         font-size: 20px;
+      .r18-line {
+         font-size: 22px;
          color: #222;
          word-wrap: break-word;
          vertical-align: top;
+         padding: 0 0 2px 18px;
+         text-indent: -18px;
+         line-height: 26px;
       }
-      .r18-title {
+      .r18-line svg {
+         display: inline;
+         width: 12px !important;
+         height: 12px !important;
+         vertical-align: 1px;
+         margin: 0 6px 0 0;
+      }
+      .r18-ttl {
          margin: 4px 0 4px 14px;
-         font-size: 22px;
+         font-size: 24px;
          font-weight: bold;
          color: #111;
       }
-      .r18-text {
+      .r18-txt {
          margin: 0 0 6px 14px;
-         font-size: 22px;
+         font-size: 24px;
          color: #333;
          word-wrap: break-word;
       }
@@ -145,9 +159,9 @@
          text-align: right;
          padding: 18px 4px 4px 4px;
       }
-      .r18-sign-label {
+      .r18-sl {
          margin: 0 0 4px 0;
-         font-size: 22px;
+         font-size: 24px;
          font-weight: bold;
          color: #111;
          text-align: right;
@@ -164,13 +178,28 @@
 <body>
    <table class="r18-head" cellpadding="0" cellspacing="0">
       <tr>
-         {{#if profilePhoto}}
-         <td class="r18-photo-td"><img class="r18-photo" src="{{{profilePhoto}}}" alt="profilePhoto" /></td>
-         {{/if}}
+         <td class="r18-photo-td">
+            <div class="r18-picwrap">
+            {{#if profilePhoto}}
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="148" height="148" viewBox="0 0 148 148">
+               <defs>
+                  <clipPath id="r18clip"><circle cx="74" cy="74" r="66" /></clipPath>
+               </defs>
+               <circle cx="74" cy="74" r="74" fill="#ffffff" />
+               <image x="8" y="8" width="132" height="132" clip-path="url(#r18clip)" xlink:href="{{{profilePhoto}}}" preserveAspectRatio="xMidYMid slice" />
+            </svg>
+            {{else}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="148" height="148" viewBox="0 0 148 148">
+               <circle cx="74" cy="74" r="74" fill="#ffffff" />
+               <circle cx="74" cy="74" r="66" fill="#d9d9d9" />
+            </svg>
+            {{/if}}
+            </div>
+         </td>
          <td style="vertical-align:middle; padding: 12px 22px 12px 8px;">
-            {{#if Name}}<p class="r18-name">{{Name}}</p>{{/if}}
-            {{#if jobTitle}}<p class="r18-job">{{jobTitle}}</p>{{/if}}
-            {{#if Objective}}<p class="r18-obj">{{Objective}}</p>{{/if}}
+            {{#if Name}}<p class="r18-nm">{{Name}}</p>{{/if}}
+            {{#if jobTitle}}<p class="r18-jb">{{jobTitle}}</p>{{/if}}
+            {{#if Objective}}<p class="r18-ob">{{Objective}}</p>{{/if}}
          </td>
       </tr>
    </table>
@@ -182,76 +211,76 @@
       </colgroup>
       <tr>
          <td class="r18-left">
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Profile</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Profile</td></tr></table>
             {{#if Phone}}
             <table class="r18-crow" cellpadding="0" cellspacing="0">
                <tr>
-                  <td class="r18-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#111111" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg></td>
-                  <td class="r18-cval">{{Phone}}</td>
+                  <td class="r18-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#111111" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg></td>
+                  <td class="r18-cv" valign="top">{{Phone}}</td>
                </tr>
             </table>
             {{/if}}
             {{#if DOB}}
             <table class="r18-crow" cellpadding="0" cellspacing="0">
                <tr>
-                  <td class="r18-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#111111" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg></td>
-                  <td class="r18-cval">{{DOB}}</td>
+                  <td class="r18-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#111111" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg></td>
+                  <td class="r18-cv" valign="top">{{DOB}}</td>
                </tr>
             </table>
             {{/if}}
             {{#if Email}}
             <table class="r18-crow" cellpadding="0" cellspacing="0">
                <tr>
-                  <td class="r18-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#111111" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg></td>
-                  <td class="r18-cval">{{Email}}</td>
+                  <td class="r18-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#111111" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg></td>
+                  <td class="r18-cv" valign="top">{{Email}}</td>
                </tr>
             </table>
             {{/if}}
             {{#if Address}}
             <table class="r18-crow" cellpadding="0" cellspacing="0">
                <tr>
-                  <td class="r18-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#111111" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg></td>
-                  <td class="r18-cval">{{Address}}</td>
+                  <td class="r18-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="#111111" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg></td>
+                  <td class="r18-cv" valign="top">{{Address}}</td>
                </tr>
             </table>
             {{/if}}
 
             {{#if Language}}
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Language</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Language</td></tr></table>
             {{#each Language}}
-            {{#if name}}<p class="r18-item">{{name}}</p>{{/if}}
+            {{#if name}}<p class="r18-it">{{name}}</p>{{/if}}
             {{/each}}
             {{/if}}
 
             {{#if Skills}}
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Skills</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Skills</td></tr></table>
             {{#each Skills}}
             {{#if skillName}}
-            <p class="r18-sname">{{skillName}}</p>
-            <table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{expertiseLabel}}%</td></tr></table>
+            <p class="r18-sn">{{skillName}}</p>
+            <table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{expertiseLabel}}%</td></tr></table>
             {{/if}}
             {{/each}}
             {{/if}}
 
             {{#if Interests}}
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Interests</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Interests</td></tr></table>
             {{#each Interests}}
-            {{#if hoby}}<p class="r18-item">{{hoby}}</p>{{/if}}
+            {{#if hoby}}<p class="r18-it">{{hoby}}</p>{{/if}}
             {{/each}}
             {{/if}}
          </td>
          <td class="r18-right">
             {{#if Education}}
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Education</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Education</td></tr></table>
             {{#each Education}}
             <table class="r18-sub" cellpadding="0" cellspacing="0">
                <tr>
                   <td class="r18-gutter">&nbsp;</td>
                   <td>
-                     {{#if course}}<p class="r18-title">{{course}}</p>{{/if}}
-                     {{#if institute}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{institute}}</td></tr></table>{{/if}}
-                     {{#if percentage}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{percentage}}%</td></tr></table>{{/if}}
-                     {{#if yearOfPassing}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{yearOfPassing}}</td></tr></table>{{/if}}
+                     {{#if course}}<p class="r18-ttl">{{course}}</p>{{/if}}
+                     {{#if institute}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{institute}}</td></tr></table>{{/if}}
+                     {{#if percentage}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{percentage}}%</td></tr></table>{{/if}}
+                     {{#if yearOfPassing}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{yearOfPassing}}</td></tr></table>{{/if}}
                   </td>
                </tr>
             </table>
@@ -259,18 +288,18 @@
             {{/if}}
 
             {{#if Experience}}
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Experience</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Experience</td></tr></table>
             {{#each Experience}}
             <table class="r18-sub" cellpadding="0" cellspacing="0">
                <tr>
                   <td class="r18-gutter">&nbsp;</td>
                   <td>
-                     <p class="r18-title">{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}</p>
-                     {{#if organization}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{organization}}</td></tr></table>{{/if}}
-                     {{#if from}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{from}}{{#if to}} - {{to}}{{/if}}</td></tr></table>{{/if}}
-                     {{#if role}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{role}}</td></tr></table>{{/if}}
-                     {{#if description}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{description}}</td></tr></table>{{/if}}
-                     {{#if present}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">Present</td></tr></table>{{/if}}
+                     <p class="r18-ttl">{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}</p>
+                     {{#if organization}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{organization}}</td></tr></table>{{/if}}
+                     {{#if from}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{from}}{{#if to}} - {{to}}{{/if}}</td></tr></table>{{/if}}
+                     {{#if role}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{role}}</td></tr></table>{{/if}}
+                     {{#if description}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{description}}</td></tr></table>{{/if}}
+                     {{#if present}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> Present</td></tr></table>{{/if}}
                   </td>
                </tr>
             </table>
@@ -278,16 +307,16 @@
             {{/if}}
 
             {{#if Projects}}
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Projects</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Projects</td></tr></table>
             {{#each Projects}}
             <table class="r18-sub" cellpadding="0" cellspacing="0">
                <tr>
                   <td class="r18-gutter">&nbsp;</td>
                   <td>
-                     <p class="r18-title">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</p>
-                     {{#if roles}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{roles}}</td></tr></table>{{/if}}
-                     {{#if duration}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{duration}}</td></tr></table>{{/if}}
-                     {{#if projectDescription}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{projectDescription}}</td></tr></table>{{/if}}
+                     <p class="r18-ttl">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</p>
+                     {{#if roles}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{roles}}</td></tr></table>{{/if}}
+                     {{#if duration}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{duration}}</td></tr></table>{{/if}}
+                     {{#if projectDescription}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{projectDescription}}</td></tr></table>{{/if}}
                   </td>
                </tr>
             </table>
@@ -295,17 +324,17 @@
             {{/if}}
 
             {{#if Reference}}
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Reference</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Reference</td></tr></table>
             {{#each Reference}}
             <table class="r18-sub" cellpadding="0" cellspacing="0">
                <tr>
                   <td class="r18-gutter">&nbsp;</td>
                   <td>
-                     {{#if name}}<p class="r18-title">{{name}}</p>{{/if}}
-                     {{#if jobtitle}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{jobtitle}}</td></tr></table>{{/if}}
-                     {{#if companyname}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{companyname}}</td></tr></table>{{/if}}
-                     {{#if email}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{email}}</td></tr></table>{{/if}}
-                     {{#if phone}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-arrcell"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg></td><td class="r18-bval">{{phone}}</td></tr></table>{{/if}}
+                     {{#if name}}<p class="r18-ttl">{{name}}</p>{{/if}}
+                     {{#if jobtitle}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{jobtitle}}</td></tr></table>{{/if}}
+                     {{#if companyname}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{companyname}}</td></tr></table>{{/if}}
+                     {{#if email}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{email}}</td></tr></table>{{/if}}
+                     {{#if phone}}<table class="r18-row" cellpadding="0" cellspacing="0"><tr><td class="r18-line" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19" fill="#111111"/></svg> {{phone}}</td></tr></table>{{/if}}
                   </td>
                </tr>
             </table>
@@ -313,15 +342,15 @@
             {{/if}}
 
             {{#if Achivement}}
-            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabc">Achievement</td></tr></table>
+            <table class="r18-tab" cellpadding="0" cellspacing="0"><tr><td class="r18-tabh">Achievement</td></tr></table>
             {{#each Achivement}}
-            {{#if achivement}}<p class="r18-text">{{achivement}}</p>{{/if}}
+            {{#if achivement}}<p class="r18-txt">{{achivement}}</p>{{/if}}
             {{/each}}
             {{/if}}
 
             {{#if sign}}
             <div class="r18-sign-wrap">
-               <p class="r18-sign-label">Signature</p>
+               <p class="r18-sl">Signature</p>
                <img class="r18-sign" src="{{{sign}}}" alt="Signature" />
             </div>
             {{/if}}

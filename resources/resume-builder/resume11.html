@@ -30,18 +30,19 @@
          background-color: #fff;
          vertical-align: top;
       }
-      .r11-photo {
-         display: block;
-         width: 150px;
-         height: 150px;
+      .r11-picwrap {
+         text-align: center;
          margin: 8px auto 16px auto;
-         border-radius: 50%;
-         background: #d9d9d9;
-         border: 4px solid #fff;
+      }
+      .r11-picwrap svg {
+         display: block;
+         width: 156px !important;
+         height: 156px !important;
+         margin: 0 auto;
       }
       .r11-lh {
          margin: 14px 0 6px 0;
-         font-size: 20px;
+         font-size: 22px;
          font-weight: bold;
          color: #fff;
       }
@@ -61,7 +62,7 @@
          height: 13px;
       }
       .r11-lval {
-         font-size: 15px;
+         font-size: 18px;
          color: #fff;
          word-wrap: break-word;
          vertical-align: top;
@@ -69,7 +70,7 @@
       }
       .r11-litem {
          margin: 0 0 2px 2px;
-         font-size: 15px;
+         font-size: 18px;
          color: #fff;
          word-wrap: break-word;
       }
@@ -78,15 +79,15 @@
          padding: 28px 28px 22px 22px;
          vertical-align: middle;
       }
-      .r11-name {
+      .r11-nm {
          margin: 0;
-         font-size: 32px;
+         font-size: 36px;
          font-weight: bold;
          color: #111;
       }
       .r11-job {
          margin: 4px 0 0 0;
-         font-size: 18px;
+         font-size: 20px;
          font-weight: normal;
          color: #222;
       }
@@ -110,21 +111,21 @@
          border-bottom: 6px solid transparent;
          border-left: 10px solid #699897;
       }
-      .r11-h {
+      .r11-head {
          margin: 0;
-         font-size: 20px;
+         font-size: 24px;
          font-weight: bold;
          color: #111;
       }
       .r11-title {
          margin: 2px 0 1px 22px;
-         font-size: 18px;
+         font-size: 20px;
          font-weight: bold;
          color: #111;
       }
       .r11-text {
          margin: 0 0 2px 22px;
-         font-size: 18px;
+         font-size: 20px;
          color: #333;
          word-wrap: break-word;
       }
@@ -149,11 +150,22 @@
       </colgroup>
       <tr>
          <td class="r11-left">
+            <div class="r11-picwrap">
             {{#if profilePhoto}}
-            <img class="r11-photo" src="{{{profilePhoto}}}" alt="profilePhoto" />
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="156" height="156" viewBox="0 0 156 156">
+               <defs>
+                  <clipPath id="r11clip"><circle cx="78" cy="78" r="70" /></clipPath>
+               </defs>
+               <circle cx="78" cy="78" r="78" fill="#ffffff" />
+               <image x="8" y="8" width="140" height="140" clip-path="url(#r11clip)" xlink:href="{{{profilePhoto}}}" preserveAspectRatio="xMidYMid slice" />
+            </svg>
             {{else}}
-            <div class="r11-photo"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="156" height="156" viewBox="0 0 156 156">
+               <circle cx="78" cy="78" r="78" fill="#ffffff" />
+               <circle cx="78" cy="78" r="70" fill="#d9d9d9" />
+            </svg>
             {{/if}}
+            </div>
 
             <p class="r11-lh">Profile</p>
             {{#if Phone}}
@@ -217,7 +229,7 @@
             <table cellpadding="0" cellspacing="0" width="100%">
                <tr>
                   <td class="r11-peach">
-                     {{#if Name}}<p class="r11-name">{{Name}}</p>{{/if}}
+                     {{#if Name}}<p class="r11-nm">{{Name}}</p>{{/if}}
                      {{#if jobTitle}}<p class="r11-job">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>{{/if}}
                   </td>
                </tr>
@@ -225,12 +237,12 @@
                   <td>
                      <div class="r11-rpad">
                         {{#if Objective}}
-                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-h">Objective</p></td></tr></table>
+                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-head">Objective</p></td></tr></table>
                         <p class="r11-text">{{Objective}}</p>
                         {{/if}}
 
                         {{#if Education}}
-                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-h">Education</p></td></tr></table>
+                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-head">Education</p></td></tr></table>
                         {{#each Education}}
                         {{#if course}}<p class="r11-title">{{course}}</p>{{/if}}
                         {{#if institute}}<p class="r11-text">{{#if institute}}{{#if institute}}{{institute}}{{else}}{{institution}}{{/if}}{{else}}{{institution}}{{/if}}</p>{{/if}}
@@ -240,7 +252,7 @@
                         {{/if}}
 
                         {{#if Experience}}
-                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-h">Experience</p></td></tr></table>
+                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-head">Experience</p></td></tr></table>
                         {{#each Experience}}
                         <p class="r11-title">{{#if jobTitle}}{{#if jobTitle}}{{jobTitle}}{{else}}{{designation}}{{/if}}{{else}}{{designation}}{{/if}}</p>
                         {{#if organization}}<p class="r11-text">{{#if organization}}{{#if organization}}{{organization}}{{else}}{{company}}{{/if}}{{else}}{{company}}{{/if}}</p>{{/if}}
@@ -252,7 +264,7 @@
                         {{/if}}
 
                         {{#if Projects}}
-                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-h">Projects</p></td></tr></table>
+                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-head">Projects</p></td></tr></table>
                         {{#each Projects}}
                         <p class="r11-title">{{#if projectTitle}}{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}{{else}}{{title}}{{/if}}</p>
                         {{#if roles}}<p class="r11-text">{{#if roles}}{{#if roles}}{{roles}}{{else}}{{role}}{{/if}}{{else}}{{role}}{{/if}}</p>{{/if}}
@@ -262,7 +274,7 @@
                         {{/if}}
 
                         {{#if Reference}}
-                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-h">Reference</p></td></tr></table>
+                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-head">Reference</p></td></tr></table>
                         {{#each Reference}}
                         {{#if name}}<p class="r11-title">{{name}}</p>{{/if}}
                         {{#if jobtitle}}<p class="r11-text">{{jobtitle}}</p>{{/if}}
@@ -273,7 +285,7 @@
                         {{/if}}
 
                         {{#if Achivement}}
-                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-h">Achievement</p></td></tr></table>
+                        <table class="r11-ht" cellpadding="0" cellspacing="0"><tr><td class="r11-arr"><div class="r11-tri"></div></td><td><p class="r11-head">Achievement</p></td></tr></table>
                         {{#each Achivement}}
                         {{#if achivement}}<p class="r11-text">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>{{/if}}
                         {{/each}}
@@ -281,7 +293,7 @@
 
                         {{#if sign}}
                         <div class="r11-sign-wrap">
-                           <p class="r11-h">Signature</p>
+                           <p class="r11-head">Signature</p>
                            <img class="r11-sign" src="{{{sign}}}" alt="Signature" />
                         </div>
                         {{/if}}

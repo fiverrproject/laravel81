@@ -74,47 +74,63 @@
       .r27-crow {
          width: 100%;
          border-collapse: collapse;
+         table-layout: auto !important;
          margin: 0 0 8px 0;
+         page-break-inside: avoid;
       }
       .r27-icon {
-         width: 22px;
+         width: 22px !important;
          vertical-align: top;
-         padding: 3px 6px 0 0;
+         padding: 4px 6px 0 0;
+         line-height: 14px;
+      }
+      .r27-icon svg {
+         display: block;
+         width: 14px !important;
+         height: 14px !important;
       }
       .r27-cval {
-         font-size: 15px;
+         font-size: 18px;
          color: #dddce1;
          word-wrap: break-word;
          vertical-align: top;
+         line-height: 22px;
+         padding: 0 0 2px 0;
       }
       .r27-arow,
       .r27-item,
       .r27-sub {
          width: 100%;
          border-collapse: collapse;
-         table-layout: fixed;
+         table-layout: auto !important;
          margin: 0 0 2px 0;
+         page-break-inside: avoid;
       }
-      .r27-acell {
-         width: 18px;
-         vertical-align: top;
-         padding: 3px 0 0 0;
-      }
-      .r27-aval {
-         font-size: 15px;
+      .r27-aline {
+         font-size: 18px;
          color: #dddce1;
          word-wrap: break-word;
          vertical-align: top;
-         padding: 0 0 3px 4px;
-         line-height: 18px;
+         padding: 0 0 3px 16px;
+         text-indent: -16px;
+         line-height: 22px;
       }
-      .r27-aval2 {
-         font-size: 15px;
+      .r27-aline2 {
+         font-size: 18px;
          color: #464546;
          word-wrap: break-word;
          vertical-align: top;
-         padding: 0 0 2px 4px;
-         line-height: 18px;
+         padding: 0 0 2px 16px;
+         text-indent: -16px;
+         line-height: 22px;
+      }
+      .r27-aline svg,
+      .r27-aline2 svg {
+         display: inline;
+         width: 10px !important;
+         height: 10px !important;
+         vertical-align: 2px;
+         margin: 0 6px 0 0;
       }
       .r27-name {
          display: block;
@@ -152,29 +168,28 @@
          display: block;
          width: 100%;
          margin: 8px 0 8px 0;
-         font-size: 15px;
+         font-size: 18px;
          color: #464546;
          word-wrap: break-word;
       }
       .r27-circell {
-         width: 16px;
+         width: 16px !important;
          vertical-align: top;
-         padding: 3px 0 0 0;
+         padding: 5px 0 0 0;
       }
-      .r27-circ {
-         width: 10px;
-         height: 10px;
-         border: 2px solid #111111;
-         border-radius: 7px;
-         background-color: #eae8eb;
+      .r27-circell svg,
+      .r27-rail svg {
+         display: block;
+         width: 10px !important;
+         height: 10px !important;
       }
       .r27-ititle {
-         font-size: 16px;
+         font-size: 18px;
          font-weight: bold;
          color: #464546;
          vertical-align: top;
          padding: 0;
-         line-height: 18px;
+         line-height: 22px;
       }
       .r27-item {
          margin: 0 0 6px 0;
@@ -187,14 +202,14 @@
       .r27-dates {
          width: 24%;
          vertical-align: top;
-         font-size: 14px;
+         font-size: 18px;
          color: #464546;
          padding: 2px 8px 0 0;
       }
       .r27-rail {
-         width: 16px;
+         width: 16px !important;
          vertical-align: top;
-         padding: 4px 0 0 0;
+         padding: 5px 0 0 0;
       }
       .r27-expb {
          vertical-align: top;
@@ -203,13 +218,13 @@
       }
       .r27-org {
          margin: 0 0 2px 0;
-         font-size: 16px;
+         font-size: 18px;
          font-weight: bold;
          color: #464546;
       }
       .r27-role {
          margin: 0 0 4px 0;
-         font-size: 15px;
+         font-size: 18px;
          color: #464546;
       }
       .r27-sign-wrap {
@@ -245,40 +260,40 @@
                {{#if Email}}
                <table class="r27-crow" cellpadding="0" cellspacing="0">
                   <tr>
-                     <td class="r27-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z"/></svg></td>
-                     <td class="r27-cval">{{Email}}</td>
+                     <td class="r27-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z"/></svg></td>
+                     <td class="r27-cval" valign="top">{{Email}}</td>
                   </tr>
                </table>
                {{/if}}
                {{#if DOB}}
                <table class="r27-crow" cellpadding="0" cellspacing="0">
                   <tr>
-                     <td class="r27-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg></td>
-                     <td class="r27-cval">{{DOB}}</td>
+                     <td class="r27-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg></td>
+                     <td class="r27-cval" valign="top">{{DOB}}</td>
                   </tr>
                </table>
                {{/if}}
                {{#if Phone}}
                <table class="r27-crow" cellpadding="0" cellspacing="0">
                   <tr>
-                     <td class="r27-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/></svg></td>
-                     <td class="r27-cval">{{Phone}}</td>
+                     <td class="r27-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/></svg></td>
+                     <td class="r27-cval" valign="top">{{Phone}}</td>
                   </tr>
                </table>
                {{/if}}
                {{#if Address}}
                <table class="r27-crow" cellpadding="0" cellspacing="0">
                   <tr>
-                     <td class="r27-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/></svg></td>
-                     <td class="r27-cval">{{Address}}</td>
+                     <td class="r27-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/></svg></td>
+                     <td class="r27-cval" valign="top">{{Address}}</td>
                   </tr>
                </table>
                {{/if}}
                {{#if Website}}
                <table class="r27-crow" cellpadding="0" cellspacing="0">
                   <tr>
-                     <td class="r27-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/></svg></td>
-                     <td class="r27-cval">{{Website}}</td>
+                     <td class="r27-icon" valign="top" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#b6b0b0" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/></svg></td>
+                     <td class="r27-cval" valign="top">{{Website}}</td>
                   </tr>
                </table>
                {{/if}}
@@ -292,8 +307,7 @@
                   {{#each Skills}}
                   {{#if skillName}}
                   <tr>
-                     <td class="r27-acell" width="18" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#ffffff" points="0,1 10,6 0,11"/></svg></td>
-                     <td class="r27-aval" valign="top">{{skillName}}</td>
+                     <td class="r27-aline" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#ffffff" points="0,1 10,6 0,11"/></svg> {{skillName}}</td>
                   </tr>
                   {{/if}}
                   {{/each}}
@@ -309,8 +323,7 @@
                   {{#each Language}}
                   {{#if name}}
                   <tr>
-                     <td class="r27-acell" width="18" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#ffffff" points="0,1 10,6 0,11"/></svg></td>
-                     <td class="r27-aval" valign="top">{{name}}</td>
+                     <td class="r27-aline" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#ffffff" points="0,1 10,6 0,11"/></svg> {{name}}</td>
                   </tr>
                   {{/if}}
                   {{/each}}
@@ -326,8 +339,7 @@
                   {{#each Interests}}
                   {{#if hoby}}
                   <tr>
-                     <td class="r27-acell" width="18" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#ffffff" points="0,1 10,6 0,11"/></svg></td>
-                     <td class="r27-aval" valign="top">{{hoby}}</td>
+                     <td class="r27-aline" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#ffffff" points="0,1 10,6 0,11"/></svg> {{hoby}}</td>
                   </tr>
                   {{/if}}
                   {{/each}}
@@ -350,29 +362,23 @@
             <table class="r27-item" cellpadding="0" cellspacing="0">
                <colgroup><col style="width:16px;" /><col style="width:16px;" /><col /></colgroup>
                <tr>
-                  <td class="r27-circell" width="16" valign="top"><div class="r27-circ"></div></td>
+                  <td class="r27-circell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.5" fill="#eae8eb" stroke="#111111" stroke-width="2"/></svg></td>
                   <td width="16"></td>
                   <td class="r27-ititle" valign="top">{{#if course}}{{course}}{{/if}}</td>
                </tr>
                {{#if institute}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{institute}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{institute}}</td>
                </tr>
                {{/if}}
                {{#if percentage}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{percentage}}%</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{percentage}}%</td>
                </tr>
                {{/if}}
                {{#if yearOfPassing}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{yearOfPassing}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{yearOfPassing}}</td>
                </tr>
                {{/if}}
             </table>
@@ -387,7 +393,7 @@
                   <td class="r27-dates">
                      {{#if from}}{{from}}{{/if}}{{#if to}}<br />{{to}} -{{else}}{{#if endDate}}<br />{{endDate}} -{{/if}}{{/if}}
                   </td>
-                  <td class="r27-rail"><div class="r27-circ"></div></td>
+                  <td class="r27-rail" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.5" fill="#eae8eb" stroke="#111111" stroke-width="2"/></svg></td>
                   <td class="r27-expb">
                      {{#if organization}}<p class="r27-org">{{organization}}</p>{{/if}}
                      {{#if jobTitle}}<p class="r27-role">{{jobTitle}}</p>{{/if}}
@@ -395,8 +401,7 @@
                      <table class="r27-sub" cellpadding="0" cellspacing="0">
                         <colgroup><col style="width:16px;" /><col /></colgroup>
                         <tr>
-                           <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                           <td class="r27-aval2" valign="top">{{role}}</td>
+                           <td class="r27-aline2" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{role}}</td>
                         </tr>
                      </table>
                      {{/if}}
@@ -404,8 +409,7 @@
                      <table class="r27-sub" cellpadding="0" cellspacing="0">
                         <colgroup><col style="width:16px;" /><col /></colgroup>
                         <tr>
-                           <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                           <td class="r27-aval2" valign="top">{{description}}</td>
+                           <td class="r27-aline2" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{description}}</td>
                         </tr>
                      </table>
                      {{/if}}
@@ -413,8 +417,7 @@
                      <table class="r27-sub" cellpadding="0" cellspacing="0">
                         <colgroup><col style="width:16px;" /><col /></colgroup>
                         <tr>
-                           <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                           <td class="r27-aval2" valign="top">Present</td>
+                           <td class="r27-aline2" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> Present</td>
                         </tr>
                      </table>
                      {{/if}}
@@ -430,29 +433,23 @@
             <table class="r27-item" cellpadding="0" cellspacing="0">
                <colgroup><col style="width:16px;" /><col style="width:16px;" /><col /></colgroup>
                <tr>
-                  <td class="r27-circell" width="16" valign="top"><div class="r27-circ"></div></td>
+                  <td class="r27-circell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.5" fill="#eae8eb" stroke="#111111" stroke-width="2"/></svg></td>
                   <td width="16"></td>
                   <td class="r27-ititle" valign="top">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</td>
                </tr>
                {{#if projectDescription}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{projectDescription}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{projectDescription}}</td>
                </tr>
                {{/if}}
                {{#if roles}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{roles}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{roles}}</td>
                </tr>
                {{/if}}
                {{#if duration}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{duration}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{duration}}</td>
                </tr>
                {{/if}}
             </table>
@@ -466,8 +463,7 @@
             <table class="r27-sub" cellpadding="0" cellspacing="0">
                <colgroup><col style="width:16px;" /><col /></colgroup>
                <tr>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{achivement}}</td>
+                  <td class="r27-aline2" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{achivement}}</td>
                </tr>
             </table>
             {{/if}}
@@ -480,36 +476,28 @@
             <table class="r27-item" cellpadding="0" cellspacing="0">
                <colgroup><col style="width:16px;" /><col style="width:16px;" /><col /></colgroup>
                <tr>
-                  <td class="r27-circell" width="16" valign="top"><div class="r27-circ"></div></td>
+                  <td class="r27-circell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.5" fill="#eae8eb" stroke="#111111" stroke-width="2"/></svg></td>
                   <td width="16"></td>
                   <td class="r27-ititle" valign="top">{{#if name}}{{name}}{{/if}}</td>
                </tr>
                {{#if companyname}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{companyname}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{companyname}}</td>
                </tr>
                {{/if}}
                {{#if jobtitle}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">{{jobtitle}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> {{jobtitle}}</td>
                </tr>
                {{/if}}
                {{#if email}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">Email : {{email}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> Email : {{email}}</td>
                </tr>
                {{/if}}
                {{#if phone}}
                <tr>
-                  <td width="16"></td>
-                  <td class="r27-acell" width="16" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg></td>
-                  <td class="r27-aval2" valign="top">Phone : {{phone}}</td>
+                  <td width="16"></td><td class="r27-aline2" valign="top" colspan="2"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 12"><polygon fill="#464546" points="0,1 10,6 0,11"/></svg> Phone : {{phone}}</td>
                </tr>
                {{/if}}
             </table>

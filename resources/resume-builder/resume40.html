@@ -54,35 +54,34 @@
       }
       .r40-obj {
          margin: 0;
-         font-size: 15px;
+         font-size: 18px;
          color: #ffffff;
-         line-height: 20px;
+         line-height: 22px;
       }
       .r40-crow {
          width: 100%;
          border-collapse: collapse;
-         table-layout: fixed;
+         table-layout: auto !important;
          margin: 0 0 8px 0;
       }
       .r40-icon {
          width: 22px;
-         max-width: 22px;
-         font-size: 1px;
          vertical-align: top;
-         padding: 2px 0 0 0;
+         padding: 3px 8px 0 0;
+         font-size: 1px;
       }
       .r40-icon svg {
          display: block;
-         width: 15px;
-         height: 15px;
+         width: 15px !important;
+         height: 15px !important;
       }
       .r40-cval {
-         font-size: 15px;
+         font-size: 18px;
          color: #222222;
-         padding: 0 0 0 6px;
+         padding: 0;
          vertical-align: top;
          word-wrap: break-word;
-         line-height: 19px;
+         line-height: 22px;
       }
       .r40-h {
          margin: 10px 0 6px 0;
@@ -103,42 +102,40 @@
          padding: 0 0 4px 0;
       }
       .r40-title {
-         font-size: 17px;
+         font-size: 18px;
          color: #111111;
          padding: 2px 0 4px 0;
+         line-height: 22px;
       }
       .r40-list {
          width: 100%;
          border-collapse: collapse;
-         table-layout: fixed;
+         table-layout: auto !important;
          margin: 0 0 4px 0;
+         page-break-inside: avoid;
       }
       .r40-sub {
          width: 96%;
          margin: 0 0 10px 16px;
          border-collapse: collapse;
-         table-layout: fixed;
-      }
-      .r40-mark {
-         width: 14px;
-         max-width: 14px;
-         font-size: 1px;
-         line-height: 7px;
-         vertical-align: top;
-         padding: 6px 0 0 0;
-      }
-      .r40-mark svg {
-         display: block;
-         width: 7px;
-         height: 7px;
+         table-layout: auto !important;
+         page-break-inside: avoid;
       }
       .r40-txt {
-         font-size: 15px;
+         font-size: 18px;
          color: #555555;
-         padding: 0 0 2px 6px;
-         line-height: 19px;
+         padding: 0 0 2px 14px;
+         text-indent: -14px;
+         line-height: 22px;
          word-wrap: break-word;
          vertical-align: top;
+      }
+      .r40-txt svg {
+         display: inline;
+         width: 7px !important;
+         height: 7px !important;
+         vertical-align: 2px;
+         margin: 0 6px 0 0;
       }
       .r40-sign {
          display: block;
@@ -207,12 +204,10 @@
             {{#if Skills}}
             <p class="r40-h">SKILLS</p>
             <table class="r40-list" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#each Skills}}
                {{#if skillName}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{skillName}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{skillName}}</td>
                </tr>
                {{/if}}
                {{/each}}
@@ -222,12 +217,10 @@
             {{#if Language}}
             <p class="r40-h">LANGUAGE</p>
             <table class="r40-list" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#each Language}}
                {{#if name}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{name}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{name}}</td>
                </tr>
                {{/if}}
                {{/each}}
@@ -237,12 +230,10 @@
             {{#if Interests}}
             <p class="r40-h">INTERESTS</p>
             <table class="r40-list" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#each Interests}}
                {{#if hoby}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{hoby}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{hoby}}</td>
                </tr>
                {{/if}}
                {{/each}}
@@ -256,29 +247,24 @@
             {{#each Experience}}
             {{#if jobTitle}}<div class="r40-title">{{jobTitle}}</div>{{/if}}
             <table class="r40-sub" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#if organization}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{organization}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{organization}}</td>
                </tr>
                {{/if}}
                {{#if role}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{role}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{role}}</td>
                </tr>
                {{/if}}
                {{#if description}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{description}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{description}}</td>
                </tr>
                {{/if}}
                {{#if from}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{from}}- {{#if to}}{{to}}{{else}}Present{{/if}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{from}}- {{#if to}}{{to}}{{else}}Present{{/if}}</td>
                </tr>
                {{/if}}
             </table>
@@ -290,23 +276,19 @@
             {{#each Education}}
             {{#if course}}<div class="r40-title">{{course}}</div>{{/if}}
             <table class="r40-sub" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#if institute}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{institute}}</td>
-               </tr>
-               {{/if}}
-               {{#if percentage}}
-               <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{percentage}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{institute}}</td>
                </tr>
                {{/if}}
                {{#if yearOfPassing}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{yearOfPassing}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{yearOfPassing}}</td>
+               </tr>
+               {{/if}}
+               {{#if percentage}}
+               <tr>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{percentage}}%</td>
                </tr>
                {{/if}}
             </table>
@@ -318,23 +300,19 @@
             {{#each Projects}}
             {{#if projectTitle}}<div class="r40-title">{{projectTitle}}</div>{{else}}{{#if title}}<div class="r40-title">{{title}}</div>{{/if}}{{/if}}
             <table class="r40-sub" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#if roles}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{roles}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{roles}}</td>
                </tr>
                {{/if}}
                {{#if duration}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{duration}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{duration}}</td>
                </tr>
                {{/if}}
                {{#if projectDescription}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{projectDescription}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{projectDescription}}</td>
                </tr>
                {{/if}}
             </table>
@@ -344,12 +322,10 @@
             {{#if Achivement}}
             <p class="r40-rh">ACHIVEMENT</p>
             <table class="r40-sub" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#each Achivement}}
                {{#if achivement}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{achivement}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{achivement}}</td>
                </tr>
                {{/if}}
                {{/each}}
@@ -361,29 +337,24 @@
             {{#each Reference}}
             {{#if name}}<div class="r40-title">{{name}}</div>{{/if}}
             <table class="r40-sub" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#if jobtitle}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{jobtitle}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{jobtitle}}</td>
                </tr>
                {{/if}}
                {{#if companyname}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{companyname}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{companyname}}</td>
                </tr>
                {{/if}}
                {{#if email}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{email}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{email}}</td>
                </tr>
                {{/if}}
                {{#if phone}}
                <tr>
-                  <td class="r40-mark" width="14" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg></td>
-                  <td class="r40-txt" valign="top">{{phone}}</td>
+                  <td class="r40-txt" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7"><rect width="7" height="7" fill="#555555"/></svg> {{phone}}</td>
                </tr>
                {{/if}}
             </table>

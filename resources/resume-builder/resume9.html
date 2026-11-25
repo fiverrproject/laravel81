@@ -117,7 +117,7 @@
          margin: 0 0 4px 0;
          font-size: 22px;
          font-style: italic;
-         font-weight: 500;
+         font-weight: bold !important;
          color: #1e3e5c;
       }
       .r9-hline {
@@ -147,7 +147,8 @@
       }
       .r9-sub {
          margin: 1px 0 0 8px;
-         font-size: 15px;
+         font-size: 18px !important;
+         line-height: 24px;
          color: #454545;
       }
       .r9-foot {
@@ -163,6 +164,7 @@
          font-size: 22px;
          letter-spacing: 1px;
          color: #fff;
+         font-weight: bold;
       }
       .r9-foot-cols {
          width: 100%;
@@ -277,7 +279,7 @@
             <p class="r9-h">Language</p>
             <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Language}}
-            {{#if name}}<p class="r9-item">{{name}}</p>{{/if}}
+            {{#if name}}<p class="r9-sub">{{name}}</p>{{/if}}
             {{/each}}
             {{/if}}
          </td>
@@ -286,7 +288,7 @@
             <p class="r9-h">Interests</p>
             <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Interests}}
-            {{#if hoby}}<p class="r9-item">{{hoby}}</p>{{/if}}
+            {{#if hoby}}<p class="r9-sub">{{hoby}}</p>{{/if}}
             {{/each}}
             {{/if}}
          </td>
@@ -297,7 +299,7 @@
             <p class="r9-h">Achievement</p>
             <table cellpadding="0" cellspacing="0" width="92%"><tr><td valign="middle"><div class="r9-hline"></div></td><td class="r9-harrow-td"><div class="r9-harrow"></div></td></tr></table>
             {{#each Achivement}}
-            {{#if achivement}}<p class="r9-item">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>{{/if}}
+            {{#if achivement}}<p class="r9-sub">{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p>{{/if}}
             {{/each}}
             {{/if}}
          </td>

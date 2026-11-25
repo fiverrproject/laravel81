@@ -48,20 +48,27 @@
          background-color: #d8d8d8;
       }
       .r37-crow {
-         width: 100%;
+         width: 96%;
          border-collapse: collapse;
-         margin: 0 0 6px 0;
+         table-layout: auto !important;
+         margin: 0 0 6px 12px;
       }
       .r37-icon {
          width: 22px;
          vertical-align: top;
-         padding: 2px 6px 0 0;
+         padding: 3px 8px 0 0;
+      }
+      .r37-icon svg {
+         display: block;
+         width: 14px !important;
+         height: 14px !important;
       }
       .r37-cval {
-         font-size: 15px;
+         font-size: 18px;
          color: #ffffff;
          word-wrap: break-word;
          vertical-align: top;
+         line-height: 22px;
       }
       .r37-htab {
          border-collapse: collapse;
@@ -87,15 +94,18 @@
          margin: 0 0 10px 0;
       }
       .r37-sname {
-         font-size: 16px;
+         font-size: 18px;
          color: #ffffff;
          padding: 6px 0 3px 0;
+         margin: 0 0 0 12px;
+         line-height: 22px;
       }
       .r37-track {
-         width: 100%;
+         width: 96%;
          border-collapse: collapse;
          table-layout: fixed;
          height: 16px;
+         margin: 0 0 0 12px;
          background-color: #66584f;
          -webkit-print-color-adjust: exact;
       }
@@ -116,21 +126,26 @@
          line-height: 16px;
       }
       .r37-list {
-         width: 100%;
+         width: 96%;
          border-collapse: collapse;
-      }
-      .r37-mark {
-         width: 22px;
-         max-width: 22px;
-         font-size: 1px;
-         vertical-align: middle;
-         padding: 3px 6px 3px 0;
+         table-layout: auto !important;
+         margin: 0 0 0 12px;
+         page-break-inside: avoid;
       }
       .r37-ltxt {
-         font-size: 16px;
+         font-size: 18px;
          color: #ffffff;
-         padding: 3px 0;
+         padding: 3px 0 3px 20px;
+         text-indent: -20px;
+         line-height: 22px;
          word-wrap: break-word;
+      }
+      .r37-ltxt svg {
+         display: inline;
+         width: 14px !important;
+         height: 14px !important;
+         vertical-align: -2px;
+         margin: 0 6px 0 0;
       }
       .r37-rtab {
          width: 100%;
@@ -181,35 +196,40 @@
          margin: 0 0 8px 0;
       }
       .r37-obj {
-         margin: 0 0 4px 0;
-         font-size: 16px;
+         margin: 0 0 4px 12px;
+         font-size: 18px;
          color: #333333;
          line-height: 22px;
       }
       .r37-title {
-         font-size: 17px;
+         font-size: 18px;
          font-weight: bold;
          color: #111111;
          padding: 2px 0 2px 0;
+         margin: 0 0 0 12px;
+         line-height: 22px;
       }
       .r37-txt {
-         font-size: 16px;
+         font-size: 18px;
          color: #333333;
-         padding: 1px 0 1px 4px;
-         line-height: 20px;
+         padding: 1px 0 1px 14px;
+         text-indent: -14px;
+         line-height: 22px;
          word-wrap: break-word;
       }
-      .r37-item {
-         width: 100%;
-         border-collapse: collapse;
-         margin: 0 0 2px 0;
+      .r37-txt svg {
+         display: inline;
+         width: 7px !important;
+         height: 7px !important;
+         vertical-align: 2px;
+         margin: 0 6px 0 0;
       }
-      .r37-bmark {
-         width: 16px;
-         max-width: 16px;
-         font-size: 1px;
-         vertical-align: top;
-         padding: 6px 4px 0 0;
+      .r37-item {
+         width: 96%;
+         border-collapse: collapse;
+         table-layout: auto !important;
+         margin: 0 0 2px 12px;
+         page-break-inside: avoid;
       }
       .r37-signwrap {
          text-align: right;
@@ -290,8 +310,7 @@
                {{#each Language}}
                {{#if name}}
                <tr>
-                  <td class="r37-mark" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ffffff"/><circle cx="8" cy="8" r="3.2" fill="#000000"/></svg></td>
-                  <td class="r37-ltxt">{{name}}</td>
+                  <td class="r37-ltxt"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ffffff"/><circle cx="8" cy="8" r="3.2" fill="#000000"/></svg> {{name}}</td>
                </tr>
                {{/if}}
                {{/each}}
@@ -308,8 +327,7 @@
                {{#each Interests}}
                {{#if hoby}}
                <tr>
-                  <td class="r37-mark" width="22"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ffffff"/><circle cx="8" cy="8" r="3.2" fill="#000000"/></svg></td>
-                  <td class="r37-ltxt">{{hoby}}</td>
+                  <td class="r37-ltxt"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ffffff"/><circle cx="8" cy="8" r="3.2" fill="#000000"/></svg> {{hoby}}</td>
                </tr>
                {{/if}}
                {{/each}}
@@ -350,20 +368,17 @@
                <table class="r37-item" cellpadding="0" cellspacing="0">
                   {{#if institute}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{institute}}</td>
-                  </tr>
-                  {{/if}}
-                  {{#if percentage}}
-                  <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{percentage}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{institute}}</td>
                   </tr>
                   {{/if}}
                   {{#if yearOfPassing}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{yearOfPassing}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{yearOfPassing}}</td>
+                  </tr>
+                  {{/if}}
+                  {{#if percentage}}
+                  <tr>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{percentage}}%</td>
                   </tr>
                   {{/if}}
                </table>
@@ -381,20 +396,17 @@
                <table class="r37-item" cellpadding="0" cellspacing="0">
                   {{#if roles}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{roles}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{roles}}</td>
                   </tr>
                   {{/if}}
                   {{#if duration}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{duration}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{duration}}</td>
                   </tr>
                   {{/if}}
                   {{#if projectDescription}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{projectDescription}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{projectDescription}}</td>
                   </tr>
                   {{/if}}
                </table>
@@ -412,26 +424,22 @@
                <table class="r37-item" cellpadding="0" cellspacing="0">
                   {{#if organization}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{organization}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{organization}}</td>
                   </tr>
                   {{/if}}
                   {{#if role}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{role}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{role}}</td>
                   </tr>
                   {{/if}}
                   {{#if from}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{from}}{{#if to}}-{{to}}{{else}}{{#if endDate}}-{{endDate}}{{/if}}{{/if}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{from}}{{#if to}}-{{to}}{{else}}{{#if endDate}}-{{endDate}}{{/if}}{{/if}}</td>
                   </tr>
                   {{/if}}
                   {{#if description}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{description}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{description}}</td>
                   </tr>
                   {{/if}}
                </table>
@@ -460,26 +468,22 @@
                <table class="r37-item" cellpadding="0" cellspacing="0">
                   {{#if jobtitle}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{jobtitle}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{jobtitle}}</td>
                   </tr>
                   {{/if}}
                   {{#if companyname}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{companyname}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{companyname}}</td>
                   </tr>
                   {{/if}}
                   {{#if email}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{email}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{email}}</td>
                   </tr>
                   {{/if}}
                   {{#if phone}}
                   <tr>
-                     <td class="r37-bmark" width="16"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg></td>
-                     <td class="r37-txt">{{phone}}</td>
+                     <td class="r37-txt"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="#111111"/></svg> {{phone}}</td>
                   </tr>
                   {{/if}}
                </table>

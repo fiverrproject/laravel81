@@ -59,9 +59,9 @@
       }
       .r33-obj {
          margin: 0 0 12px 0;
-         font-size: 15px;
+         font-size: 18px;
          color: #ffffff;
-         line-height: 20px;
+         line-height: 22px;
          word-wrap: break-word;
       }
       .r33-name {
@@ -100,8 +100,9 @@
       .r33-crow {
          width: 100%;
          border-collapse: collapse;
-         table-layout: fixed;
+         table-layout: auto !important;
          margin: 0 0 2px 0;
+         page-break-inside: avoid;
       }
       .r33-nest {
          width: 94%;
@@ -109,57 +110,65 @@
       }
       .r33-mark {
          width: 14px;
-         max-width: 14px;
+         vertical-align: top;
+         padding: 6px 6px 0 0;
          font-size: 1px;
          line-height: 8px;
-         vertical-align: top;
-         padding: 5px 0 0 0;
       }
       .r33-mark svg {
          display: block;
-         width: 8px;
-         height: 8px;
+         width: 8px !important;
+         height: 8px !important;
       }
       .r33-title {
-         font-size: 16px;
+         font-size: 18px;
          font-weight: bold;
          color: #111111;
-         padding: 0 0 2px 4px;
-         line-height: 19px;
+         padding: 0 0 2px 0;
+         line-height: 22px;
          word-wrap: break-word;
       }
       .r33-txt {
-         font-size: 15px;
+         font-size: 18px;
          color: #333333;
          vertical-align: top;
-         padding: 0 0 2px 4px;
-         line-height: 18px;
+         padding: 0 0 2px 0;
+         line-height: 22px;
          word-wrap: break-word;
       }
       .r33-ltxt {
-         font-size: 15px;
+         font-size: 18px;
          color: #ffffff;
          vertical-align: top;
-         padding: 0 0 4px 4px;
-         line-height: 18px;
+         padding: 0 0 4px 0;
+         line-height: 22px;
          word-wrap: break-word;
       }
       .r33-icon {
          width: 22px;
          vertical-align: top;
-         padding: 2px 6px 6px 0;
+         padding: 4px 8px 0 0;
+         font-size: 1px;
+         line-height: 14px;
+      }
+      .r33-icon svg {
+         display: block;
+         width: 14px !important;
+         height: 14px !important;
       }
       .r33-cval {
-         font-size: 14px;
+         font-size: 18px;
          color: #ffffff;
          word-wrap: break-word;
          vertical-align: top;
          padding: 0 0 6px 0;
+         line-height: 22px;
       }
       .r33-sname {
-         font-size: 14px;
+         font-size: 18px;
          color: #ffffff;
          padding: 0 0 4px 0;
+         line-height: 22px;
       }
       .r33-skill {
          margin: 0 0 12px 0;

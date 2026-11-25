@@ -33,20 +33,29 @@
       .r6-name-cell {
          padding: 28px 20px 22px 48px;
          vertical-align: middle;
-         color: #fff;
+         color: #ffffff;
       }
       .r6-name {
          margin: 0;
+         font-family: Arial, Helvetica, sans-serif;
          font-size: 32px;
          font-weight: bold;
          letter-spacing: 1px;
-         text-shadow: 1px 2px 4px #000;
+         color: #ffffff;
+         text-shadow: none !important;
+         -webkit-text-stroke: 0;
+         filter: none;
+         opacity: 1;
       }
       .r6-job {
          margin: 6px 0 0 0;
+         font-family: Arial, Helvetica, sans-serif;
          font-size: 18px;
          letter-spacing: 5px;
-         color: #fff;
+         color: #ffffff;
+         text-shadow: none !important;
+         filter: none;
+         opacity: 1;
       }
       .r6-photo-cell {
          width: 190px;
@@ -115,6 +124,12 @@
          width: 1.4em;
          font-size: 18px;
       }
+      .r6-icon svg {
+         display: block;
+         width: 14px !important;
+         height: 14px !important;
+         margin-top: 3px;
+      }
       .r6-item p {
          margin-left: 1.5em;
       }
@@ -158,16 +173,16 @@
             <div class="r6-sec">
                <ul>
                   {{#if Phone}}
-                  <li class="r6-item"><span class="r6-icon">✆</span><p>{{Phone}}</p></li>
+                  <li class="r6-item"><span class="r6-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="#111111" stroke-width="2" d="M7 3h3l1.6 4.2-2.2 1.3c.9 1.8 2.4 3.3 4.3 4.3l1.3-2.2 4.2 1.6v3.1c0 1.1-1 2.2-2.4 2.2C9.4 17.5 4.5 12.6 4.5 5.4 4.5 4 5.6 3 7 3z"/></svg></span><p>{{Phone}}</p></li>
                   {{/if}}
                   {{#if DOB}}
-                  <li class="r6-item"><span class="r6-icon">♔</span><p>{{DOB}}</p></li>
+                  <li class="r6-item"><span class="r6-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="#111111" stroke-width="2"/><path fill="none" stroke="#111111" stroke-width="2" d="M3 10h18M8 3v4M16 3v4"/></svg></span><p>{{DOB}}</p></li>
                   {{/if}}
                   {{#if Email}}
-                  <li class="r6-item"><span class="r6-icon">✉</span><p>{{Email}}</p></li>
+                  <li class="r6-item"><span class="r6-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" fill="none" stroke="#111111" stroke-width="2"/><path fill="none" stroke="#111111" stroke-width="2" d="M3 7l9 7 9-7"/></svg></span><p>{{Email}}</p></li>
                   {{/if}}
                   {{#if Address}}
-                  <li class="r6-item"><span class="r6-icon">⟰</span><p>{{Address}}</p></li>
+                  <li class="r6-item"><span class="r6-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="#111111" stroke-width="2" d="M3 11l9-8 9 8v10H3V11z"/><path fill="none" stroke="#111111" stroke-width="2" d="M9 21v-8h6v8"/></svg></span><p>{{Address}}</p></li>
                   {{/if}}
                </ul>
             </div>

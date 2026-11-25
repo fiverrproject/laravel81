@@ -29,23 +29,20 @@
          vertical-align: middle;
          padding: 18px 8px 18px 28px;
       }
-      .r17-photo {
+      .r17-picwrap svg {
          display: block;
-         width: 140px;
-         height: 140px;
-         border-radius: 70px;
-         background-color: #d9d9d9;
-         border: 4px solid #ffffff;
+         width: 148px !important;
+         height: 148px !important;
       }
-      .r17-name {
+      .r17-nm {
          margin: 0;
-         font-size: 36px;
+         font-size: 38px;
          font-weight: bold;
          color: #ffffff;
       }
       .r17-job {
          margin: 6px 0 0 0;
-         font-size: 18px;
+         font-size: 20px;
          color: #ffffff;
       }
       .r17-left {
@@ -62,7 +59,7 @@
       }
       .r17-lh {
          margin: 14px 0 8px 0;
-         font-size: 20px;
+         font-size: 22px;
          font-weight: bold;
          color: #1a3a66;
       }
@@ -80,20 +77,21 @@
          padding: 3px 6px 0 0;
       }
       .r17-cval {
-         font-size: 16px;
+         font-size: 18px;
          color: #222;
          word-wrap: break-word;
          vertical-align: top;
+         line-height: 22px;
       }
       .r17-litem {
          margin: 0 0 3px 4px;
-         font-size: 16px;
+         font-size: 18px;
          color: #222;
          word-wrap: break-word;
       }
       .r17-sname {
          margin: 8px 0 3px 0;
-         font-size: 16px;
+         font-size: 18px;
          color: #222;
          word-wrap: break-word;
       }
@@ -123,9 +121,9 @@
          font-size: 1px;
          line-height: 14px;
       }
-      .r17-spct {
-         width: 42px;
-         font-size: 14px;
+      .r17-pcnt {
+         width: 48px;
+         font-size: 18px;
          color: #1a3a66;
          text-align: right;
          white-space: nowrap;
@@ -149,10 +147,10 @@
       .r17-pill-r {
          background-color: #1a3a66;
          color: #ffffff;
-         font-size: 18px;
+         font-size: 24px;
          font-weight: bold;
          border-radius: 0 18px 18px 0;
-         padding: 4px 16px 4px 4px;
+         padding: 5px 16px 5px 4px;
          vertical-align: middle;
       }
       .r17-sub {
@@ -167,13 +165,13 @@
       }
       .r17-title {
          margin: 2px 0 3px 0;
-         font-size: 18px;
+         font-size: 20px;
          font-weight: bold;
          color: #111;
       }
       .r17-text {
          margin: 0 0 4px 0;
-         font-size: 18px;
+         font-size: 20px;
          color: #333;
          word-wrap: break-word;
       }
@@ -192,7 +190,7 @@
          margin-top: 3px;
       }
       .r17-bval {
-         font-size: 18px;
+         font-size: 20px;
          color: #222;
          word-wrap: break-word;
          vertical-align: top;
@@ -203,7 +201,7 @@
       }
       .r17-sign-label {
          margin: 0 0 4px 0;
-         font-size: 18px;
+         font-size: 20px;
          font-weight: bold;
          color: #1a3a66;
          text-align: right;
@@ -220,11 +218,26 @@
 <body>
    <table class="r17-head" cellpadding="0" cellspacing="0">
       <tr>
-         {{#if profilePhoto}}
-         <td class="r17-photo-td"><img class="r17-photo" src="{{{profilePhoto}}}" alt="profilePhoto" /></td>
-         {{/if}}
+         <td class="r17-photo-td">
+            <div class="r17-picwrap">
+            {{#if profilePhoto}}
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="148" height="148" viewBox="0 0 148 148">
+               <defs>
+                  <clipPath id="r17clip"><circle cx="74" cy="74" r="66" /></clipPath>
+               </defs>
+               <circle cx="74" cy="74" r="74" fill="#ffffff" />
+               <image x="8" y="8" width="132" height="132" clip-path="url(#r17clip)" xlink:href="{{{profilePhoto}}}" preserveAspectRatio="xMidYMid slice" />
+            </svg>
+            {{else}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="148" height="148" viewBox="0 0 148 148">
+               <circle cx="74" cy="74" r="74" fill="#ffffff" />
+               <circle cx="74" cy="74" r="66" fill="#d9d9d9" />
+            </svg>
+            {{/if}}
+            </div>
+         </td>
          <td style="vertical-align:middle; padding: 8px 16px 8px 8px;">
-            {{#if Name}}<p class="r17-name">{{Name}}</p>{{/if}}
+            {{#if Name}}<p class="r17-nm">{{Name}}</p>{{/if}}
             {{#if jobTitle}}<p class="r17-job">{{jobTitle}}</p>{{/if}}
          </td>
       </tr>
@@ -297,7 +310,7 @@
                         </tr>
                      </table>
                   </td>
-                  <td class="r17-spct">{{expertiseLabel}}%</td>
+                  <td class="r17-pcnt">{{expertiseLabel}}%</td>
                </tr>
             </table>
             {{/if}}

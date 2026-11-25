@@ -296,23 +296,23 @@
    </div>
    {{/if}}
 
-   {{#if Interests}}
+   {{#if Achivement}}
    <div class="r7-edu">
-      <h3 class="r7-h">Interests</h3>
+      <h3 class="r7-h">Achievement</h3>
       <ul>
-         {{#each Interests}}
-         {{#if hoby}}<li class="r7-item"><span class="r7-arrow" style="color:#000;">⇒</span><p>{{hoby}}</p></li>{{/if}}
+         {{#each Achivement}}
+         {{#if achivement}}<li class="r7-item"><span class="r7-arrow" style="color:#000;">⇒</span><p>{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p></li>{{/if}}
          {{/each}}
       </ul>
    </div>
    {{/if}}
 
-   {{#if Achivement}}
+   {{#if Interests}}
    <div class="r7-pink">
-      <h3>Achievement</h3>
+      <h3>Interests</h3>
       <ul>
-         {{#each Achivement}}
-         {{#if achivement}}<li class="r7-item"><span class="r7-arrow">⇒</span><p>{{#if achivement}}{{#if achivement}}{{achivement}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}{{else}}{{#if title}}{{title}}{{#if description}} - {{description}}{{/if}}{{/if}}{{/if}}</p></li>{{/if}}
+         {{#each Interests}}
+         {{#if hoby}}<li class="r7-item"><span class="r7-arrow">⇒</span><p>{{hoby}}</p></li>{{/if}}
          {{/each}}
       </ul>
    </div>

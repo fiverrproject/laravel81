@@ -84,31 +84,40 @@
          vertical-align: middle;
       }
       .r36-crow {
-         width: 100%;
+         width: 96%;
          border-collapse: collapse;
-         margin: 0 0 6px 0;
+         table-layout: auto !important;
+         margin: 0 0 6px 12px;
       }
       .r36-icon {
          width: 22px;
          vertical-align: top;
-         padding: 2px 6px 0 0;
+         padding: 3px 8px 0 0;
+      }
+      .r36-icon svg {
+         display: block;
+         width: 14px !important;
+         height: 14px !important;
       }
       .r36-cval {
-         font-size: 16px;
+         font-size: 18px;
          color: #ffffff;
          word-wrap: break-word;
          vertical-align: top;
+         line-height: 22px;
       }
       .r36-srow {
-         width: 100%;
+         width: 96%;
          border-collapse: collapse;
          table-layout: fixed;
-         margin: 0 0 6px 0;
+         margin: 0 0 6px 12px;
       }
       .r36-sname {
-         font-size: 15px;
+         font-size: 18px;
          color: #ffffff;
          padding: 0 0 1px 0;
+         margin: 0 0 0 12px;
+         line-height: 22px;
       }
       .r36-barcell {
          width: 72%;
@@ -140,7 +149,7 @@
       }
       .r36-spct {
          width: 28%;
-         font-size: 13px;
+         font-size: 16px;
          color: #ffffff;
          text-align: right;
          vertical-align: middle;
@@ -148,49 +157,67 @@
          white-space: nowrap;
       }
       .r36-ltxt {
-         font-size: 16px;
+         font-size: 18px;
          color: #ffffff;
-         padding: 0 0 4px 4px;
+         padding: 0 0 4px 14px;
+         text-indent: -14px;
+         line-height: 22px;
+      }
+      .r36-ltxt svg,
+      .r36-title svg,
+      .r36-txt svg {
+         display: inline;
+         width: 8px !important;
+         height: 8px !important;
+         vertical-align: 2px;
+         margin: 0 6px 0 0;
       }
       .r36-item,
       .r36-nest,
-      .r36-time {
-         width: 100%;
+      .r36-time,
+      .r36-list {
+         width: 96%;
          border-collapse: collapse;
-         table-layout: fixed;
-         margin: 0 0 2px 0;
+         table-layout: auto !important;
+         margin: 0 0 2px 12px;
+         page-break-inside: avoid;
       }
       .r36-nest {
+         margin: 0 0 4px 24px;
+      }
+      .r36-time .r36-item {
+         width: 100%;
+         margin-left: 0;
+      }
+      .r36-time .r36-nest {
          width: 94%;
-         margin: 0 0 4px 14px;
-      }
-      .r36-mark {
-         width: 14px;
-         max-width: 14px;
-         font-size: 1px;
-         line-height: 8px;
-         vertical-align: top;
-         padding: 5px 0 0 0;
-      }
-      .r36-mark svg {
-         display: block;
-         width: 8px;
-         height: 8px;
+         margin: 0 0 4px 12px;
       }
       .r36-title {
-         font-size: 17px;
+         font-size: 18px;
          font-weight: bold;
          color: #111111;
-         padding: 0 0 2px 4px;
-         line-height: 20px;
+         padding: 0 0 2px 14px;
+         text-indent: -14px;
+         line-height: 22px;
          word-wrap: break-word;
       }
       .r36-txt {
-         font-size: 16px;
+         font-size: 18px;
          color: #333333;
          vertical-align: top;
-         padding: 0 0 1px 4px;
-         line-height: 19px;
+         padding: 0 0 1px 14px;
+         text-indent: -14px;
+         line-height: 22px;
+         word-wrap: break-word;
+      }
+      .r36-plain {
+         margin: 0;
+         font-size: 18px;
+         font-weight: bold;
+         color: #111111;
+         padding: 0 0 2px 0;
+         line-height: 22px;
          word-wrap: break-word;
       }
       .r36-rh {
@@ -200,10 +227,10 @@
          vertical-align: middle;
       }
       .r36-obj {
-         margin: 0 0 10px 0;
-         font-size: 16px;
+         margin: 0 0 10px 12px;
+         font-size: 18px;
          color: #444444;
-         line-height: 19px;
+         line-height: 22px;
       }
       .r36-rline {
          border-top: 1px solid #d0d0d0;
@@ -213,11 +240,12 @@
       }
       .r36-date {
          width: 118px;
-         font-size: 14px;
+         font-size: 16px;
          color: #333333;
          vertical-align: top;
          padding: 2px 6px 0 0;
          white-space: nowrap;
+         line-height: 22px;
       }
       .r36-rail {
          width: 18px;
@@ -239,10 +267,6 @@
          height: 48px !important;
          max-width: 120px !important;
          max-height: 48px !important;
-      }
-      .r36-list {
-         width: 100%;
-         border-collapse: collapse;
       }
    </style>
 </head>
@@ -327,12 +351,10 @@
                <td class="r36-lh">Language</td>
             </tr></table>
             <table class="r36-list" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#each Language}}
                {{#if name}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#ffffff"/></svg></td>
-                  <td class="r36-ltxt">{{name}}</td>
+                  <td class="r36-ltxt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#ffffff"/></svg> {{name}}</td>
                </tr>
                {{/if}}
                {{/each}}
@@ -345,12 +367,10 @@
                <td class="r36-lh">Interests</td>
             </tr></table>
             <table class="r36-list" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#each Interests}}
                {{#if hoby}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#ffffff"/></svg></td>
-                  <td class="r36-ltxt">{{hoby}}</td>
+                  <td class="r36-ltxt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#ffffff"/></svg> {{hoby}}</td>
                </tr>
                {{/if}}
                {{/each}}
@@ -379,25 +399,16 @@
                   <td class="r36-date" valign="top">{{#if yearOfPassing}}{{yearOfPassing}}{{/if}}</td>
                   <td class="r36-rail" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="4" fill="#5558b0"/></svg></td>
                   <td valign="top">
-                     <table class="r36-item" width="100%" cellpadding="0" cellspacing="0">
-                        <col width="14" /><col />
-                        <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
-                           <td class="r36-title">{{#if course}}{{course}}{{/if}}</td>
-                        </tr>
-                     </table>
+                     <p class="r36-plain">{{#if course}}{{course}}{{/if}}</p>
                      <table class="r36-nest" cellpadding="0" cellspacing="0">
-                        <col width="14" /><col />
-                        {{#if institute}}
+                                 {{#if institute}}
                         <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                           <td class="r36-txt">{{institute}}</td>
+                           <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{institute}}</td>
                         </tr>
                         {{/if}}
                         {{#if percentage}}
                         <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                           <td class="r36-txt">{{percentage}}%</td>
+                           <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{percentage}}%</td>
                         </tr>
                         {{/if}}
                      </table>
@@ -417,52 +428,29 @@
             <table class="r36-time" cellpadding="0" cellspacing="0">
                <col width="118" /><col width="18" /><col />
                <tr>
-                  <td class="r36-date" valign="top">{{#if from}}{{from}}{{#if to}} - {{to}}{{else}}{{#if endDate}} - {{endDate}}{{/if}}{{/if}}{{/if}}</td>
+                  <td class="r36-date" valign="top">{{#if from}}{{from}}{{#if to}} - {{to}}{{else}}{{#if present}} - Present{{else}}{{#if endDate}} - {{endDate}}{{/if}}{{/if}}{{/if}}{{else}}{{#if present}}Present{{/if}}{{/if}}</td>
                   <td class="r36-rail" valign="top"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="4" fill="#5558b0"/></svg></td>
                   <td valign="top">
-                     <table class="r36-item" width="100%" cellpadding="0" cellspacing="0">
-                        <col width="14" /><col />
-                        <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
-                           <td class="r36-title">{{#if organization}}{{organization}}{{/if}}</td>
-                        </tr>
-                     </table>
+                     <p class="r36-plain">{{#if organization}}{{organization}}{{/if}}</p>
                      <table class="r36-nest" cellpadding="0" cellspacing="0">
-                        <col width="14" /><col />
-                        {{#if jobTitle}}
+                                 {{#if jobTitle}}
                         <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                           <td class="r36-txt">{{jobTitle}}</td>
-                        </tr>
-                        {{/if}}
-                        {{#if from}}
-                        <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                           <td class="r36-txt">{{from}}{{#if to}} - {{to}}{{else}}{{#if endDate}} - {{endDate}}{{/if}}{{/if}}</td>
+                           <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{jobTitle}}</td>
                         </tr>
                         {{/if}}
                         {{#if role}}
                         <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                           <td class="r36-txt">{{role}}</td>
+                           <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{role}}</td>
                         </tr>
                         {{/if}}
                         {{#if description}}
                         <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                           <td class="r36-txt">{{description}}</td>
+                           <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{description}}</td>
                         </tr>
                         {{/if}}
                         {{#if organization}}
                         <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                           <td class="r36-txt">{{organization}}</td>
-                        </tr>
-                        {{/if}}
-                        {{#if present}}
-                        <tr>
-                           <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                           <td class="r36-txt">Present</td>
+                           <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{organization}}</td>
                         </tr>
                         {{/if}}
                      </table>
@@ -480,30 +468,24 @@
             </tr></table>
             {{#each Projects}}
             <table class="r36-item" width="100%" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
-                  <td class="r36-title">{{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</td>
+                  <td class="r36-title"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg> {{#if projectTitle}}{{projectTitle}}{{else}}{{title}}{{/if}}</td>
                </tr>
             </table>
             <table class="r36-nest" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#if roles}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                  <td class="r36-txt">{{roles}}</td>
+                  <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{roles}}</td>
                </tr>
                {{/if}}
                {{#if duration}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                  <td class="r36-txt">{{duration}}</td>
+                  <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{duration}}</td>
                </tr>
                {{/if}}
                {{#if projectDescription}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                  <td class="r36-txt">{{projectDescription}}</td>
+                  <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{projectDescription}}</td>
                </tr>
                {{/if}}
             </table>
@@ -519,10 +501,8 @@
             {{#each Achivement}}
             {{#if achivement}}
             <table class="r36-item" width="100%" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
-                  <td class="r36-txt">{{achivement}}</td>
+                  <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg> {{achivement}}</td>
                </tr>
             </table>
             {{/if}}
@@ -537,36 +517,29 @@
             </tr></table>
             {{#each Reference}}
             <table class="r36-item" width="100%" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg></td>
-                  <td class="r36-title">{{#if name}}{{name}}{{/if}}</td>
+                  <td class="r36-title"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="#111111"/></svg> {{#if name}}{{name}}{{/if}}</td>
                </tr>
             </table>
             <table class="r36-nest" cellpadding="0" cellspacing="0">
-               <col width="14" /><col />
                {{#if jobtitle}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                  <td class="r36-txt">{{jobtitle}}</td>
+                  <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{jobtitle}}</td>
                </tr>
                {{/if}}
                {{#if companyname}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                  <td class="r36-txt">{{companyname}}</td>
+                  <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{companyname}}</td>
                </tr>
                {{/if}}
                {{#if email}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                  <td class="r36-txt">{{email}}</td>
+                  <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{email}}</td>
                </tr>
                {{/if}}
                {{#if phone}}
                <tr>
-                  <td class="r36-mark" width="14"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg></td>
-                  <td class="r36-txt">{{phone}}</td>
+                  <td class="r36-txt"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="#111111"/></svg> {{phone}}</td>
                </tr>
                {{/if}}
             </table>
